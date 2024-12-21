@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | default: "Omar Almasry Portfolio" }}</title>
+    <link href="/dist/output.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    {% include "_includes/navbar.liquid" %}
+    <main class="container mx-auto py-8">
+      {{ content }}
+    </main>
+    {% include "_includes/footer.liquid" %}
+  </body>
+  </html>
