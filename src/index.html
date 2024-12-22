@@ -2,5 +2,26 @@
 layout: layout.liquid
 title: Home
 ---
-<h1 class="text-4xl font-bold text-center mb-4 text-pink-400">Welcome to My Portfolio</h1>
-<p class="text-lg text-center">Hi, I'm Omar Almasry, a UI Developer specializing in Webflow-based solutions.</p>
+<div class="hero bg-white min-h-screen">
+    <div class="hero-content text-center">
+      <div class="max-w-2xl">
+        <div class="relative mx-auto w-44 h-44 rounded-full bg-black mb-6 overflow-hidden shadow-lg">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+              <source src="images/omar-almasry-emoji-video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        <p class="text-8xl font-bold">Hi there!</p>
+        <h1 class="py-6 text-xl">
+            My name is Omar Almasry. I'm an independant UX engineer. I work with design agencies and in-house marketing teams to create scalable, high-performance web solutions.
+        </h1>
+        <button class="btn btn-primary">Get Started</button>
+        {% include "section-header.liquid", section-title: "About me", section-subtitle: "I'm just testing this out" %}
+
+        <div class="service-card">
+            <h3 class="text-xl font-semibold">Service Title</h3>
+            <p>A brief description of the service.</p>
+</div>
+      </div>
+    </div>
+  </div>`

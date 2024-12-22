@@ -1,9 +1,13 @@
 module.exports = function (eleventyConfig) {
   // Add a passthrough copy for assets or other folders
   eleventyConfig.addPassthroughCopy("dist");
+  eleventyConfig.addPassthroughCopy("src/images");
 
   // Watch the CSS directory for changes
   eleventyConfig.addWatchTarget("src/styles/**/*.css");
+
+  //Add a global shortcode to get the current year
+  eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
 
   return {
     dir: {
