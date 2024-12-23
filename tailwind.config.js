@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js,liquid}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Inter', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
