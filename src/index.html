@@ -2,8 +2,8 @@
 layout: layout.liquid
 title: Home
 ---
-<div class="min-h-svh mx-auto">
-    <div class="text-center">
+<div class="min-h-svh mx-auto flex-col items-center">
+    <div class="text-center mr-auto ml-auto">
       <div class="max-w-2xl mr-auto ml-auto">
         <div class="relative mx-auto w-44 h-44 rounded-full bg-black mb-6 overflow-hidden shadow-lg">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
@@ -15,9 +15,17 @@ title: Home
         <h1 class="py-6 text-xl">
             My name is Omar Almasry. I'm an independant UX engineer. I work with design agencies and in-house marketing teams to create scalable, high-performance web solutions.
         </h1>
-        <button class="btn btn-primary">Get Started</button>
-        {% include "section-header.liquid", section-title: "About me", section-subtitle: "I'm just testing this out" %}
-
-      </div>
+        <button class="bg-blue-950 text-xl text-amber-400">Test Button</button>
     </div>
   </div>
+
+
+  <section class="bg-text text-background py-12 px-8">
+    <h1 class="text-4xl font-bold mb-4">Welcome to My Website</h1>
+    <p class="text-text-muted text-lg">
+      This is a sample hero section with a muted subtitle. Let's build something awesome.
+    </p>
+    <button class="bg-primary text-background py-2 px-4 rounded-lg hover:bg-primary-light focus:bg-primary-dark">
+      Get Started
+    </button>
+  </section>
