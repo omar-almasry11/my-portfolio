@@ -12,3 +12,11 @@
 .service-card {
     @apply grid gap-4 border rounded-lg flex flex-col justify-start items-start h-full p-6 no-underline transition-all relative border-lime-500;
 }
+
+.navbar-link {
+    @apply text-gray-500 transition duration-300 text-lg font-normal hover:text-blue-600;
+}
+
+.footer-social-embed {
+    @apply w-7 h-7 fill-current;
+}
