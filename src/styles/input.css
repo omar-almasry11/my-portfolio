@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+@layer base {
 @font-face {
     font-family: Inter;
     src: url('/fonts/Inter.ttf');
 }
+
+body {
+    @apply text-normal;
+}
+ }
 
 @layer components {
 /* Custom Component Styles */
@@ -22,12 +26,4 @@
 .footer-social-embed {
     @apply w-7 h-7 fill-current;
 }
-
-.section-title {
-    @apply text-4xl font-bold text-gray-800 mb-1;
-}
-
-.section-subtitle {
-    @apply text-2xl text-slate-500;
-}
-}
+ }

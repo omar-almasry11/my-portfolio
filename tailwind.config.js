@@ -7,14 +7,24 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
       },
       colors: {
-        primary: {
-          DEFAULT: '#3d60e2', // Default primary color
-          light: '#e0ecff',   // Light variant
-        },
-        text: {
-          DEFAULT: '#080708', // Default text color
-          muted: '#707179',   // Muted text color
-        },
+        transparent: 'transparent',
+        current: 'currentColor',
+        savoyBlue: '#3d60e2',
+        aliceBlue: '#e0ecff',
+        oxfordBlue: '#000022',
+        ebony: '#515751',
+        icterine: '#EDF060',
+        taupeGray: '#A39594',
+      },
+      textColor: {
+        normal: '#000022',
+        normalLight: '#515751',
+        inverted: 'white',
+        invertedLight: 'A39594',
+      },
+      backgroundColor: {
+        normal: 'white',
+        inverted: '#000022',
       },
     },
   },
