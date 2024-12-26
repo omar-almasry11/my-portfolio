@@ -1,15 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cursor = document.getElementById("custom-cursor");
-  
+    let mouseX = 0;
+    let mouseY = 0;
+    let isMoving = false;
+
+    // Offset for fine-tuning the position
+    const offsetX = 5; // Adjust to your liking
+    const offsetY = -5;
+
     document.addEventListener("mousemove", (e) => {
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
-  
-      // Add an offset to align the dot closer or further
-      const offsetX = 0; // Positive to move right, negative to move left
-      const offsetY = 0; // Positive to move down, negative to move up
-  
-      // Adjust position
-      cursor.style.transform = `translate(${mouseX + offsetX}px, ${mouseY + offsetY}px)`;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!isMoving) {
+            isMoving = true;
+            requestAnimationFrame(() => {
+                cursor.style.transform = `translate(${mouseX + offsetX}px, ${mouseY + offsetY}px)`;
+                isMoving = false;
+            });
+        }
     });
-  });
+});

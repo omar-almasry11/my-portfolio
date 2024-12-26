@@ -607,22 +607,12 @@ body {
   fill: currentColor;
 }
 
-#custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 12px;
-  /* Size of the dot */
-  height: 12px;
-  background-color: #000;
-  /* Adjust color */
-  border-radius: 50%;
+.pointer-events-none {
   pointer-events: none;
-  /* Prevent interference with clicks */
-  transform: translate(-50%, -50%);
-  /* Center the dot on the cursor */
-  z-index: 9999;
-  transition: transform 0.1s ease-out;
+}
+
+.fixed {
+  position: fixed;
 }
 
 .relative {
@@ -633,12 +623,20 @@ body {
   position: sticky;
 }
 
+.left-0 {
+  left: 0px;
+}
+
 .top-0 {
   top: 0px;
 }
 
 .z-50 {
   z-index: 50;
+}
+
+.z-\[9999\] {
+  z-index: 9999;
 }
 
 .mx-auto {
@@ -670,6 +668,10 @@ body {
   display: flex;
 }
 
+.h-3 {
+  height: 0.75rem;
+}
+
 .h-44 {
   height: 11rem;
 }
@@ -682,6 +684,10 @@ body {
   min-height: 100svh;
 }
 
+.w-3 {
+  width: 0.75rem;
+}
+
 .w-44 {
   width: 11rem;
 }
@@ -692,6 +698,16 @@ body {
 
 .max-w-2xl {
   max-width: 42rem;
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .transform {
@@ -942,8 +958,22 @@ body {
   transition-duration: 150ms;
 }
 
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-100 {
+  transition-duration: 100ms;
+}
+
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 .hover\:bg-blue-500:hover {
