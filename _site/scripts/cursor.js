@@ -1,23 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const cursor = document.getElementById("custom-cursor");
-    let mouseX = 0;
-    let mouseY = 0;
-    let isMoving = false;
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the custom cursor element
+    var cursor = document.getElementById("custom-cursor");
+    if (!cursor) {
+        console.error("Custom cursor element not found!");
+        return;
+    }
 
-    // Offset for fine-tuning the position
-    const offsetX = 5; // Adjust to your liking
-    const offsetY = -5;
+    console.log("Custom cursor found:", cursor);
 
-    document.addEventListener("mousemove", (e) => {
+    // Variables for mouse position
+    var mouseX = 0;
+    var mouseY = 0;
+
+    // Offset for positioning
+    var offsetX = 5;
+    var offsetY = -5;
+
+    // Update cursor position on mousemove
+    document.addEventListener("mousemove", function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        cursor.style.transform = `translate(${mouseX + offsetX}px, ${mouseY + offsetY}px)`;
+    });
 
-        if (!isMoving) {
-            isMoving = true;
-            requestAnimationFrame(() => {
-                cursor.style.transform = `translate(${mouseX + offsetX}px, ${mouseY + offsetY}px)`;
-                isMoving = false;
-            });
-        }
+    // Hover effect for navigation links
+    var navLinks = document.querySelectorAll(".menu_link");
+    if (navLinks.length === 0) {
+        console.warn("No navigation links found with class 'menu_link'.");
+        return;
+    }
+
+    navLinks.forEach(function (link) {
+        link.addEventListener("mouseenter", function () {
+            console.log("Hovering over:", this);
+            // Add scaling and transition inline
+            cursor.style.transform += " scale(6.0)";
+            cursor.style.transition = "transform 0.3s ease-out";
+        });
+
+        link.addEventListener("mouseleave", function () {
+            console.log("Leaving:", this);
+            // Reset scaling
+            cursor.style.transform = `translate(${mouseX + offsetX}px, ${mouseY + offsetY}px) scale(1.0)`;
+            cursor.style.transition = "transform 0.3s ease-out";
+        });
     });
 });
