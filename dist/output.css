@@ -601,28 +601,28 @@ body {
 
 /* Custom Component Styles */
 
-.navbar-link {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 400;
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
-.navbar-link:hover {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
-}
-
 .footer-social-embed {
   height: 1.75rem;
   width: 1.75rem;
   fill: currentColor;
+}
+
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  /* Size of the dot */
+  height: 12px;
+  background-color: #000;
+  /* Adjust color */
+  border-radius: 50%;
+  pointer-events: none;
+  /* Prevent interference with clicks */
+  transform: translate(-50%, -50%);
+  /* Center the dot on the cursor */
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
 }
 
 .relative {
@@ -692,6 +692,10 @@ body {
 
 .max-w-2xl {
   max-width: 42rem;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .flex-col {
@@ -890,6 +894,11 @@ body {
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
 }
 
+.text-normalLight {
+  --tw-text-opacity: 1;
+  color: rgb(81 87 81 / var(--tw-text-opacity, 1));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -945,6 +954,11 @@ body {
 .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-hover:hover {
+  --tw-text-opacity: 1;
+  color: rgb(61 96 226 / var(--tw-text-opacity, 1));
 }
 
 .focus\:outline-none:focus {

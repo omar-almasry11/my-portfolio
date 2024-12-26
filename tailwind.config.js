@@ -19,6 +19,7 @@ module.exports = {
       textColor: {
         normal: '#000022',
         normalLight: '#515751',
+        hover: '#3d60e2',
         inverted: 'white',
         invertedLight: 'A39594',
       },

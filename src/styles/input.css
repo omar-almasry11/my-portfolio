@@ -19,11 +19,21 @@ body {
     @apply grid gap-4 border rounded-lg flex flex-col justify-start items-start h-full p-6 no-underline transition-all relative border-lime-500;
 }
 
-.navbar-link {
-    @apply text-gray-500 transition duration-300 text-lg font-normal hover:text-blue-600;
-}
-
 .footer-social-embed {
     @apply w-7 h-7 fill-current;
 }
+
+#custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px; /* Size of the dot */
+    height: 12px;
+    background-color: #000; /* Adjust color */
+    border-radius: 50%;
+    pointer-events: none; /* Prevent interference with clicks */
+    transform: translate(-50%, -50%); /* Center the dot on the cursor */
+    z-index: 9999;
+    transition: transform 0.1s ease-out;
+  }
  }
