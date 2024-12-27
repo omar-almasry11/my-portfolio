@@ -10,7 +10,7 @@
     <nav class="px-6 py-4 bg-white shadow-sm sticky top-0 bg-white/60 z-50 backdrop-blur-sm">
   <div class="flex items-center justify-between container mx-auto">
   <!-- Logo -->
-  <a href="/src/index.html" class="flex items-center text-gray-700 font-bold text-lg">
+  <a href="/src/index.html" class="flex items-center text-gray-700 font-bold text-lg no-underline">
     <h3 class="flex items-center">
       <span class="text-4xl font-normal text-gray-500">O</span>
       <span class="text-4xl text-blue-500 ml-1">.</span>
@@ -21,16 +21,13 @@
   <div class="flex items-center space-x-6">
     <ul class="flex items-center space-x-6">
       <li>
-        <a href="#services" class="menu_link">Services</a>
+        <a href="#services" class="text-normalLight transition duration-300 text-lg font-normal hover:text-hover no-underline">Services</a>
       </li>
       <li>
-        <a href="#work" class="menu_link">Work</a>
+        <a href="#work" class="text-normalLight transition duration-300 text-lg font-normal hover:text-hover no-underline">Work</a>
       </li>
     </ul>
-    <a
-      href="#contact"
-      class="px-5 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-500 transition-all"
-    >
+    <a href="#contact" class="px-5 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-500 transition-all no-underline">
       Contact 👋🏽
     </a>
   </div>
@@ -58,12 +55,22 @@
   <section class="py-24 px-[5%]">
     <div class="container mx-auto">
         <div class="max-w-2xl">
-            <h2 class="text-4xl font-bold mb-2">Welcome to My Website</h2>
-            <p class="text-2xl text-ebony mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
+            <h2 class="text-4xl font-bold mb-2">Featured articles</h2>
+            <p class="text-2xl text-ebony mb-6">I love learning and writing. So, here are some insights from my journey.</p>
         </div>
     </div>
+  </section>
+
+
+  <section class="py-24 px-[5%]">
+    <div class="text-center">
+  <h2 class="text-4xl font-bold mb-2">
+    Default Header
+  </h2>
+  <p class="text-2xl text-ebony mb-6">
+    Default Subheader
+  </p>
+</div>
   </section>
     </main>
     <footer class="py-4">
@@ -89,7 +96,7 @@
       <nav class="flex space-x-4" class="focus:outline-none focus:ring-2 focus:ring-teal-500">
         <a href="https://github.com/omar-almasry11" target="_blank" rel="noopener noreferrer">
           <svg xmlns="http://www.w3.org/2000/svg" 
-            class="footer-social-embed" 
+            class="w-7 h-7 fill-current hover:text-savoyBlue transition duration-300" 
             role="img" 
             aria-label="GitHub"
             viewBox="0 0 256 256">
@@ -100,7 +107,7 @@
           <!-- LinkedIn-->
          <a href="https://www.linkedin.com/in/omar-al-masry-608a1581/" target="_blank" class="focus:outline-none focus:ring-2 focus:ring-teal-500">
           <svg xmlns="http://www.w3.org/2000/svg" 
-            class="footer-social-embed"
+            class="w-7 h-7 fill-current"
             role="img" 
             aria-label="LinkedIn"
             viewBox="0 0 256 256">
@@ -111,7 +118,7 @@
         <!-- Email-->
         <a href="mailto:hello@omar" class="focus:outline-none focus:ring-2 focus:ring-teal-500">
           <svg xmlns="http://www.w3.org/2000/svg" 
-            class="footer-social-embed"
+            class="w-7 h-7 fill-current"
             role="img" 
             aria-label="Email"
             viewBox="0 0 256 256">

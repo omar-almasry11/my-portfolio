@@ -5,12 +5,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/scripts");
 
-
   // Watch the CSS directory for changes
   eleventyConfig.addWatchTarget("src/styles/**/*.css");
 
-  //Add a global shortcode to get the current year
+  // Add a global shortcode to get the current year
   eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
+
+  // Set Liquid options to enable dynamic partials
+  eleventyConfig.setLiquidOptions({
+    dynamicPartials: true, // Enable dynamic partials
+    strictFilters: false,  // Optional: Allow loose filtering
+  });
 
   return {
     dir: {

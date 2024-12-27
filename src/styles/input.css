@@ -11,15 +11,12 @@
 body {
     @apply text-normal;
 }
+
  }
 
 @layer components {
 /* Custom Component Styles */
 .service-card {
     @apply grid gap-4 border rounded-lg flex flex-col justify-start items-start h-full p-6 no-underline transition-all relative border-lime-500;
-}
-
-.footer-social-embed {
-    @apply w-7 h-7 fill-current;
 }
  }
