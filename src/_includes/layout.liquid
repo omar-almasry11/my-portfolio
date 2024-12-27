@@ -7,10 +7,10 @@
     <link href="/dist/output.css" rel="stylesheet">
   </head>
   <body>
-    {% include "_includes/navbar.liquid" %}
+    {% render 'navbar' %}
     <main>
       {{ content }}
     </main>
-    {% include "_includes/footer.liquid" %}
+    {% render 'footer' %}
   </body>
   </html>
