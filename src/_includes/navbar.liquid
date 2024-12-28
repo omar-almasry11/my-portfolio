@@ -1,26 +1,32 @@
-<nav class="px-6 py-4 bg-white shadow-sm sticky top-0 bg-white/60 z-50 backdrop-blur-sm">
+<nav class="px-6 py-4 bg-white shadow-sm sticky top-0 bg-white/60 z-50 backdrop-blur-sm dark:bg-black">
+  <!-- Progress Bar -->
+  <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-gray-200">
+    <div id="progressBar" class="h-1 bg-savoyBlue w-0"></div>
+  </div>
   <div class="flex items-center justify-between container mx-auto">
-  <!-- Logo -->
-  <a href="/src/index.html" class="flex items-center text-gray-700 font-bold text-lg no-underline">
-    <h3 class="flex items-center">
-      <span class="text-4xl font-normal text-gray-500">O</span>
-      <span class="text-4xl text-blue-500 ml-1">.</span>
-    </h3>
-  </a>
-
-  <!-- Navigation Links & Button -->
-  <div class="flex items-center space-x-6">
-    <ul class="flex items-center space-x-6">
-      <li>
-        <a href="#services" class="text-normalLight transition duration-300 text-lg font-normal hover:text-hover no-underline">Services</a>
-      </li>
-      <li>
-        <a href="#work" class="text-normalLight transition duration-300 text-lg font-normal hover:text-hover no-underline">Work</a>
-      </li>
-    </ul>
-    <a href="#contact" class="px-5 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-500 transition-all no-underline">
-      Contact 👋🏽
+    <!-- Logo -->
+    <a href="/src/index.html" class="flex items-center text-gray-700 font-bold text-lg no-underline">
+      <h3 class="flex items-center">
+        <span class="text-4xl font-normal text-gray-500">O</span>
+        <span class="text-4xl text-blue-500 ml-1">.</span>
+      </h3>
     </a>
+
+    <!-- Navigation Links & Button -->
+    <div class="flex items-center space-x-6">
+      <ul class="flex items-center space-x-6">
+        <li>
+          <a href="#services" class="text-normalLight transition duration-300 text-lg font-normal hover:text-hover no-underline">Services</a>
+        </li>
+        <li>
+          <a href="#work" class="text-normalLight transition duration-300 text-lg font-normal hover:text-hover no-underline">Work</a>
+        </li>
+      </ul>
+      <a href="#contact" class="px-5 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-500 transition-all no-underline">
+        Contact 👋🏽
+      </a>
+    </div>
   </div>
-  </div>
+
+  
 </nav>
