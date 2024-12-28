@@ -1,14 +1,14 @@
-<nav class="px-6 py-4 bg-white shadow-sm sticky top-0 bg-white/60 z-50 backdrop-blur-sm dark:bg-black">
+<nav class="px-6 py-4 shadow-sm sticky top-0 bg-normal/60 z-50 backdrop-blur-sm dark:bg-inverted/60">
   <!-- Progress Bar -->
-  <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-gray-200">
-    <div id="progressBar" class="h-1 bg-savoyBlue w-0"></div>
+  <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-transparant">
+    <div id="progressBar" class="h-1 bg-primary w-0 dark:bg-primaryInverted"></div>
   </div>
   <div class="flex items-center justify-between container mx-auto">
     <!-- Logo -->
     <a href="/src/index.html" class="flex items-center text-gray-700 font-bold text-lg no-underline">
       <h3 class="flex items-center">
-        <span class="text-4xl font-normal text-gray-500">O</span>
-        <span class="text-4xl text-blue-500 ml-1">.</span>
+        <span class="text-4xl font-normal text-normalLight dark:text-invertedLight">O</span>
+        <span class="text-4xl text-primary ml-1 dark:text-primaryInverted">.</span>
       </h3>
     </a>
 
@@ -16,17 +16,51 @@
     <div class="flex items-center space-x-6">
       <ul class="flex items-center space-x-6">
         <li>
-          <a href="#services" class="text-normalLight transition duration-300 text-lg font-normal hover:text-hover no-underline">Services</a>
+          <a
+            href="#services"
+            class="text-normalLight transition duration-300 text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+            >Services</a
+          >
         </li>
         <li>
-          <a href="#work" class="text-normalLight transition duration-300 text-lg font-normal hover:text-hover no-underline">Work</a>
+          <a
+            href="#work"
+            class="text-normalLight transition duration-300 text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+            >Work</a
+          >
         </li>
       </ul>
-      <a href="#contact" class="px-5 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-500 transition-all no-underline">
-        Contact 👋🏽
+      <a
+        href="#contact"
+        class="px-5 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-500 transition-all no-underline"
+      >
+        Contact
       </a>
+
+      <!-- Dark Mode Toggle -->
+      <button id="themeToggle" class="px-3 py-2 bg-inverted rounded shadow dark:bg-normal">
+        <span class="sr-only">Toggle dark mode</span>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 fill-current text-primaryInverted hover:text-inverted transition duration-300 block dark:hidden"
+          role="img"
+          aria-label="Dark Mode"
+          viewBox="0 0 256 256"
+        >
+          <path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 fill-current text-normal transition duration-300 dark:hover:text-invertedLight hidden dark:block"
+          role="img"
+          aria-label="Light Mode"
+          viewBox="0 0 256 256"
+        >
+          <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+        </svg>
+      </button>
     </div>
   </div>
-
-  
 </nav>

@@ -8,10 +8,13 @@
     src: url('/fonts/Inter.ttf');
 }
 
-body {
-    @apply text-normal;
-}
 
+html {
+    @apply text-normal bg-normal;
+  }
+  html.dark {
+    @apply text-inverted bg-inverted;
+  }
  }
 
 @layer components {
