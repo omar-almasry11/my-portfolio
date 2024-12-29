@@ -1,0 +1,13 @@
+<button 
+    class="flex mr-auto ml-auto px-5 py-2 bg-primary text-inverted font-medium rounded-lg shadow hover:bg-inverted transition-all duration-300 no-underline border-2 border-current dark:bg-primaryInverted dark:text-normal dark:hover:bg-normal focus:ring focus:ring-blue-300 {{ variant }}"
+    type="{{ type | default: 'button' }}"
+    {% if ariaLabel %} aria-label="{{ ariaLabel }}" {% endif %}
+    {% if ariaExpanded %} aria-expanded="{{ ariaExpanded }}" {% endif %}
+  >
+    <span>{{ text }}</span>
+    {% if icon %}
+        <span class="{{ iconPosition | default: 'ml-2' }}">
+          {{ icon }}
+        </span>
+      {% endif %}
+  </button>

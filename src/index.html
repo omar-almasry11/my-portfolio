@@ -15,7 +15,16 @@ title: Home
         <h1 class="py-6 text-xl text-normalLight font-regular dark:text-invertedLight">
             My name is Omar Almasry. I'm an independant UX engineer. I work with design agencies and in-house marketing teams to create scalable, high-performance web solutions
         </h1>
-        <button class="bg-savoyBlue text-white py-2 px-4 rounded-md">Test Button</button>
+        {% render 'button', 
+        text: 'Click Me',
+        icon: '',
+        iconPosition: '',
+        type: 'button', 
+        variant: '', 
+        ariaLabel: '',
+        ariaExpanded: '' 
+      %}
+      
      </div>
    </div>
   </div>

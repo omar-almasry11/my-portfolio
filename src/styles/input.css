@@ -15,6 +15,9 @@ html {
   html.dark {
     @apply text-inverted bg-inverted;
   }
+  a {
+    @apply font-medium underline decoration-primary decoration-2 transition duration-300 hover:text-primary hover:decoration-normal dark:decoration-primaryInverted dark:hover:text-primaryInverted dark:hover:decoration-inverted;
+  }
  }
 
 @layer components {

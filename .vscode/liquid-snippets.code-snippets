@@ -1,0 +1,31 @@
+{
+	"Render Button Partial": {
+	  "prefix": "renderbutton",
+	  "body": [
+		"{% render 'button', ",
+		"  text: '${1:Click Me}',",
+		"  icon: '${2}',",
+		"  iconPosition: '${3}',",
+		"  type: '${4:button}',",
+		"  variant: '${5}',",
+		"  ariaLabel: '${6}',",
+		"  ariaExpanded: '${7}' ",
+		"%}"
+	  ],
+	  "description": "Insert a button partial with all options"
+	},
+
+	"Render Section Standard": {
+    "prefix": "rendersection",
+    "body": [
+      "{% render 'section-standard', ",
+      "  header: '${1:Lorem ipsum}',",
+      "  subheader: '${2:Lorem ipsum}',",
+      "  content: '${3:<p>Lorem ipsum</p>}',",
+      "  customClasses: '${4}'",
+      "%}"
+    ],
+    "description": "Insert a section-standard render with all options"
+  }
+  }
+  
