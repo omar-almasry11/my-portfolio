@@ -1,0 +1,13 @@
+---
+layout: "/layouts/layout.liquid"
+---
+
+<article class="max-w-4xl mx-auto py-12 px-6">
+  <header class="mb-8">
+    <h1 class="text-4xl font-bold mb-2">{{ title }}</h1>
+    <p class="text-sm text-gray-500">{{ date | date: "%B %d, %Y" }}</p>
+  </header>
+  <div class="prose dark:prose-inverted">
+    {{ content | safe }}
+  </div>
+</article>

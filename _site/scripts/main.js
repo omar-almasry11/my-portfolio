@@ -26,3 +26,21 @@ themeToggle.addEventListener('click', () => {
   const isDarkMode = document.documentElement.classList.toggle('dark');
   localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
 });
+
+// Back to Top Button Logic
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopButton.classList.remove('hidden');
+  } else {
+    backToTopButton.classList.add('hidden');
+  }
+});
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+});

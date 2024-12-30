@@ -8,7 +8,6 @@
     src: url('/fonts/Inter.ttf');
 }
 
-
 html {
     @apply text-normal bg-normal;
   }
