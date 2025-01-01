@@ -745,10 +745,6 @@ a:hover:is(.dark *) {
   margin-top: 1.5rem;
 }
 
-.mb-16 {
-  margin-bottom: 4rem;
-}
-
 .block {
   display: block;
 }
@@ -781,20 +777,16 @@ a:hover:is(.dark *) {
   height: 1.25rem;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .h-7 {
   height: 1.75rem;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-12 {
-  height: 3rem;
 }
 
 .min-h-svh {
@@ -817,20 +809,16 @@ a:hover:is(.dark *) {
   width: 1.25rem;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .w-7 {
   width: 1.75rem;
 }
 
 .w-full {
   width: 100%;
-}
-
-.w-6 {
-  width: 1.5rem;
-}
-
-.w-12 {
-  width: 3rem;
 }
 
 .max-w-2xl {
@@ -853,10 +841,6 @@ a:hover:is(.dark *) {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -865,32 +849,16 @@ a:hover:is(.dark *) {
   align-items: center;
 }
 
-.justify-center {
-  justify-content: center;
-}
-
 .justify-between {
   justify-content: space-between;
-}
-
-.gap-6 {
-  gap: 1.5rem;
-}
-
-.gap-4 {
-  gap: 1rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .gap-1 {
   gap: 0.25rem;
 }
 
-.gap-12 {
-  gap: 3rem;
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -903,12 +871,6 @@ a:hover:is(.dark *) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-y-1 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -947,10 +909,6 @@ a:hover:is(.dark *) {
   border-width: 2px;
 }
 
-.border-none {
-  border-style: none;
-}
-
 .border-current {
   border-color: currentColor;
 }
@@ -977,15 +935,6 @@ a:hover:is(.dark *) {
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(61 96 226 / var(--tw-bg-opacity, 1));
-}
-
-.bg-primaryInverted {
-  --tw-bg-opacity: 1;
-  background-color: rgb(247 203 21 / var(--tw-bg-opacity, 1));
-}
-
-.bg-transparent {
-  background-color: transparent;
 }
 
 .fill-current {
@@ -1094,11 +1043,6 @@ a:hover:is(.dark *) {
   line-height: 1.75rem;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1155,20 +1099,8 @@ a:hover:is(.dark *) {
   color: rgb(61 96 226 / var(--tw-text-opacity, 1));
 }
 
-.underline {
-  text-decoration-line: underline;
-}
-
 .no-underline {
   text-decoration-line: none;
-}
-
-.decoration-primary {
-  text-decoration-color: #3d60e2;
-}
-
-.decoration-2 {
-  text-decoration-thickness: 2px;
 }
 
 .shadow {
@@ -1192,12 +1124,6 @@ a:hover:is(.dark *) {
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-none {
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1229,10 +1155,6 @@ a:hover:is(.dark *) {
   background-color: rgb(61 96 226 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-transparent:hover {
-  background-color: transparent;
-}
-
 .hover\:text-inverted:hover {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
@@ -1250,14 +1172,6 @@ a:hover:is(.dark *) {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
-}
-
-.hover\:decoration-normal:hover {
-  text-decoration-color: #000022;
-}
-
-.hover\:decoration-primary:hover {
-  text-decoration-color: #3d60e2;
 }
 
 .focus\:outline-none:focus {
@@ -1334,10 +1248,6 @@ a:hover:is(.dark *) {
   color: rgb(247 203 21 / var(--tw-text-opacity, 1));
 }
 
-.dark\:decoration-primaryInverted:is(.dark *) {
-  text-decoration-color: #F7CB15;
-}
-
 .dark\:hover\:bg-normal:hover:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
@@ -1351,10 +1261,6 @@ a:hover:is(.dark *) {
 .dark\:hover\:text-primaryInverted:hover:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(247 203 21 / var(--tw-text-opacity, 1));
-}
-
-.dark\:hover\:decoration-inverted:hover:is(.dark *) {
-  text-decoration-color: #f2f2f2;
 }
 
 @media (min-width: 768px) {
