@@ -37,6 +37,10 @@ module.exports = {
         primary: '#3d60e2',
         primaryInverted: '#F7CB15',
       },
+      borderColor: {
+        normal: '#f2f2f2',
+        inverted: '#f2f2f2',
+      },
     },
   },
   plugins: [],

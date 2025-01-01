@@ -19,13 +19,17 @@
     "prefix": "rendersection",
     "body": [
       "{% render 'partials/section-standard', ",
-      "  header: '${1:Lorem ipsum}',",
-      "  subheader: '${2:Lorem ipsum}',",
-      "  content: '${3:<p>Lorem ipsum</p>}',",
-      "  customClasses: '${4}'",
+      "  header: '${1:Default Header}',",
+      "  subheader: '${2:Default Subheader}',",
+      "  content: '${3:<p>Default Content</p>}',",
+      "  collection: ${4:collections.post},",
+      "  limit: ${5:3},",
+      "  collectionLink: '${6:/collection-url/}',",
+      "  collectionName: '${7:Collection Name}',",
+      "  customClasses: '${8:custom-css-classes}'",
       "%}"
     ],
     "description": "Insert a section-standard render with all options"
-  }
+}
   }
   

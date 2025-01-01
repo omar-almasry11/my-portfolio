@@ -21,7 +21,7 @@ html {
 
 @layer components {
 /* Custom Component Styles */
-.service-card {
-    @apply grid gap-4 border rounded-lg flex flex-col justify-start items-start h-full p-6 no-underline transition-all relative border-lime-500;
+.standard-card {
+    @apply border rounded-md flex flex-col justify-start items-start h-full p-6 no-underline transition-all relative border-normal;
 }
  }

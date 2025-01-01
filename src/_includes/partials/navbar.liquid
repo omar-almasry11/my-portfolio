@@ -5,7 +5,7 @@
   </div>
   <div class="flex items-center justify-between container mx-auto">
     <!-- Logo -->
-    <a href="/src/index.html" class="flex items-center text-gray-700 font-bold text-lg no-underline">
+    <a href="{{ '/' | url }}" class="flex items-center text-gray-700 font-bold text-lg no-underline">
       <h3 class="flex items-center">
         <span class="text-4xl font-normal text-normalLight dark:text-invertedLight">O</span>
         <span class="text-4xl text-primary ml-1 dark:text-primaryInverted">.</span>
@@ -13,7 +13,7 @@
     </a>
 
     <!-- Navigation Links & Button -->
-    <div class="flex items-center space-x-6">
+    <div class="flex items-center space-x-4">
       <ul class="flex items-center space-x-6">
         <li>
           <a
@@ -24,7 +24,7 @@
         </li>
         <li>
           <a
-            href="src/blog.liquid"
+            href="{{ '/blog' | url }}"
             class="text-normalLight text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
             >Blog</a
           >

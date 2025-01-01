@@ -14,7 +14,7 @@
   </div>
   <div class="flex items-center justify-between container mx-auto">
     <!-- Logo -->
-    <a href="/src/index.html" class="flex items-center text-gray-700 font-bold text-lg no-underline">
+    <a href="/" class="flex items-center text-gray-700 font-bold text-lg no-underline">
       <h3 class="flex items-center">
         <span class="text-4xl font-normal text-normalLight dark:text-invertedLight">O</span>
         <span class="text-4xl text-primary ml-1 dark:text-primaryInverted">.</span>
@@ -22,7 +22,7 @@
     </a>
 
     <!-- Navigation Links & Button -->
-    <div class="flex items-center space-x-6">
+    <div class="flex items-center space-x-4">
       <ul class="flex items-center space-x-6">
         <li>
           <a
@@ -33,7 +33,7 @@
         </li>
         <li>
           <a
-            href="src/blog.liquid"
+            href="/blog"
             class="text-normalLight text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
             >Blog</a
           >
@@ -116,67 +116,85 @@
         </span>
       
   </button>
-      
      </div>
    </div>
   </div>
-  <section class="py-24 px-[5%] ">
+  <section class="py-20 px-[5%] ">
   <div class="container mx-auto">
-    <div class="max-w-3xl">
+    <div class="max-w-3xl mx-auto">
       
         <h2 class="text-4xl font-bold mb-2">
           Featured Articles
         </h2>
-        <p class="text-2xl text-normalLight mb-6 dark:text-invertedLight">I love learning and writing. So, here are some insights from my journey.</p>
+        <p class="text-2xl text-normalLight mb-6 dark:text-invertedLight">
+          I love learning and writing. So, here are some insights from my journey.
+        </p>
       
-      <p>Additional content goes here</p>
+
+      <!-- Render Dynamic Collection -->
+      
+        <div class="flex-col space-y-4"><div class="standard-card">
+              <h3 class="text-2xl font-md mb-2">
+                <a href="/blog/post-1/" class="no-underline">First Blog Post</a>
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight">This is the first blog post.</p>
+              
+              <a href="/blog/post-1/" class="flex items-center gap-1"> Read more <svg xmlns="http://www.w3.org/2000/svg" 
+                class="w-6 h-6 fill-current" 
+                role="img" 
+                aria-label="GitHub"
+                viewBox="0 0 256 256">
+                <path d="M216,128l-72,72V56Z" opacity="0.2"></path><path d="M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z"></path>              </svg> </a>
+            </div>
+          <div class="standard-card">
+              <h3 class="text-2xl font-md mb-2">
+                <a href="/blog/post-2/" class="no-underline">Second Blog Post</a>
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight">This is the first blog post.</p>
+              
+              <a href="/blog/post-2/" class="flex items-center gap-1"> Read more <svg xmlns="http://www.w3.org/2000/svg" 
+                class="w-6 h-6 fill-current" 
+                role="img" 
+                aria-label="GitHub"
+                viewBox="0 0 256 256">
+                <path d="M216,128l-72,72V56Z" opacity="0.2"></path><path d="M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z"></path>              </svg> </a>
+            </div>
+          <div class="standard-card">
+              <h3 class="text-2xl font-md mb-2">
+                <a href="/blog/post-3/" class="no-underline">Third Blog Post</a>
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight">This is the first blog post.</p>
+              
+              <a href="/blog/post-3/" class="flex items-center gap-1"> Read more <svg xmlns="http://www.w3.org/2000/svg" 
+                class="w-6 h-6 fill-current" 
+                role="img" 
+                aria-label="GitHub"
+                viewBox="0 0 256 256">
+                <path d="M216,128l-72,72V56Z" opacity="0.2"></path><path d="M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z"></path>              </svg> </a>
+            </div>
+          
+        </div>
+        
+      
     </div>
   </div>
 </section>
 
-
-
-  <section class="py-24 px-[5%]">
-    <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-12">Blog</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="p-6 border rounded-lg shadow">
-            <h3 class="text-2xl font-bold mb-2">
-              <a href="/blog/post-1/" class="hover:underline">First Blog Post</a>
-            </h3>
-            <p class="text-normalLight mb-4">January 01, 2024</p>
-            <a href="/blog/post-1/" class="text-savoyBlue hover:underline">Read more &rarr;</a>
-          </div>
-        <div class="p-6 border rounded-lg shadow">
-            <h3 class="text-2xl font-bold mb-2">
-              <a href="/blog/post-2/" class="hover:underline">First Blog Post</a>
-            </h3>
-            <p class="text-normalLight mb-4">January 01, 2024</p>
-            <a href="/blog/post-2/" class="text-savoyBlue hover:underline">Read more &rarr;</a>
-          </div>
-        <div class="p-6 border rounded-lg shadow">
-            <h3 class="text-2xl font-bold mb-2">
-              <a href="/blog/post-3/" class="hover:underline">First Blog Post</a>
-            </h3>
-            <p class="text-normalLight mb-4">January 01, 2024</p>
-            <a href="/blog/post-3/" class="text-savoyBlue hover:underline">Read more &rarr;</a>
-          </div>
-        
-      </div>
-    </div>
-  </section>
-  
     </main>
     <!-- Back to Top Button -->
-<button id="back-to-top" class="fixed bottom-12 right-6 text-normal w-12 h-12 rounded-full bg-normal shadow-md hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted" aria-label="Back to top">
+<button id="back-to-top" class="fixed bottom-6 right-6 text-normal w-10 h-10 rounded-full bg-normal shadow-md hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted" aria-label="Back to top">
   <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm37.66-101.66a8,8,0,0,1-11.32,11.32L136,107.31V168a8,8,0,0,1-16,0V107.31l-18.34,18.35a8,8,0,0,1-11.32-11.32l32-32a8,8,0,0,1,11.32,0Z"></path>
 </svg>
 </button>
 
 <footer class="py-4">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-4 pr-20">
     <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
       <!-- Logo -->
-      <a href="/src/index.html" class="flex items-center text-gray-700 font-bold text-lg no-underline">
+      <a href="/" class="flex items-center text-gray-700 font-bold text-lg no-underline">
         <h3 class="flex items-center">
           <span class="text-4xl font-normal text-normalLight dark:text-invertedLight">O</span>
           <span class="text-4xl text-primary ml-1 dark:text-primaryInverted">.</span>
@@ -184,9 +202,10 @@
       </a>
 
        <!-- Copyright -->
-       <div class="flex-col space-y-1">
-        <p class="text-sm text-center">Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a>. Hosted on <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.</p>
-        <p class="text-xs text-center">© 2024 Omar Almasry. All rights reserved.</p>
+       <div class="flex flex-col gap-1">
+        <p class="text-sm text-center">Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a> and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">TailwindCSS</a>. Hosted on <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.</p>
+        <p class="text-sm text-center mb-2">Icons from <a href="https://phosphoricons.com/" target="_blank" rel="noopener noreferrer">Phosphor Icons</a>.</p>
+        <p class="text-sm text-center text-normalLight dark:text-invertedLight">© 2025 Omar Almasry. All rights reserved.</p>
        </div>
 
       <!-- Social Icons -->

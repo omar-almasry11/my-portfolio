@@ -24,32 +24,13 @@ title: Home
         ariaLabel: '',
         ariaExpanded: '' 
       %}
-      
      </div>
    </div>
   </div>
   {% render 'partials/section-standard', 
-  header: 'Featured Articles', 
-  subheader: 'I love learning and writing. So, here are some insights from my journey.', 
-  content: '<p>Additional content goes here</p>', 
-  customClasses: ''
+    header: 'Featured Articles',
+    subheader: 'I love learning and writing. So, here are some insights from my journey.',
+    content: '<p>Default Content</p>',
+    collection: collections.post,
+    limit: 3,
   %}
-
-
-  <section class="py-24 px-[5%]">
-    <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-12">Blog</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {%- for post in collections.post -%}
-          <div class="p-6 border rounded-lg shadow">
-            <h3 class="text-2xl font-bold mb-2">
-              <a href="{{ post.url }}" class="hover:underline">{{ post.data.title }}</a>
-            </h3>
-            <p class="text-normalLight mb-4">{{ post.data.date | date: "%B %d, %Y" }}</p>
-            <a href="{{ post.url }}" class="text-savoyBlue hover:underline">Read more &rarr;</a>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-  
