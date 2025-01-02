@@ -5,11 +5,11 @@
         <h2 class="text-4xl font-bold mb-2">
           {{ header | default: 'Default Header' }}
         </h2>
-        <p class="text-2xl text-normalLight mb-6 dark:text-invertedLight">
+        <p class="text-2xl text-normalLight mb-8 dark:text-invertedLight">
           {{ subheader | default: 'Default Subheader' }}
         </p>
       {% else %}
-        <h2 class="text-4xl font-bold mb-6">
+        <h2 class="text-4xl font-bold mb-8">
           {{ header | default: 'Default Header' }}
         </h2>
       {% endif %}
@@ -23,23 +23,23 @@
                 <a href="{{ item.url }}" class="no-underline">{{ item.data.title }}</a>
               </h3>
               {% if item.data.description %}
-                <p class="mb-6 text-md text-normalLight">{{ item.data.description }}</p>
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">{{ item.data.description }}</p>
               {% endif %}
 
               {% render 'partials/text-link',
                 url: item.url,
                 label: 'Read more',
-                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256"><path d="M216,128l-72,72V56Z" opacity="0.2"></path><path d="M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z"></path></svg>'
               %}
             </div>
           {% endfor %}
         </div>
         {% if collectionLink %}
           <div class="mt-6 text-center">
-            <a href="{{ collectionLink }}" class="text-savoyBlue hover:underline text-lg">
-              View All {{ collectionName | default: 'Items' }} &rarr;
-            </a>
-          </div>
+            {%- render 'partials/text-link',
+              url: collectionLink,
+              label: 'View all posts',
+              customClasses: 'mt-10'
+            -%}
         {% endif %}
       {% else %}
         <!-- Render Static Content -->

@@ -22,6 +22,6 @@ html {
 @layer components {
 /* Custom Component Styles */
 .standard-card {
-    @apply border rounded-md flex flex-col justify-start items-start h-full p-6 no-underline transition-all relative border-normal;
+    @apply border rounded-md flex flex-col justify-start items-start h-full p-6 no-underline transition-all relative border-normal dark:border-inverted;
 }
  }

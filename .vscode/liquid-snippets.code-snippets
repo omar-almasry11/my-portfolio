@@ -2,7 +2,7 @@
 	"Render Button Partial": {
 	  "prefix": "renderbutton",
 	  "body": [
-		"{% render 'partials/button', ",
+		"{%- render 'partials/button', ",
 		"  text: '${1:Click Me}',",
 		"  icon: '${2}',",
 		"  iconPosition: '${3}',",
@@ -10,7 +10,7 @@
 		"  variant: '${5}',",
 		"  ariaLabel: '${6}',",
 		"  ariaExpanded: '${7}' ",
-		"%}"
+		"-%}"
 	  ],
 	  "description": "Insert a button partial with all options"
 	},
@@ -18,7 +18,7 @@
 	"Render Section Standard": {
     "prefix": "rendersection",
     "body": [
-      "{% render 'partials/section-standard', ",
+      "{%- render 'partials/section-standard', ",
       "  header: '${1:Default Header}',",
       "  subheader: '${2:Default Subheader}',",
       "  content: '${3:<p>Default Content</p>}',",
@@ -27,7 +27,7 @@
       "  collectionLink: '${6:/collection-url/}',",
       "  collectionName: '${7:Collection Name}',",
       "  customClasses: '${8:custom-css-classes}'",
-      "%}"
+      "-%}"
     ],
     "description": "Insert a section-standard render with all options"
 },
@@ -35,12 +35,12 @@
 "Render Text Link": {
   "prefix": "rendertextlink",
   "body": [
-    "{% render 'partials/text-link',",
+    "{%- render 'partials/text-link',",
     "  url: '${1:#}',",
     "  label: '${2:Read more}',",
-    "  icon: '${3:<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"w-6 h-6 fill-current\" role=\"img\" aria-label=\"arrow\" viewBox=\"0 0 256 256\"><path d=\"M216,128l-72,72V56Z\" opacity=\"0.2\"></path><path d=\"M221.66,122.34l-72-72A8,8,0,0,0,136,56v64H40a8,8,0,0,0,0,16h96v64a8,8,0,0,0,13.66,5.66l72-72A8,8,0,0,0,221.66,122.34ZM152,180.69V75.31L204.69,128Z\"></path></svg>}',",
+    "  icon: '${3:}',",
     "  customClasses: '${4:}'",
-    "%}"
+    "-%}"
   ],
   "description": "Insert a text link with an optional icon"
 }

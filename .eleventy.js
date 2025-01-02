@@ -6,7 +6,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/scripts");
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/*.md");
+    return collectionApi.getFilteredByGlob("src/blog/*.md").sort((a, b) => {
+      return new Date(b.date) - new Date(a.date); // Newest posts first
+    });
   });  
 
   // Watch the CSS directory for changes

@@ -39,7 +39,7 @@ module.exports = {
       },
       borderColor: {
         normal: '#f2f2f2',
-        inverted: '#f2f2f2',
+        inverted: '#A39594',
       },
     },
   },

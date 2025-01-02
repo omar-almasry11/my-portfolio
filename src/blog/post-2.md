@@ -1,6 +1,6 @@
 ---
 title: "Second Blog Post"
-date: 2024-01-01
+date: 2024-10-01
 description: "This is the first blog post."
 ---
 ## Welcome to My First Blog Post
