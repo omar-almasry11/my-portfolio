@@ -3,20 +3,12 @@ layout: layouts/layout.liquid
 title: "Blog"
 ---
 
-<section class="max-w-6xl mx-auto py-12 px-6">
-  <h1 class="text-4xl font-bold mb-6">Blog</h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {% for post in collections.blog | reverse %}
-    <article class="p-6 border rounded-lg shadow">
-      <h2 class="text-2xl font-bold mb-2">
-        <a href="{{ post.url }}" class="text-primary hover:underline">
-          {{ post.data.title }}
-        </a>
-      </h2>
-      <p class="text-sm text-gray-500 mb-4">{{ post.data.date | date: "%B %d, %Y" }}</p>
-      <p class="text-normalLight">{{ post.data.description }}</p>
-      <a href="{{ post.url }}" class="text-primary hover:underline">Read more &rarr;</a>
-    </article>
-    {% endfor %}
-  </div>
-</section>
+{%- render 'partials/page-header',
+  headerTitle: 'Blog',
+  headerSubtitle: 'The place where I share my opinions, ideas, and interesting findings from my work.',
+-%}
+
+{%- render 'partials/section-standard', 
+  collection: collections.post,
+-%}
+

@@ -43,6 +43,17 @@
     "-%}"
   ],
   "description": "Insert a text link with an optional icon"
+},
+
+"Render Page Header": {
+  "prefix": "renderpageheader",
+  "body": [
+    "{%- render 'partials/page-header',",
+    "  headerTitle: '${1:}',",
+    "  headerSubtitle: '${2:}',",
+    "-%}"
+  ],
+  "description": "Insert a standard page header"
 }
   }
   
