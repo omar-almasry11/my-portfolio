@@ -90,10 +90,10 @@
 </nav>
 
     <main>
-      <article class="max-w-4xl mx-auto py-12 px-6">
-  <header class="mb-8">
-    <h1 class="text-4xl font-extrabold mb-2">First Blog Post</h1>
-    <p class="text-2xl text-normalLight max-w-2xl mb-4 ml-0 text-normalLight dark:text-invertedLight">
+      
+  <header class="pt-12 pb-4 px-[5%] max-w-4xl mx-auto">
+    <h1 class="text-4xl font-extrabold mb-2 dark:text-inverted">First Blog Post</h1>
+    <p class="text-2xl text-normalLight max-w-2xl mb-4 text-normalLight dark:text-invertedLight">
       This is the first blog post.
     </p>
     <p class="text-sm flex flex-wrap items-center gap-2 mb-8">
@@ -109,7 +109,7 @@
           <path d="M216,48V88H40V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z" opacity="0.2"></path>
           <path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"></path>
         </svg>
-        <span>Published on: January 01, 2024</span>
+        <span class="dark:text-inverted">Published on: January 01, 2024</span>
       </span>
 
       <!-- Separator -->
@@ -131,7 +131,7 @@
       </span>
     </p>
   </header>
-  <div class="flex items-center gap-6 mt-6 mb-12">
+  <div class="flex items-center gap-6 mb-12 px-[5%] max-w-4xl mx-auto">
     <!-- Share on X -->
     <a href="https://twitter.com/share?url=/blog/post-1/" 
        target="_blank" 
@@ -179,15 +179,29 @@
       <span class="text-sm hidden sm:inline text-normalLight transition duration-300 hover:text-primary dark:text-invertedLight hover:dark:text-primaryInverted" id="copy-link-text">Copy Link</span>
     </button>
   </div>
-  <div class="prose dark:prose-inverted">
-    <h1>Welcome to My First Blog Post</h1>
-<p>&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;</p>
-<p>Section 1.10.32 of &quot;de Finibus Bonorum et Malorum&quot;, written by Cicero in 45 BC
-&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;</p>
-<p>1914 translation by H. Rackham
-&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;</p>
+    <article class="prose lg:prose-lg md:prose-base max-w-4xl mx-auto py-12 px-[5%] dark:prose-inverted" id="reading-time">
+    <h1>Header 1</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
+<p>This is a paragraph with some <strong>bold text</strong>, <em>italic text</em>, and a <a href="https://example.com">link</a>.</p>
+<blockquote>
+<p>This is a blockquote. It's useful for emphasizing important points or quotes.</p>
+</blockquote>
+<ul>
+<li>This is a list item</li>
+<li>Another list item
+<ul>
+<li>Nested list item</li>
+</ul>
+</li>
+</ul>
+<p>Here’s an inline code example: <code>console.log('Hello, world!')</code>.</p>
+<pre><code class="language-javascript">// This is a JavaScript code block
+function greet() {
+  console.log('Hello, world!');
+}
+</code></pre>
 
-  </div>
 </article>
 
 <script>

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: 'class', // Enables dark mode
   content: ["./src/**/*.{html,js,liquid}"], // Adjust paths if needed
   theme: {
     extend: {
@@ -41,7 +41,28 @@ module.exports = {
         normal: '#f2f2f2',
         inverted: '#A39594',
       },
+      typography: (theme) => ({
+        inverted: {
+          css: {
+            '--tw-prose-body': theme('textColor.inverted'),
+            '--tw-prose-headings': theme('textColor.inverted'),
+            '--tw-prose-links': theme('textColor.primaryInverted'),
+            '--tw-prose-bold': theme('textColor.inverted'),
+            '--tw-prose-counters': theme('textColor.invertedLight'),
+            '--tw-prose-bullets': theme('textColor.primaryInverted'),
+            '--tw-prose-hr': theme('textColor.invertedLight'),
+            '--tw-prose-quotes': theme('textColor.invertedLight'),
+            '--tw-prose-quote-borders': theme('colors.icterine'),
+            '--tw-prose-captions': theme('textColor.invertedLight'),
+            '--tw-prose-code': theme('textColor.primaryInverted'),
+            '--tw-prose-pre-code': theme('textColor.normal'),
+            '--tw-prose-pre-bg': theme('textColor.inverted'),
+            '--tw-prose-th-borders': theme('borderColor.inverted'),
+            '--tw-prose-td-borders': theme('borderColor.inverted'),
+          },
+        },
+      }),
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography')], // Adds typography plugin
 };
