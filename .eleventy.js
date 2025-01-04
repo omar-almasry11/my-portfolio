@@ -9,19 +9,20 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/blog/*.md").sort((a, b) => {
       return new Date(b.date) - new Date(a.date); // Newest posts first
     });
-  });  
+  }); 
+  
+  // New case studies collection
+  eleventyConfig.addCollection("caseStudies", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/case-studies/*.md").sort((a, b) => {
+      return new Date(b.date) - new Date(a.date); // Newest case studies first
+    });
+  });
 
   // Watch the CSS directory for changes
   eleventyConfig.addWatchTarget("src/styles/**/*.css");
 
   // Add a global shortcode to get the current year
   eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
-
-  // Set Liquid options to enable dynamic partials
-  eleventyConfig.setLiquidOptions({
-    dynamicPartials: true, // Enable dynamic partials
-    strictFilters: false,  // Optional: Allow loose filtering
-  });
 
   return {
     dir: {

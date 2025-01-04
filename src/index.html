@@ -26,4 +26,11 @@ title: Home
     limit: 3,
     collectionLink: '/blog',
   -%}
+
+  {%- render 'partials/section-standard', 
+    header: 'Featured Projects',
+    subheader: 'Interesting case studies for some projects I worked on.',
+    collection: collections.caseStudies,
+    limit: 6,
+  -%}
   

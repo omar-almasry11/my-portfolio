@@ -22,7 +22,7 @@
       "  header: '${1:Default Header}',",
       "  subheader: '${2:Default Subheader}',",
       "  content: '${3:<p>Default Content</p>}',",
-      "  collection: ${4:collections.post},",
+      "  collection: ${4:collections.posts},",
       "  limit: ${5:3},",
       "  collectionLink: '${6:/collection-url/}',",
       "  collectionName: '${7:Collection Name}',",

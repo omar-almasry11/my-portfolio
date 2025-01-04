@@ -3,11 +3,11 @@ layout: "/layouts/layout.liquid"
 ---
 
   <header class="pt-12 pb-4 px-[5%] max-w-4xl mx-auto">
-    <h1 class="text-4xl font-extrabold mb-2 dark:text-inverted">{{ title }}</h1>
-    <p class="text-2xl text-normalLight max-w-2xl mb-4 text-normalLight dark:text-invertedLight">
+    <h1 class="text-4xl font-extrabold mb-4 dark:text-inverted">{{ title }}</h1>
+    <p class="text-2xl text-normalLight max-w-2xl mb-6 text-normalLight dark:text-invertedLight">
       {{ description }}
     </p>
-    <p class="text-sm flex flex-wrap items-center gap-2 mb-8">
+    <p class="text-sm flex flex-wrap items-center gap-2 mb-6">
       <!-- Published On -->
       <span class="flex items-center gap-1">
         <svg
@@ -91,7 +91,7 @@ layout: "/layouts/layout.liquid"
     </button>
   </div>
     <article class="prose lg:prose-lg md:prose-base max-w-4xl mx-auto py-12 px-[5%] dark:prose-inverted" id="reading-time">
-    {{ content | safe }}
+    {{ content }}
 </article>
 
 <script>

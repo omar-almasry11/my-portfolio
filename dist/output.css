@@ -1371,6 +1371,10 @@ a:hover:is(.dark *) {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -1542,11 +1546,6 @@ a:hover:is(.dark *) {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 
 .text-4xl {
@@ -2234,6 +2233,21 @@ a:hover:is(.dark *) {
   --tw-ring-color: rgb(20 184 166 / var(--tw-ring-opacity, 1));
 }
 
+.group:hover .group-hover\:text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(61 96 226 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .group-hover\:text-normal {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 34 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .group-hover\:text-normalLight {
+  --tw-text-opacity: 1;
+  color: rgb(81 87 81 / var(--tw-text-opacity, 1));
+}
+
 .dark\:block:is(.dark *) {
   display: block;
 }
@@ -2299,6 +2313,21 @@ a:hover:is(.dark *) {
 .hover\:dark\:text-primaryInverted:is(.dark *):hover {
   --tw-text-opacity: 1;
   color: rgb(247 203 21 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .dark\:group-hover\:text-primaryInverted:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(247 203 21 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .dark\:group-hover\:text-inverted:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(242 242 242 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .dark\:group-hover\:text-invertedLight:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(163 149 148 / var(--tw-text-opacity, 1));
 }
 
 @media (min-width: 640px) {

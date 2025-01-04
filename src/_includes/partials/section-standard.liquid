@@ -36,16 +36,17 @@
           {% endfor %}
         </div>
         {% if collectionLink %}
-          <div class="mt-6 text-center">
+          <div class="mt-6 flex justify-end">
             {%- render 'partials/text-link',
               url: collectionLink,
               label: 'View all posts',
               customClasses: 'mt-10'
             -%}
-        {% endif %}
+          </div>
+          {% endif %}          
       {% else %}
         <!-- Render Static Content -->
-        {{ content | safe }}
+        {{ content }}
       {% endif %}
     </div>
   </div>
