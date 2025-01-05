@@ -15,7 +15,10 @@ html {
     @apply text-inverted bg-inverted;
   }
   a {
-    @apply font-medium underline decoration-primary decoration-2 transition duration-300 hover:text-primary hover:decoration-normal dark:decoration-primaryInverted dark:hover:text-primaryInverted dark:hover:decoration-inverted;
+    @apply font-medium underline decoration-primary decoration-2 transition duration-300 hover:text-primary hover:decoration-transparent dark:decoration-primaryInverted dark:hover:text-primaryInverted dark:hover:decoration-transparent;
+  }
+  h1 {
+    @apply text-4xl lg:text-6xl font-bold mb-4;
   }
  }
 
@@ -24,4 +27,7 @@ html {
 .standard-card {
     @apply border rounded-md flex flex-col justify-start items-start h-full p-6 no-underline transition-all relative border-normal dark:border-inverted;
 }
+.prose {
+    @apply prose-h2:text-4xl prose-h2:mb-4 prose-h3:text-2xl prose-h3:text-normalLight prose-h3:mb-2 lg:prose-lg md:prose-base max-w-4xl dark:prose-inverted dark:prose-h3:text-invertedLight;
+  }
  }

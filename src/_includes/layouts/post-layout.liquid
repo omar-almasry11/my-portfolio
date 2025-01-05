@@ -1,9 +1,8 @@
 ---
 layout: "/layouts/layout.liquid"
 ---
-
-  <header class="pt-12 pb-4 px-[5%] max-w-4xl mx-auto">
-    <h1 class="text-4xl font-extrabold mb-4 dark:text-inverted">{{ title }}</h1>
+ <header class="pt-16 pb-4 px-[5%] max-w-4xl mr-auto">
+    <h1>{{ title }}</h1>
     <p class="text-2xl text-normalLight max-w-2xl mb-6 text-normalLight dark:text-invertedLight">
       {{ description }}
     </p>
@@ -42,7 +41,7 @@ layout: "/layouts/layout.liquid"
       </span>
     </p>
   </header>
-  <div class="flex items-center gap-6 mb-12 px-[5%] max-w-4xl mx-auto">
+  <div class="flex items-center gap-6 mb-12 px-[5%] max-w-4xl mr-auto">
     <!-- Share on X -->
     <a href="https://twitter.com/share?url={{ page.url }}" 
        target="_blank" 
@@ -90,7 +89,7 @@ layout: "/layouts/layout.liquid"
       <span class="text-sm hidden sm:inline text-normalLight transition duration-300 hover:text-primary dark:text-invertedLight hover:dark:text-primaryInverted" id="copy-link-text">Copy Link</span>
     </button>
   </div>
-    <article class="prose lg:prose-lg md:prose-base max-w-4xl mx-auto py-12 px-[5%] dark:prose-inverted" id="reading-time">
+    <article class="prose py-12 px-[5%]" id="reading-time">
     {{ content }}
 </article>
 
