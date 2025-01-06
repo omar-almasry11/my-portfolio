@@ -8,10 +8,7 @@ layout: "/layouts/layout.liquid"
       <div>
         <h1>{{ title }}</h1>
         <p class="text-md mb-6 lg:text-lg text-normalLight dark:text-invertedLight">
-          Visit Hatta is a premier destination for tourists and adventure enthusiasts looking to explore the scenic
-          beauty and cultural heritage of Hatta, UAE. The website provides visitors with comprehensive information about
-          attractions, accommodations, activities, and events. Our goal was to create an engaging and user-friendly
-          platform that effectively promotes Hatta's unique offerings.
+          {{ header-overview }}
         </p>
         {% if project-link %}
           {%- render 'partials/text-link',
@@ -25,22 +22,21 @@ layout: "/layouts/layout.liquid"
            <path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z">
            </path>  
              </svg>',
-            customClasses: ''
+            customClasses: 'mt-8'
           -%}
         {% endif %}
       </div>
       <!-- Right Column: Placeholder for Image -->
       <div class="aspect-video rounded-lg flex items-center justify-center">
-        <img src="{{ header-img }}" width="100" height="140" class="w-full h-auto">
+        <img src="{{ header-img }}" width="100%" height="auto" class="w-full h-auto max-h-[550px] object-cover object-top">
       </div>
     </div>
   </div>
 </header>
-
 <section class="prose py-12 px-[5%]">
-  <div class="container">
-    <div class="max-w-3xl mx-auto">
+  <div class="container mx-auto">
+    <article class="prose">
       {{ content }}
-    </div>
+    </article>
   </div>
 </section>

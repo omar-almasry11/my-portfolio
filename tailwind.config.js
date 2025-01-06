@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class', // Enables dark mode
-  content: ["./src/**/*.{html,js,liquid}"], // Adjust paths if needed
+  content: ["./src/**/*.{html,js,liquid,md}"], // Adjust paths if needed
   theme: {
     extend: {
       fontFamily: {
@@ -38,10 +38,33 @@ module.exports = {
         primaryInverted: '#F7CB15',
       },
       borderColor: {
-        normal: '#f2f2f2',
-        inverted: '#A39594',
+        normal: '#000022',
+        normalLight: '#515751',
+        primary: '#3d60e2',
+        primaryInverted: '#F7CB15',
+        inverted: '#f2f2f2',
+        invertedLight: '#A39594',
       },
       typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': theme('textColor.normal'),
+            '--tw-prose-headings': theme('textColor.normal'),
+            '--tw-prose-links': theme('textColor.primary'),
+            '--tw-prose-bold': theme('textColor.normal'),
+            '--tw-prose-counters': theme('textColor.normalLight'),
+            '--tw-prose-bullets': theme('textColor.primary'),
+            '--tw-prose-hr': theme('textColor.normalLight'),
+            '--tw-prose-quotes': theme('textColor.normalLight'),
+            '--tw-prose-quote-borders': theme('colors.icterine'),
+            '--tw-prose-captions': theme('textColor.normalLight'),
+            '--tw-prose-code': theme('textColor.primary'),
+            '--tw-prose-pre-code': theme('textColor.normal'),
+            '--tw-prose-pre-bg': theme('backgroundColor.normal'),
+            '--tw-prose-th-borders': theme('borderColor.normalLight'),
+            '--tw-prose-td-borders': theme('borderColor.normal'),
+          },
+        },
         inverted: {
           css: {
             '--tw-prose-body': theme('textColor.inverted'),

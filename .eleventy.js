@@ -12,11 +12,20 @@ module.exports = function (eleventyConfig) {
   }); 
   
   // New case studies collection
-  eleventyConfig.addCollection("caseStudies", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/case-studies/*.md").sort((a, b) => {
-      return new Date(b.date) - new Date(a.date); // Newest case studies first
-    });
+eleventyConfig.addCollection("caseStudies", function (collectionApi) {
+  return collectionApi.getFilteredByGlob("src/case-studies/*.md").sort((a, b) => {
+    // Sort by `order` field, and fall back to `date` if `order` is not defined
+    const orderA = a.data.order || Number.MAX_SAFE_INTEGER;
+    const orderB = b.data.order || Number.MAX_SAFE_INTEGER;
+
+    if (orderA !== orderB) {
+      return orderA - orderB; // Sort ascending by `order`
+    }
+
+    // If orders are equal or undefined, sort by date (newest first)
+    return new Date(b.date) - new Date(a.date);
   });
+});
 
   // Watch the CSS directory for changes
   eleventyConfig.addWatchTarget("src/styles/**/*.css");
