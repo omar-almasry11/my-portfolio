@@ -38,12 +38,23 @@ module.exports = {
         primaryInverted: '#F7CB15',
       },
       borderColor: {
-        normal: '#000022',
-        normalLight: '#515751',
+        normal: '#f2f2f2',
+        normalLight: '#f2f2f2',
         primary: '#3d60e2',
         primaryInverted: '#F7CB15',
-        inverted: '#f2f2f2',
-        invertedLight: '#A39594',
+        inverted: '#00002D',
+        invertedLight: '#f2f2f2',
+      },
+      boxShadow: {
+        // Light Mode Shadows
+        low: '0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.10), 0px 2px 1px rgba(0, 0, 0, 0.08)',
+        medium: '0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.14)',
+        high: '0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23)',
+
+        // Dark Mode Shadows
+        lowInverted: '0px 1px 3px rgba(255, 255, 255, 0.15), 0px 1px 1px rgba(255, 255, 255, 0.04), 0px 2px 1px rgba(255, 255, 255, 0.03)',
+        mediumInverted: '0px 3px 6px rgba(255, 255, 255, 0.08), 0px 3px 6px rgba(255, 255, 255, 0.06)',
+        highInverted: '0px 10px 20px rgba(255, 255, 255, 0.1), 0px 6px 6px rgba(255, 255, 255, 0.08)',
       },
       typography: (theme) => ({
         DEFAULT: {

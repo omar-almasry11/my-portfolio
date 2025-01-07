@@ -7,7 +7,7 @@
     <link href="/dist/output.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="px-6 py-4 shadow-sm sticky top-0 bg-normal/60 z-50 backdrop-blur-sm dark:bg-inverted/60">
+    <nav class="px-6 py-4 shadow-low sticky top-0 bg-normal/60 z-50 backdrop-blur-sm dark:bg-inverted/60 dark:shadow-lowInverted">
   <!-- Progress Bar -->
   <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-transparant">
     <div id="progressBar" class="h-1 bg-primary w-0 dark:bg-primaryInverted"></div>
@@ -40,7 +40,7 @@
         </li>
       </ul>
       <button 
-    class="flex mr-auto ml-auto px-5 py-2 bg-primary text-inverted font-medium rounded-lg shadow no-underline transition duration-300 hover:bg-inverted dark:bg-primaryInverted dark:text-normal dark:hover:bg-normal focus:ring focus:ring-blue-300 "
+    class="flex mr-auto ml-auto px-5 py-2 bg-primary text-inverted font-medium rounded-lg shadow-low no-underline transition duration-300 hover:bg-inverted dark:bg-primaryInverted dark:text-normal dark:hover:bg-normal dark:shadow-lowInverted focus:ring focus:ring-blue-300 "
     type="button"
      aria-label="Contact" 
      aria-expanded="" 
@@ -55,7 +55,7 @@
       
 
       <!-- Dark Mode Toggle -->
-      <button id="themeToggle" class="px-2 py-2 bg-inverted rounded shadow dark:bg-normal">
+      <button id="themeToggle" class="px-2 py-2 bg-inverted rounded shadow-low dark:shadow-lowInveted dark:bg-normal">
         <span class="sr-only">Toggle dark mode</span>
 
         <svg
@@ -216,7 +216,7 @@
 
     </main>
     <!-- Back to Top Button -->
-<button id="back-to-top" class="fixed bottom-6 right-6 text-normal w-10 h-10 rounded-full bg-normal shadow-md hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted" aria-label="Back to top">
+<button id="back-to-top" class="fixed bottom-6 right-6 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted" aria-label="Back to top">
   <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm37.66-101.66a8,8,0,0,1-11.32,11.32L136,107.31V168a8,8,0,0,1-16,0V107.31l-18.34,18.35a8,8,0,0,1-11.32-11.32l32-32a8,8,0,0,1,11.32,0Z"></path>
 </svg>
 </button>
