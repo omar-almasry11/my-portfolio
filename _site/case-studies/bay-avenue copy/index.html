@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Bay Avenue</title>
     <link href="/dist/output.css" rel="stylesheet">
   </head>
   <body>
@@ -83,226 +83,128 @@
 </nav>
 
     <main>
-      <div class="min-h-svh mx-auto flex-col items-center px-[5%] py-24">
-    <div class="text-center mr-auto ml-auto">
-      <div class="max-w-2xl mr-auto ml-auto">
-        <div class="relative mx-auto w-44 h-44 rounded-full bg-black mb-6 overflow-hidden shadow-low dark:shadow-lowInverted">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover">
-              <source src="images/omar-almasry-emoji-video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        <p class="text-8xl font-extrabold">Hi there!</p>
-        <h1 class="py-6 text-2xl text-normalLight font-normal dark:text-invertedLight">
-            My name is Omar Almasry. I'm an independant UX engineer. I work with design agencies and in-house marketing teams to create scalable, high-performance web solutions.
-        </h1>
-     </div>
-   </div>
-  </div><section class="py-20 px-[5%] ">
-  <div class="container">
-    <div class="max-w-3xl mx-auto">
-      
-        <div class="mb-8">
-          
-            <div class="flex items-center">
-            <h2 class="text-4xl font-bold mb-2 leading-none">
-              Featured Articles 
-    <svg xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true" 
-    focusable="false" 
-    class="inline text-primary w-9 dark:text-primaryInverted" 
-    width="auto" 
-    height="auto" 
-    fill="currentColor" 
-    viewBox="0 0 256 256">
-    <path d="M216,48H40a8,8,0,0,0-8,8V216l32-16,32,16,32-16,32,16,32-16,32,16V56A8,8,0,0,0,216,48ZM112,160H64V96h48Z" opacity="0.2"></path>
-    <path d="M216,40H40A16,16,0,0,0,24,56V216a8,8,0,0,0,11.58,7.15L64,208.94l28.42,14.21a8,8,0,0,0,7.16,0L128,208.94l28.42,14.21a8,8,0,0,0,7.16,0L192,208.94l28.42,14.21A8,8,0,0,0,232,216V56A16,16,0,0,0,216,40Zm0,163.06-20.42-10.22a8,8,0,0,0-7.16,0L160,207.06l-28.42-14.22a8,8,0,0,0-7.16,0L96,207.06,67.58,192.84a8,8,0,0,0-7.16,0L40,203.06V56H216ZM136,112a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H144A8,8,0,0,1,136,112Zm0,32a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H144A8,8,0,0,1,136,144ZM64,168h48a8,8,0,0,0,8-8V96a8,8,0,0,0-8-8H64a8,8,0,0,0-8,8v64A8,8,0,0,0,64,168Zm8-64h32v48H72Z"></path>
-    </svg>
-            </h2>
-            </div>
-          
-          
-            <p class="text-2xl text-normalLight mb-6 dark:text-invertedLight">
-              I love learning and writing. So, here are some insights from my journey.
-            </p>
-          
-        </div>
-      
-      <!-- Render Dynamic Collection -->
-      
-        <div class="flex-col space-y-4"><div class="standard-card">
-              <!-- logo for the case studies -->
-              
-              <h3 class="text-2xl font-md mb-2">
-                <a href="/blog/post-3/" class="no-underline">Third Blog Post</a>
-              </h3>
-              
-                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">This is the first blog post.</p>
-              
-
-              <a href="/blog/post-3/" class="flex items-center gap-2 ">
-  Read more
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
-     <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
-     </path>  
-    </svg>
+      <header class="pt-16 pb-4 px-[5%] mx-auto flex items-center min-screen">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <!-- Left Column: Project Name and Description -->
+      <div>
+        <h1>Bay Avenue</h1>
+        <p class="text-md mb-6 lg:text-lg text-normalLight dark:text-invertedLight">
+          Bay Avenue is a prominent retail destination in Dubai, managed by Dubai Holding. The project involved creating a bilingual (Arabic and English) website on Webflow, migrating from an older platform to enhance performance, usability, and SEO. Additionally, the design templates were utilized for two other retail destinations, Bay Square and Souk Madinat Jumeirah, to ensure brand consistency across all three websites.
+        </p>
+        <a href="{{ project-link }}" class="flex items-center gap-2 mt-8">
+  View live website
+  <svg xmlns="http://www.w3.org/2000/svg" 
+          class="w-4 h-4 fill-current" 
+          role="img" 
+          aria-label="arrow" 
+          viewBox="0 0 256 256">
+           <path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z">
+           </path>  
+             </svg>
 </a>
 
-            </div>
-          <div class="standard-card">
-              <!-- logo for the case studies -->
-              
-              <h3 class="text-2xl font-md mb-2">
-                <a href="/blog/post-2/" class="no-underline">Second Blog Post</a>
-              </h3>
-              
-                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">This is the first blog post.</p>
-              
-
-              <a href="/blog/post-2/" class="flex items-center gap-2 ">
-  Read more
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
-     <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
-     </path>  
-    </svg>
-</a>
-
-            </div>
-          <div class="standard-card">
-              <!-- logo for the case studies -->
-              
-              <h3 class="text-2xl font-md mb-2">
-                <a href="/blog/post-1/" class="no-underline">First Blog Post</a>
-              </h3>
-              
-                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">This is the first blog post.</p>
-              
-
-              <a href="/blog/post-1/" class="flex items-center gap-2 ">
-  Read more
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
-     <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
-     </path>  
-    </svg>
-</a>
-
-            </div>
-          
-        </div>
-        
-          <div class="mt-6 flex justify-end"><a href="/blog" class="flex items-center gap-2 mt-10">
-  View all posts
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
-     <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
-     </path>  
-    </svg>
-</a>
-</div>
-                    
-      
+      </div>
+      <!-- Right Column: Placeholder for Image -->
+      <div class="aspect-video rounded-lg flex items-center justify-center">
+        <img src="/images/ba-hero-img.webp" width="100%" height="auto" class="w-full h-auto max-h-[550px] object-cover object-top">
+      </div>
+    </div>
+  </div>
+</header>
+<section class="prose py-12 px-[5%]">
+  <div class="container mx-auto">
+    <article class="prose">
+      <h2>My Role</h2>
+<p>As the lead developer, I was tasked with unifying the digital presence for three distinct destinations—Bay Avenue, Bay Square, and Souk Madinat Jumeirah—under a cohesive brand experience. Specifically, I:</p>
+<ul>
+<li><strong>Developed a Shared Concept</strong> – Ensured consistent branding and design elements across all three websites</li>
+<li><strong>Tailored Each Site</strong> – Adapted layouts, imagery, and content to suit each destination’s unique audience and offerings</li>
+<li><strong>Coordinated Cross-Team Efforts</strong> – Collaborated with designers, content creators, and stakeholders for a seamless launch</li>
+<li><strong>Optimized Performance</strong> – Focused on site speed, SEO best practices, and responsive design for an optimal user experience</li>
+</ul>
+<h2>Challenges</h2>
+<p>Building three separate websites under one overarching concept demanded careful planning and execution:</p>
+<ul>
+<li><strong>Brand Consistency vs. Individual Identity</strong><br>
+Striking the right balance between a unified look and feel and each location’s distinct personality</li>
+<li><strong>Performance &amp; SEO Requirements</strong><br>
+Managing multiple sites with large media assets, ensuring high performance and search visibility</li>
+<li><strong>Complex Content Structures</strong><br>
+Adapting different content needs—events, store listings, cultural highlights—while maintaining a user-friendly interface</li>
+</ul>
+<h2>Solution</h2>
+<p>A modular approach was used to streamline design, development, and maintenance across all sites:</p>
+<ul>
+<li><strong>Unified Design System</strong><br>
+Created reusable components and consistent styling guidelines, allowing for easy customization without sacrificing brand cohesion</li>
+<li><strong>Targeted Customization</strong><br>
+Tailored layouts, color schemes, and content blocks for each destination’s audience, ensuring relevance and engagement</li>
+<li><strong>Performance Tuning &amp; SEO</strong><br>
+Deployed optimized images, clean code structures, and meta configurations to enhance page load speeds and improve ranking potential</li>
+<li><strong>Collaboration &amp; Testing</strong><br>
+Worked closely with design and marketing teams, conducting multiple test iterations to confirm consistent user experience and accessibility</li>
+</ul>
+<h2>The Process</h2>
+<h3>One Concept, Three Websites</h3>
+<p>After establishing the overarching brand direction, the core design elements and style guides were developed to maintain visual harmony across all three destinations.</p>
+<h3>Initial Development</h3>
+<ul>
+<li><strong>Design Prototypes</strong><br>
+Created mockups for Bay Avenue, testing user flows and information architecture before moving into full production</li>
+<li><strong>Core Build</strong><br>
+Developed a robust framework that could be adapted for the subsequent websites, focusing on scalability and performance</li>
+</ul>
+<h3>Adaptation for Bay Square and Souk Madinat Jumeirah</h3>
+<ul>
+<li><strong>Brand Personalization</strong><br>
+Adjusted color palettes, imagery, and content structures to reflect each destination’s unique characteristics</li>
+<li><strong>Feature Implementation</strong><br>
+Incorporated destination-specific features, such as event calendars, store directories, and cultural attractions, all within the same modular framework</li>
+<li><strong>Final QA &amp; Launch</strong><br>
+Conducted thorough testing on both sites to verify performance, responsiveness, and SEO compliance prior to going live</li>
+</ul>
+<p>By employing this systematic approach, we successfully delivered three high-performing, visually aligned websites, each tailored to its respective audience while preserving a cohesive brand identity.</p>
+<h2>Project Images</h2>
+<section class="py-12 px-[5%]">
+  <div class="mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full items-start">
+      <!-- Image 1 -->
+      <div class="w-full">
+        <img
+          src="/images/bay-avenue-final.webp"
+          alt="A day out in Hatta"
+          class="w-full h-auto object-contain shadow-lg"
+        />
+      </div>
+      <!-- Image 2 -->
+      <div class="w-full">
+        <img
+          src="/images/bay-square-final.webp"
+          alt="A night under the stars in Hatta"
+          class="w-full h-auto object-contain shadow-lg"
+        />
+      </div>
+      <!-- Image 3 -->
+      <div class="w-full">
+        <img
+          src="/images/souq-jumeirah-final.webp"
+          alt="A night under the stars in Hatta"
+          class="w-full h-auto object-contain shadow-lg"
+        />
+      </div>
+      <!-- Image 4 -->
+      <div class="w-full">
+        <img
+          src="/images/ba-directory.png"
+          alt="A night under the stars in Hatta"
+          class="w-full h-auto object-contain shadow-lg"
+        />
+      </div>
     </div>
   </div>
 </section>
-<section class="py-20 px-[5%] ">
-  <div class="container">
-    <div class="max-w-3xl mx-auto">
-      
-        <div class="mb-8">
-          
-            <div class="flex items-center">
-            <h2 class="text-4xl font-bold mb-2 leading-none">
-              Featured Projects
-    <svg xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true" 
-    focusable="false" 
-    class="inline text-primary w-9 dark:text-primaryInverted" 
-    width="auto" 
-    height="auto" 
-    fill="currentColor" 
-    viewBox="0 0 256 256">
-    <path d="M240,128l-48,40H64L16,128,64,88H192Z" opacity="0.2"></path>
-    <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
-    </svg>
-            </h2>
-            </div>
-          
-          
-            <p class="text-2xl text-normalLight mb-6 dark:text-invertedLight">
-              Interesting case studies for some projects I worked on.
-            </p>
-          
-        </div>
-      
-      <!-- Render Dynamic Collection -->
-      
-        <div class="flex-col space-y-4"><div class="standard-card">
-              <!-- logo for the case studies -->
-              
-                <img src="/images/visit-hatta-logo.webp" alt="Logo" width="52" height="52" class="mb-4">
-              
-              <h3 class="text-2xl font-md mb-2">
-                <a href="/case-studies/visit-hatta/" class="no-underline">Visit Hatta</a>
-              </h3>
-              
-                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">The official website for Dubai's largest nature reserve with over 350,000 visitor's per season. Hatta is the UAE's favorite outdoor destination, which is managed by Hatta Resorts (a Dubai Holding Company).</p>
-              
-
-              <a href="/case-studies/visit-hatta/" class="flex items-center gap-2 ">
-  Read more
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
-     <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
-     </path>  
-    </svg>
-</a>
-
-            </div>
-          <div class="standard-card">
-              <!-- logo for the case studies -->
-              
-                <img src="/images/ba-logo.webp" alt="Logo" width="52" height="52" class="mb-4">
-              
-              <h3 class="text-2xl font-md mb-2">
-                <a href="/case-studies/bay-avenue/" class="no-underline">Bay Avenue</a>
-              </h3>
-              
-                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Bay Avenue is a vibrant retail destination in the heart of Business Bay, offering a diverse range of dining, services, and essential stores. This project involved creating design templates for two other retail destinations under Dubai Holding's management.</p>
-              
-
-              <a href="/case-studies/bay-avenue/" class="flex items-center gap-2 ">
-  Read more
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
-     <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
-     </path>  
-    </svg>
-</a>
-
-            </div>
-          <div class="standard-card">
-              <!-- logo for the case studies -->
-              
-                <img src="/images/future-makers-logo.svg" alt="Logo" width="52" height="52" class="mb-4">
-              
-              <h3 class="text-2xl font-md mb-2">
-                <a href="/case-studies/future-makers/" class="no-underline">Future Makers</a>
-              </h3>
-              
-                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Future Makers is a Baltimore-based company dedicated to empowering educators and students through hands-on learning and innovative teaching tools. This project involved creating a robust digital platform with a blog, a secure educators’ portal for members, and a custom Google Analytics dashboard to provide valuable insights into website performance and user engagement.</p>
-              
-
-              <a href="/case-studies/future-makers/" class="flex items-center gap-2 ">
-  Read more
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
-     <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
-     </path>  
-    </svg>
-</a>
-
-            </div>
-          
-        </div>
-                  
-      
-    </div>
+    </article>
   </div>
 </section>
 
