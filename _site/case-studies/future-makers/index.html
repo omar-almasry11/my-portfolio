@@ -1,10 +1,37 @@
 <!DOCTYPE html>
   <html lang="en">
   <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Future Makers is a Baltimore-based company dedicated to empowering educators and students through hands-on learning and innovative teaching tools. This project involved creating a robust digital platform with a blog, a secure educators’ portal for members, and a custom Google Analytics dashboard to provide valuable insights into website performance and user engagement.">
+    <meta name="author" content="Omar Almasry">
     <title>Future Makers</title>
+  
+    <!-- Favicons -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Future Makers">
+    <meta property="og:description" content="Future Makers is a Baltimore-based company dedicated to empowering educators and students through hands-on learning and innovative teaching tools. This project involved creating a robust digital platform with a blog, a secure educators’ portal for members, and a custom Google Analytics dashboard to provide valuable insights into website performance and user engagement.">
+    <meta property="og:image" content="/images/og-image.jpg">
+    <meta property="og:url" content="https://omaralmasry.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Future Makers">
+    <meta name="twitter:description" content="Future Makers is a Baltimore-based company dedicated to empowering educators and students through hands-on learning and innovative teaching tools. This project involved creating a robust digital platform with a blog, a secure educators’ portal for members, and a custom Google Analytics dashboard to provide valuable insights into website performance and user engagement.">
+    <meta name="twitter:image" content="/images/og-image.jpg">
+  
+    <!-- Robots Meta -->
+    <meta name="robots" content="index, follow">
+  
+    <!-- Stylesheet -->
     <link href="/dist/output.css" rel="stylesheet">
+  
   </head>
   <body>
     <nav class="px-6 py-4 shadow-medium sticky top-0 bg-normal/60 z-50 backdrop-blur-sm dark:bg-inverted/60 dark:shadow-mediumInverted">
@@ -107,7 +134,7 @@
       </div>
       <!-- Right Column: Placeholder for Image -->
       <div class="aspect-video rounded-lg flex items-center justify-center">
-        <img src="/images/ba-hero-img.webp" width="100%" height="auto" class="w-full h-auto max-h-[550px] object-cover object-top">
+        <img src="/images/future-makers-header.webp" width="100%" height="auto" class="w-full h-auto max-h-[550px] object-cover object-top shadow-low dark:shadow-lowInverted">
       </div>
     </div>
   </div>
@@ -116,92 +143,94 @@
   <div class="container mx-auto">
     <article class="prose">
       <h2>My Role</h2>
-<p>As the lead developer, I was tasked with unifying the digital presence for three distinct destinations—Bay Avenue, Bay Square, and Souk Madinat Jumeirah—under a cohesive brand experience. Specifically, I:</p>
+<p>As the lead developer for this project, I was responsible for implementing key features that aligned with the client’s goals of improving content strategy and fostering educator relationships. My contributions included:</p>
 <ul>
-<li><strong>Developed a Shared Concept</strong> – Ensured consistent branding and design elements across all three websites</li>
-<li><strong>Tailored Each Site</strong> – Adapted layouts, imagery, and content to suit each destination’s unique audience and offerings</li>
-<li><strong>Coordinated Cross-Team Efforts</strong> – Collaborated with designers, content creators, and stakeholders for a seamless launch</li>
-<li><strong>Optimized Performance</strong> – Focused on site speed, SEO best practices, and responsive design for an optimal user experience</li>
+<li><strong>Blog Development</strong> – Built a fully functional, SEO-optimized blog that the in-house team could easily update without requiring developer support.</li>
+<li><strong>Membership System Creation</strong> – Designed and implemented an &quot;Educators' Portal&quot; for logged-in users to access exclusive content, including features such as email verification, password resets, and favoriting content.</li>
+<li><strong>Custom Analytics &amp; Reporting</strong> – Developed a robust tracking system to separate member and non-member activity, providing actionable insights through a custom Google Analytics dashboard in Looker Studio.</li>
 </ul>
 <h2>Challenges</h2>
-<p>Building three separate websites under one overarching concept demanded careful planning and execution:</p>
+<p>The project presented a unique set of challenges that required strategic problem-solving and technical execution:</p>
 <ul>
-<li><strong>Brand Consistency vs. Individual Identity</strong><br>
-Striking the right balance between a unified look and feel and each location’s distinct personality</li>
-<li><strong>Performance &amp; SEO Requirements</strong><br>
-Managing multiple sites with large media assets, ensuring high performance and search visibility</li>
-<li><strong>Complex Content Structures</strong><br>
-Adapting different content needs—events, store listings, cultural highlights—while maintaining a user-friendly interface</li>
+<li><strong>User-Friendly Blog</strong><br>
+Ensuring the blog was not only easy to update by the client’s non-technical in-house team but also optimized for SEO to improve content visibility and ranking.</li>
+<li><strong>Membership System Complexity</strong><br>
+Building a membership system with email verification, content gating, and user-specific features while maintaining a seamless experience for both logged-in and regular users.</li>
+<li><strong>Custom Analytics Requirements</strong><br>
+Writing custom code to track and segment user activity based on membership status and translating this data into meaningful reports for decision-makers.</li>
 </ul>
 <h2>Solution</h2>
-<p>A modular approach was used to streamline design, development, and maintenance across all sites:</p>
+<p>A tailored approach was taken to address each challenge and deliver a high-performing solution:</p>
 <ul>
-<li><strong>Unified Design System</strong><br>
-Created reusable components and consistent styling guidelines, allowing for easy customization without sacrificing brand cohesion</li>
-<li><strong>Targeted Customization</strong><br>
-Tailored layouts, color schemes, and content blocks for each destination’s audience, ensuring relevance and engagement</li>
-<li><strong>Performance Tuning &amp; SEO</strong><br>
-Deployed optimized images, clean code structures, and meta configurations to enhance page load speeds and improve ranking potential</li>
-<li><strong>Collaboration &amp; Testing</strong><br>
-Worked closely with design and marketing teams, conducting multiple test iterations to confirm consistent user experience and accessibility</li>
+<li><strong>SEO-Optimized Blog</strong><br>
+Developed a blog that adhered to SEO best practices, including meta tags, structured data, and performance optimization, to enhance content visibility and search rankings.</li>
+<li><strong>Feature-Rich Membership System</strong><br>
+Built the Educators’ Portal with intuitive features such as account creation, email verification, password management, and a &quot;favorites&quot; system for saving educational guides.</li>
+<li><strong>Custom Analytics &amp; Dashboard</strong><br>
+Created a tracking system to separate member and non-member activity and visualized the data in a custom Looker Studio dashboard, providing insights into content engagement and user behavior.</li>
 </ul>
 <h2>The Process</h2>
-<h3>One Concept, Three Websites</h3>
-<p>After establishing the overarching brand direction, the core design elements and style guides were developed to maintain visual harmony across all three destinations.</p>
-<h3>Initial Development</h3>
+<h3>Blog Development</h3>
+<p>The blog was designed to align with the client’s inbound marketing strategy and ensure ease of use:</p>
 <ul>
-<li><strong>Design Prototypes</strong><br>
-Created mockups for Bay Avenue, testing user flows and information architecture before moving into full production</li>
-<li><strong>Core Build</strong><br>
-Developed a robust framework that could be adapted for the subsequent websites, focusing on scalability and performance</li>
+<li><strong>Content Management</strong><br>
+Integrated a simple, intuitive CMS that allowed the in-house team to create, edit, and publish blog posts without technical support.</li>
+<li><strong>SEO Optimization</strong><br>
+Incorporated meta tags, alt text, and schema markup to ensure maximum visibility on search engines.</li>
 </ul>
-<h3>Adaptation for Bay Square and Souk Madinat Jumeirah</h3>
+<h3>Educators’ Portal</h3>
+<p>The membership system was developed to foster deeper engagement with educators and provide exclusive access to valuable resources:</p>
 <ul>
-<li><strong>Brand Personalization</strong><br>
-Adjusted color palettes, imagery, and content structures to reflect each destination’s unique characteristics</li>
-<li><strong>Feature Implementation</strong><br>
-Incorporated destination-specific features, such as event calendars, store directories, and cultural attractions, all within the same modular framework</li>
-<li><strong>Final QA &amp; Launch</strong><br>
-Conducted thorough testing on both sites to verify performance, responsiveness, and SEO compliance prior to going live</li>
+<li><strong>User Features</strong><br>
+Implemented email verification, password reset functionality, and a favorites system for saving content.</li>
+<li><strong>Content Gating</strong><br>
+Restricted certain pages and resources to logged-in members to encourage sign-ups and provide exclusive value.</li>
 </ul>
-<p>By employing this systematic approach, we successfully delivered three high-performing, visually aligned websites, each tailored to its respective audience while preserving a cohesive brand identity.</p>
+<h3>Custom Analytics &amp; Dashboard</h3>
+<p>To give the client actionable insights, I built a custom tracking and reporting solution:</p>
+<ul>
+<li><strong>Traffic Segmentation</strong><br>
+Used custom code to distinguish between logged-in and general user activity, allowing for detailed behavioral analysis.</li>
+<li><strong>Looker Studio Dashboard</strong><br>
+Designed a unified dashboard that visualized key metrics such as page views, content engagement, and user behavior for both members and non-members.</li>
+</ul>
+<p>By leveraging these solutions, the client was able to enhance their content strategy, build meaningful relationships with educators, and gain valuable insights into user behavior to inform future decisions.</p>
 <h2>Project Images</h2>
-<section class="py-12 px-[5%]">
+<section>
   <div class="mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full items-start">
       <!-- Image 1 -->
       <div class="w-full">
         <img
-          src="/images/bay-avenue-final.webp"
+          src="/images/futuremakers-screenshot-1.png"
           alt="A day out in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 2 -->
       <div class="w-full">
         <img
-          src="/images/bay-square-final.webp"
+          src="/images/futuremakers-screenshot-2.png"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contains hadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 3 -->
       <div class="w-full">
         <img
-          src="/images/souq-jumeirah-final.webp"
+          src="/images/futuremakers-screenshot-3.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
-      </div>
+      </div> 
       <!-- Image 4 -->
       <div class="w-full">
         <img
-          src="/images/ba-directory.png"
+          src="/images/futuremakers-screenshot-4.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
-      </div>
-    </div>
+      </div>   
   </div>
 </section>
     </article>
@@ -311,6 +340,8 @@ Conducted thorough testing on both sites to verify performance, responsiveness, 
   </div>
 </footer>
 
-  <script src="/scripts/main.js" defer></script>
+  
+    <!-- JavaScript -->
+    <script src="/scripts/main.js" defer></script>
   </body>
   </html>

@@ -1,4 +1,4 @@
-<section class="py-20 px-[5%] {{ customClasses | default: '' }}">
+<section class="py-16 px-[5%] {{ customClasses | default: '' }}">
   <div class="container">
     <div class="max-w-3xl mx-auto">
       {% if header or subheader %}
@@ -24,7 +24,7 @@
             <div class="standard-card">
               <!-- logo for the case studies -->
               {% if item.data.logo %}
-                <img src="{{ item.data.logo }}" alt="Logo" width="52" height="52" class="mb-4">
+                <img src="{{ item.data.logo }}" alt="Logo" width="64" height="64" class="mb-4">
               {% endif %}
               <h3 class="text-2xl font-md mb-2">
                 <a href="{{ item.url }}" class="no-underline">{{ item.data.title }}</a>

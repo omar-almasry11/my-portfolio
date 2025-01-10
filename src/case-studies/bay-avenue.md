@@ -69,7 +69,7 @@ By employing this systematic approach, we successfully delivered three high-perf
         <img
           src="/images/bay-avenue-final.webp"
           alt="A day out in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 2 -->
@@ -77,7 +77,7 @@ By employing this systematic approach, we successfully delivered three high-perf
         <img
           src="/images/bay-square-final.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 3 -->
@@ -85,7 +85,7 @@ By employing this systematic approach, we successfully delivered three high-perf
         <img
           src="/images/souq-jumeirah-final.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 4 -->
@@ -93,7 +93,7 @@ By employing this systematic approach, we successfully delivered three high-perf
         <img
           src="/images/ba-directory.png"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
     </div>

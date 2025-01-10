@@ -51,7 +51,7 @@ We employed **Webflow’s native localization** features to streamline the bilin
    - Continued to offer support and implement incremental improvements
 
 ## Project Images
-<section class="py-12 px-[5%]">
+<section>
   <div class="mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full items-start">
       <!-- Image 1 -->
@@ -59,7 +59,7 @@ We employed **Webflow’s native localization** features to streamline the bilin
         <img
           src="/images/hatta-homepage-english.webp"
           alt="A day out in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 2 -->
@@ -67,7 +67,7 @@ We employed **Webflow’s native localization** features to streamline the bilin
         <img
           src="/images/hatta-homepage-arabic.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 3 -->
@@ -75,7 +75,7 @@ We employed **Webflow’s native localization** features to streamline the bilin
         <img
           src="/images/hatta-inner-page.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 4 -->
@@ -83,7 +83,7 @@ We employed **Webflow’s native localization** features to streamline the bilin
         <img
           src="/images/hatta-menu.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
     </div>
