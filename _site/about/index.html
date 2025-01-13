@@ -110,13 +110,117 @@
 </nav>
 
     <main>
+      <section class="py-20 px-[5%]">
+  <div class="container mx-auto max-w-3xl">
+    <!-- Main Heading -->
+    <h1 class="text-5xl font-extrabold mb-6">
+      An Architect Who Fell in Love with the Web
+    </h1>
+    
+      <!-- Supporting Text -->
+      <p class="text-2xl text-normalLight max-w-2xl ml-0 text-normalLight dark:text-invertedLight">
+        Some background info about me.
+      </p>
+    
+  </div>
+</section>
+<section class="py-16 px-[5%] ">
+  <div class="container">
+    <div class="max-w-3xl mx-auto">
       
+        <div class="mb-8">
+          
+            <div class="flex items-center">
+            <h2 class="text-4xl font-bold mb-2 leading-none">
+              Default Header
+            </h2>
+            </div>
+          
+          
+            <p class="text-2xl text-normalLight mb-6 dark:text-invertedLight">
+              Default Subheader
+            </p>
+          
+        </div>
+      
+      <!-- Render Dynamic Collection -->
+      
+        <!-- Render Static Content -->
+        
+  <div class="grid grid-cols-6 grid-rows-2 gap-4">
+    <!-- Standard card spanning 3 columns -->
+    <div class="standard-card col-span-3">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+        role="img"
+        aria-label="Location Pin"
+        viewBox="0 0 256 256"
+      >
+        <path d="M128,24a80,80,0,0,0-80,80c0,72,80,128,80,128s80-56,80-128A80,80,0,0,0,128,24Zm0,112a32,32,0,1,1,32-32A32,32,0,0,1,128,136Z" opacity="0.2"></path>
+        <path d="M200,224H150.54A266.56,266.56,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25a88,88,0,0,0-176,0c0,31.4,14.51,64.68,42,96.25A266.56,266.56,0,0,0,105.46,224H56a8,8,0,0,0,0,16H200a8,8,0,0,0,0-16ZM56,104a72,72,0,0,1,144,0c0,57.23-55.47,105-72,118C111.47,209,56,161.23,56,104Zm112,0a40,40,0,1,0-40,40A40,40,0,0,0,168,104Zm-64,0a24,24,0,1,1,24,24A24,24,0,0,1,104,104Z"></path>
+      </svg>
+      <h3 class="text-2xl font-bold">Current Location</h3>
+      <p class="text-lg font-medium text-normalLight dark:text-invertedLight">Cairo, Egypt</p>
+    </div>
+  
+    <!-- Local time card spanning 3 columns -->
+    <div class="standard-card col-span-3">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+        role="img"
+        aria-label="Clock Icon"
+        viewBox="0 0 256 256"
+      >
+        <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path>
+        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
+      </svg>
+      <h3 class="text-2xl font-bold">Local Time</h3>
+      <div class="local-time flex items-center text-xl font-medium text-normalLight dark:text-invertedLight">
+        <span id="hours" class="time-part w-[2ch] text-center">14</span>
+        <span class="colon mx-1">:</span>
+        <span id="minutes" class="time-part w-[2ch] text-center">34</span>
+        <span class="colon mx-1">:</span>
+        <span id="seconds" class="time-part w-[2ch] text-center">33</span>
+        <span class="gmt ml-2 whitespace-nowrap">(GMT +2)</span>
+      </div>
+    </div>
+  </div>
+  
+      
+    </div>
+  </div>
+</section>
+<script>
+    function updateTime() {
+  const now = new Date();
 
+  // Cairo, Egypt timezone (GMT+2)
+  const options = { timeZone: 'Africa/Cairo', hour12: false };
+  const timeString = now.toLocaleTimeString('en-US', options);
+
+  // Parse the time
+  const [hours, minutes, seconds] = timeString.split(':');
+
+  // Update the DOM
+  document.getElementById('hours').textContent = hours.padStart(2, '0');
+  document.getElementById('minutes').textContent = minutes.padStart(2, '0');
+  document.getElementById('seconds').textContent = seconds.padStart(2, '0');
+
+  // Optionally, update the timezone dynamically if needed
+  document.getElementById('timezone').textContent = `(GMT +2)`;
+}
+
+// Update the time every second
+setInterval(updateTime, 1000);
+updateTime(); // Initialize immediately
+</script>
     </main>
     <!-- Back to Top Button -->
 <button
   id="back-to-top"
-  class="fixed bottom-6 right-6 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted"
+  class="fixed bottom-20 right-6 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted"
   aria-label="Back to top"
 >
   <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256">
@@ -125,7 +229,7 @@
 </button>
 
 <footer class="py-4">
-  <div class="container mx-auto px-4 pr-20">
+  <div class="container mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
       <!-- Logo -->
       <a href="/" class="flex items-center font-bold text-lg no-underline group">
@@ -141,15 +245,15 @@
 
       <!-- Copyright -->
       <div class="flex flex-col gap-1">
-        <p class="text-sm text-center">
+        <p class="text-xs text-center">
           Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a> and
           <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">TailwindCSS</a>. Hosted on
           <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
         </p>
-        <p class="text-sm text-center mb-4">
+        <p class="text-xs text-center mb-4">
           Icons from <a href="https://phosphoricons.com/" target="_blank" rel="noopener noreferrer">Phosphor Icons</a>.
         </p>
-        <p class="text-sm text-center text-normalLight dark:text-invertedLight">
+        <p class="text-xs text-center text-normalLight dark:text-invertedLight">
           © 2025 Omar Almasry. All rights reserved.
         </p>
       </div>
