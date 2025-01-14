@@ -111,7 +111,8 @@
 
     <main>
       <section class="py-20 px-[5%]">
-  <div class="container mx-auto max-w-3xl">
+  <div class="container">
+  <div class="max-w-3xl mx-auto">
     <!-- Main Heading -->
     <h1 class="text-5xl font-extrabold mb-6">
       An Architect Who Fell in Love with the Web
@@ -123,6 +124,7 @@
       </p>
     
   </div>
+  </div>
 </section>
 <section class="py-16 px-[5%] ">
   <div class="container">
@@ -132,13 +134,13 @@
           
             <div class="flex items-center">
             <h2 class="text-4xl font-bold mb-2 leading-none">
-              Default Header
+              My Life in Cards
             </h2>
             </div>
           
           
             <p class="text-2xl text-normalLight mb-6 dark:text-invertedLight">
-              Default Subheader
+              Trivial info, fun stuff, and nerdy things that hardly matter.
             </p>
           
         </div>
@@ -148,8 +150,8 @@
         <!-- Render Static Content -->
         
   <div class="grid grid-cols-6 grid-rows-2 gap-4">
-    <!-- Standard card spanning 3 columns -->
-    <div class="standard-card col-span-3">
+    <!-- Location Card -->
+    <div class="standard-card col-span-3 justify-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
@@ -161,11 +163,11 @@
         <path d="M200,224H150.54A266.56,266.56,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25a88,88,0,0,0-176,0c0,31.4,14.51,64.68,42,96.25A266.56,266.56,0,0,0,105.46,224H56a8,8,0,0,0,0,16H200a8,8,0,0,0,0-16ZM56,104a72,72,0,0,1,144,0c0,57.23-55.47,105-72,118C111.47,209,56,161.23,56,104Zm112,0a40,40,0,1,0-40,40A40,40,0,0,0,168,104Zm-64,0a24,24,0,1,1,24,24A24,24,0,0,1,104,104Z"></path>
       </svg>
       <h3 class="text-2xl font-bold">Current Location</h3>
-      <p class="text-lg font-medium text-normalLight dark:text-invertedLight">Cairo, Egypt</p>
+      <p class="text-2xl text-normalLight dark:text-invertedLight">Cairo, Egypt</p>
     </div>
   
-    <!-- Local time card spanning 3 columns -->
-    <div class="standard-card col-span-3">
+    <!-- Time Card -->
+    <div class="standard-card col-span-3 justify-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
@@ -177,16 +179,186 @@
         <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
       </svg>
       <h3 class="text-2xl font-bold">Local Time</h3>
-      <div class="local-time flex items-center text-xl font-medium text-normalLight dark:text-invertedLight">
+      <div class="local-time flex items-center text-2xl text-normalLight dark:text-invertedLight">
         <span id="hours" class="time-part w-[2ch] text-center">14</span>
-        <span class="colon mx-1">:</span>
+        <span class="colon mx-0.5">:</span>
         <span id="minutes" class="time-part w-[2ch] text-center">34</span>
-        <span class="colon mx-1">:</span>
+        <span class="colon mx-0.5">:</span>
         <span id="seconds" class="time-part w-[2ch] text-center">33</span>
-        <span class="gmt ml-2 whitespace-nowrap">(GMT +2)</span>
+        <span class="gmt ml-1.5 whitespace-nowrap">(GMT +2)</span>
       </div>
     </div>
-  </div>
+
+    <!-- Languages Card -->
+    <div class="standard-card col-span-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+          role="img"
+          aria-label="Languages Icon"
+          viewBox="0 0 256 256"
+        >
+        <path d="M224,184H144l40-80ZM96,127.56h0A95.78,95.78,0,0,0,128,56H64A95.78,95.78,0,0,0,96,127.56Z" opacity="0.2"></path>
+        <path d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.7,87.7,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z"></path>        
+    </svg>
+        <h3 class="text-2xl font-bold">Languages Spoken</h3>
+        <p class="text-2xl text-normalLight dark:text-invertedLight">English (EN)</p>
+        <p class="text-2xl text-normalLight dark:text-invertedLight">Arabic (AR)</p>
+        <p class="text-2xl text-normalLight dark:text-invertedLight">French (FR)</p>
+     </div>
+
+     <!-- Coffee Card -->
+    <div class="standard-card col-span-2 justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+          role="img"
+          aria-label="Coffee Cup Icon"
+          viewBox="0 0 256 256"
+        >
+        <path d="M208,88v48a88,88,0,0,1-51.3,80H83.3A88,88,0,0,1,32,136V88Z" opacity="0.2"></path>
+        <path d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z"></path>
+        </svg>       
+        <h3 class="text-2xl font-bold">Avg. Espresso Shots/Day</h3>
+        <p class="text-2xl text-normalLight dark:text-invertedLight">5.2</p>
+     </div>
+      <!-- Webflow Partner Card -->
+    <div class="standard-card col-span-2 justify-center">
+        <a href="https://webflow.com/@omar-almasrys-workspace">
+        <img src="/images/premium-partner.png" class="w-max  shadow-medium dark:shadow-mediumInverted" aria-label="Webflow Premium Partner Label">
+    </a>
+      </div>
+
+     <!-- Movies Card -->
+    <div class="standard-card col-span-6">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+          role="img"
+          aria-label="Movies Icon"
+          viewBox="0 0 256 256"
+        >
+        <path d="M128,32a96,96,0,1,0,96,96A96,96,0,0,0,128,32ZM80,144a16,16,0,1,1,16-16A16,16,0,0,1,80,144Zm48,48a16,16,0,1,1,16-16A16,16,0,0,1,128,192Zm0-96a16,16,0,1,1,16-16A16,16,0,0,1,128,96Zm48,48a16,16,0,1,1,16-16A16,16,0,0,1,176,144Z" opacity="0.2"></path>
+        <path d="M232,216H183.36A103.95,103.95,0,1,0,128,232H232a8,8,0,0,0,0-16ZM40,128a88,88,0,1,1,88,88A88.1,88.1,0,0,1,40,128Zm88-24a24,24,0,1,0-24-24A24,24,0,0,0,128,104Zm0-32a8,8,0,1,1-8,8A8,8,0,0,1,128,72Zm24,104a24,24,0,1,0-24,24A24,24,0,0,0,152,176Zm-32,0a8,8,0,1,1,8,8A8,8,0,0,1,120,176Zm56-24a24,24,0,1,0-24-24A24,24,0,0,0,176,152Zm0-32a8,8,0,1,1-8,8A8,8,0,0,1,176,120ZM80,104a24,24,0,1,0,24,24A24,24,0,0,0,80,104Zm0,32a8,8,0,1,1,8-8A8,8,0,0,1,80,136Z"></path>        
+    </svg>       
+        <h3 class="text-2xl font-bold mb-4">Favorite Movies</h3>
+        <div class="grid grid-cols-5 gap-4">
+            <div class="flex flex-col gap-1">
+                <img src="/images/matrix.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium text-center text-normalLight dark:text-invertedLight">The Matrix</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/truman.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">The Truman Show</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/parasite.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Parasite</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/inception.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Inception</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/lotr.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium  leading:tight text-center text-normalLight dark:text-invertedLight">Lord of the Rings</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/mad-max.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Mad Max: Fury Road</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/interstellar.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Interstellar</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/shawshank.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">The Shawshank Redemption</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/dark-knight.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">The Dark Knight</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/district9.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">District 9</p>
+            </div>
+        </div>
+        </div>
+
+         <!-- Books Card -->
+    <div class="standard-card col-span-6">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+          role="img"
+          aria-label="Books Icon"
+          viewBox="0 0 256 256"
+        >
+        <path d="M48,72h64V184H48ZM190.64,38.39a8,8,0,0,0-9.5-6.21l-46.81,10a8.07,8.07,0,0,0-6.15,9.57L139.79,107l62.46-13.42Z" opacity="0.2"></path>
+        <path d="M231.65,194.55,198.46,36.75a16,16,0,0,0-19-12.39L132.65,34.42a16.08,16.08,0,0,0-12.3,19l33.19,157.8A16,16,0,0,0,169.16,224a16.25,16.25,0,0,0,3.38-.36l46.81-10.06A16.09,16.09,0,0,0,231.65,194.55ZM136,50.15c0-.06,0-.09,0-.09l46.8-10,3.33,15.87L139.33,66Zm6.62,31.47,46.82-10.05,3.34,15.9L146,97.53Zm6.64,31.57,46.82-10.06,13.3,63.24-46.82,10.06ZM216,197.94l-46.8,10-3.33-15.87L212.67,182,216,197.85C216,197.91,216,197.94,216,197.94ZM104,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V48A16,16,0,0,0,104,32ZM56,48h48V64H56Zm0,32h48v96H56Zm48,128H56V192h48v16Z"></path>
+    </svg>       
+        <h3 class="text-2xl font-bold mb-4">Favorite Books</h3>
+        <div class="grid grid-cols-5 gap-4">
+            <div class="flex flex-col gap-1">
+                <img src="/images/design-of-everyday-things.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium text-center text-normalLight dark:text-invertedLight">The Design of Everyday Things</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/dont-make-me-think.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Don't Make Me Think</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/this-is-marketing.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">This is Marketing</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/lean-startup.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">The Lean Startup</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/cant-hurt-me.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium  leading:tight text-center text-normalLight dark:text-invertedLight">Can't Hurt Me</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/meditations.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Meditations</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/fast-and-slow.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Thinking, Fast and Slow</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/creativity-inc.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Creativity, Inc.</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/atomic-habits.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Atomic Habits</p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <img src="/images/art-of-war.webp" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+                <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">The Art of War</p>
+            </div>
+        </div>
   
       
     </div>
@@ -220,7 +392,7 @@ updateTime(); // Initialize immediately
     <!-- Back to Top Button -->
 <button
   id="back-to-top"
-  class="fixed bottom-20 right-6 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted"
+  class="fixed bottom-16 right-6 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted"
   aria-label="Back to top"
 >
   <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256">
