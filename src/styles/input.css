@@ -7,7 +7,6 @@
     font-family: Inter;
     src: url('/fonts/Inter.ttf');
 }
-
 html {
     @apply text-normal bg-normal;
   }
@@ -24,6 +23,13 @@ html {
   h3 {
     @apply text-2xl lg:text-3xl font-semibold mb-1;
   }
+::selection {
+  @apply bg-inverted text-inverted; /* Apply light mode colors */
+}
+
+.dark ::selection {
+  @apply bg-normal text-normal; /* Apply dark mode colors */
+}
  }
 
 @layer components {

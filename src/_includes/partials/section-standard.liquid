@@ -5,9 +5,9 @@
         <div class="mb-8">
           {% if header %}
             <div class="flex items-center">
-            <h2 class="text-4xl font-bold mb-2 leading-none">
-              {{ header | default: 'Default Header' }}
-            </h2>
+              <h2 class="text-4xl font-bold mb-2 leading-none">
+                {{ header | default: 'Default Header' }}
+              </h2>
             </div>
           {% endif %}
           {% if subheader %}
@@ -22,9 +22,13 @@
         <div class="flex-col space-y-4">
           {%- for item in collection limit: limit -%}
             <div class="standard-card">
-              <!-- logo for the case studies -->
+              <!-- Light Mode Logo -->
               {% if item.data.logo %}
-                <img src="{{ item.data.logo }}" alt="Logo" width="64" height="64" class="mb-4">
+                <img src="{{ item.data.logo }}" alt="Logo" width="64" height="64" class="mb-4 ratio-square object-contain dark:hidden {{ item.data.customLogoClass | default: '' }}">
+              {% endif %}
+              <!-- Dark Mode Logo -->
+              {% if item.data.logo-dark %}
+                <img src="{{ item.data.logo-dark }}" alt="Logo" width="64" height="64" class="hidden dark:block dark:ratio-square dark:object-contain dark:mb-4 dark:w-16 dark:h-16 {{ item.data.customLogoClass | default: '' }}">
               {% endif %}
               <h3 class="text-2xl font-md mb-2">
                 <a href="{{ item.url }}" class="no-underline">{{ item.data.title }}</a>
@@ -48,7 +52,7 @@
               customClasses: 'mt-10'
             -%}
           </div>
-          {% endif %}          
+        {% endif %}
       {% else %}
         <!-- Render Static Content -->
         {{ content }}

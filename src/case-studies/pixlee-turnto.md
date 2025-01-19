@@ -2,11 +2,13 @@
 title: "Pixlee TurnTo"
 date: 2025-01-01
 project-link: "https://emplifi.io/resources/"
-description: "Pixlee TurnTo was a leader in Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing tools, serving enterprise clients globally. Pixlee TurnTo needed a complete migration of their high-traffic blog to Webflow to enhance performance and empower their marketing team."
-logo: "/images/pixlee-logo.webp"
+description: "Pixlee TurnTo, a leader in Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing tools, needed a complete migration of their high-traffic blog to Webflow to enhance performance and empower their marketing team. Following the successful migration, Pixlee TurnTo was acquired by Emplifi, a global leader in customer experience solutions."
+logo: "/images/emplifi-logo.svg"
+logo-dark: "/images/emplifi-logo-white.svg"
+customLogoClass: "w-24 h-24 mb-0 dark:w-24 dark:h-24 dark:mb-6"
 header-img: "/images/pixlee-header-img.webp"
 header-overview: "Pixlee TurnTo needed a complete migration of their high-traffic blog to Webflow to enhance performance and empower their marketing team. This project involved migrating over 850 pages from WordPress to Webflow, implementing advanced filtering features, optimizing performance, and preserving critical SEO rankings to maintain traffic and visibility for their extensive audience. Following the migration, Pixlee TurnTo was acquired by Emplifi, a global leader in customer experience solutions."
-order: 4
+order: 3
 ---
 
 ## About the Project

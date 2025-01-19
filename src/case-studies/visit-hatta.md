@@ -4,9 +4,11 @@ date: 2025-01-01
 project-link: "https://www.visithatta.com/"
 description: "The official website for Dubai's largest nature reserve with over 350,000 visitor's per season. Hatta is the UAE's favorite outdoor destination, which is managed by Hatta Resorts (a Dubai Holding Company)."
 logo: "/images/visit-hatta-logo.webp"
+logo-dark: "/images/hatta-logo-white.svg"
+customLogoClass: "mb-8 dark:mb-8"
 header-img: "/images/vh-header-img.webp"
 header-overview: "Visit Hatta is a premier destination for tourists and adventure enthusiasts looking to explore the scenic beauty and cultural heritage of Hatta, UAE. The website provides visitors with comprehensive information about attractions, accommodations, activities, and events. Our goal was to create an engaging and user-friendly platform that effectively promotes Hatta's unique offerings."
-order: 1
+order: 2
 ---
 
 ## My Role

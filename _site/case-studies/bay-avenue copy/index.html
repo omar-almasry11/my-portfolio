@@ -1,13 +1,40 @@
 <!DOCTYPE html>
   <html lang="en">
   <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bay Avenue is a vibrant retail destination in the heart of Business Bay, offering a diverse range of dining, services, and essential stores. This project involved creating design templates for two other retail destinations under Dubai Holding's management.">
+    <meta name="author" content="Omar Almasry">
     <title>Bay Avenue</title>
+  
+    <!-- Favicons -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Bay Avenue">
+    <meta property="og:description" content="Bay Avenue is a vibrant retail destination in the heart of Business Bay, offering a diverse range of dining, services, and essential stores. This project involved creating design templates for two other retail destinations under Dubai Holding's management.">
+    <meta property="og:image" content="/images/og-image.jpg">
+    <meta property="og:url" content="https://omaralmasry.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bay Avenue">
+    <meta name="twitter:description" content="Bay Avenue is a vibrant retail destination in the heart of Business Bay, offering a diverse range of dining, services, and essential stores. This project involved creating design templates for two other retail destinations under Dubai Holding's management.">
+    <meta name="twitter:image" content="/images/og-image.jpg">
+  
+    <!-- Robots Meta -->
+    <meta name="robots" content="index, follow">
+  
+    <!-- Stylesheet -->
     <link href="/dist/output.css" rel="stylesheet">
+  
   </head>
   <body>
-    <nav class="px-6 py-4 shadow-medium sticky top-0 bg-normal/60 z-50 backdrop-blur-sm dark:bg-inverted/60 dark:shadow-mediumInverted">
+    <nav class="px-[5%] py-4 shadow-medium sticky top-0 bg-normal/60 z-50 backdrop-blur-sm dark:bg-inverted/60 dark:shadow-mediumInverted">
   <!-- Progress Bar -->
   <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-transparant">
     <div id="progressBar" class="h-1 bg-primary w-0 dark:bg-primaryInverted"></div>
@@ -26,9 +53,9 @@
       <ul class="flex items-center space-x-6">
         <li>
           <a
-            href="about"
+            href="/about"
             class="text-normalLight text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
-            >About</a
+            >About Me</a
           >
         </li>
         <li>
@@ -107,7 +134,7 @@
       </div>
       <!-- Right Column: Placeholder for Image -->
       <div class="aspect-video rounded-lg flex items-center justify-center">
-        <img src="/images/ba-hero-img.webp" width="100%" height="auto" class="w-full h-auto max-h-[550px] object-cover object-top">
+        <img src="/images/ba-hero-img.webp" width="100%" height="auto" class="w-full h-auto max-h-[550px] object-cover object-top shadow-low dark:shadow-lowInverted">
       </div>
     </div>
   </div>
@@ -174,7 +201,7 @@ Conducted thorough testing on both sites to verify performance, responsiveness, 
         <img
           src="/images/bay-avenue-final.webp"
           alt="A day out in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 2 -->
@@ -182,7 +209,7 @@ Conducted thorough testing on both sites to verify performance, responsiveness, 
         <img
           src="/images/bay-square-final.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 3 -->
@@ -190,7 +217,7 @@ Conducted thorough testing on both sites to verify performance, responsiveness, 
         <img
           src="/images/souq-jumeirah-final.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
       <!-- Image 4 -->
@@ -198,7 +225,7 @@ Conducted thorough testing on both sites to verify performance, responsiveness, 
         <img
           src="/images/ba-directory.png"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-lg"
+          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
     </div>
@@ -212,7 +239,7 @@ Conducted thorough testing on both sites to verify performance, responsiveness, 
     <!-- Back to Top Button -->
 <button
   id="back-to-top"
-  class="fixed bottom-6 right-6 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted"
+  class="fixed bottom-20 right-6 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted"
   aria-label="Back to top"
 >
   <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256">
@@ -220,8 +247,8 @@ Conducted thorough testing on both sites to verify performance, responsiveness, 
   </svg>
 </button>
 
-<footer class="py-4">
-  <div class="container mx-auto px-4 pr-20">
+<footer class="py-4 px-[5%]">
+  <div class="container mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
       <!-- Logo -->
       <a href="/" class="flex items-center font-bold text-lg no-underline group">
@@ -237,15 +264,15 @@ Conducted thorough testing on both sites to verify performance, responsiveness, 
 
       <!-- Copyright -->
       <div class="flex flex-col gap-1">
-        <p class="text-sm text-center">
+        <p class="text-xs text-center">
           Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a> and
           <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">TailwindCSS</a>. Hosted on
           <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
         </p>
-        <p class="text-sm text-center mb-4">
+        <p class="text-xs text-center mb-4">
           Icons from <a href="https://phosphoricons.com/" target="_blank" rel="noopener noreferrer">Phosphor Icons</a>.
         </p>
-        <p class="text-sm text-center text-normalLight dark:text-invertedLight">
+        <p class="text-xs text-center text-normalLight dark:text-invertedLight">
           © 2025 Omar Almasry. All rights reserved.
         </p>
       </div>
@@ -265,7 +292,7 @@ Conducted thorough testing on both sites to verify performance, responsiveness, 
           </svg>
         </a>
         <!-- Github -->
-        <a href="https://github.com/omar-almasry11" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/omar-almasry11" target="_blank" rel="noopener noreferrer" class="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-7 h-7 fill-current hover:text-savoyBlue dark:hover:text-primaryInverted"
@@ -311,6 +338,8 @@ Conducted thorough testing on both sites to verify performance, responsiveness, 
   </div>
 </footer>
 
-  <script src="/scripts/main.js" defer></script>
+  
+    <!-- JavaScript -->
+    <script src="/scripts/main.js" defer></script>
   </body>
   </html>

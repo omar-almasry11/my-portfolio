@@ -1,16 +1,79 @@
 ---
 layout: /layouts/layout.liquid
-title: about
+title: About Me
 ---
 
 {%- render 'partials/page-header',
-  headerTitle: 'An Architect Who Fell in Love with the Web',
-  headerSubtitle: 'Some background info about me.',
+  headerTitle: 'About Me',
+  headerSubtitle: 'Some info about who I am, what I do, and why I do it.',
 -%}
 
 {%- render 'partials/section-standard', 
-  header: 'My Life in Cards',
-  subheader: 'Trivial info, fun stuff, and nerdy things that hardly matter.',
+  header: 'An Architect Who Fell in Love With the Web
+  <svg xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true" 
+    focusable="false" 
+    class="inline text-primary w-9 dark:text-primaryInverted mb-2" 
+    width="auto" 
+    height="auto" 
+    fill="currentColor" 
+    viewBox="0 0 256 256">
+    <path d="M232,102c0,66-104,122-104,122S24,168,24,102A54,54,0,0,1,78,48c22.59,0,41.94,12.31,50,32,8.06-19.69,27.41-32,50-32A54,54,0,0,1,232,102Z" opacity="0.2"></path>
+    <path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z"></path>    
+</svg>',
+  subheader: 'Working at the intersection of design, technology, and accessibility.',
+  content: '<p>My journey started in architecture, a field where I learned the importance of aesthetics, structure, and functionality. However, I found myself increasingly drawn to the limitless possibilities of the digital world. What began as a curiosity soon turned into a passion for creating high-performing web experiences.
+</p>
+  <br>
+  <p>In 2017, I made the leap into web design and development. My background in architecture gave me a unique perspective on problem-solving, design systems, and user-centric thinking. Over the years, I\’ve had the privilege of working with clients from Fortune 500 companies to SMEs, helping them achieve their goals through thoughtful design and robust digital solutions.</p>
+  <br>
+  <p class="mb-8">Today, I work as an independent UX Engineer and accessibility consultant, and I run <a href="smelter.studio" target="_blank" rel="noopener noreferrer">Smelter Studio</a>: a product-focused studio that empowers business with scalable and effective web solutions and digital products. 
+</p>
+<h3 class="mb-8">Featured Clients</h3>
+<div class="grid grid-cols-5 gap-4 items-center">
+    <div class="flex justify-center">
+        <img class="w-3/4 sm:w-full max-w-[80px] object-contain dark:hidden" src="/images/duba-holding-logo-2.svg" alt="Dubai Holding Logo">
+        <img class="hidden dark:block dark:w-3/4 dark:max-w-[80px] dark:object-contain" src="/images/dubai-holding-logo-inverted.avif" alt="Dubai Holding Logo">
+    </div>
+    <div class="flex justify-center">
+        <img class="w-3/4 max-w-[60px] object-contain dark:hidden" src="/images/visit-hatta-logo.webp" alt="Visit Hatta Logo">
+        <img class="hidden dark:block dark:w-3/4 dark:max-w-[60px] dark:object-contain" src="/images/hatta-logo-white.svg" alt="Visit Hatta Logo">
+    </div>
+    <div class="flex justify-center">
+        <img class="w-3/4 max-w-[60px] object-contain" src="/images/bay-square-logo.webp" alt="Bay Square">
+    </div>
+    <div class="flex justify-center">
+        <img class="w-3/4 max-w-[80px] object-contain dark:hidden" src="/images/nakheel-logo.svg" alt="Nakheel Logo">
+        <img class="hidden dark:block dark:w-3/4 dark:max-w-[80px] dark:object-contain" src="/images/nakheel-logo-white.svg" alt="Nakheel Logo">
+    </div>
+    <div class="flex justify-center">
+        <img class="w-3/4 max-w-[80px] object-contain dark:hidden" src="/images/emplifi-logo.svg" alt="Emplifi Logo">
+        <img class="hidden dark:block dark:w-3/4 dark:max-w-[80px] dark:object-contain" src="/images/emplifi-logo-white.svg" alt="Emplifi Logo">
+    </div>
+</div>
+  ',
+-%}
+
+{%- render 'partials/section-standard', 
+  header: 'What My Clients Say',
+  subheader: 'People seem to love working with me. Not sure why though.',
+  content: '<p>Default Content</p>',
+-%}
+
+{%- render 'partials/section-standard', 
+  header: 'My Life in Cards
+  <svg xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true" 
+    focusable="false" 
+    class="inline text-primary w-9 dark:text-primaryInverted mb-1" 
+    width="auto" 
+    height="auto" 
+    fill="currentColor" 
+    viewBox="0 0 256 256">
+    <path d="M192,88V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V88a8,8,0,0,1,8-8H184A8,8,0,0,1,192,88Z" opacity="0.2"></path>
+    <path d="M184,72H40A16,16,0,0,0,24,88V200a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V88A16,16,0,0,0,184,72Zm0,128H40V88H184V200ZM232,56V176a8,8,0,0,1-16,0V56H64a8,8,0,0,1,0-16H216A16,16,0,0,1,232,56Z"></path>
+    </svg>',
+  subheader: 'Fun stuff. Potentially interesting.',
   content: '
   <div class="grid grid-cols-6 grid-rows-2 gap-4">
     <!-- Location Card -->
@@ -26,7 +89,7 @@ title: about
         <path d="M200,224H150.54A266.56,266.56,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25a88,88,0,0,0-176,0c0,31.4,14.51,64.68,42,96.25A266.56,266.56,0,0,0,105.46,224H56a8,8,0,0,0,0,16H200a8,8,0,0,0,0-16ZM56,104a72,72,0,0,1,144,0c0,57.23-55.47,105-72,118C111.47,209,56,161.23,56,104Zm112,0a40,40,0,1,0-40,40A40,40,0,0,0,168,104Zm-64,0a24,24,0,1,1,24,24A24,24,0,0,1,104,104Z"></path>
       </svg>
       <h3 class="text-2xl font-bold">Current Location</h3>
-      <p class="text-2xl text-normalLight dark:text-invertedLight">Cairo, Egypt</p>
+      <p class="text-2xl font-light text-normalLight dark:text-invertedLight">Cairo, Egypt</p>
     </div>
   
     <!-- Time Card -->
@@ -42,7 +105,7 @@ title: about
         <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
       </svg>
       <h3 class="text-2xl font-bold">Local Time</h3>
-      <div class="local-time flex items-center text-2xl text-normalLight dark:text-invertedLight">
+      <div class="local-time font-light flex items-center text-2xl text-normalLight dark:text-invertedLight">
         <span id="hours" class="time-part w-[2ch] text-center">14</span>
         <span class="colon mx-0.5">:</span>
         <span id="minutes" class="time-part w-[2ch] text-center">34</span>
@@ -65,9 +128,9 @@ title: about
         <path d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.7,87.7,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z"></path>        
     </svg>
         <h3 class="text-2xl font-bold">Languages Spoken</h3>
-        <p class="text-2xl text-normalLight dark:text-invertedLight">English (EN)</p>
-        <p class="text-2xl text-normalLight dark:text-invertedLight">Arabic (AR)</p>
-        <p class="text-2xl text-normalLight dark:text-invertedLight">French (FR)</p>
+        <p class="text-2xl font-light text-normalLight dark:text-invertedLight">English (EN)</p>
+        <p class="text-2xl font-light text-normalLight dark:text-invertedLight">Arabic (AR)</p>
+        <p class="text-2xl font-light text-normalLight dark:text-invertedLight">French (FR)</p>
      </div>
 
      <!-- Coffee Card -->
@@ -83,14 +146,24 @@ title: about
         <path d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z"></path>
         </svg>       
         <h3 class="text-2xl font-bold">Avg. Espresso Shots/Day</h3>
-        <p class="text-2xl text-normalLight dark:text-invertedLight">5.2</p>
+        <p class="text-2xl font-light text-normalLight dark:text-invertedLight">5.2</p>
      </div>
       <!-- Webflow Partner Card -->
-    <div class="standard-card col-span-2 justify-center">
+    <div class="standard-card col-span-2">
+        <h3 class="text-2xl font-bold">Webflow Premium Partner</h3>
+        <p class="text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">Recognized by Webflow as a trusted professional for building high-quality websites.</p>
         <a href="https://webflow.com/@omar-almasrys-workspace">
         <img src="/images/premium-partner.png" class="w-max  shadow-medium dark:shadow-mediumInverted" aria-label="Webflow Premium Partner Label">
     </a>
       </div>
+
+      <!-- Clients Globe Card -->
+    <div class="standard-card col-span-4 justify-center">      
+        <h3 class="text-2xl font-bold">Client Locations</h3>
+        <p class="text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">I\'ve had the pleasure of working with clients from 11 different countries on 5 continents.</p>
+        <div class="globe-embed w-full aspect-square"></div>
+       
+     </div>
 
      <!-- Movies Card -->
     <div class="standard-card col-span-6">
@@ -249,4 +322,155 @@ title: about
 // Update the time every second
 setInterval(updateTime, 1000);
 updateTime(); // Initialize immediately
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.138.1/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.138.1/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the scene, camera, and renderer
+    const scene = new THREE.Scene();
+    scene.background = null; // Set background to transparent
+
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000); // Aspect ratio will update dynamically
+
+    // Create renderer and target the .globe-embed container
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); // Alpha makes the background transparent
+    const globeContainer = document.querySelector('.globe-embed'); // Target the container with class globe-embed
+
+    // Ensure the container exists before initializing the globe
+    if (!globeContainer) {
+        console.error('Error: Element with class .globe-embed not found.');
+        return;
+    }
+
+    // Set renderer to fit the container size
+    renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio); // Ensure crisp rendering on high-DPI screens
+    globeContainer.appendChild(renderer.domElement);
+
+    // Load the globe texture
+    const texture = new THREE.TextureLoader().load(
+        '/images/globe-texture.jpg'
+    );
+
+    // Create the globe
+    const sphereGeometry = new THREE.SphereGeometry(5, 64, 64);
+    const sphereMaterial = new THREE.MeshStandardMaterial({
+        map: texture,
+        roughness: 0.8,
+        metalness: 0.2,
+    });
+    const globe = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    scene.add(globe);
+
+    // Add ambient and directional lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // Directional light
+    directionalLight.position.set(10, 10, 10);
+    scene.add(directionalLight);
+
+    // Add markers as aligned cubes
+    function addMarker(lat, lon, radius) {
+        const phi = (90 - lat) * (Math.PI / 180);
+        const theta = (lon + 180) * (Math.PI / 180);
+
+        // Convert lat/lon to 3D position
+        const x = -(radius * Math.sin(phi) * Math.cos(theta));
+        const z = radius * Math.sin(phi) * Math.sin(theta);
+        const y = radius * Math.cos(phi);
+
+        // Create the cube marker
+        const cubeGeometry = new THREE.BoxGeometry(0.2, 0.2, 0.2); // Cube dimensions
+        const cubeMaterial = new THREE.MeshStandardMaterial({
+            color: 0x2F55CF, // Blue color to match the theme
+            roughness: 0.5,
+            metalness: 0.8,
+        });
+        const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+        cube.position.set(x, y, z);
+
+        // Align the cube base to face the globe
+        cube.lookAt(0, 0, 0); // Ensure the cube faces the center of the globe
+
+        globe.add(cube); // Add the cube to the globe
+    }
+
+    // Locations for the markers
+    const locations = [
+        { lat: 60.1695, lon: 24.9354 }, // Helsinki, Finland
+        { lat: 48.8566, lon: 2.3522 },  // Paris, France
+        { lat: 36.7783, lon: -119.4179 }, // California, USA
+        { lat: 51.5074, lon: -0.1278 },  // London, UK
+        { lat: 25.276987, lon: 55.296249 }, // Dubai, UAE
+        { lat: 30.0444, lon: 31.2357 }, // Cairo, Egypt
+        { lat: 43.6532, lon: -79.3832 }, // Toronto, Canada
+        { lat: 24.7136, lon: 46.6753 }, // Riyadh, Saudi Arabia
+        { lat: 59.3293, lon: 18.0686 }, // Stockholm, Sweden
+        { lat: -37.8136, lon: 144.9631 }, // Melbourne, Australia
+    ];
+
+    // Add markers for all locations
+    locations.forEach(location => {
+        addMarker(location.lat, location.lon, 5.1);
+    });
+
+    // Position the camera for the best view
+    camera.position.set(0, 0, 12); // Centered with enough distance
+
+    // Add OrbitControls
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true; // Smooth rotation
+    controls.dampingFactor = 0.05;
+    controls.enableZoom = false; // Disable scroll-to-zoom
+
+    // Auto-rotate the globe
+    let isUserInteracting = false;
+    let autoRotateTimeout;
+
+    controls.addEventListener('start', () => {
+        isUserInteracting = true;
+
+        // Clear the timeout if interaction occurs
+        if (autoRotateTimeout) {
+            clearTimeout(autoRotateTimeout);
+        }
+    });
+
+    controls.addEventListener('end', () => {
+        // Resume auto-rotation after 1 second of inactivity
+        autoRotateTimeout = setTimeout(() => {
+            isUserInteracting = false;
+        }, 1000);
+    });
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        // Rotate the globe if no user interaction
+        if (!isUserInteracting) {
+            globe.rotation.y += 0.001; // Slow auto-rotate
+        }
+
+        controls.update();
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    // Handle window resize for responsiveness
+    window.addEventListener('resize', () => {
+        const width = globeContainer.clientWidth;
+        const height = globeContainer.clientHeight;
+
+        // Update camera aspect ratio and projection matrix
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+
+        // Resize the renderer
+        renderer.setSize(width, height);
+    });
+});
 </script>
