@@ -35,7 +35,7 @@ html {
 @layer components {
 /* Custom Component Styles */
 .standard-card {
-    @apply border border-normal rounded-md flex flex-col justify-start items-start h-full p-6 no-underline transition-all shadow-low dark:shadow-lowInverted relative dark:border-inverted;
+    @apply border border-normal rounded-md flex flex-col justify-start items-start h-full p-6 no-underline transition-all shadow-low w-full dark:shadow-lowInverted relative dark:border-inverted;
 }
 .prose {
     @apply prose-h2:text-4xl prose-h2:mb-4 prose-h3:text-2xl prose-h3:font-medium prose-h3:text-normalLight prose-h3:mb-1 prose-h3:mt-6 lg:prose-lg md:prose-base max-w-full dark:prose-inverted dark:prose-h3:text-invertedLight;
