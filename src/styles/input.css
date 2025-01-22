@@ -30,6 +30,9 @@ html {
 .dark ::selection {
   @apply bg-normal text-normal; /* Apply dark mode colors */
 }
+a[aria-current=page] {
+  @apply font-medium text-primary dark:text-primaryInverted;
+}
  }
 
 @layer components {
