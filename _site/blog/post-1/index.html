@@ -9,7 +9,7 @@
       content="This is the first blog post."
     >
     <meta name="author" content="Omar Almasry">
-    <title>First Blog Post</title>
+    <title>Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success</title>
 
     <!-- Favicons -->
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
@@ -19,7 +19,7 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="First Blog Post">
+    <meta property="og:title" content="Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success">
     <meta
       property="og:description"
       content="This is the first blog post."
@@ -28,7 +28,7 @@
     <meta property="og:url" content="https://omaralmasry.com">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="First Blog Post">
+    <meta name="twitter:title" content="Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success">
     <meta
       name="twitter:description"
       content="This is the first blog post."
@@ -122,7 +122,7 @@
 </nav>
     <main>
        <header class="pt-16 pb-4 px-[5%] max-w-4xl mr-auto">
-    <h1>First Blog Post</h1>
+    <h1>Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success</h1>
     <p class="text-2xl text-normalLight max-w-2xl mb-6 text-normalLight dark:text-invertedLight">
       This is the first blog post.
     </p>
@@ -210,27 +210,63 @@
     </button>
   </div>
     <article class="prose py-12 px-[5%]" id="reading-time">
-    <h1>Header 1</h1>
-<h2>Header 2</h2>
-<h3>Header 3</h3>
-<p>This is a paragraph with some <strong>bold text</strong>, <em>italic text</em>, and a <a href="https://example.com">link</a>.</p>
-<blockquote>
-<p>This is a blockquote. It's useful for emphasizing important points or quotes.</p>
-</blockquote>
+    <h2><strong>Table of Contents</strong></h2>
 <ul>
-<li>This is a list item</li>
-<li>Another list item
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#why-traditional-rtl-approaches-fall-short">Why Traditional RTL Approaches Fall Short</a>
 <ul>
-<li>Nested list item</li>
+<li><a href="#over-reliance-on-dirrtl">Over-Reliance on <code>dir=&quot;rtl&quot;</code></a></li>
 </ul>
 </li>
+<li><a href="#fixing-common-rtl-ui-issues">Fixing Common RTL UI Issues</a>
+<ul>
+<li><a href="#incorrect-numeral-handling">Incorrect Numeral Handling</a></li>
+<li><a href="#directional-icons-break-navigation-logic">Directional Icons Break Navigation Logic</a></li>
+<li><a href="#grid-systems-maintain-ltr-order-in-rtl-contexts">Grid Systems Maintain LTR Order in RTL Contexts</a></li>
+<li><a href="#navigation-menus--list-order-in-rtl">Navigation Menus &amp; List Order in RTL</a></li>
+<li><a href="#table-column-alignment--reordering">Table Column Alignment &amp; Reordering</a></li>
 </ul>
-<p>Here’s an inline code example: <code>console.log('Hello, world!')</code>.</p>
-<pre><code class="language-javascript">// This is a JavaScript code block
-function greet() {
-  console.log('Hello, world!');
-}
-</code></pre>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<hr>
+<h2><strong>Introduction</strong></h2>
+<p>Building web experiences that successfully engage audiences in Arabic-speaking countries is essential for any enterprise looking to succeed in this fast-growing region. However, most enterprises <strong>underestimate the complexity</strong> of <strong>right-to-left (RTL) adaptation</strong>, often treating it as a simple <strong>text flip</strong> rather than an integral part of UX.</p>
+<p>This is particularly true for <strong>enterprise-level projects</strong>, where multiple teams from different backgrounds collaborate on <strong>content, design, and UI components</strong>. Without a structured <strong>design system</strong>, RTL adaptation becomes an afterthought, leading to inconsistencies and technical debt.</p>
+<p>A <strong>well-structured RTL design system</strong>—built with <strong>localization and accessibility</strong> in mind—empowers teams to:</p>
+<ul>
+<li><strong>Create reusable, RTL-friendly components.</strong></li>
+<li><strong>Maintain brand consistency across multiple websites.</strong></li>
+<li><strong>Launch new sites or products faster with fewer errors.</strong></li>
+</ul>
+<p>In large organizations, <strong>costly mistakes</strong>—such as broken navigation, misaligned forms, or inconsistent UI components—can damage brand credibility. To prevent this, <strong>RTL best practices must be systemized</strong> from the start.</p>
+<hr>
+<h2><strong>Why Traditional RTL Approaches Fall Short</strong></h2>
+<p>Applying <code>dir=&quot;rtl&quot;</code> and flipping text alignment <strong>isn’t enough</strong> for Arabic localization—especially at the <strong>enterprise level</strong>, where large teams, multiple geographies, and millions of users are involved.</p>
+<h3><strong>Over-Reliance on <code>dir=&quot;rtl&quot;</code></strong></h3>
+<p>Many developers—especially non-Arabic speakers—assume that adding <code>dir=&quot;rtl&quot;</code> and adjusting text alignment <strong>solves all RTL issues</strong>. In reality, these quick fixes <strong>only address surface-level problems</strong>, often <strong>leaving deeper UI issues unaccounted for</strong>.</p>
+<p>Problems arise when:</p>
+<ul>
+<li>Developers and stakeholders <strong>don’t read Arabic</strong>, making it <strong>hard to spot</strong> UI errors.</li>
+<li><strong>Component-level problems</strong>—like <strong>misaligned numbers, directional icons, or broken navigation</strong>—go unnoticed.</li>
+<li>Teams rely <strong>too much on site-wide fixes</strong>, which don’t account for <strong>individual component behavior</strong>.</li>
+</ul>
+<p>The following sections highlight some of the most common RTL issues—and <strong>how to fix them properly</strong>.</p>
+<hr>
+<h2><strong>Fixing Common RTL UI Issues</strong></h2>
+<h3><strong>Incorrect Numeral Handling</strong></h3>
+<p>Arabic websites often use <strong>Arabic numerals (1, 2, 3, …)</strong> alongside Arabic text. However, <strong>numbers remain LTR</strong>, even within RTL layouts. This becomes problematic when <strong>symbols like <code>-</code> or <code>+</code></strong> cause the <strong>order to flip unexpectedly</strong>.</p>
+<h4><strong>Why Does This Happen?</strong></h4>
+<ul>
+<li><strong>Numbers Default to LTR Directionality</strong> even inside RTL text.</li>
+<li><strong>The Unicode Bidirectional Algorithm</strong> attempts to reorder symbols based on surrounding text, <strong>causing misalignment</strong>.</li>
+</ul>
+<h4><strong>How to Fix It</strong></h4>
+<p>The solution is to <strong>override</strong> the browser’s default behavior using <strong>CSS properties</strong>:</p>
+<pre><code class="language-css">.phone-number {
+  direction: ltr;
+  unicode-bidi: isolate;
+}</code></pre>
 
 </article>
 
@@ -345,14 +381,14 @@ function greet() {
             xmlns="http://www.w3.org/2000/svg"
             class="w-7 h-7 fill-current hover:text-savoyBlue dark:hover:text-primaryInverted"
             role="img"
-            aria-label="LinkedIn"
+            aria-label="Codepen"
             viewBox="0 0 256 256"
           >
             <path d="M232,160,128,216,24,160l104-56Z" opacity="0.2"></path>
             <path d="M235.79,89l-104-56a8,8,0,0,0-7.58,0l-104,56A8,8,0,0,0,16,96v64a8,8,0,0,0,4.21,7.05l104,56a8,8,0,0,0,7.58,0l104-56A8,8,0,0,0,240,160V96A8,8,0,0,0,235.79,89ZM224,146.61,189.45,128,224,109.39Zm-51.43-27.7L136,99.22V53.39L215.13,96Zm-44.57,24L100.3,128,128,113.09,155.7,128Zm-8-89.52V99.22L83.43,118.91,40.87,96Zm-88,56L66.55,128,32,146.61Zm51.43,27.7L120,156.78v45.83L40.87,160ZM136,202.61V156.78l36.57-19.69L215.13,160Z"></path>
           </svg>
         </a>
-       
+
         <!-- LinkedIn -->
         <a
           href="https://www.linkedin.com/in/omar-al-masry-608a1581/"

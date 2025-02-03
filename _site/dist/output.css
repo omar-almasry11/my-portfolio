@@ -606,7 +606,7 @@ h1 {
   margin-bottom: 1rem;
   font-size: 2.25rem;
   line-height: 2.5rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 @media (min-width: 1024px) {
@@ -1074,14 +1074,14 @@ a[aria-current=page]:is(.dark *) {
   --tw-prose-counters: #515751;
   --tw-prose-bullets: #3d60e2;
   --tw-prose-hr: #515751;
-  --tw-prose-quotes: #515751;
+  --tw-prose-quotes: #111827;
   --tw-prose-quote-borders: #EDF060;
   --tw-prose-captions: #515751;
   --tw-prose-kbd: #111827;
   --tw-prose-kbd-shadows: 17 24 39;
-  --tw-prose-code: #3d60e2;
-  --tw-prose-pre-code: #000022;
-  --tw-prose-pre-bg: white;
+  --tw-prose-code: #A39594;
+  --tw-prose-pre-code: #F7CB15;
+  --tw-prose-pre-bg: #000022;
   --tw-prose-th-borders: #d1d5db;
   --tw-prose-td-borders: #f2f2f2;
   --tw-prose-invert-body: #d1d5db;
@@ -1797,6 +1797,10 @@ a[aria-current=page]:is(.dark *) {
   border-width: 0;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }
@@ -1827,6 +1831,10 @@ a[aria-current=page]:is(.dark *) {
 
 .top-0 {
   top: 0px;
+}
+
+.isolate {
+  isolation: isolate;
 }
 
 .z-50 {
@@ -1929,6 +1937,18 @@ a[aria-current=page]:is(.dark *) {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.ml-\[0\] {
+  margin-left: 0;
+}
+
+.ml-\[5\%\] {
+  margin-left: 5%;
+}
+
+.mr-0 {
+  margin-right: 0px;
 }
 
 .block {
@@ -2099,6 +2119,10 @@ a[aria-current=page]:is(.dark *) {
   max-width: 100%;
 }
 
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .resize {
   resize: both;
 }
@@ -2127,12 +2151,20 @@ a[aria-current=page]:is(.dark *) {
   flex-wrap: wrap;
 }
 
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 .items-start {
   align-items: flex-start;
 }
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-end {
@@ -2165,6 +2197,18 @@ a[aria-current=page]:is(.dark *) {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-y-4 {
+  row-gap: 1rem;
+}
+
+.gap-y-6 {
+  row-gap: 1.5rem;
+}
+
+.gap-y-8 {
+  row-gap: 2rem;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -2209,6 +2253,10 @@ a[aria-current=page]:is(.dark *) {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .bg-black {
@@ -2302,6 +2350,11 @@ a[aria-current=page]:is(.dark *) {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.px-\[\] {
+  padding-left: ;
+  padding-right: ;
 }
 
 .pb-24 {
