@@ -18,6 +18,8 @@
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@tailwindcss/typography": "^0.5.15",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-table-of-contents": "^0.9.0",
     "sharp": "^0.33.5"
   },
   "devDependencies": {

@@ -42,7 +42,7 @@
     <link href="/dist/output.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="px-[5%] py-4 shadow-medium sticky top-0 bg-normal/60 z-50 backdrop-blur-sm dark:bg-inverted/60 dark:shadow-mediumInverted">
+    <nav class="px-[5%] py-4 sticky top-0 bg-normal/60 z-50 backdrop-blur-sm dark:bg-inverted/60">
   <!-- Progress Bar -->
   <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-transparant">
     <div id="progressBar" class="h-1 bg-primary w-0 dark:bg-primaryInverted"></div>
@@ -216,29 +216,11 @@
   </div>
 </header>
 
-<section class="prose py-12 px-[5%] max-w-4xl mx-auto">
+<section class="py-12 px-[5%] max-w-4xl mx-auto">
   <article class="prose">
-    <h2><strong>Table of Contents</strong></h2>
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#why-traditional-rtl-approaches-fall-short">Why Traditional RTL Approaches Fall Short</a>
-<ul>
-<li><a href="#over-reliance-on-dirrtl">Over-Reliance on <code>dir=&quot;rtl&quot;</code></a></li>
-</ul>
-</li>
-<li><a href="#fixing-common-rtl-ui-issues">Fixing Common RTL UI Issues</a>
-<ul>
-<li><a href="#incorrect-numeral-handling">Incorrect Numeral Handling</a></li>
-<li><a href="#directional-icons-break-navigation-logic">Directional Icons Break Navigation Logic</a></li>
-<li><a href="#grid-systems-maintain-ltr-order-in-rtl-contexts">Grid Systems Maintain LTR Order in RTL Contexts</a></li>
-<li><a href="#navigation-menus--list-order-in-rtl">Navigation Menus &amp; List Order in RTL</a></li>
-<li><a href="#table-column-alignment--reordering">Table Column Alignment &amp; Reordering</a></li>
-</ul>
-</li>
-<li><a href="#conclusion">Conclusion</a></li>
-</ul>
+    <div class="toc"><h2 class='text-lg font-bold mb-3 text-primary dark:text-primaryInverted'>Table of Contents</h2><ul><li><a href="#1.-introduction">1. Introduction</a></li><li><a href="#2.-why-traditional-rtl-approaches-fall-short">2. Why Traditional RTL Approaches Fall Short</a><ul><li><a href="#a.-over-reliance-on-dir%3D%22rtl%22">a. Over-Reliance on dir="rtl"</a></li></ul></li><li><a href="#2.-fixing-common-rtl-ui-issues">2. Fixing Common RTL UI Issues</a><ul><li><a href="#a.-incorrect-numeral-handling">a. Incorrect Numeral Handling</a></li><li><a href="#b.-directional-icons-break-navigation-logic">b. Directional Icons Break Navigation Logic</a></li><li><a href="#c%2C-grid-systems-maintain-ltr-order-in-rtl-contexts">c, Grid Systems Maintain LTR Order in RTL Contexts</a></li><li><a href="#d.-navigation-menus-%26-list-order-in-rtl">d. Navigation Menus & List Order in RTL</a></li><li><a href="#e.-table-column-alignment-%26-reordering">e. Table Column Alignment & Reordering</a></li></ul></li><li><a href="#3.-conclusion">3. Conclusion</a></li></ul></div>
 <hr>
-<h2><strong>Introduction</strong></h2>
+<h2 id="1.-introduction" tabindex="-1">1. Introduction</h2>
 <p>Building web experiences that successfully engage audiences in Arabic-speaking countries is essential for any enterprise looking to succeed in this fast-growing region. However, most enterprises <strong>underestimate the complexity</strong> of <strong>right-to-left (RTL) adaptation</strong>, often treating it as a simple <strong>text flip</strong> rather than an integral part of UX.</p>
 <p>This is particularly true for <strong>enterprise-level projects</strong>, where multiple teams from different backgrounds collaborate on <strong>content, design, and UI components</strong>. Without a structured <strong>design system</strong>, RTL adaptation becomes an afterthought, leading to inconsistencies and technical debt.</p>
 <p>A <strong>well-structured RTL design system</strong> —built with <strong>localization and accessibility</strong> in mind— empowers teams to:</p>
@@ -249,9 +231,9 @@
 </ul>
 <p>In large organizations, <strong>costly mistakes</strong>—such as broken navigation, misaligned forms, or inconsistent UI components—can damage brand credibility. To prevent this, <strong>RTL best practices must be systemized</strong> from the start.</p>
 <hr>
-<h2><strong>Why Traditional RTL Approaches Fall Short</strong></h2>
+<h2 id="2.-why-traditional-rtl-approaches-fall-short" tabindex="-1">2. Why Traditional RTL Approaches Fall Short</h2>
 <p>Applying <code>dir=&quot;rtl&quot;</code> and flipping text alignment <strong>isn’t enough</strong> for Arabic localization—especially at the <strong>enterprise level</strong>, where large teams, multiple geographies, and millions of users are involved.</p>
-<h3><strong>Over-Reliance on <code>dir=&quot;rtl&quot;</code></strong></h3>
+<h3 id="a.-over-reliance-on-dir%3D%22rtl%22" tabindex="-1">a. Over-Reliance on <code>dir=&quot;rtl&quot;</code></h3>
 <p>Many developers—especially non-Arabic speakers—assume that adding <code>dir=&quot;rtl&quot;</code> and adjusting text alignment <strong>solves all RTL issues</strong>. In reality, these quick fixes <strong>only address surface-level problems</strong>, often <strong>leaving deeper UI issues unaccounted for</strong>.</p>
 <p>Problems arise when:</p>
 <ul>
@@ -261,22 +243,22 @@
 </ul>
 <p>The following sections highlight some of the most common RTL issues—and <strong>how to fix them properly</strong>.</p>
 <hr>
-<h2><strong>Fixing Common RTL UI Issues</strong></h2>
-<h3><strong>Incorrect Numeral Handling</strong></h3>
+<h2 id="2.-fixing-common-rtl-ui-issues" tabindex="-1">2. Fixing Common RTL UI Issues</h2>
+<h3 id="a.-incorrect-numeral-handling" tabindex="-1">a. Incorrect Numeral Handling</h3>
 <p>Arabic websites often use <strong>Arabic numerals (1, 2, 3, …)</strong> alongside Arabic text. However, <strong>numbers remain LTR</strong>, even within RTL layouts. This becomes problematic when <strong>symbols like <code>-</code> or <code>+</code></strong> cause the <strong>order to flip unexpectedly</strong>.</p>
-<h4><strong>Why Does This Happen?</strong></h4>
+<h4 id="why-does-this-happen%3F" tabindex="-1">Why Does This Happen?</h4>
 <ul>
 <li><strong>Numbers Default to LTR Directionality</strong> even inside RTL text.</li>
 <li><strong>The Unicode Bidirectional Algorithm</strong> attempts to reorder symbols based on surrounding text, <strong>causing misalignment</strong>.</li>
 </ul>
-<h4><strong>How to Fix It</strong></h4>
+<h4 id="how-to-fix-it" tabindex="-1">How to Fix It</h4>
 <p>The solution is to <strong>override</strong> the browser’s default behavior using <strong>CSS properties</strong>:</p>
 <pre><code>.phone-number {
   direction: ltr;
   unicode-bidi: isolate;
 }
 </code></pre>
-<h3>The Fix in Action</h3>
+<h4 id="the-fix-in-action" tabindex="-1">The Fix in Action</h4>
 <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="ZYzZvmb" data-pen-title="Table Column Alignment & Reordering in Arabic/RTL Layouts" data-user="omaralmasry579">
       <span>See the Pen <a href="https://codepen.io/omaralmasry579/pen/ZYzZvmb">
       Table Column Alignment & Reordering in Arabic/RTL Layouts</a> by Omar Almasry (<a href="https://codepen.io/omaralmasry579">@omaralmasry579</a>)
@@ -284,20 +266,20 @@
     </p>
     <script async src="https://public.codepenassets.com/embed/index.js"></script>
 <hr>
-<h3>Directional Icons Break Navigation Logic</h3>
+<h3 id="b.-directional-icons-break-navigation-logic" tabindex="-1">b. Directional Icons Break Navigation Logic</h3>
 <p>Directional icons (e.g., arrows in “Read More” links) often don’t flip in RTL layouts, breaking navigation logic.</p>
-<h4>Why Does This Happen?</h4>
+<h4 id="why-does-this-happen%3F-1" tabindex="-1">Why Does This Happen?</h4>
 <ul>
 <li>Icons are not affected by dir=&quot;rtl&quot;—they remain static unless explicitly styled.</li>
 <li>Manual fixes (duplicating assets) lead to complexity.</li>
 </ul>
-<h4>How to Fix It</h4>
+<h4 id="how-to-fix-it-1" tabindex="-1">How to Fix It</h4>
 <p>A simple CSS fix ensures icons flip dynamically without separate assets:</p>
 <pre><code>.arrow-fix {
   transform: rotate(180deg);
 }
 </code></pre>
-<h4>The Fix in Action</h4>
+<h4 id="the-fix-in-action-1" tabindex="-1">The Fix in Action</h4>
 <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="MYgRYjN" data-pen-title="Fixing Directional Icons in Arabic/RTL Layouts" data-user="omaralmasry579" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/omaralmasry579/pen/MYgRYjN">
   Fixing Directional Icons in Arabic/RTL Layouts</a> by Omar Almasry (<a href="https://codepen.io/omaralmasry579">@omaralmasry579</a>)
@@ -305,14 +287,14 @@
 </p>
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
 <hr>
-<h3>Grid Systems Maintain LTR Order in RTL Contexts</h3>
+<h3 id="c%2C-grid-systems-maintain-ltr-order-in-rtl-contexts" tabindex="-1">c, Grid Systems Maintain LTR Order in RTL Contexts</h3>
 <p>CSS Grid does not automatically reverse column order in RTL mode, leading to incorrect product listings or UI layouts.</p>
-<h4>Why does this happen?</h4>
+<h4 id="why-does-this-happen%3F-2" tabindex="-1">Why does this happen?</h4>
 <ul>
 <li>CSS Grid defaults to LTR flow, unless explicitly overridden.</li>
 <li>Users expect a right-to-left flow, but items remain in left-to-right order.</li>
 </ul>
-<h4>How to Fix It</h4>
+<h4 id="how-to-fix-it-2" tabindex="-1">How to Fix It</h4>
 <p>The fix explicitly reverses the grid direction in RTL mode:</p>
 <pre><code>.auto-grid {
   display: grid;
@@ -321,7 +303,7 @@
   direction: rtl;
 }
 </code></pre>
-<h4>The Fix in Action</h4>
+<h4 id="the-fix-in-action-2" tabindex="-1">The Fix in Action</h4>
 <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="mybgBra" data-pen-title="Fixing Arabic/RTL Layout Flow Reversal in CSS Grid" data-user="omaralmasry579" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/omaralmasry579/pen/mybgBra">
   Fixing Arabic/RTL Layout Flow Reversal in CSS Grid</a> by Omar Almasry (<a href="https://codepen.io/omaralmasry579">@omaralmasry579</a>)
@@ -329,21 +311,21 @@
 </p>
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
 <hr>
-<h3>Navigation Menus &amp; List Order in RTL</h3>
+<h3 id="d.-navigation-menus-%26-list-order-in-rtl" tabindex="-1">d. Navigation Menus &amp; List Order in RTL</h3>
 <p>Navigation menus (ul &gt; li) do not automatically reverse order in RTL mode, leading to incorrect menu navigation.</p>
-<h4>Why Does This Happen?</h4>
+<h4 id="why-does-this-happen%3F-3" tabindex="-1">Why Does This Happen?</h4>
 <ul>
 <li>dir=&quot;rtl&quot; changes text alignment but not list order.</li>
 <li>Users expect right-to-left navigation, but menu items remain in LTR order.</li>
 </ul>
-<h4>How to Fix It</h4>
+<h4 id="how-to-fix-it-3" tabindex="-1">How to Fix It</h4>
 <p>By applying flex-direction: row-reverse;, we force menus to follow the correct order:</p>
 <pre><code>.nav-menu {
   display: flex;
   flex-direction: row-reverse;
 }
 </code></pre>
-<h4>The Fix in Action</h4>
+<h4 id="the-fix-in-action-3" tabindex="-1">The Fix in Action</h4>
 <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="JoPVMaW" data-pen-title="Navigation Menus &amp;amp; List Order in Arabic/RTL" data-user="omaralmasry579" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/omaralmasry579/pen/JoPVMaW">
   Navigation Menus &amp; List Order in Arabic/RTL</a> by Omar Almasry (<a href="https://codepen.io/omaralmasry579">@omaralmasry579</a>)
@@ -351,20 +333,20 @@
 </p>
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
 <hr>
-<h3>Table Column Alignment &amp; Reordering</h3>
+<h3 id="e.-table-column-alignment-%26-reordering" tabindex="-1">e. Table Column Alignment &amp; Reordering</h3>
 <p>Table headers and data cells stay left-aligned in RTL mode, causing misalignment issues.</p>
-<h4>Why Does This Happen?</h4>
+<h4 id="why-does-this-happen%3F-4" tabindex="-1">Why Does This Happen?</h4>
 <ul>
 <li>Tables default to LTR column alignment, even in RTL.</li>
 <li>Numbers and text require different alignment strategies.</li>
 </ul>
-<h4>How to Fix It</h4>
+<h4 id="how-to-fix-it-4" tabindex="-1">How to Fix It</h4>
 <p>Using logical text alignment (text-align: start;) ensures proper layout in both modes:</p>
 <pre><code>.data-table th, .data-table td {
   text-align: start;
 }
 </code></pre>
-<h4>The Fix in Action</h4>
+<h4 id="the-fix-in-action-4" tabindex="-1">The Fix in Action</h4>
 <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="ZYzZvmb" data-pen-title="Table Column Alignment &amp;amp; Reordering in Arabic/RTL Layouts" data-user="omaralmasry579" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/omaralmasry579/pen/ZYzZvmb">
   Table Column Alignment &amp; Reordering in Arabic/RTL Layouts</a> by Omar Almasry (<a href="https://codepen.io/omaralmasry579">@omaralmasry579</a>)
@@ -372,7 +354,7 @@
 </p>
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
 <hr>
-<h2>Conclusion</h2>
+<h2 id="3.-conclusion" tabindex="-1">3. Conclusion</h2>
 <p>RTL localization is more than just flipping text—it requires thoughtful system design to ensure scalability, accessibility, and consistency.</p>
 <p>By integrating proactive solutions—from numeric alignment and icon flipping to grid restructuring and menu ordering—enterprises can avoid common pitfalls and deliver seamless Arabic UX experiences.</p>
 <p>A strong RTL design system isn’t just about localization—it’s an investment in global accessibility, user trust, and operational efficiency.</p>

@@ -27,6 +27,8 @@ module.exports = {
       },
       backgroundColor: {
         normal: 'white',
+        secondary: ' #f2f2f2',
+        secondaryInverted: '#A39594',
         inverted: '#000022',
         primary: '#3d60e2',
         primaryInverted: '#F7CB15',
@@ -43,9 +45,9 @@ module.exports = {
       },
       boxShadow: {
         // Light Mode Shadows
-        low: '0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.10), 0px 2px 1px rgba(0, 0, 0, 0.08)',
-        medium: '0px 3px 6px rgba(0, 0, 0, 0.12), 0px 3px 6px rgba(0, 0, 0, 0.14)',
-        high: '0px 10px 20px rgba(0, 0, 0, 0.12), 0px 6px 6px rgba(0, 0, 0, 0.23)',
+        low: '0px 1px 3px rgba(0, 0, 34, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.10), 0px 2px 1px rgba(0, 0, 0, 0.08)',
+        medium: '0px 2px 4px rgba(0, 0, 34, 0.1), 0px 3px 6px rgba(0, 0, 0, 0.14)',
+        high: '0px 10px 20px rgba(0, 0, 34, 0.1), 0px 6px 6px rgba(0, 0, 0, 0.23)',
 
         // Dark Mode Shadows
         lowInverted: '0px 1px 3px rgba(255, 255, 255, 0.12), 0px 1px 1px rgba(255, 255, 255, 0.04), 0px 2px 1px rgba(255, 255, 255, 0.03)',
@@ -61,7 +63,7 @@ module.exports = {
             '--tw-prose-bold': theme('textColor.normal'),
             '--tw-prose-counters': theme('textColor.normalLight'),
             '--tw-prose-bullets': theme('textColor.primary'),
-            '--tw-prose-hr': theme('textColor.normalLight'),
+            '--tw-prose-hr': theme('color.ebony'),
             '--tw-prose-quotes': theme('borderColor.normalLight'),
             '--tw-prose-quote-borders': theme('colors.icterine'),
             '--tw-prose-captions': theme('textColor.normalLight'),

@@ -34,6 +34,15 @@ a[aria-current=page] {
   @apply font-medium text-primary dark:text-primaryInverted;
 }
  }
+ .toc ul a {
+  @apply text-normal font-medium decoration-2 decoration-primary hover:decoration-transparent dark:decoration-primaryInverted dark:text-inverted;
+ }
+
+/* Remove Bullet Points */
+.toc ul {
+  list-style: none;
+  @apply pl-0;
+}
 
 @layer components {
 /* Custom Component Styles */
