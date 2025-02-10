@@ -17,20 +17,20 @@ module.exports = function (eleventyConfig) {
   });
 
   // Case studies collection
-  eleventyConfig.addCollection("caseStudies", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/case-studies/*.md").sort((a, b) => {
-      // Sort by `order` field, and fall back to `date` if `order` is not defined
-      const orderA = a.data.order || Number.MAX_SAFE_INTEGER;
-      const orderB = a.data.order || Number.MAX_SAFE_INTEGER;
+eleventyConfig.addCollection("caseStudies", function (collectionApi) {
+  return collectionApi.getFilteredByGlob("src/case-studies/*.md").sort((a, b) => {
+    // Ensure `order` values exist
+    const orderA = typeof a.data.order !== "undefined" ? a.data.order : Number.MAX_SAFE_INTEGER;
+    const orderB = typeof b.data.order !== "undefined" ? b.data.order : Number.MAX_SAFE_INTEGER;
 
-      if (orderA !== orderB) {
-        return orderA - orderB; // Sort ascending by `order`
-      }
+    if (orderA !== orderB) {
+      return orderA - orderB; // Sort ascending by `order` (1, 2, 3)
+    }
 
-      // If orders are equal or undefined, sort by date (newest first)
-      return new Date(b.date) - new Date(a.date);
-    });
+    // If orders are the same or missing, sort by `date` (newest first)
+    return new Date(b.date) - new Date(a.date);
   });
+});
 
   // Watch the CSS directory for changes
   eleventyConfig.addWatchTarget("src/styles/**/*.css");
@@ -53,6 +53,9 @@ let markdownLib = markdownIt({ html: true })
 });
 
 eleventyConfig.setLibrary("md", markdownLib);
+
+// Ensure web manifest is copied to _site/
+eleventyConfig.addPassthroughCopy("site.webmanifest");
 
   return {
     dir: {

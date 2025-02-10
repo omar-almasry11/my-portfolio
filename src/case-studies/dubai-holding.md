@@ -1,6 +1,6 @@
 ---
 title: "Dubai Holding"
-date: 2025-01-01
+date: 2025-01-04
 project-link: "https://www.dubaiholding.com//"
 description: "Dubai Holding is a global investment company with a diverse portfolio spanning real estate, retail, and hospitality. I collaborated with their teams to deliver tailored websites for various business units, aligning with their strategic objectives and enhancing their digital presence."
 logo: "/images/duba-holding-logo-2.svg"
