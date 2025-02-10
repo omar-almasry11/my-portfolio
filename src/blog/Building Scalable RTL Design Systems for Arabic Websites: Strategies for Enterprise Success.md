@@ -90,7 +90,7 @@ A simple CSS fix ensures icons flip dynamically without separate assets:
 
 ---
 
-### c, Grid Systems Maintain LTR Order in RTL Contexts
+### c. Grid Systems Maintain LTR Order in RTL Contexts
 CSS Grid does not automatically reverse column order in RTL mode, leading to incorrect product listings or UI layouts.
 
 #### Why does this happen?

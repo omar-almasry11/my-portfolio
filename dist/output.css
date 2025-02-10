@@ -630,6 +630,11 @@ h3 {
   }
 }
 
+h2, h3 {
+  scroll-margin-top: 80px;
+  /* Adjust to your navbar's height */
+}
+
 ::-moz-selection {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 34 / var(--tw-bg-opacity, 1));

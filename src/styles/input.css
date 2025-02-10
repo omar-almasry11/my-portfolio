@@ -23,10 +23,12 @@ html {
   h3 {
     @apply text-2xl lg:text-3xl font-semibold mb-1;
   }
+  h2, h3 {
+    scroll-margin-top: 80px; /* Adjust to your navbar's height */
+  }
 ::selection {
   @apply bg-inverted text-inverted; /* Apply light mode colors */
 }
-
 .dark ::selection {
   @apply bg-normal text-normal; /* Apply dark mode colors */
 }
