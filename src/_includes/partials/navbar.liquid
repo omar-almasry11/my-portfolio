@@ -14,20 +14,20 @@
 
     <!-- Navigation Links & Button -->
     <div class="flex items-center space-x-4">
-      <ul class="flex items-center space-x-6">
+      <ul class="flex items-center space-x-4">
         <li>
           <a
             href="{{ '/about/' | url }}"
-            class="text-normalLight text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+            class="text-normalLight text-md sm:text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
             {% if page.url == '/about/' %} aria-current="page"{% endif %}          
           >
-            About Me
+            About
           </a>
         </li>
         <li>
           <a
             href="{{ '/blog/' | url }}"
-            class="text-normalLight text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+            class="text-normalLight text-md sm:text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
             {% if page.url == '/blog/' %}aria-current="page"{% endif %}
           >
             Blog

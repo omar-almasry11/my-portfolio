@@ -604,12 +604,12 @@ a:hover:is(.dark *) {
 
 h1 {
   margin-bottom: 1rem;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   font-weight: 800;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
   h1 {
     font-size: 3.75rem;
     line-height: 1;
@@ -2111,10 +2111,6 @@ a[aria-current=page]:is(.dark *) {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.resize {
-  resize: both;
-}
-
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -2187,12 +2183,6 @@ a[aria-current=page]:is(.dark *) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -2359,8 +2349,8 @@ a[aria-current=page]:is(.dark *) {
   line-height: 1;
 }
 
-.text-8xl {
-  font-size: 6rem;
+.text-6xl {
+  font-size: 3.75rem;
   line-height: 1;
 }
 
@@ -2372,6 +2362,11 @@ a[aria-current=page]:is(.dark *) {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-xs {
@@ -2731,6 +2726,21 @@ a[aria-current=page]:is(.dark *) {
 
   .sm\:gap-4 {
     gap: 1rem;
+  }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .sm\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
