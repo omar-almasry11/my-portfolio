@@ -4,8 +4,8 @@
 
 @layer base {
 @font-face {
-    font-family: Inter;
-    src: url('/fonts/Inter.ttf');
+    font-family: Atkinson;
+    src: url('/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf');
 }
 html {
     @apply text-normal bg-normal;
@@ -19,9 +19,12 @@ html {
   h1 {
     @apply text-4xl sm:text-6xl font-extrabold mb-6;
   }
+  p {
+    @apply text-xl;
+  }
 
   h2 {
-    @apply text-3xl sm:text-4xl font-bold mb-2;
+    @apply text-4xl sm:text-5xl font-bold mb-2;
   }
 
   h3 {

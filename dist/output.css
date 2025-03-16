@@ -154,7 +154,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: Inter, sans-serif;
+  font-family: Atkinson, Inter, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -555,9 +555,9 @@ video {
 }
 
 @font-face {
-  font-family: Inter;
+  font-family: Atkinson;
 
-  src: url('/fonts/Inter.ttf');
+  src: url('/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf');
 }
 
 html {
@@ -616,17 +616,22 @@ h1 {
   }
 }
 
+p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 h2 {
   margin-bottom: 0.5rem;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   font-weight: 700;
 }
 
 @media (min-width: 640px) {
   h2 {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
@@ -1894,6 +1899,10 @@ a[aria-current=page]:is(.dark *) {
   margin-bottom: 0.25rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -2328,11 +2337,6 @@ a[aria-current=page]:is(.dark *) {
   padding-bottom: 1rem;
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .pb-24 {
   padding-bottom: 6rem;
 }
@@ -2368,8 +2372,8 @@ a[aria-current=page]:is(.dark *) {
   line-height: 1;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
+.text-8xl {
+  font-size: 6rem;
   line-height: 1;
 }
 
@@ -2391,6 +2395,16 @@ a[aria-current=page]:is(.dark *) {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
 .font-bold {
@@ -2757,14 +2771,19 @@ a[aria-current=page]:is(.dark *) {
     line-height: 1;
   }
 
-  .sm\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .sm\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 

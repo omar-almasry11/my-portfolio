@@ -7,8 +7,8 @@
     <!-- Logo -->
     <a href="{{ '/' | url }}" class="flex items-center font-bold text-lg no-underline group">
       <h3 class="flex items-center">
-        <span class="text-4xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted">O</span>
-        <span class="text-4xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight">.</span>
+        <span class="text-4xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted">O</span>
+        <span class="text-4xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight">.</span>
       </h3>
     </a>    
 
@@ -18,7 +18,7 @@
         <li>
           <a
             href="{{ '/about/' | url }}"
-            class="text-normalLight text-md sm:text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+            class="text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
             {% if page.url == '/about/' %} aria-current="page"{% endif %}          
           >
             About
@@ -27,7 +27,7 @@
         <li>
           <a
             href="{{ '/blog/' | url }}"
-            class="text-normalLight text-md sm:text-lg font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+            class="text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
             {% if page.url == '/blog/' %}aria-current="page"{% endif %}
           >
             Blog
