@@ -154,7 +154,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: Atkinson, Inter, sans-serif;
+  font-family: Atkinson Next, Inter, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -555,7 +555,7 @@ video {
 }
 
 @font-face {
-  font-family: Atkinson;
+  font-family: Atkinson Next;
 
   src: url('/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf');
 }
@@ -2367,11 +2367,6 @@ a[aria-current=page]:is(.dark *) {
   line-height: 2.5rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
@@ -2395,16 +2390,6 @@ a[aria-current=page]:is(.dark *) {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
 }
 
 .font-bold {
@@ -2766,6 +2751,11 @@ a[aria-current=page]:is(.dark *) {
     line-height: 2rem;
   }
 
+  .sm\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .sm\:text-8xl {
     font-size: 6rem;
     line-height: 1;
@@ -2774,16 +2764,6 @@ a[aria-current=page]:is(.dark *) {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  .sm\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
   }
 }
 

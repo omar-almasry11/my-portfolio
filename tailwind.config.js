@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Atkinson', 'Inter', 'sans-serif'],
+        sans: ['Atkinson Next', 'Inter', 'sans-serif'],
       },
       colors: {
         transparent: 'transparent',
