@@ -1,0 +1,31 @@
+---
+layout: "/layouts/layout.liquid"
+---
+<header class="pt-16 pb-8 px-[5%] mx-auto">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Service Icon -->
+      {% if cardIcon %}
+        <div class="text-6xl mb-6">{{ cardIcon }}</div>
+      {% endif %}
+
+      <h1>{{ title }}</h1>
+
+      {% if description %}
+        <p class="text-xl lg:text-2xl text-normalLight dark:text-invertedLight max-w-3xl mx-auto">
+          {{ description }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+<section class="prose py-12 px-[5%]">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto">
+      <article class="prose">
+        {{ content }}
+      </article>
+    </div>
+  </div>
+</section>

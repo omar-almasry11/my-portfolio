@@ -2135,6 +2135,10 @@ a[aria-current=page]:is(.dark *) {
   max-width: 100%;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -2201,6 +2205,10 @@ a[aria-current=page]:is(.dark *) {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-y-8 {
@@ -2353,6 +2361,14 @@ a[aria-current=page]:is(.dark *) {
   padding-top: 2rem;
 }
 
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.pt-0 {
+  padding-top: 0px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -2390,6 +2406,11 @@ a[aria-current=page]:is(.dark *) {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .font-bold {
@@ -2792,8 +2813,17 @@ a[aria-current=page]:is(.dark *) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }

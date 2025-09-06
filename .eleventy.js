@@ -32,6 +32,22 @@ eleventyConfig.addCollection("caseStudies", function (collectionApi) {
   });
 });
 
+  // Services collection
+  eleventyConfig.addCollection("services", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/services/*.md").sort((a, b) => {
+      // Ensure `order` values exist
+      const orderA = typeof a.data.order !== "undefined" ? a.data.order : Number.MAX_SAFE_INTEGER;
+      const orderB = typeof b.data.order !== "undefined" ? b.data.order : Number.MAX_SAFE_INTEGER;
+
+      if (orderA !== orderB) {
+        return orderA - orderB; // Sort ascending by `order` (1, 2, 3)
+      }
+
+      // If orders are the same or missing, sort by `date` (newest first)
+      return new Date(b.date) - new Date(a.date);
+    });
+  });
+
   // Watch the CSS directory for changes
   eleventyConfig.addWatchTarget("src/styles/**/*.css");
 
