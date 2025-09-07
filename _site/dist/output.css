@@ -1891,6 +1891,11 @@ a[aria-current=page]:is(.dark *) {
   margin-right: auto;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -1977,6 +1982,10 @@ a[aria-current=page]:is(.dark *) {
 
 .flex {
   display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
 }
 
 .grid {
@@ -2179,6 +2188,10 @@ a[aria-current=page]:is(.dark *) {
   align-items: center;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-end {
   justify-content: flex-end;
 }
@@ -2257,6 +2270,11 @@ a[aria-current=page]:is(.dark *) {
   border-width: 1px;
 }
 
+.border-normal {
+  --tw-border-opacity: 1;
+  border-color: rgb(242 242 242 / var(--tw-border-opacity, 1));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
@@ -2300,6 +2318,10 @@ a[aria-current=page]:is(.dark *) {
      object-position: top;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2308,6 +2330,11 @@ a[aria-current=page]:is(.dark *) {
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .px-\[5\%\] {
@@ -2338,6 +2365,11 @@ a[aria-current=page]:is(.dark *) {
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .py-4 {
@@ -2382,14 +2414,14 @@ a[aria-current=page]:is(.dark *) {
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 
 .text-8xl {
@@ -2549,6 +2581,16 @@ a[aria-current=page]:is(.dark *) {
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
 }
 
+.hover\:text-normal:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 34 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-normalLight:hover {
+  --tw-text-opacity: 1;
+  color: rgb(81 87 81 / var(--tw-text-opacity, 1));
+}
+
 .hover\:text-primary:hover {
   --tw-text-opacity: 1;
   color: rgb(61 96 226 / var(--tw-text-opacity, 1));
@@ -2656,6 +2698,11 @@ a[aria-current=page]:is(.dark *) {
   max-width: 80px;
 }
 
+.dark\:border-inverted:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(30 30 30 / var(--tw-border-opacity, 1));
+}
+
 .dark\:bg-inverted:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 34 / var(--tw-bg-opacity, 1));
@@ -2715,6 +2762,11 @@ a[aria-current=page]:is(.dark *) {
 .dark\:hover\:bg-normal:hover:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:hover\:text-inverted:hover:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(242 242 242 / var(--tw-text-opacity, 1));
 }
 
 .dark\:hover\:text-invertedLight:hover:is(.dark *) {
@@ -2810,11 +2862,29 @@ a[aria-current=page]:is(.dark *) {
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
+
+  .md\:p-12 {
+    padding: 3rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:justify-end {
+    justify-content: flex-end;
   }
 
   .lg\:text-2xl {
