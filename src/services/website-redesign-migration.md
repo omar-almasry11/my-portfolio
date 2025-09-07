@@ -2,7 +2,15 @@
 title: "Website Redesign & Migration"
 date: 2025-01-01
 cardDescription: "Transform your digital presence with modern, performance-focused website redesigns and seamless platform migrations."
-cardIcon: "🌐"
+cardIcon: '<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+  role="img"
+  aria-label="Arrow Clockwise Icon"
+  viewBox="0 0 256 256"
+  >
+ <path d="M216,128a88,88,0,1,1-88-88A88,88,0,0,1,216,128Z" opacity="0.2"></path><path d="M240,56v48a8,8,0,0,1-8,8H184a8,8,0,0,1,0-16H211.4L184.81,71.64l-.25-.24a80,80,0,1,0-1.67,114.78,8,8,0,0,1,11,11.63A95.44,95.44,0,0,1,128,224h-1.32A96,96,0,1,1,195.75,60L224,85.8V56a8,8,0,1,1,16,0Z"></path>
+  </svg>'
 description: "Complete website redesign and migration services to modernize your digital presence, improve performance, and enhance user experience."
 order: 1
 ---

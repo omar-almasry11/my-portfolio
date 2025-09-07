@@ -2203,12 +2203,12 @@ a[aria-current=page]:is(.dark *) {
   gap: 1rem;
 }
 
-.gap-8 {
-  gap: 2rem;
-}
-
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .gap-y-8 {
@@ -2353,6 +2353,14 @@ a[aria-current=page]:is(.dark *) {
   padding-bottom: 1rem;
 }
 
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.pt-0 {
+  padding-top: 0px;
+}
+
 .pt-16 {
   padding-top: 4rem;
 }
@@ -2361,12 +2369,8 @@ a[aria-current=page]:is(.dark *) {
   padding-top: 2rem;
 }
 
-.pb-8 {
-  padding-bottom: 2rem;
-}
-
-.pt-0 {
-  padding-top: 0px;
+.text-left {
+  text-align: left;
 }
 
 .text-center {
@@ -2381,6 +2385,11 @@ a[aria-current=page]:is(.dark *) {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .text-8xl {
@@ -2406,11 +2415,6 @@ a[aria-current=page]:is(.dark *) {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 
 .font-bold {
@@ -2813,17 +2817,13 @@ a[aria-current=page]:is(.dark *) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .lg\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 }

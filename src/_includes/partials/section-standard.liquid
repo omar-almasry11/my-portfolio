@@ -26,7 +26,7 @@
               <div class="standard-card">
                 <!-- Service Icon -->
                 {% if item.data.cardIcon %}
-                  <div class="text-4xl mb-4">{{ item.data.cardIcon }}</div>
+                  {{ item.data.cardIcon }}
                 {% endif %}
                 <!-- Light Mode Logo -->
                 {% if item.data.logo %}
@@ -57,7 +57,9 @@
                   <p class="mb-6 text-md text-normalLight dark:text-invertedLight">{{ item.data.description }}</p>
                 {% endif %}
 
-                {% render 'partials/text-link', url: item.url, label: 'Learn more' %}
+                <div class="mt-auto">
+                  {% render 'partials/text-link', url: item.url, label: 'Learn more' %}
+                </div>
               </div>
             {% endfor %}
           </div>
