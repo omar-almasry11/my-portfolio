@@ -11,29 +11,36 @@ order: 4
 
 Startup Website Launch Sprints help startups and innovation teams rapidly move from problem identification to a copy-driven website optimized for conversions, and easy to update.
 
-As a founder, you need a professional site that clearly communicates your vision, captures leads, and validates your concept—fast. You need someone to guide you through the process of creating a clear brand message, designing a conversion-focused website, and bringing that website to life. And that’s where I can help. 
+As a founder, you need a professional site that clearly communicates your vision, captures leads, and validates your concept—fast. You need someone to guide you through the process of creating a clear brand message, designing a conversion-focused website, and bringing that website to life. And that’s where I can help.
 
 My Startup Marketing Website Sprint delivers an online presence that acts as a strategic tool to validate ideas and accelerate your growth.
 
 ## My Framework: From Idea to Launch
+
 A proven process to help you turn your startup idea to a fully-functioning website that sends a clear message and generates leads.
 
-### Phase 1:  Discovery & Research 
-We start with a questionnaire to uncover your core message, target users, and goals. I’ll research competitors to help you position your idea in a way that stands out. 
+### Phase 1: Discovery & Research
+
+We start with a questionnaire to uncover your core message, target users, and goals. I’ll research competitors to help you position your idea in a way that stands out.
 
 ### Phase 2: Wireframing and Content Structure
+
 Homepage and key pages laid out in low-fidelity wireframes. Draft conversion copy and key sections (hero, value props, social proof, CTA, FAQs).
 
 ### Phase 3: Visual Design
+
 Translate approved wires into an on-brand design with usability and accessibility best practices.
 
-### Phase 4: Development  
+### Phase 4: Development
+
 Develop a responsive site with clean structure, performance optimizations, and CMS where needed.
 
 ### Phase 5: Launch, Onboarding, and Support
+
 Cross-browser/device testing, basic SEO setup, go-live, and a short handover session so you can edit without code. Includes post-launch support for 14 that covers any bugs.
 
 ## What’s Included
+
 - Custom copy and messaging honed for your audience
 - 1-5 pages (e.g., homepage, features, about, contact) with lead capture
 - Webflow CMS for effortless updates
@@ -58,7 +65,16 @@ Cross-browser/device testing, basic SEO setup, go-live, and a short handover ses
 - Solve complex user problems
 - Accelerate decision-making
 
+{% render 'partials/faq-accordion',
+  title: 'Frequently Asked Questions',
+  faqs: faq.designSprints
+%}
 
-## Ready to Sprint?
-
-Transform your startup idea into a validated prototype in just one week. [Contact me](/contact) to schedule your design sprint consultation.
+{% render 'partials/cta-section',
+  title: 'Launch Your Startup Website in Days',
+  ctaIcon: '<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256"><path d="M96,240l16-80L48,136,160,16,144,96l64,24Z" opacity="0.2"></path><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path></svg>',
+  description: 'Book your Website Sprint today and get a clear, conversion-focused site that’s built to grow with your business.',
+  buttonText: 'Schedule a Consultation',
+  buttonUrl: 'mailto:hello@omaralmasry.com?subject=Website Redesign & Migration Consultation',
+  variant: 'centered'
+%}

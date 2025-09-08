@@ -4,7 +4,6 @@ layout: "/layouts/layout.liquid"
 <header class="pt-16 pb-8 px-[5%] mx-auto">
   <div class="container mx-auto">
     <div class="max-w-4xl mx-auto text-left">
-
       <h1>{{ title }}</h1>
 
       {% if description %}
@@ -25,3 +24,13 @@ layout: "/layouts/layout.liquid"
     </div>
   </div>
 </section>
+{% if ctaTitle %}
+  {% render 'partials/cta-section',
+    title: ctaTitle,
+    description: ctaDescription,
+    buttonText: ctaButtonText,
+    buttonUrl: ctaButtonUrl,
+    variant: 'centered',
+    ctaIcon: ctaIcon
+  %}
+{% endif %}

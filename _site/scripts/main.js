@@ -68,3 +68,50 @@ window.addEventListener('scroll', checkScroll, { passive: true });
 backToTopButton?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+
+// =============================
+// 📋 FAQ Accordion Functionality
+// =============================
+function initFAQAccordions() {
+  const faqTriggers = document.querySelectorAll('.faq-trigger');
+  
+  faqTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      const content = document.getElementById(this.getAttribute('aria-controls'));
+      const icon = this.querySelector('.faq-icon');
+      
+      // Toggle this accordion
+      this.setAttribute('aria-expanded', !isExpanded);
+      
+      if (isExpanded) {
+        // Collapse
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        // Expand
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+    
+    // Keyboard navigation support
+    trigger.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+}
+
+// Initialize FAQ accordions when DOM is loaded
+document.addEventListener('DOMContentLoaded', initFAQAccordions);
+
+// Re-initialize if content is dynamically loaded
+if (typeof window.reinitializeComponents === 'undefined') {
+  window.reinitializeComponents = function() {
+    initFAQAccordions();
+  };
+}

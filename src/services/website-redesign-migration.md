@@ -13,6 +13,11 @@ cardIcon: '<svg
   </svg>'
 description: "Complete website redesign and migration services to modernize your digital presence, improve performance, and enhance user experience."
 order: 1
+ctaTitle: "Ready to Transform Your Website?"
+ctaDescription: "Let's discuss your website redesign and migration needs and create a plan that delivers results."
+ctaButtonText: "Schedule a Consultation"
+ctaButtonUrl: "mailto:hello@omaralmasry.com?subject=Website Redesign & Migration Consultation"
+ctaIcon: '<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" viewBox="0 0 256 256"><path d="M184,213.27A80,80,0,0,1,74.7,184l-40-69.32a20,20,0,0,1,34.64-20L55.08,70A20,20,0,0,1,89.73,50l6.92,12h0a20,20,0,0,1,34.64-20l30,52A20,20,0,0,1,196,74l17.31,30A80,80,0,0,1,184,213.27Z" opacity="0.2"></path><path d="M220.17,100,202.86,70a28,28,0,0,0-38.24-10.25,27.69,27.69,0,0,0-9,8.34L138.2,38a28,28,0,0,0-48.48,0A28,28,0,0,0,48.15,74l1.59,2.76A27.67,27.67,0,0,0,38,80.41a28,28,0,0,0-10.24,38.25l40,69.32a87.47,87.47,0,0,0,53.43,41,88.56,88.56,0,0,0,22.92,3,88,88,0,0,0,76.06-132Zm-6.66,62.64A72,72,0,0,1,81.62,180l-40-69.32a12,12,0,0,1,20.78-12L81.63,132a8,8,0,1,0,13.85-8L62,66A12,12,0,1,1,82.78,54L114,108a8,8,0,1,0,13.85-8L103.57,58h0a12,12,0,1,1,20.78-12l33.42,57.9a48,48,0,0,0-5.54,60.6,8,8,0,0,0,13.24-9A32,32,0,0,1,172.78,112a8,8,0,0,0,2.13-10.4L168.23,90A12,12,0,1,1,189,78l17.31,30A71.56,71.56,0,0,1,213.51,162.62Z"></path></svg>'
 ---
 
 ## Service Overview
@@ -71,6 +76,7 @@ I work with various platforms and technologies including:
 
 Most website redesign and migration projects take 6-12 weeks, depending on complexity and scope. I'll provide a detailed timeline during the discovery phase.
 
-## Ready to Get Started?
-
-Let's discuss your website redesign and migration needs. [Contact me](mailto:hello@omaralmasry.com?subject=Website%20Redesign%20Consultation) to schedule a consultation.
+{% render 'partials/faq-accordion',
+  title: 'Frequently Asked Questions',
+  faqs: faq.websiteRedesign
+%}

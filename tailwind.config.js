@@ -15,7 +15,7 @@ module.exports = {
         oxfordBlue: '#000022',
         ebony: '#515751',
         icterine: '#EDF060',
-        taupeGray: '#A39594',
+        taupeGray: '#C0B5B5',
       },
       textColor: {
         normal: '#000022',
