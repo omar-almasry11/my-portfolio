@@ -1,7 +1,8 @@
 ---
 title: "Website Redesign & Migration"
 date: 2025-01-01
-cardDescription: "Transform your digital presence with modern, performance-focused website redesigns and seamless platform migrations."
+draft: true
+cardDescription: "Transform your site with a modern, performance-focused redesign and a seamless platform migration."
 cardIcon: '<svg
   xmlns="http://www.w3.org/2000/svg"
   class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
@@ -13,6 +14,8 @@ cardIcon: '<svg
   </svg>'
 description: "Complete website redesign and migration services to modernize your digital presence, improve performance, and enhance user experience."
 order: 1
+ctaText: "Request a scoping call"
+ctaUrl: "mailto:hello@omaralmasry.com?subject=Website Redesign & Migration - Scoping Call Request"
 ctaTitle: "Ready to Transform Your Website?"
 ctaDescription: "Let's discuss your website redesign and migration needs and create a plan that delivers results."
 ctaButtonText: "Schedule a Consultation"

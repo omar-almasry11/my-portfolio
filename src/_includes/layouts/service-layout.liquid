@@ -15,15 +15,41 @@ layout: "/layouts/layout.liquid"
   </div>
 </header>
 
-<section class="prose py-12 px-[5%]">
-  <div class="container mx-auto">
-    <div class="max-w-4xl mx-auto">
-      <article class="prose">
-        {{ content }}
-      </article>
+{% if projectsTitle and projectsData and content contains '---PROJECTS-BREAK---' %}
+  {% assign contentParts = content | split: '---PROJECTS-BREAK---' %}
+  <section class="prose py-12 px-[5%]">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <article class="prose">
+          {{ contentParts[0] }}
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  {% assign projectList = projects[projectsData] %}
+  {% if projectList and projectList.size > 0 %}
+    {% render 'partials/project-grid', title: projectsTitle, projects: projectList %}
+  {% endif %}
+  <section class="prose py-12 px-[5%]">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <article class="prose">
+          {{ contentParts[1] }}
+        </article>
+      </div>
+    </div>
+  </section>
+{% else %}
+  <section class="prose py-12 px-[5%]">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <article class="prose">
+          {{ content }}
+        </article>
+      </div>
+    </div>
+  </section>
+{% endif %}
 {% if ctaTitle %}
   {% render 'partials/cta-section',
     title: ctaTitle,

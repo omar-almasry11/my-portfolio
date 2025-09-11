@@ -7,9 +7,11 @@
     "build:css": "npx tailwindcss -i ./src/styles/input.css -o ./dist/output.css",
     "watch:css": "npx tailwindcss -i ./src/styles/input.css -o ./dist/output.css --watch",
     "build:11ty": "NODE_OPTIONS=\"--max-old-space-size=8192\" npx eleventy",
+    "build:11ty:prod": "NODE_ENV=production NODE_OPTIONS=\"--max-old-space-size=8192\" npx eleventy",
     "serve:11ty": "NODE_OPTIONS=\"--max-old-space-size=8192\" npx eleventy --serve",
     "watch": "npm-run-all --parallel watch:css serve:11ty",
-    "build": "npm run build:css && npm run build:11ty"
+    "build": "npm run build:css && npm run build:11ty",
+    "build:prod": "npm run build:css && npm run build:11ty:prod"
   },
   "keywords": [],
   "author": "",

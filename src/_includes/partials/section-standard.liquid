@@ -58,7 +58,11 @@
                 {% endif %}
 
                 <div class="mt-auto">
-                  {% render 'partials/text-link', url: item.url, label: 'Learn more' %}
+                  {% if item.data.ctaText and item.data.ctaUrl %}
+                    {% render 'partials/text-link', url: item.data.ctaUrl, label: item.data.ctaText %}
+                  {% else %}
+                    {% render 'partials/text-link', url: item.url, label: 'Learn more' %}
+                  {% endif %}
                 </div>
               </div>
             {% endfor %}

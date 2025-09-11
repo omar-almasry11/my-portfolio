@@ -34,18 +34,25 @@ eleventyConfig.addCollection("caseStudies", function (collectionApi) {
 
   // Services collection
   eleventyConfig.addCollection("services", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/services/*.md").sort((a, b) => {
-      // Ensure `order` values exist
-      const orderA = typeof a.data.order !== "undefined" ? a.data.order : Number.MAX_SAFE_INTEGER;
-      const orderB = typeof b.data.order !== "undefined" ? b.data.order : Number.MAX_SAFE_INTEGER;
+    return collectionApi.getFilteredByGlob("src/services/*.md")
+      .filter(item => {
+        // In production, exclude draft items. In development, include all.
+        const isDraft = item.data.draft === true;
+        const isProduction = process.env.NODE_ENV === 'production';
+        return !isDraft || !isProduction;
+      })
+      .sort((a, b) => {
+        // Ensure `order` values exist
+        const orderA = typeof a.data.order !== "undefined" ? a.data.order : Number.MAX_SAFE_INTEGER;
+        const orderB = typeof b.data.order !== "undefined" ? b.data.order : Number.MAX_SAFE_INTEGER;
 
-      if (orderA !== orderB) {
-        return orderA - orderB; // Sort ascending by `order` (1, 2, 3)
-      }
+        if (orderA !== orderB) {
+          return orderA - orderB; // Sort ascending by `order` (1, 2, 3)
+        }
 
-      // If orders are the same or missing, sort by `date` (newest first)
-      return new Date(b.date) - new Date(a.date);
-    });
+        // If orders are the same or missing, sort by `date` (newest first)
+        return new Date(b.date) - new Date(a.date);
+      });
   });
 
   // Watch the CSS directory for changes

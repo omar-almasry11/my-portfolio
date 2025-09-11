@@ -1,0 +1,19 @@
+{
+  "startupSprints": [
+    {
+      "title": "248.ai",
+      "image": "/images/248-screencapture.png",
+      "url": "https://www.248.ai/"
+    },
+    {
+      "title": "Salney",
+      "image": "/images/salney-screencapture.png",
+      "url": "https://www.salney.com/"
+    },
+    {
+      "title": "Meezy",
+      "image": "/images/meezy-screencapture.png",
+      "url": "https://meezy-lp.webflow.io/"
+    }
+  ]
+}
