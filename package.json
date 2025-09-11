@@ -11,7 +11,9 @@
     "serve:11ty": "NODE_OPTIONS=\"--max-old-space-size=8192\" npx eleventy --serve",
     "watch": "npm-run-all --parallel watch:css serve:11ty",
     "build": "npm run build:css && npm run build:11ty",
-    "build:prod": "npm run build:css && npm run build:11ty:prod"
+    "build:prod": "npm run build:css && npm run build:11ty:prod",
+    "optimize:images": "node convert-png-to-webp.js",
+    "build:optimized": "npm run optimize:images && npm run build:prod"
   },
   "keywords": [],
   "author": "",
