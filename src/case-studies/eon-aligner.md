@@ -40,7 +40,7 @@ order: 2
 
 I layered window load, Finsweet CMS events (cmsfilter, cmsload), a simple stable-count poll, and a deep MutationObserver signature. We only boot once data and attribute bindings are stable.
 
-```
+```js
 // Wait until doctor items + their key dataset bindings stop changing.
 const waitForCMSStableDeep = async ({ quietMs = 900, maxWait = 15000 } = {}) => {
   let lastSig = "", lastChange = Date.now();
@@ -65,7 +65,7 @@ const waitForCMSStableDeep = async ({ quietMs = 900, maxWait = 15000 } = {}) => 
 
 The list is built only after a country is selected. Before selection, we show a lightweight empty state and markers only. This keeps the initial DOM tiny and interaction responsive.
 
-```
+```js
 countrySelect.addEventListener("change", () => {
   const selected = countrySelect.value;
   if (!selected) { showEmptyList(); showListOverlay(); return; }
@@ -78,7 +78,7 @@ countrySelect.addEventListener("change", () => {
 
 Addresses resolve only when list rows near the viewport intersect, and results are cached by lat/lng to avoid repeat lookups.
 
-```
+```js
 const geocodeCache = new Map();
 const geocodeOnce = (lat, lng) => {
   const key = `${lat},${lng}`;
@@ -101,7 +101,7 @@ const io = new IntersectionObserver(entries => entries.forEach(e => {
 
 Arabic pages prefer Arabic display names and use Intl.Collator for natural sorting. We strip “Dr./Doctor/د./دكتور” prefixes so the alphabetical order reflects the actual name.
 
-```
+```js
 const IS_AR = /^ar\b/i.test(document.documentElement.lang) || document.documentElement.dir==="rtl";
 const collator = new Intl.Collator(IS_AR ? ["ar","en"] : ["en","ar"], { sensitivity:"base", numeric:true });
 const stripPrefix = s => s.trim().replace(/^\s*(?:dr\.?|doctor|د\.?|دكتور)\s*/i, "");
@@ -116,7 +116,7 @@ Localized strings (e.g., “Loading address…” → “جاري تحميل ا�
 
 A short MutationObserver window (~8s) watches for new .doctor-items, normalizes them, and updates markers/options/list—without reload.
 
-```
+```js
 const beginLateHydration = (ms=8000) => {
   const seen = new WeakSet([...document.querySelectorAll(".doctor-item")]);
   const obs = new MutationObserver(muts => {

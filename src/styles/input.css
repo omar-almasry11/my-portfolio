@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prism.js Syntax Highlighting Theme */
+@import url('https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css');
+
 @layer base {
 @font-face {
     font-family: Atkinson Next;
@@ -61,4 +64,78 @@ a[aria-current=page] {
 .prose {
     @apply prose-h2:text-4xl prose-h2:mb-4 prose-h3:text-2xl prose-h3:font-medium prose-h3:text-normalLight prose-h3:mb-1 prose-h3:mt-6 lg:prose-lg md:prose-base max-w-full dark:prose-inverted dark:prose-h3:text-invertedLight;
   }
- }
+
+/* Enhanced Prism.js styling for better integration */
+.prose pre[class*="language-"] {
+  @apply rounded-lg shadow-low dark:shadow-lowInverted my-6;
+  background: #2d3748 !important;
+  border: 1px solid #4a5568;
+}
+
+.prose code[class*="language-"] {
+  color: #e2e8f0 !important;
+  text-shadow: none;
+}
+
+/* Dark mode adjustments */
+.dark .prose pre[class*="language-"] {
+  background: #1a202c !important;
+  border-color: #2d3748;
+}
+
+/* Token colors for better visibility */
+.prose .token.comment,
+.prose .token.prolog,
+.prose .token.doctype,
+.prose .token.cdata {
+  color: #718096 !important;
+}
+
+.prose .token.punctuation {
+  color: #e2e8f0 !important;
+}
+
+.prose .token.property,
+.prose .token.tag,
+.prose .token.boolean,
+.prose .token.number,
+.prose .token.constant,
+.prose .token.symbol,
+.prose .token.deleted {
+  color: #f56565 !important;
+}
+
+.prose .token.selector,
+.prose .token.attr-name,
+.prose .token.string,
+.prose .token.char,
+.prose .token.builtin,
+.prose .token.inserted {
+  color: #48bb78 !important;
+}
+
+.prose .token.operator,
+.prose .token.entity,
+.prose .token.url,
+.prose .language-css .token.string,
+.prose .style .token.string {
+  color: #ed8936 !important;
+}
+
+.prose .token.atrule,
+.prose .token.attr-value,
+.prose .token.keyword {
+  color: #9f7aea !important;
+}
+
+.prose .token.function,
+.prose .token.class-name {
+  color: #4299e1 !important;
+}
+
+.prose .token.regex,
+.prose .token.important,
+.prose .token.variable {
+  color: #ed8936 !important;
+}
+}

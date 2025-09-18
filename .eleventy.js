@@ -1,6 +1,13 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItTOC = require("markdown-it-table-of-contents");
+const Prism = require("prismjs");
+
+// Load additional Prism.js languages
+require("prismjs/components/prism-javascript");
+require("prismjs/components/prism-css");
+require("prismjs/components/prism-json");
+require("prismjs/components/prism-bash");
 
 module.exports = function (eleventyConfig) {
   // Add a passthrough copy for assets or other folders
@@ -61,8 +68,22 @@ eleventyConfig.addCollection("caseStudies", function (collectionApi) {
   // Add a global shortcode to get the current year
   eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
 
-  // Markdown Configuration for Table of Contents
-let markdownLib = markdownIt({ html: true })
+  // Markdown Configuration for Table of Contents and Syntax Highlighting
+let markdownLib = markdownIt({ 
+  html: true,
+  highlight: function (str, lang) {
+    if (lang && Prism.languages[lang]) {
+      try {
+        return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' +
+               Prism.highlight(str, Prism.languages[lang], lang) +
+               '</code></pre>';
+      } catch (__) {}
+    }
+    return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + 
+           markdownLib.utils.escapeHtml(str) + 
+           '</code></pre>';
+  }
+})
 .use(markdownItAnchor, {
   permalink: false, 
 })
