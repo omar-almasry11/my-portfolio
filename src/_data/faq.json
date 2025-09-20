@@ -91,5 +91,35 @@
     "question": "Is this right for my startup?",
     "answer": "If you need a professional, fast, and scalable website to validate your product, attract investors, or start selling, this sprint is designed for you. It’s not ideal for companies who want a months-long traditional agency process."
   }
-]
+],
+  "speedOptimization": [
+    {
+      "question": "How much faster will my website become?",
+      "answer": "Most websites see 50-80% improvement in loading times after optimization. Typical results include reducing load times from 8-12 seconds to 2-4 seconds, dramatically improving user experience and conversions. I provide detailed before/after metrics to show exact improvements."
+    },
+    {
+      "question": "Will speed optimization affect my website's design or functionality?",
+      "answer": "No, speed optimization focuses on technical improvements that don't change your website's visual design or functionality. I optimize behind-the-scenes elements like code, images, and server response times while preserving your site's look and user experience."
+    },
+    {
+      "question": "How long does the speed optimization process take?",
+      "answer": "Most speed optimization projects take 1-2 weeks depending on your site's complexity and current performance issues. This includes the initial audit, implementation of optimizations, testing, and performance validation across different devices and browsers."
+    },
+    {
+      "question": "What tools do you use to measure website speed?",
+      "answer": "I use industry-standard tools including Google PageSpeed Insights, GTmetrix, WebPageTest, and Core Web Vitals metrics. These provide comprehensive analysis of loading performance, user experience metrics, and SEO impact. You'll receive detailed reports showing improvements."
+    },
+    {
+      "question": "Will speed optimization help my SEO rankings?",
+      "answer": "Absolutely! Site speed is a confirmed Google ranking factor, and Core Web Vitals are increasingly important for SEO. Faster websites typically see improved search rankings, lower bounce rates, and better user engagement signals that boost overall SEO performance."
+    },
+    {
+      "question": "Can you optimize e-commerce websites with lots of product images?",
+      "answer": "Yes, e-commerce sites often see the biggest improvements from speed optimization! I specialize in optimizing product images, implementing lazy loading for large catalogs, and optimizing checkout flows. These improvements typically lead to higher conversion rates and reduced cart abandonment."
+    },
+    {
+      "question": "Do you provide a performance guarantee?",
+      "answer": "While every website is different, I guarantee measurable improvement in your site's loading speed and Core Web Vitals scores. If you're not satisfied with the performance improvements achieved, I'll work with you until we reach acceptable performance levels or provide a full refund."
+    }
+  ]
 }

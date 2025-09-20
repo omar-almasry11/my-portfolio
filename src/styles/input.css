@@ -138,4 +138,98 @@ a[aria-current=page] {
 .prose .token.variable {
   color: #ed8936 !important;
 }
+
+/* Accessible Lightbox Styles */
+.lightbox-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300;
+}
+
+.lightbox-overlay.active {
+  @apply opacity-100 pointer-events-auto;
+}
+
+.lightbox-content {
+  @apply relative max-w-6xl max-h-full w-full h-full flex items-center justify-center;
+}
+
+.lightbox-image {
+  @apply max-w-full max-h-full object-contain rounded-lg shadow-2xl cursor-zoom-in transition-transform duration-300;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.lightbox-image.zoomed {
+  @apply cursor-grab;
+  transform-origin: center center;
+  transition: transform 0.1s ease-out;
+}
+
+.lightbox-image.zoomed:active {
+  @apply cursor-grabbing;
+}
+
+.lightbox-content.zoomed {
+  overflow: hidden;
+}
+
+/* Prevent text selection during drag */
+.lightbox-overlay * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.lightbox-close {
+  @apply absolute top-4 right-4 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white transition-all duration-200 backdrop-blur-sm;
+}
+
+.lightbox-close:hover {
+  @apply scale-110;
+}
+
+.lightbox-close:focus {
+  @apply outline-none ring-2 ring-white ring-opacity-50;
+}
+
+.lightbox-nav {
+  @apply absolute top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white transition-all duration-200 backdrop-blur-sm;
+}
+
+.lightbox-nav:hover {
+  @apply scale-110;
+}
+
+.lightbox-nav:focus {
+  @apply outline-none ring-2 ring-white ring-opacity-50;
+}
+
+.lightbox-prev {
+  @apply left-4;
+}
+
+.lightbox-next {
+  @apply right-4;
+}
+
+.lightbox-counter {
+  @apply absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full text-sm backdrop-blur-sm;
+}
+
+/* Clickable image cursor */
+.lightbox-trigger {
+  @apply cursor-zoom-in transition-opacity duration-200;
+}
+
+.lightbox-trigger:hover {
+  @apply opacity-90;
+}
+
+/* Screen reader only class for accessibility */
+.sr-only {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  clip: rect(0, 0, 0, 0);
+}
 }

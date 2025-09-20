@@ -28,7 +28,11 @@ layout: "/layouts/layout.liquid"
   </section>
   {% assign projectList = projects[projectsData] %}
   {% if projectList and projectList.size > 0 %}
-    {% render 'partials/project-grid', title: projectsTitle, projects: projectList %}
+    {% if projectsData == 'speedOptimization' %}
+      {% render 'partials/speed-optimization-grid', title: projectsTitle, projects: projectList %}
+    {% else %}
+      {% render 'partials/project-grid', title: projectsTitle, projects: projectList %}
+    {% endif %}
   {% endif %}
   <section class="prose py-12 px-[5%]">
     <div class="container mx-auto">
