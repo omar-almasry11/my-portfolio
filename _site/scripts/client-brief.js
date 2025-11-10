@@ -28,6 +28,26 @@
     // Initialize form - show first step
     showStep(currentStep);
 
+    // Prevent Enter key from submitting form on steps 1 and 2
+    form.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.keyCode === 13) {
+        const activeStep = document.querySelector('.form-step.active');
+        const isLastStep = currentStep === totalSteps;
+        
+        // If not on the last step, prevent submission and click Next instead
+        if (!isLastStep) {
+          e.preventDefault();
+          
+          // Find the Next button in the current step
+          const nextButton = activeStep.querySelector('.btn-next');
+          if (nextButton) {
+            nextButton.click();
+          }
+        }
+        // If on last step, allow Enter to submit (it will hit the validation)
+      }
+    });
+
     // Next button click handlers
     nextButtons.forEach(button => {
       button.addEventListener('click', function(e) {
