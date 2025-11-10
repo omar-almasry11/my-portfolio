@@ -259,6 +259,8 @@ a[aria-current=page] {
 
 .form-step.active {
   display: block;
+  width: 100%;
+  flex: 1 1 100%;
   animation: fadeIn 0.3s ease-in;
 }
 

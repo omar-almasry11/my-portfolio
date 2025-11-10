@@ -2416,6 +2416,8 @@ a[aria-current=page]:is(.dark *) {
 
 .form-step.active {
   display: block;
+  width: 100%;
+  flex: 1 1 100%;
   animation: fadeIn 0.3s ease-in;
 }
 
@@ -2670,9 +2672,9 @@ input[type="radio"]:focus {
   margin-right: 0.125rem;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 .mx-auto {
@@ -2844,6 +2846,10 @@ input[type="radio"]:focus {
   height: 1.75rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-9 {
   height: 2.25rem;
 }
@@ -2908,6 +2914,10 @@ input[type="radio"]:focus {
   width: 1.75rem;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
 .w-9 {
   width: 2.25rem;
 }
@@ -2956,8 +2966,8 @@ input[type="radio"]:focus {
   max-width: 100%;
 }
 
-.max-w-md {
-  max-width: 28rem;
+.max-w-lg {
+  max-width: 32rem;
 }
 
 .max-w-none {

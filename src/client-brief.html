@@ -16,26 +16,26 @@ description: Share details about your project so we can determine if we're a goo
 
     <!-- Progress Indicator -->
     <div class="mb-8">
-      <div class="flex items-center justify-between max-w-md mx-auto">
+      <div class="flex items-center justify-between max-w-lg mx-auto">
         <div class="flex items-center">
-          <div class="step-indicator active flex items-center justify-center w-10 h-10 rounded-full bg-primary text-inverted font-bold dark:bg-primaryInverted dark:text-normal" data-step="1">1</div>
+          <div class="step-indicator active flex items-center justify-center w-8 h-8 rounded-full bg-primary text-inverted text-sm font-bold dark:bg-primaryInverted dark:text-normal" data-step="1">1</div>
           <span class="ml-2 text-sm font-medium step-label">Contact Info</span>
         </div>
-        <div class="flex-1 h-1 mx-4 bg-primary/20 dark:bg-primaryInverted/20 step-line" data-line="1"></div>
+        <div class="flex-1 h-1 mx-3 bg-primary/20 dark:bg-primaryInverted/20 step-line" data-line="1"></div>
         <div class="flex items-center">
-          <div class="step-indicator flex items-center justify-center w-10 h-10 rounded-full bg-normal dark:bg-inverted text-normalLight dark:text-invertedLight font-bold" data-step="2">2</div>
-          <span class="ml-2 text-sm font-medium step-label text-normalLight dark:text-invertedLight">Business</span>
+          <div class="step-indicator flex items-center justify-center w-8 h-8 rounded-full bg-normal dark:bg-inverted text-normalLight dark:text-invertedLight text-sm font-bold" data-step="2">2</div>
+          <span class="ml-2 text-sm font-medium step-label text-normalLight dark:text-invertedLight">Business Info</span>
         </div>
-        <div class="flex-1 h-1 mx-4 bg-primary/20 dark:bg-primaryInverted/20 step-line" data-line="2"></div>
+        <div class="flex-1 h-1 mx-3 bg-primary/20 dark:bg-primaryInverted/20 step-line" data-line="2"></div>
         <div class="flex items-center">
-          <div class="step-indicator flex items-center justify-center w-10 h-10 rounded-full bg-normal dark:bg-inverted text-normalLight dark:text-invertedLight font-bold" data-step="3">3</div>
-          <span class="ml-2 text-sm font-medium step-label text-normalLight dark:text-invertedLight">Project</span>
+          <div class="step-indicator flex items-center justify-center w-8 h-8 rounded-full bg-normal dark:bg-inverted text-normalLight dark:text-invertedLight text-sm font-bold" data-step="3">3</div>
+          <span class="ml-2 text-sm font-medium step-label text-normalLight dark:text-invertedLight">Project Info</span>
         </div>
       </div>
     </div>
 
     <!-- Form Container -->
-    <div class="standard-card">
+    <div class="standard-card max-w-2xl mx-auto">
       <!-- Success Message (Hidden by default) -->
       <div id="successMessage" class="hidden text-center py-12">
         <div class="mb-6">
@@ -59,7 +59,7 @@ description: Share details about your project so we can determine if we're a goo
         method="POST" 
         data-netlify="true" 
         data-netlify-honeypot="bot-field"
-        class="space-y-8"
+        class="space-y-8 w-full"
       >
         <!-- Honeypot field for spam protection -->
         <input type="hidden" name="form-name" value="client-brief" />
@@ -114,7 +114,7 @@ description: Share details about your project so we can determine if we're a goo
             </div>
           </div>
 
-          <div class="flex justify-end mt-8">
+          <div class="flex justify-end mt-8 w-full">
             <button 
               type="button" 
               class="btn-next px-8 py-3 bg-primary dark:bg-primaryInverted text-inverted dark:text-normal font-bold rounded-md hover:opacity-90 transition shadow-low dark:shadow-lowInverted"
