@@ -1,4 +1,4 @@
-<a href="{{ url }}" class="flex text-lg items-center gap-2 {{ customClasses | default: '' }}">
+<a href="{{ url }}" class="flex text-lg items-center gap-2 {{ customClasses | default: '' }}"{% if targetBlank %} target="_blank" rel="noopener noreferrer"{% endif %}>
   {{ label | default: 'Read more' }}
   {{
     icon
