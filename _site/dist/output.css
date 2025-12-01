@@ -3330,8 +3330,8 @@ input[type="radio"]:focus {
   line-height: 2.5rem;
 }
 
-.text-8xl {
-  font-size: 6rem;
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 
