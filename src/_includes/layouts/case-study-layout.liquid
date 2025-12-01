@@ -12,7 +12,7 @@ layout: "/layouts/layout.liquid"
         </p>
         {% if project-link %}
           {%- render 'partials/text-link',
-            url: '{{ project-link }}',
+            url: project-link,
             label: 'View live website',
             icon: '<svg xmlns="http://www.w3.org/2000/svg" 
           class="w-4 h-4 fill-current" 
