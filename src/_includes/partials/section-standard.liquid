@@ -49,7 +49,7 @@
                   >
                 {% endif %}
                 <h3 class="font-bold mb-2">
-                  <a href="{{ item.url }}" class="no-underline">{{ item.data.title }}</a>
+                  {{ item.data.title }}
                 </h3>
                 {% if item.data.cardDescription %}
                   <p class="mb-6 text-md text-normalLight dark:text-invertedLight">{{ item.data.cardDescription }}</p>
@@ -60,8 +60,6 @@
                 <div class="mt-auto">
                   {% if item.data.ctaText and item.data.ctaUrl %}
                     {% render 'partials/text-link', url: item.data.ctaUrl, label: item.data.ctaText %}
-                  {% else %}
-                    {% render 'partials/text-link', url: item.url, label: 'Learn more' %}
                   {% endif %}
                 </div>
               </div>
