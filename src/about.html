@@ -270,7 +270,7 @@ title: About Me
         <span id="minutes" class="time-part w-[2ch] text-center">34</span>
         <span class="colon mx-0.5">:</span>
         <span id="seconds" class="time-part w-[2ch] text-center">33</span>
-        <span class="gmt ml-1.5 whitespace-nowrap">(GMT +2)</span>
+        <span id="timezone" class="ml-1.5 whitespace-nowrap">(EST)</span>
       </div>
     </div>
 
@@ -511,13 +511,21 @@ title: About Me
       // =============================
       function updateTime() {
           const now = new Date();
-          const options = { timeZone: 'Africa/Cairo', hour12: false };
+          const options = { timeZone: 'America/Toronto', hour12: false };
           const timeString = now.toLocaleTimeString('en-US', options);
           const [hours, minutes, seconds] = timeString.split(':');
-  
+
+          // Get timezone abbreviation (EST or EDT)
+          const timeZoneString = now.toLocaleDateString('en-US', {
+              timeZone: 'America/Toronto',
+              timeZoneName: 'short'
+          });
+          const timeZoneAbbrev = timeZoneString.split(', ')[1];
+
           document.getElementById('hours').textContent = hours.padStart(2, '0');
           document.getElementById('minutes').textContent = minutes.padStart(2, '0');
           document.getElementById('seconds').textContent = seconds.padStart(2, '0');
+          document.getElementById('timezone').textContent = `(${timeZoneAbbrev})`;
       }
   
       setInterval(updateTime, 1000);
