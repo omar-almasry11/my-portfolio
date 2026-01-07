@@ -25,7 +25,12 @@ module.exports = function (eleventyConfig) {
 
   // Case studies collection
 eleventyConfig.addCollection("caseStudies", function (collectionApi) {
-  return collectionApi.getFilteredByGlob("src/case-studies/*.md").sort((a, b) => {
+    return collectionApi.getFilteredByGlob("src/case-studies/*.md")
+      .filter(item => {
+        // Exclude archived items completely (both development and production)
+        return item.data.archived !== true;
+      })
+      .sort((a, b) => {
     // Ensure `order` values exist
     const orderA = typeof a.data.order !== "undefined" ? a.data.order : Number.MAX_SAFE_INTEGER;
     const orderB = typeof b.data.order !== "undefined" ? b.data.order : Number.MAX_SAFE_INTEGER;

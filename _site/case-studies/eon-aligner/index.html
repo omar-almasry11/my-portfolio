@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="Eon Aligner is a dental brand specializing in clear-aligner treatment. I engineered a bilingual (EN/AR) Find a Doctor locator—map-first UI with country/city filters, lazy-rendered results, cached reverse-geocoding, and CMS-driven content so marketing can update it without code."
+      content="Eon Aligner is a dental brand specializing in clear-aligner treatment. I built a React-based doctor locator with interactive Google Maps integration, country/city filtering, and an Airtable backend that lets the marketing team manage clinic listings without developer involvement."
     >
     <meta name="author" content="Omar Almasry">
     <title>Eon Aligner</title>
@@ -24,7 +24,7 @@
     <meta property="og:title" content="Eon Aligner">
     <meta
       property="og:description"
-      content="Eon Aligner is a dental brand specializing in clear-aligner treatment. I engineered a bilingual (EN/AR) Find a Doctor locator—map-first UI with country/city filters, lazy-rendered results, cached reverse-geocoding, and CMS-driven content so marketing can update it without code."
+      content="Eon Aligner is a dental brand specializing in clear-aligner treatment. I built a React-based doctor locator with interactive Google Maps integration, country/city filtering, and an Airtable backend that lets the marketing team manage clinic listings without developer involvement."
     >
     <meta property="og:image" content="/images/png/og.png">
     <meta property="og:url" content="https://omaralmasry.com">
@@ -33,7 +33,7 @@
     <meta name="twitter:title" content="Eon Aligner">
     <meta
       name="twitter:description"
-      content="Eon Aligner is a dental brand specializing in clear-aligner treatment. I engineered a bilingual (EN/AR) Find a Doctor locator—map-first UI with country/city filters, lazy-rendered results, cached reverse-geocoding, and CMS-driven content so marketing can update it without code."
+      content="Eon Aligner is a dental brand specializing in clear-aligner treatment. I built a React-based doctor locator with interactive Google Maps integration, country/city filtering, and an Airtable backend that lets the marketing team manage clinic listings without developer involvement."
     >
     <meta name="twitter:image" content="/images/png/og.png">
 
@@ -129,9 +129,9 @@
       <div>
         <h1>Eon Aligner</h1>
         <p class="text-md mb-6 lg:text-lg text-normalLight dark:text-invertedLight">
-          Patients needed a fast way to discover nearby clinics. I designed and built a map-first locator with country/city filters, a lazy-rendered results list, cached reverse-geocoding, and robust boot logic to handle late-loading CMS content. The experience is fully bilingual (English/Arabic, RTL) with Arabic-aware sorting and localized UI strings. Marketing can update clinics from the CMS without developer involvement.
+          Patients needed a fast, intuitive way to find certified providers in their area. I architected and built a map-first locator using React and Google Maps API, with dynamic country/city filtering and real-time data from Airtable. The solution empowers the marketing team to add, edit, and remove clinic listings through a simple spreadsheet-like interface—no code changes, no deployments, no developer bottlenecks.
         </p>
-        <a href="https://eon-aligner-v2.webflow.io/find-your-doctor" class="flex text-lg items-center gap-2 mt-8" target="_blank" rel="noopener noreferrer">
+        <a href="https://eon-aligner-doctor-finder.netlify.app/" class="flex text-lg items-center gap-2 mt-8" target="_blank" rel="noopener noreferrer">
   View live website
   <svg xmlns="http://www.w3.org/2000/svg" 
           class="w-4 h-4 fill-current" 
@@ -146,7 +146,7 @@
       </div>
       <!-- Right Column: Placeholder for Image -->
       <div class="aspect-video rounded-lg flex items-center justify-center">
-        <img src="/images/eon-aligner-2.png" width="100%" height="auto" class="w-full h-auto max-h-[550px] object-cover object-top shadow-low dark:shadow-lowInverted">
+        <img src="/images/eon-aligner-1.webp" width="100%" height="auto" class="w-full h-auto max-h-[550px] object-cover object-top shadow-low dark:shadow-lowInverted">
       </div>
     </div>
   </div>
@@ -154,121 +154,49 @@
 <section class="prose py-12 px-[5%]">
   <div class="container mx-auto">
     <article class="prose">
-      <h2 id="my-role" tabindex="-1">My Role</h2>
+      <h2 id="overview" tabindex="-1">Overview</h2>
+<p>I designed and built a production-ready doctor locator application for Eon Aligner, enabling potential patients to discover certified providers in their area through an interactive map interface. The solution empowers the marketing team to manage doctor listings independently through a no-code CMS, eliminating ongoing developer dependency for routine updates.</p>
+<h2 id="the-challenge" tabindex="-1">The Challenge</h2>
+<p>Eon Aligner faced a dual problem: patients needed an intuitive way to find nearby certified providers, while the marketing team required autonomy to manage listings across multiple countries without technical assistance. The solution needed to be maintainable, performant, and secure—while keeping the tech stack lean enough for rapid iteration.</p>
+<p>Key requirements:</p>
 <ul>
-<li><strong>UX Engineering:</strong> flows, interaction patterns (map → tooltip → popup), empty/loaded states.</li>
-<li><strong>Front-end Architecture &amp; Implementation:</strong> vanilla JS, Google Maps API, data pipeline from CMS to UI.</li>
-<li><strong>Internationalization:</strong> Arabic (RTL) layout support, Arabic-aware sorting, localized strings.</li>
-<li><strong>Performance &amp; Reliability:</strong> lazy list rendering, IntersectionObserver geocoding, mutation-based readiness gates, late hydration.</li>
-<li><strong>Handover:</strong> documentation for editors; CMS field conventions.</li>
+<li>Interactive map with location-based filtering</li>
+<li>Marketing team self-service for adding/editing doctors</li>
+<li>Multi-region support with country and city filtering</li>
+<li>Zero ongoing developer involvement for content updates</li>
 </ul>
-<h2 id="challenges" tabindex="-1">Challenges</h2>
-<ol>
-<li><strong>Staggered content &amp; third-party timing:</strong>
-CMS items and filter scripts don’t arrive at the same time; starting too early produces incomplete UIs.</li>
-<li><strong>Heavy first paint:</strong>
-Rendering the entire list up front ballooned DOM size and slowed initial interaction.</li>
-<li><strong>N+1 reverse-geocoding:</strong>
-Naively resolving every address triggers a burst of network calls and jank during scroll.</li>
-<li><strong>Bilingual/RTL behavior:</strong>
-Names should sort naturally in Arabic; prefixes like “Dr.” / “د.” shouldn’t affect ordering. UI copy and address text must be localized.</li>
-<li><strong>Late-arriving CMS items:</strong>
-Additional doctors can appear seconds after load; the UI must absorb them without a hard refresh.</li>
-<li><strong>Image &amp; content integrity:</strong>
-Photo src/srcset/sizes/alt need to stay in sync between CMS cards, list rows, and popups.</li>
-</ol>
 <h2 id="solution" tabindex="-1">Solution</h2>
-<h3 id="robust-readiness-gates-(race-condition-proof)" tabindex="-1">Robust readiness gates (race-condition proof)</h3>
-<p>I layered window load, Finsweet CMS events (cmsfilter, cmsload), a simple stable-count poll, and a deep MutationObserver signature. We only boot once data and attribute bindings are stable.</p>
-<pre class="language-js"><code class="language-js"><span class="token comment">// Wait until doctor items + their key dataset bindings stop changing.</span>
-<span class="token keyword">const</span> <span class="token function-variable function">waitForCMSStableDeep</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> quietMs <span class="token operator">=</span> <span class="token number">900</span><span class="token punctuation">,</span> maxWait <span class="token operator">=</span> <span class="token number">15000</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> lastSig <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">,</span> lastChange <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> <span class="token function-variable function">computeSig</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> els <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".doctor-item"</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> parts <span class="token operator">=</span> els<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">el</span> <span class="token operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>el<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>name<span class="token operator">||</span><span class="token string">""</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">|</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>el<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>country<span class="token operator">||</span><span class="token string">""</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">|</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>el<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>city<span class="token operator">||</span><span class="token string">""</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>els<span class="token punctuation">.</span>length<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">::</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>parts<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"||"</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> <span class="token function-variable function">changed</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> <span class="token keyword">const</span> s <span class="token operator">=</span> <span class="token function">computeSig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>s <span class="token operator">!==</span> lastSig<span class="token punctuation">)</span> <span class="token punctuation">{</span> lastSig <span class="token operator">=</span> s<span class="token punctuation">;</span> lastChange <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-  <span class="token keyword">const</span> obs <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MutationObserver</span><span class="token punctuation">(</span>changed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  obs<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>body<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">childList</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">subtree</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> iv <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> lastChange <span class="token operator">>=</span> quietMs<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> to <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>done<span class="token punctuation">,</span> maxWait<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">function</span> <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token function">clearInterval</span><span class="token punctuation">(</span>iv<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">clearTimeout</span><span class="token punctuation">(</span>to<span class="token punctuation">)</span><span class="token punctuation">;</span> obs<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">res</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="lazy-list-rendering-(fast-first-paint)" tabindex="-1">Lazy list rendering (fast first paint)</h3>
-<p>The list is built only after a country is selected. Before selection, we show a lightweight empty state and markers only. This keeps the initial DOM tiny and interaction responsive.</p>
-<pre class="language-js"><code class="language-js">countrySelect<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"change"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> selected <span class="token operator">=</span> countrySelect<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>selected<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">showEmptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">showListOverlay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-  <span class="token function">hideListOverlay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">buildDoctorList</span><span class="token punctuation">(</span><span class="token function">filterByCountry</span><span class="token punctuation">(</span>selected<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="on-view-geocoding-%2B-caching-(no-jank)" tabindex="-1">On-view geocoding + caching (no jank)</h3>
-<p>Addresses resolve only when list rows near the viewport intersect, and results are cached by lat/lng to avoid repeat lookups.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> geocodeCache <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token function-variable function">geocodeOnce</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">lat<span class="token punctuation">,</span> lng</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>lat<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>lng<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>geocodeCache<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> geocodeCache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">r</span> <span class="token operator">=></span> geocoder<span class="token punctuation">.</span><span class="token function">geocode</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">location</span><span class="token operator">:</span><span class="token punctuation">{</span>lat<span class="token punctuation">,</span>lng<span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">(</span><span class="token parameter">res<span class="token punctuation">,</span> status</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">r</span><span class="token punctuation">(</span>status<span class="token operator">===</span><span class="token string">"OK"</span> <span class="token operator">&amp;&amp;</span> res<span class="token operator">?.</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">?</span> res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>formatted_address <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  geocodeCache<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> p<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> io <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IntersectionObserver</span><span class="token punctuation">(</span><span class="token parameter">entries</span> <span class="token operator">=></span> entries<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>e<span class="token punctuation">.</span>isIntersecting<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
-  io<span class="token punctuation">.</span><span class="token function">unobserve</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">geocodeOnce</span><span class="token punctuation">(</span><span class="token operator">+</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>lat<span class="token punctuation">,</span> <span class="token operator">+</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>lng<span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">addr</span> <span class="token operator">=></span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>textContent <span class="token operator">=</span> addr <span class="token operator">||</span> <span class="token string">"Address not found"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">rootMargin</span><span class="token operator">:</span> <span class="token string">"200px 0px"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="arabic-first-sorting-%26-localized-ui" tabindex="-1">Arabic-first sorting &amp; localized UI</h3>
-<p>Arabic pages prefer Arabic display names and use Intl.Collator for natural sorting. We strip “Dr./Doctor/د./دكتور” prefixes so the alphabetical order reflects the actual name.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token constant">IS_AR</span> <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^ar\b</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>lang<span class="token punctuation">)</span> <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>dir<span class="token operator">===</span><span class="token string">"rtl"</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> collator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>Collator</span><span class="token punctuation">(</span><span class="token constant">IS_AR</span> <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token string">"ar"</span><span class="token punctuation">,</span><span class="token string">"en"</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"en"</span><span class="token punctuation">,</span><span class="token string">"ar"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">sensitivity</span><span class="token operator">:</span><span class="token string">"base"</span><span class="token punctuation">,</span> <span class="token literal-property property">numeric</span><span class="token operator">:</span><span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token function-variable function">stripPrefix</span> <span class="token operator">=</span> <span class="token parameter">s</span> <span class="token operator">=></span> s<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\s*(?:dr\.?|doctor|د\.?|دكتور)\s*</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token function-variable function">sortKey</span> <span class="token operator">=</span> <span class="token parameter">n</span> <span class="token operator">=></span> <span class="token function">stripPrefix</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// ...</span>
-<span class="token keyword">const</span> sorted <span class="token operator">=</span> doctors<span class="token punctuation">.</span><span class="token function">toSorted</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span> <span class="token operator">=></span> collator<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span><span class="token function">sortKey</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">sortKey</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Localized strings (e.g., “Loading address…” → “جاري تحميل العنوان…”) keep status messaging native in both languages.</p>
-<h3 id="late-hydration-window-(seamless-updates)" tabindex="-1">Late hydration window (seamless updates)</h3>
-<p>A short MutationObserver window (~8s) watches for new .doctor-items, normalizes them, and updates markers/options/list—without reload.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">beginLateHydration</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">ms<span class="token operator">=</span><span class="token number">8000</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> seen <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakSet</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".doctor-item"</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> obs <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MutationObserver</span><span class="token punctuation">(</span><span class="token parameter">muts</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> changed<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
-    muts<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">m</span> <span class="token operator">=></span> m<span class="token punctuation">.</span>addedNodes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">n</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>n <span class="token keyword">instanceof</span> <span class="token class-name">Element</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
-      <span class="token keyword">const</span> els <span class="token operator">=</span> n<span class="token punctuation">.</span><span class="token function">matches</span><span class="token punctuation">(</span><span class="token string">".doctor-item"</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">:</span> n<span class="token punctuation">.</span>querySelectorAll<span class="token operator">?.</span><span class="token punctuation">(</span><span class="token string">".doctor-item"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      els <span class="token operator">&amp;&amp;</span> els<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">el</span> <span class="token operator">=></span> <span class="token punctuation">{</span> <span class="token keyword">if</span><span class="token punctuation">(</span>seen<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span> seen<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">addDoctorFromEl</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span><span class="token punctuation">;</span> changed<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>changed<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">rebuildCountryOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">filterAndRender</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  obs<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>body<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">childList</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">subtree</span><span class="token operator">:</span><span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> obs<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ms<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="image-%26-content-integrity" tabindex="-1">Image &amp; content integrity</h3>
-<p>Photos and srcset/sizes/alt are mirrored from CMS cards into list rows and popups to preserve quality and accessibility. Alt text falls back to the doctor’s name.</p>
-<h3 id="process-overview" tabindex="-1">Process Overview</h3>
-<ol>
-<li><strong>Planning &amp; Discovery:</strong>
-Clarified primary task (“find a nearby clinic”), countries/cities taxonomy, CMS fields, and i18n requirements.</li>
-<li><strong>Design &amp; Prototyping:</strong>
-Chose map-first with progressive disclosure: empty state → country → city → results. Defined tooltip vs. popup interaction and primary actions.</li>
-<li><strong>Development:</strong>
-Vanilla JS architecture: harvest CMS → normalize → renderers (markers &amp; list). Implemented readiness gates, geocode cache, and late hydration.</li>
-<li><strong>Testing &amp; Optimization:</strong>
-Cross-browser/device checks, RTL review, address resolution edge-cases, performance budget passes.</li>
-<li><strong>Launch &amp; Handover:</strong>
-CMS conventions, editor guide, and notes for future analytics (filter usage, directions CTR).</li>
-</ol>
+<p>I architected a React single-page application that connects a headless CMS (Airtable) to an interactive Google Maps interface. The marketing team manages all doctor data through Airtable's familiar spreadsheet-like interface, while patients experience a polished, responsive map application.</p>
+<p>The application features cascading country/city filters, clickable map markers with doctor details, and automatic address resolution from coordinates—all optimized for performance across regions with varying doctor densities.</p>
+<h2 id="technical-approach" tabindex="-1">Technical Approach</h2>
+<p><strong>Secure API Architecture</strong></p>
+<p>Rather than exposing the Airtable API key in client-side code, I implemented a server-side proxy using Netlify Functions. The serverless function handles authentication, pagination, and caching—returning sanitized data to the frontend. This pattern keeps credentials secure while enabling a 5-minute cache layer to reduce API calls.</p>
+<p><strong>Intelligent Map Behavior</strong></p>
+<p>The map camera responds contextually to user actions through a priority-based system:</p>
+<ul>
+<li>Selecting a doctor zooms to street level (15) and centers on their location</li>
+<li>Selecting a city zooms to neighborhood level (12) with the camera centered on available providers</li>
+<li>Selecting only a country calculates the geographic center by averaging all doctor coordinates, then zooms to regional level (6)</li>
+</ul>
+<p>This adaptive behavior ensures users always see relevant context regardless of how they navigate.</p>
+<p><strong>Geocoding with Hybrid Caching</strong></p>
+<p>Converting latitude/longitude to human-readable addresses requires Google's Geocoding API. To minimize API calls and improve responsiveness, I implemented a two-tier caching strategy: an in-memory Map for instant access during the session, backed by localStorage for persistence across visits. Addresses are fetched lazily—only when a user opens a doctor's info window.</p>
+<p><strong>Cascading Filter Logic</strong></p>
+<p>The filtering system uses dependent state: cities remain disabled until a country is selected, then dynamically populate with only relevant options. All derived data (filtered doctors, available countries, available cities) is memoized to prevent unnecessary recalculations during re-renders.</p>
+<p><strong>Airtable Pagination Handling</strong></p>
+<p>Airtable returns paginated results for large datasets. The serverless function implements a loop that follows pagination tokens until all records are retrieved, ensuring the application displays complete data regardless of how the doctor list grows.</p>
+<h2 id="tech-stack" tabindex="-1">Tech Stack</h2>
+<ul>
+<li><strong>Frontend:</strong> React 19, Vite, Tailwind CSS</li>
+<li><strong>Maps:</strong> @vis.gl/react-google-maps (Advanced Markers, Geocoding)</li>
+<li><strong>Backend/CMS:</strong> Airtable (no-code database)</li>
+<li><strong>Serverless:</strong> Netlify Functions (API proxy)</li>
+<li><strong>Deployment:</strong> Netlify (continuous deployment from Git)</li>
+</ul>
+<h2 id="results" tabindex="-1">Results</h2>
+<p>The solution delivered exactly what the business needed: a polished patient-facing tool paired with marketing team autonomy. The architecture decisions—server-side API proxying, intelligent caching, and memoized state—ensure the application remains performant and secure as the doctor network scales.</p>
+<p>The marketing team now adds new providers in minutes through Airtable, with changes reflected immediately on the live site. No developer tickets, no deployment cycles, no bottlenecks.</p>
+<hr>
 <h2 id="project-images" tabindex="-1">Project Images</h2>
 <section>
   <div class="mx-auto">
@@ -276,7 +204,7 @@ CMS conventions, editor guide, and notes for future analytics (filter usage, dir
       <!-- Image 1 -->
       <div class="w-full">
         <img
-          src="/images/png/eon-aligner-1.webp"
+          src="/images/eon-aligner-1.webp"
           alt="EON Aligner doctor finder interface showing the initial map view with location markers for dental clinics across different countries"
           class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
@@ -289,31 +217,6 @@ CMS conventions, editor guide, and notes for future analytics (filter usage, dir
           class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
         />
       </div>
-      <!-- Image 3 -->
-      <div class="w-full">
-        <img
-          src="/images/png/eon-aligner-3.webp"
-          alt="EON Aligner doctor finder results list showing dental clinic cards with doctor names, addresses, and contact information in a filtered view"
-          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
-        />
-      </div>
-      <!-- Image 4 -->
-      <div class="w-full">
-        <img
-          src="/images/png/eon-aligner-4.webp"
-          alt="EON Aligner clinic detail popup showing doctor information, clinic address, contact details, and action buttons for directions and appointments"
-          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
-        />
-      </div>
-      <!-- Image 5 -->
-      <div class="w-full">
-        <img
-          src="/images/png/eon-aligner-5.webp"
-          alt="EON Aligner Arabic (RTL) version of the doctor finder interface demonstrating bilingual support with Arabic text and right-to-left layout"
-          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
-        />
-      </div>
-    </div>
   </div>
 </section>
 

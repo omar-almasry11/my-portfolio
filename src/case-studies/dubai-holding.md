@@ -8,7 +8,7 @@ logo-dark: "/images/dubai-holding-logo-inverted.avif"
 customLogoClass: "w-20 h-20 dark:w-20 dark:h-20"
 header-img: "/images/dubai-holding-hero-img.webp"
 header-overview: "Dubai Holding is a leading global investment company with a diverse portfolio spanning real estate, retail, hospitality, and entertainment. I have partnered with their teams to design and develop high-impact websites for various business units, enabling them to achieve their goals with user-centric, scalable, and high-performance digital solutions."
-order: 1
+order: 2
 ---
 
 ## My Role
