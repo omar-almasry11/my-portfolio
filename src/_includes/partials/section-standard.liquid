@@ -23,7 +23,7 @@
         {% if gridLayout %}
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {%- for item in collection limit: limit -%}
-              <div class="standard-card">
+              <div class="service-card standard-card">
                 <!-- Service Icon -->
                 {% if item.data.cardIcon %}
                   {{ item.data.cardIcon }}
@@ -69,7 +69,7 @@
           <!-- Default single column layout -->
           <div class="flex-col space-y-4">
             {%- for item in collection limit: limit -%}
-              <div class="standard-card">
+              <div class="list-parent standard-card">
                 <!-- Light Mode Logo -->
                 {% if item.data.logo %}
                   <img

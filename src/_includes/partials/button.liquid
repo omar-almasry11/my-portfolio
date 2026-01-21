@@ -1,21 +1,26 @@
-{% if text == "Contact" %}
-  <a 
+{% if text == 'Contact' %}
+  <a
     href="mailto:hello@omaralmasry.com"
-    class="flex mr-auto ml-auto px-5 py-2 bg-primary text-lg text-inverted font-medium rounded-lg shadow-low no-underline transition duration-300 hover:bg-inverted hover:text-inverted dark:bg-primaryInverted dark:text-normal dark:hover:bg-normal dark:hover:text-normal dark:shadow-lowInverted focus:ring focus:ring-blue-300"
+    class="button flex items-center mr-auto ml-auto px-6 py-3 bg-primary text-lg text-inverted font-medium rounded-full shadow-low no-underline transition duration-300 dark:bg-primaryInverted dark:text-normal dark:shadow-lowInverted relative z-0 overflow-hidden group"
     aria-label="Contact"
   >
-    <span>{{ text }}</span>
-    <span class="ml-2">
-      {{ icon }}
+    <span class="relative z-10 flex items-center">
+      <span>{{ text }}</span>
+      <span class="ml-2">
+        {{ icon }}
+      </span>
     </span>
   </a>
 {% else %}
-  {% render 'partials/button', 
-    text: text,
-    icon: icon,
-    iconPosition: iconPosition,
-    type: type,
-    variant: variant,
-    ariaLabel: ariaLabel
-  %}
+  <a
+    href="#"
+    class="button flex items-center px-6 py-3 bg-primary text-lg text-inverted font-medium rounded-full shadow-low no-underline transition duration-300 dark:bg-primaryInverted dark:text-normal dark:shadow-lowInverted relative overflow-hidden group"
+  >
+    <span class="relative z-10 flex items-center">
+      <span>{{ text }}</span>
+      {% if icon %}
+        <span class="ml-2">{{ icon }}</span>
+      {% endif %}
+    </span>
+  </a>
 {% endif %}

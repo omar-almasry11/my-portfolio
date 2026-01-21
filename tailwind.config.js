@@ -10,6 +10,9 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
+        princetonOrange: '#FB8304',
+        oceanMist: '#40BFAE',
+        blazingFlame: '#FE3300',
         savoyBlue: '#3d60e2',
         aliceBlue: '#e0ecff',
         oxfordBlue: '#000022',
