@@ -426,6 +426,10 @@
     @apply z-[100] !important;
   }
 
+  .navbar-gradient {
+    background: linear-gradient(to right, #3d60e2, #40BFAE, #FB8304, #FE3300);
+  }
+
   .cursor_dot {
     @apply w-4 h-4 bg-primary rounded-full dark:bg-primaryInverted;
     transition: background-color 300ms ease-out, opacity 300ms ease-out, transform 300ms ease-out;
@@ -447,8 +451,9 @@
     @apply bg-oxfordBlue opacity-40 dark:bg-primaryInverted;
   }
 
-  .red-cursor {
-    @apply bg-[#ef3546] opacity-40;
+  .gradient-cursor {
+    background: linear-gradient(45deg, #3d60e2, #40BFAE, #FB8304, #FE3300);
+    @apply opacity-60;
   }
 
   .white-cursor {

@@ -2651,6 +2651,10 @@ input[type="radio"]:focus {
   z-index: 100 !important;
 }
 
+.navbar-gradient {
+  background: linear-gradient(to right, #3d60e2, #40BFAE, #FB8304, #FE3300);
+}
+
 a.button.cursor_dot {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
@@ -2701,10 +2705,9 @@ a.button.cursor_dot:hover {
   background-color: rgb(247 203 21 / var(--tw-bg-opacity, 1));
 }
 
-.red-cursor {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 53 70 / var(--tw-bg-opacity, 1));
-  opacity: 0.4;
+.gradient-cursor {
+  background: linear-gradient(45deg, #3d60e2, #40BFAE, #FB8304, #FE3300);
+  opacity: 0.6;
 }
 
 .white-cursor {
@@ -3072,6 +3075,10 @@ nav,
   height: 0.25rem;
 }
 
+.h-1\.5 {
+  height: 0.375rem;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -3092,12 +3099,12 @@ nav,
   height: 1rem;
 }
 
-.h-44 {
-  height: 11rem;
-}
-
 .h-5 {
   height: 1.25rem;
+}
+
+.h-56 {
+  height: 14rem;
 }
 
 .h-6 {
@@ -3122,14 +3129,6 @@ nav,
 
 .h-full {
   height: 100%;
-}
-
-.h-64 {
-  height: 16rem;
-}
-
-.h-56 {
-  height: 14rem;
 }
 
 .max-h-\[550px\] {
@@ -3168,12 +3167,12 @@ nav,
   width: 1rem;
 }
 
-.w-44 {
-  width: 11rem;
-}
-
 .w-5 {
   width: 1.25rem;
+}
+
+.w-56 {
+  width: 14rem;
 }
 
 .w-6 {
@@ -3198,14 +3197,6 @@ nav,
 
 .w-full {
   width: 100%;
-}
-
-.w-64 {
-  width: 16rem;
-}
-
-.w-56 {
-  width: 14rem;
 }
 
 .max-w-24 {
@@ -3492,16 +3483,16 @@ nav,
      object-position: top;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .p-4 {
   padding: 1rem;
 }
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .px-2 {

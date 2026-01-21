@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Logo: Scale up small + black
     addHoverEffect('.logo', ['scale-cursor-up-small', 'black-cursor']);
 
-    // Home Heading: Scale up small + red
-    addHoverEffect('.home-heading', ['scale-cursor-up-small', 'red-cursor']);
+    // Home Heading: Scale up small + gradient brush effect
+    addHoverEffect('.home-heading', ['scale-cursor-up-small', 'gradient-cursor']);
 
     // Magnetic Effect for Navbar Links with Smooth LERP
     const magneticElements = document.querySelectorAll('.menu_link');
