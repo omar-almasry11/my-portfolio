@@ -42,8 +42,240 @@
 
     <!-- Stylesheet -->
     <link href="/dist/output.css" rel="stylesheet">
+    <noscript>
+      <style>
+        .load_grid {
+          display: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
+    <div class="load_grid">
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+    </div>
+    <script>
+      (function () {
+        const colors = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2', '#EDF060'];
+        const items = document.querySelectorAll('.load_grid-item');
+        const storedColors = sessionStorage.getItem('transitionColors');
+
+        if (storedColors) {
+          const colorArray = JSON.parse(storedColors);
+          items.forEach((item, i) => {
+            if (colorArray[i]) item.style.backgroundColor = colorArray[i];
+          });
+        } else {
+          const newColors = [];
+          items.forEach((item) => {
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            item.style.backgroundColor = color;
+            newColors.push(color);
+          });
+          sessionStorage.setItem('transitionColors', JSON.stringify(newColors));
+        }
+      })();
+    </script>
     <nav class="px-[5%] py-4 sticky top-0 z-50">
   <!-- Progress Bar -->
   <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-transparant">
@@ -150,7 +382,7 @@
             -->
             <img src="/images/png/pixel-profile-picture.png" alt="Omar Almasry Pixel Art" class="w-full h-full object-cover">
           </div>
-        <p class="home-heading text-5xl sm:text-9xl font-extrabold z-0 relative" id="colorfulHeading">
+        <p class="home-heading text-[5rem] sm:text-9xl font-extrabold z-0 relative" id="colorfulHeading">
           <span data-letter>H</span><span data-letter>i</span><span data-letter>&nbsp;</span><span data-letter>t</span><span data-letter>h</span><span data-letter>e</span><span data-letter>r</span><span data-letter>e</span><span data-letter>!</span>
         </p>
         <h1 class="py-4 text-xl sm:text-2xl text-normalLight font-normal dark:text-invertedLight">
@@ -188,13 +420,17 @@
                 <!-- Dark Mode Logo -->
                 
                 <h3 class="font-bold mb-2">
-                  <a href="/blog/Webflow for Enterprise Clients: A Deep Dive/" class="no-underline">Webflow for Enterprise Clients: A Deep Dive</a>
+                  Webflow for Enterprise Clients: A Deep Dive
                 </h3>
                 
                   <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Webflow is a great choice for startups and small businesses, but is it the right fit for enterprises? Let's explore the pros, cons, and risks of committing to Webflow Enterprise.</p>
                 
 
-                <a href="/blog/Webflow for Enterprise Clients: A Deep Dive/" class="flex text-lg items-center gap-2 ">
+                <a
+  href="/blog/Webflow for Enterprise Clients: A Deep Dive/"
+  class="text-link flex text-lg items-center gap-2 stretched-link"
+  
+>
   Read more
   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
      <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
@@ -202,20 +438,23 @@
     </svg>
 </a>
 
-              </div>
-            <div class="list-parent standard-card">
+              </div><div class="list-parent standard-card">
                 <!-- Light Mode Logo -->
                 
                 <!-- Dark Mode Logo -->
                 
                 <h3 class="font-bold mb-2">
-                  <a href="/blog/Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success/" class="no-underline">Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success</a>
+                  Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success
                 </h3>
                 
                   <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Building Arabic-friendly websites requires more than `dir="rtl"`. Learn how to create scalable RTL design systems for enterprise success.</p>
                 
 
-                <a href="/blog/Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success/" class="flex text-lg items-center gap-2 ">
+                <a
+  href="/blog/Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success/"
+  class="text-link flex text-lg items-center gap-2 stretched-link"
+  
+>
   Read more
   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
      <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
@@ -223,12 +462,14 @@
     </svg>
 </a>
 
-              </div>
-            
-          </div>
+              </div></div>
         
         
-          <div class="mt-6 flex justify-end"><a href="/blog" class="flex text-lg items-center gap-2 mt-10">
+          <div class="mt-6 flex justify-end"><a
+  href="/blog"
+  class="text-link flex text-lg items-center gap-2 mt-10"
+  
+>
   View all posts
   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
      <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
@@ -287,13 +528,17 @@
                   >
                 
                 <h3 class="font-bold mb-2">
-                  <a href="/case-studies/eon-aligner/" class="no-underline">Eon Aligner</a>
+                  Eon Aligner
                 </h3>
                 
                   <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Eon Aligner is a dental brand specializing in clear-aligner treatment. I built a React-based doctor locator with interactive Google Maps integration, country/city filtering, and an Airtable backend that lets the marketing team manage clinic listings without developer involvement.</p>
                 
 
-                <a href="/case-studies/eon-aligner/" class="flex text-lg items-center gap-2 ">
+                <a
+  href="/case-studies/eon-aligner/"
+  class="text-link flex text-lg items-center gap-2 stretched-link"
+  
+>
   Read more
   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
      <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
@@ -301,8 +546,7 @@
     </svg>
 </a>
 
-              </div>
-            <div class="list-parent standard-card">
+              </div><div class="list-parent standard-card">
                 <!-- Light Mode Logo -->
                 
                   <img
@@ -324,13 +568,17 @@
                   >
                 
                 <h3 class="font-bold mb-2">
-                  <a href="/case-studies/dubai-holding/" class="no-underline">Dubai Holding</a>
+                  Dubai Holding
                 </h3>
                 
                   <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Dubai Holding is a global investment company with a diverse portfolio spanning real estate, retail, and hospitality. I collaborated with their teams to deliver tailored websites for various business units, aligning with their strategic objectives and enhancing their digital presence.</p>
                 
 
-                <a href="/case-studies/dubai-holding/" class="flex text-lg items-center gap-2 ">
+                <a
+  href="/case-studies/dubai-holding/"
+  class="text-link flex text-lg items-center gap-2 stretched-link"
+  
+>
   Read more
   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
      <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
@@ -338,8 +586,7 @@
     </svg>
 </a>
 
-              </div>
-            <div class="list-parent standard-card">
+              </div><div class="list-parent standard-card">
                 <!-- Light Mode Logo -->
                 
                   <img
@@ -361,13 +608,17 @@
                   >
                 
                 <h3 class="font-bold mb-2">
-                  <a href="/case-studies/visit-hatta/" class="no-underline">Visit Hatta</a>
+                  Visit Hatta
                 </h3>
                 
                   <p class="mb-6 text-md text-normalLight dark:text-invertedLight">The official website for Dubai's largest nature reserve with over 350,000 visitor's per season. Hatta is the UAE's favorite outdoor destination, which is managed by Hatta Resorts (a Dubai Holding Company).</p>
                 
 
-                <a href="/case-studies/visit-hatta/" class="flex text-lg items-center gap-2 ">
+                <a
+  href="/case-studies/visit-hatta/"
+  class="text-link flex text-lg items-center gap-2 stretched-link"
+  
+>
   Read more
   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
      <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
@@ -375,8 +626,7 @@
     </svg>
 </a>
 
-              </div>
-            <div class="list-parent standard-card">
+              </div><div class="list-parent standard-card">
                 <!-- Light Mode Logo -->
                 
                   <img
@@ -398,13 +648,17 @@
                   >
                 
                 <h3 class="font-bold mb-2">
-                  <a href="/case-studies/pixlee-turnto/" class="no-underline">Pixlee TurnTo</a>
+                  Pixlee TurnTo
                 </h3>
                 
                   <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Pixlee TurnTo, a leader in Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing tools, needed a complete migration of their high-traffic blog to Webflow to enhance performance and empower their marketing team. Following the successful migration, Pixlee TurnTo was acquired by Emplifi, a global leader in customer experience solutions.</p>
                 
 
-                <a href="/case-studies/pixlee-turnto/" class="flex text-lg items-center gap-2 ">
+                <a
+  href="/case-studies/pixlee-turnto/"
+  class="text-link flex text-lg items-center gap-2 stretched-link"
+  
+>
   Read more
   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
      <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
@@ -412,9 +666,7 @@
     </svg>
 </a>
 
-              </div>
-            
-          </div>
+              </div></div>
         
         
       
@@ -560,8 +812,10 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="/scripts/main.js" defer></script>
     <script src="/scripts/cursor.js" defer></script>
     <script src="/scripts/colorful-heading.js" defer></script>
+    <script src="/scripts/page-transition.js" defer></script>
   </body>
 </html>

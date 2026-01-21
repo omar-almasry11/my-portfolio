@@ -59,7 +59,11 @@
 
                 <div class="mt-auto">
                   {% if item.data.ctaText and item.data.ctaUrl %}
-                    {% render 'partials/text-link', url: item.data.ctaUrl, label: item.data.ctaText %}
+                    {% render 'partials/text-link',
+                      url: item.data.ctaUrl,
+                      label: item.data.ctaText,
+                      customClasses: 'stretched-link'
+                    %}
                   {% endif %}
                 </div>
               </div>
@@ -91,15 +95,15 @@
                   >
                 {% endif %}
                 <h3 class="font-bold mb-2">
-                  <a href="{{ item.url }}" class="no-underline">{{ item.data.title }}</a>
+                  {{ item.data.title }}
                 </h3>
                 {% if item.data.description %}
                   <p class="mb-6 text-md text-normalLight dark:text-invertedLight">{{ item.data.description }}</p>
                 {% endif %}
 
-                {% render 'partials/text-link', url: item.url, label: 'Read more' %}
+                {% render 'partials/text-link', url: item.url, label: 'Read more', customClasses: 'stretched-link' %}
               </div>
-            {% endfor %}
+            {%- endfor -%}
           </div>
         {% endif %}
         {% if collectionLink %}

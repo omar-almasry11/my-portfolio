@@ -42,8 +42,42 @@
 
     <!-- Stylesheet -->
     <link href="/dist/output.css" rel="stylesheet">
+    <noscript>
+      <style>
+        .load_grid {
+          display: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
+    <div class="load_grid">
+      {% for i in (1..100) %}
+        <div class="load_grid-item"></div>
+      {% endfor %}
+    </div>
+    <script>
+      (function () {
+        const colors = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2', '#EDF060'];
+        const items = document.querySelectorAll('.load_grid-item');
+        const storedColors = sessionStorage.getItem('transitionColors');
+
+        if (storedColors) {
+          const colorArray = JSON.parse(storedColors);
+          items.forEach((item, i) => {
+            if (colorArray[i]) item.style.backgroundColor = colorArray[i];
+          });
+        } else {
+          const newColors = [];
+          items.forEach((item) => {
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            item.style.backgroundColor = color;
+            newColors.push(color);
+          });
+          sessionStorage.setItem('transitionColors', JSON.stringify(newColors));
+        }
+      })();
+    </script>
     {% render 'partials/navbar', page: page %}
     <main>
       {{ content }}
@@ -58,8 +92,10 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="/scripts/main.js" defer></script>
     <script src="/scripts/cursor.js" defer></script>
     <script src="/scripts/colorful-heading.js" defer></script>
+    <script src="/scripts/page-transition.js" defer></script>
   </body>
 </html>

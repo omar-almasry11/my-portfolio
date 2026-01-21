@@ -9,7 +9,7 @@
       {% if projects and projects.size > 0 %}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto">
           {% for project in projects %}
-            <div class="group">
+            <div class="group relative">
               <!-- Project Image -->
               <div class="relative overflow-hidden rounded-lg bg-normal border border-normal shadow-low dark:bg-inverted dark:border-inverted dark:shadow-lowInverted">
                 <img
@@ -29,7 +29,7 @@
                     href="{{ project.url }}"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-primary dark:text-primaryInverted hover:text-primaryLight dark:hover:text-primaryLight transition-colors duration-200 no-underline"
+                    class="text-link stretched-link inline-flex items-center gap-2 text-primary dark:text-primaryInverted hover:text-primaryLight dark:hover:text-primaryLight transition-colors duration-200 no-underline"
                   >
                     <span>View Project</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 256 256">

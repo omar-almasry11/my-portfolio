@@ -1508,6 +1508,10 @@ a[aria-current=page]:is(.dark *) {
   transition-duration: 150ms;
 }
 
+.group.standard-card {
+  position: relative;
+}
+
 .standard-card:is(.dark *) {
   --tw-border-opacity: 1;
   border-color: rgb(30 30 30 / var(--tw-border-opacity, 1));
@@ -2153,6 +2157,11 @@ a[aria-current=page]:is(.dark *) {
   color: #ed8936 !important;
 }
 
+
+  .prose .token.\!important {
+  color: #ed8936 !important;
+}
+
 /* Accessible Lightbox Styles */
 
 .lightbox-overlay {
@@ -2186,6 +2195,10 @@ a[aria-current=page]:is(.dark *) {
   max-width: 72rem;
   align-items: center;
   justify-content: center;
+}
+
+.group.lightbox-content {
+  position: relative;
 }
 
 .lightbox-image {
@@ -2728,6 +2741,10 @@ a.button.cursor_dot:hover {
   transition-duration: 300ms;
 }
 
+.group.menu_link {
+  position: relative;
+}
+
 .menu_link:hover {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
@@ -2751,6 +2768,16 @@ a.button.cursor_dot:hover {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.group.button,.group
+  .theme-toggle,.group
+  .logo,.group
+  .home-heading,.group
+  .footer-social-link,.group
+  .list-parent,.group
+  .service-card {
+  position: relative;
 }
 
 /* Social links hover behavior like menu links */
@@ -2820,6 +2847,10 @@ a.button.dark\:bg-primaryInverted:hover:is(.dark *) {
   line-height: 1.5em;
 }
 
+.group.roll-text {
+  position: relative;
+}
+
 .roll-text span {
   display: block;
   transition-property: transform;
@@ -2838,6 +2869,12 @@ nav,
   footer {
   position: relative;
   z-index: 20;
+}
+
+nav.group,
+  main.group,
+  footer.group {
+  position: relative;
 }
 
 /* Colorful Heading Letter Hover Effect */
@@ -3636,6 +3673,10 @@ nav,
   line-height: 1rem;
 }
 
+.text-\[5rem\] {
+  font-size: 5rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -3696,6 +3737,10 @@ nav,
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\] {
+  color: ;
 }
 
 .no-underline {
@@ -3784,6 +3829,60 @@ nav,
   .cursor-wrapper {
     display: none;
   }
+}
+
+/* Page Transition Grid */
+
+.load_grid {
+  pointer-events: none;
+  position: fixed;
+  inset: 0px;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.load_grid-item {
+  height: 100%;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 34 / var(--tw-bg-opacity, 1));
+  will-change: opacity;
+}
+
+/* Utility to hide custom cursor */
+
+.cursor-hidden {
+  opacity: 0 !important;
+  transform: scale(0) !important;
+}
+
+/* Stretched link pattern */
+
+.stretched-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  /* Above the card content but potentially below other links if needed */
+  pointer-events: auto;
+}
+
+/* Ensure child links are accessible if needed, though we should avoid nested links */
+
+.standard-card a:not(.stretched-link) {
+  position: relative;
+  z-index: 11;
+}
+
+/* Ensure parents of stretched links allow the link to span correctly */
+
+.group.relative {
+  position: relative;
 }
 
 a.hover\:bg-primary:hover.button {

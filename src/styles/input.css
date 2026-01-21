@@ -551,3 +551,43 @@
     @apply hidden;
   }
 }
+/* Page Transition Grid */
+.load_grid {
+  @apply fixed inset-0 z-[1000] grid pointer-events-none;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.load_grid-item {
+  @apply bg-inverted w-full h-full;
+  will-change: opacity;
+}
+
+/* Utility to hide custom cursor */
+.cursor-hidden {
+  opacity: 0 !important;
+  transform: scale(0) !important;
+}
+
+/* Stretched link pattern */
+.stretched-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10; /* Above the card content but potentially below other links if needed */
+  pointer-events: auto;
+}
+
+/* Ensure child links are accessible if needed, though we should avoid nested links */
+.standard-card a:not(.stretched-link) {
+  position: relative;
+  z-index: 11;
+}
+
+/* Ensure parents of stretched links allow the link to span correctly */
+.group.relative {
+  position: relative;
+}

@@ -80,6 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Home Heading: Scale up small + gradient brush effect
     addHoverEffect('.home-heading', ['scale-cursor-up-small', 'gradient-cursor']);
 
+    // Text links & Inline links: Hide custom cursor for better readability
+    addHoverEffect('.text-link, footer p a, .prose a', ['cursor-hidden']);
+
     // Magnetic Effect for Navbar Links with Smooth LERP
     const magneticElements = document.querySelectorAll('.menu_link');
     magneticElements.forEach(el => {

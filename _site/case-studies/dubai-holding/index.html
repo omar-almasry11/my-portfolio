@@ -42,8 +42,240 @@
 
     <!-- Stylesheet -->
     <link href="/dist/output.css" rel="stylesheet">
+    <noscript>
+      <style>
+        .load_grid {
+          display: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
+    <div class="load_grid">
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+        <div class="load_grid-item"></div>
+      
+    </div>
+    <script>
+      (function () {
+        const colors = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2', '#EDF060'];
+        const items = document.querySelectorAll('.load_grid-item');
+        const storedColors = sessionStorage.getItem('transitionColors');
+
+        if (storedColors) {
+          const colorArray = JSON.parse(storedColors);
+          items.forEach((item, i) => {
+            if (colorArray[i]) item.style.backgroundColor = colorArray[i];
+          });
+        } else {
+          const newColors = [];
+          items.forEach((item) => {
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            item.style.backgroundColor = color;
+            newColors.push(color);
+          });
+          sessionStorage.setItem('transitionColors', JSON.stringify(newColors));
+        }
+      })();
+    </script>
     <nav class="px-[5%] py-4 sticky top-0 z-50">
   <!-- Progress Bar -->
   <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-transparant">
@@ -147,7 +379,13 @@
         <p class="text-md mb-6 lg:text-lg text-normalLight dark:text-invertedLight">
           Dubai Holding is a leading global investment company with a diverse portfolio spanning real estate, retail, hospitality, and entertainment. I have partnered with their teams to design and develop high-impact websites for various business units, enabling them to achieve their goals with user-centric, scalable, and high-performance digital solutions.
         </p>
-        <a href="https://www.dubaiholding.com//" class="flex text-lg items-center gap-2 mt-8" target="_blank" rel="noopener noreferrer">
+        <a
+  href="https://www.dubaiholding.com//"
+  class="text-link flex text-lg items-center gap-2 mt-8"
+  
+    target="_blank" rel="noopener noreferrer"
+  
+>
   View live website
   <svg xmlns="http://www.w3.org/2000/svg" 
           class="w-4 h-4 fill-current" 
@@ -418,8 +656,10 @@ Worked closely with Dubai Holding’s internal teams to ensure the websites met 
     </div>
 
     <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="/scripts/main.js" defer></script>
     <script src="/scripts/cursor.js" defer></script>
     <script src="/scripts/colorful-heading.js" defer></script>
+    <script src="/scripts/page-transition.js" defer></script>
   </body>
 </html>
