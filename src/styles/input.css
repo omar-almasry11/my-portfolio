@@ -23,6 +23,12 @@
     @apply font-medium underline decoration-primary decoration-2 transition duration-300 hover:text-primary hover:decoration-transparent dark:decoration-primaryInverted dark:hover:text-primaryInverted dark:hover:decoration-transparent;
   }
 
+  a,
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+
   h1 {
     @apply text-4xl sm:text-6xl font-extrabold mb-6;
   }
@@ -427,7 +433,7 @@
   }
 
   .navbar-gradient {
-    background: linear-gradient(to right, #3d60e2, #40BFAE, #FB8304, #FE3300);
+    background: linear-gradient(to right, #3d60e2, #40BFAE, #FB8304);
   }
 
   .cursor_dot {
@@ -464,7 +470,7 @@
 
   /* Interactive Elements Layering */
   .menu_link {
-    @apply relative z-20 inline-block transition-colors duration-300;
+    @apply relative z-20 inline-block transition-colors duration-300 cursor-pointer;
   }
 
   .menu_link:hover {
@@ -477,8 +483,9 @@
   .home-heading,
   .footer-social-link,
   .list-parent,
-  .service-card {
-    @apply relative z-[20] transition-all duration-300 ease-out;
+  .service-card,
+  .project-card {
+    @apply relative z-[20] transition-all duration-300 ease-out cursor-pointer;
   }
 
   /* Social links hover behavior like menu links */
@@ -579,6 +586,7 @@
   left: 0;
   z-index: 10; /* Above the card content but potentially below other links if needed */
   pointer-events: auto;
+  cursor: pointer;
 }
 
 /* Ensure child links are accessible if needed, though we should avoid nested links */
