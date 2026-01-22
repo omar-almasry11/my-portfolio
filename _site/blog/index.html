@@ -11,13 +11,8 @@
     <meta name="author" content="Omar Almasry">
     <title>Blog</title>
 
-    <!-- Favicons -->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/png/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/png/favicon-16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512.png">
+    <!-- Dynamic Favicon managed via /scripts/dynamic-favicon.js -->
+    <script src="/scripts/dynamic-favicon.js" defer></script>
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Social Media Meta Tags -->
@@ -277,9 +272,9 @@
       })();
     </script>
     <nav class="px-[5%] py-4 sticky top-0 z-50">
-  <!-- Progress Bar -->
-  <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-transparant">
-    <div id="progressBar" class="h-1.5 navbar-gradient w-0"></div>
+  <!-- Pixelated Progress Bar -->
+  <div id="progressBarContainer" class="absolute top-0 left-0 h-2 w-full bg-transparent overflow-hidden">
+    <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
   </div>
   <div class="flex items-center justify-between container mx-auto">
     <!-- Logo -->
@@ -306,20 +301,6 @@
             <span class="roll-text">
               <span data-text="About">About</span>
               <span data-text="About" aria-hidden="true">About</span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/blog/"
-            class="menu_link text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
-            
-              aria-current="page"
-            
-          >
-            <span class="roll-text">
-              <span data-text="Blog">Blog</span>
-              <span data-text="Blog" aria-hidden="true">Blog</span>
             </span>
           </a>
         </li>
@@ -451,6 +432,20 @@
       
     </div>
   </div>
+</section>
+<section class="py-12 px-[5%] ">
+  <div class="container mx-auto"><div class="max-w-3xl mx-auto text-center"><h2 class="text-3xl md:text-4xl font-bold mb-4 ">Have a project in mind?</h2>
+        <p class="text-lg md:text-xl text-normalLight dark:text-invertedLight mb-6">Let's work together to build something exceptional.</p>
+        <a
+          href="mailto:hello@omaralmasry.com"
+          class="flex mr-auto ml-auto px-5 py-2 bg-primary text-lg text-inverted font-medium rounded-lg shadow-low no-underline transition duration-300 hover:bg-inverted hover:text-inverted dark:bg-primaryInverted dark:text-normal dark:hover:bg-normal dark:hover:text-normal dark:shadow-lowInverted focus:ring focus:ring-blue-300"
+        >
+          <span>Get in touch</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2 fill-current" viewBox="0 0 256 256">
+            <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
+          </svg>
+        </a>
+      </div></div>
 </section>
 
     </main>
@@ -596,5 +591,6 @@
     <script src="/scripts/cursor.js" defer></script>
     <script src="/scripts/colorful-heading.js" defer></script>
     <script src="/scripts/page-transition.js" defer></script>
+    <script src="/scripts/cta-grid-animation.js" defer></script>
   </body>
 </html>

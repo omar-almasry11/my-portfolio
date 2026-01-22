@@ -2670,8 +2670,17 @@ input[type="radio"]:focus {
   z-index: 100 !important;
 }
 
-.navbar-gradient {
-  background: linear-gradient(to right, #3d60e2, #40BFAE, #FB8304);
+.pixel-progress-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 4px);
+  grid-template-rows: repeat(2, 4px);
+  grid-auto-flow: column;
+  gap: 0;
+}
+
+.progress-pixel {
+  width: 4px;
+  height: 4px;
 }
 
 a.button.cursor_dot {
@@ -2889,10 +2898,11 @@ nav.group,
 
 /* Colorful Heading Letter Hover Effect */
 
-#colorfulHeading [data-letter] {
+#colorfulHeading [data-letter],
+  #portraitCircle {
   display: inline-block;
   cursor: pointer;
-  transition: color 0.4s ease-out;
+  transition: color 1.2s ease-out, background-color 1.2s ease-out;
 }
 
 .sr-only {
@@ -2925,6 +2935,10 @@ nav.group,
 
 .sticky {
   position: sticky;
+}
+
+.inset-0 {
+  inset: 0px;
 }
 
 .bottom-4 {
@@ -3142,10 +3156,6 @@ nav.group,
   height: 0.25rem;
 }
 
-.h-1\.5 {
-  height: 0.375rem;
-}
-
 .h-10 {
   height: 2.5rem;
 }
@@ -3156,6 +3166,10 @@ nav.group,
 
 .h-16 {
   height: 4rem;
+}
+
+.h-2 {
+  height: 0.5rem;
 }
 
 .h-20 {
@@ -3300,6 +3314,10 @@ nav.group,
 
 .max-w-5xl {
   max-width: 64rem;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
 }
 
 .max-w-\[100px\] {
@@ -3550,11 +3568,6 @@ nav.group,
   border-color: rgb(226 232 240 / var(--tw-border-opacity, 1));
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
-}
-
 .bg-inverted {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 34 / var(--tw-bg-opacity, 1));
@@ -3577,6 +3590,10 @@ nav.group,
 .bg-slate-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .fill-current {
@@ -3899,6 +3916,16 @@ nav.group,
   opacity: 0.8;
 }
 
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.shadow-high {
+  --tw-shadow: 0px 10px 20px rgba(0, 0, 34, 0.1), 0px 6px 6px rgba(0, 0, 0, 0.23);
+  --tw-shadow-colored: 0px 10px 20px var(--tw-shadow-color), 0px 6px 6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-low {
   --tw-shadow: 0px 1px 3px rgba(0, 0, 34, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.10), 0px 2px 1px rgba(0, 0, 0, 0.08);
   --tw-shadow-colored: 0px 1px 3px var(--tw-shadow-color), 0px 1px 1px var(--tw-shadow-color), 0px 2px 1px var(--tw-shadow-color);
@@ -4007,6 +4034,7 @@ nav.group,
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 34 / var(--tw-bg-opacity, 1));
   will-change: opacity;
+  aspect-ratio: 1 / 1;
 }
 
 /* Utility to hide custom cursor */
@@ -4044,6 +4072,41 @@ nav.group,
   position: relative;
 }
 
+/* CTA Grid Animation Styles */
+
+.cta-grid-container {
+  position: relative;
+  min-height: 300px;
+}
+
+.group.cta-grid-container {
+  position: relative;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  transition: background-color 0.5s ease;
+}
+
+.cta-grid-item {
+  height: 100%;
+  width: 100%;
+  will-change: opacity;
+  transition: opacity 0.3s ease;
+  aspect-ratio: 1 / 1;
+}
+
+/* Respect user motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-grid,
+  .cta-grid-item {
+    transition: none !important;
+  }
+}
+
 a.hover\:bg-primary:hover.button {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
@@ -4073,6 +4136,12 @@ a.hover\:bg-primary:hover.button:hover {
   --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
   --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
   --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+}
+
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:bg-inverted:hover {
@@ -4260,6 +4329,11 @@ a.hover\:bg-primary:hover.button:hover {
 
 .dark\:bg-primaryInverted\/20:is(.dark *) {
   background-color: rgb(247 203 21 / 0.2);
+}
+
+.dark\:bg-secondary:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 242 242 / var(--tw-bg-opacity, 1));
 }
 
 .dark\:bg-white\/5:is(.dark *) {
@@ -4465,6 +4539,11 @@ a.hover\:bg-primary:hover.button:hover {
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .md\:text-6xl {

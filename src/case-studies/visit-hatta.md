@@ -8,7 +8,7 @@ logo-dark: "/images/hatta-logo-white.svg"
 customLogoClass: "mb-8 dark:mb-8"
 header-img: "/images/vh-header-img.webp"
 header-overview: "Visit Hatta is a premier destination for tourists and adventure enthusiasts looking to explore the scenic beauty and cultural heritage of Hatta, UAE. The website provides visitors with comprehensive information about attractions, accommodations, activities, and events. Our goal was to create an engaging and user-friendly platform that effectively promotes Hatta's unique offerings."
-order: 2
+draft: true
 ---
 
 ## My Role

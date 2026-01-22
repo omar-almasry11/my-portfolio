@@ -16,23 +16,106 @@ if (savedTheme) {
 themeToggle?.addEventListener('click', () => {
   const isDarkMode = document.documentElement.classList.toggle('dark');
   localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  
+  // Update progress bar pixel colors to match new theme
+  if (typeof updatePixelColors === 'function') {
+    updatePixelColors();
+  }
 });
 
 
 // =============================
-// 📏 Progress Bar Optimization
+// 📏 Pixelated Progress Bar
 // =============================
 const progressBar = document.getElementById('progressBar');
+const lightModeColors = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2']; // Orange, Teal, Red, Blue
+const darkModeColors = ['#FB8304', '#40BFAE', '#FE3300', '#EDF060']; // Orange, Teal, Red, Yellow
+let pixelsInitialized = false;
+let totalPixels = 0;
+let pixels = [];
+
+// Helper to get current theme colors
+function getCurrentColors() {
+  const isDarkMode = document.documentElement.classList.contains('dark');
+  return isDarkMode ? darkModeColors : lightModeColors;
+}
+
+// Initialize pixels once on first scroll
+function initializePixels() {
+  if (pixelsInitialized) return;
+  
+  // Calculate how many pixels fit in the viewport width
+  const viewportWidth = window.innerWidth;
+  const pixelWidth = 4; // Each pixel is 4px wide
+  const pixelsPerRow = Math.floor(viewportWidth / pixelWidth);
+  totalPixels = pixelsPerRow * 2; // 2 rows of pixels
+  
+  // Create pixels
+  const colors = getCurrentColors();
+  for (let i = 0; i < totalPixels; i++) {
+    const pixel = document.createElement('div');
+    pixel.className = 'progress-pixel';
+    
+    // Assign random color from palette, avoiding adjacent duplicates
+    let color;
+    if (i === 0) {
+      color = colors[Math.floor(Math.random() * colors.length)];
+    } else {
+      // Avoid same color as previous pixel
+      const prevColor = pixels[i - 1].style.backgroundColor;
+      const availableColors = colors.filter(c => c !== prevColor);
+      color = availableColors[Math.floor(Math.random() * availableColors.length)] || colors[0];
+    }
+    
+    pixel.style.backgroundColor = color;
+    pixel.style.opacity = '0'; // Start hidden
+    progressBar.appendChild(pixel);
+    pixels.push(pixel);
+  }
+  
+  pixelsInitialized = true;
+}
+
+// Function to update pixel colors when theme changes
+function updatePixelColors() {
+  if (!pixelsInitialized || pixels.length === 0) return;
+  
+  const colors = getCurrentColors();
+  pixels.forEach((pixel, index) => {
+    let color;
+    if (index === 0) {
+      color = colors[Math.floor(Math.random() * colors.length)];
+    } else {
+      // Avoid same color as previous pixel
+      const prevColor = pixels[index - 1].style.backgroundColor;
+      const availableColors = colors.filter(c => c !== prevColor);
+      color = availableColors[Math.floor(Math.random() * availableColors.length)] || colors[0];
+    }
+    pixel.style.backgroundColor = color;
+  });
+}
+
 let progressBarTicking = false;
 
 function updateProgressBar() {
   if (!progressBarTicking) {
     requestAnimationFrame(() => {
+      if (!pixelsInitialized) {
+        initializePixels();
+      }
+      
       const scrollTop = window.scrollY;
       const docHeight = document.body.scrollHeight - window.innerHeight;
-      // Clamp progress between 0% and 100%
-      const progress = Math.min(Math.max(scrollTop / docHeight, 0), 1) * 100;
-      progressBar.style.width = progress + '%';
+      const progress = Math.min(Math.max(scrollTop / docHeight, 0), 1);
+      
+      // Calculate how many pixels to show
+      const pixelsToShow = Math.floor(progress * totalPixels);
+      
+      // Show/hide pixels based on scroll progress
+      pixels.forEach((pixel, index) => {
+        pixel.style.opacity = index < pixelsToShow ? '1' : '0';
+      });
+      
       progressBarTicking = false;
     });
     progressBarTicking = true;
@@ -41,6 +124,9 @@ function updateProgressBar() {
 
 // Use passive event listeners to improve scrolling performance
 window.addEventListener('scroll', updateProgressBar, { passive: true });
+
+// Initialize on load if already scrolled
+window.addEventListener('load', updateProgressBar);
 
 
 // =============================

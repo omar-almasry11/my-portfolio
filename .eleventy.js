@@ -28,7 +28,16 @@ eleventyConfig.addCollection("caseStudies", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/case-studies/*.md")
       .filter(item => {
         // Exclude archived items completely (both development and production)
-        return item.data.archived !== true;
+        if (item.data.archived === true) {
+          return false;
+        }
+        
+        // Exclude draft items in both development and production
+        if (item.data.draft === true) {
+          return false;
+        }
+        
+        return true;
       })
       .sort((a, b) => {
     // Ensure `order` values exist

@@ -8,7 +8,7 @@ logo-dark: "/images/color-code-labs-logo.svg"
 customLogoClass: "w-12 h-12 dark:w-12 dark:h-12"
 header-img: "/images/colorcoded-labs-hero.webp"
 header-overview: "ColorCoded Labs is a tech training bootcamp that's based in Colombus, Ohio. This bootcamp focuses on underrepresented talent in the tech industry, and has a job placement program that helps connects their graduates with employers who want to diversify their workforce."
-order: 2
+order: 3
 ---
 
 ## Project Overview

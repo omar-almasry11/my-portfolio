@@ -5,7 +5,7 @@ title: Home
 <div class="min-h-svh mx-auto flex-col items-center px-[5%] py-24">
     <div class="text-center mr-auto ml-auto">
       <div class="max-w-3xl mr-auto ml-auto">
-        <div class="relative mx-auto w-56 h-56 rounded-full bg-black mb-6 overflow-hidden shadow-low dark:shadow-lowInverted">
+        <div id="portraitCircle" class="relative mx-auto w-56 h-56 rounded-full bg-inverted dark:bg-secondary mb-6 overflow-hidden shadow-low dark:shadow-lowInverted cursor-pointer">
             <!-- Hidden Video for Reference: 
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
               <source src="images/omar-almasry-emoji-video.mp4" type="video/mp4">
@@ -18,20 +18,11 @@ title: Home
           <span data-letter>H</span><span data-letter>i</span><span data-letter>&nbsp;</span><span data-letter>t</span><span data-letter>h</span><span data-letter>e</span><span data-letter>r</span><span data-letter>e</span><span data-letter>!</span>
         </p>
         <h1 class="py-4 text-xl sm:text-2xl text-normalLight font-normal dark:text-invertedLight">
-            My name is Omar Almasry. I'm an independent web UI developer working with enterprise clients to build scalable and accessible web solutions that make life easier for marketing teams.
+            My name is Omar Almasry. I'm a digital designer working with agencies and in-house marketing teams to design and build digital experiences that work for eveyrone.
         </h1>
      </div>
    </div>
   </div>
-  {%- render 'partials/section-standard', 
-    header: 'Featured Articles',
-    subheader: 'I love learning and writing. So, here are some insights from my journey.',
-    content: '<p>Default Content</p>',
-    collection: collections.posts,
-    limit: 3,
-    collectionLink: '/blog',
-  -%}
-
   {%- render 'partials/section-standard', 
     header: 'Featured Projects',
     subheader: 'Interesting case studies for some projects I worked on.',
@@ -39,3 +30,189 @@ title: Home
     limit: 6,
     customClasses: 'pb-24 pt-8'
       -%}
+
+  {%- render 'partials/section-standard', 
+    header: 'What My Clients Say',
+    subheader: 'Kind words from lovely people.',
+    content: '<div class="flex flex-col gap-4 w-full sm:grid sm:grid-cols-2 sm:gap-4">
+      <!-- Haley Fraser Testimonial-->
+  <div class="standard-card">
+      <div class="w-full mb-4 flex justify-between items-center">
+        <picture>
+          <source srcset="/images/haley-fraser-portrait.webp" type="image/webp">
+          <img
+            src="/images/png/haley-fraser-portrait.png"
+            width="80"
+            height="80"
+            class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
+            alt="Haley Fraser Portrait"
+          >
+        </picture>
+        <img
+            src="/images/emplifi-logo.svg"
+            class="max-w-24 dark:hidden"
+            alt="Emplifi Logo"
+          >
+          <img
+            src="/images/emplifi-logo-white.svg"
+            class="max-w-24 hidden dark:block"
+            alt="Emplifi Logo - White Version"
+          >
+      </div>
+      <p class="italic mb-8">"Omar was terrific to work with. He quickly and skillfully helped re-platform our entire blog to Webflow within our timeline and budget. Omar went above and beyond to help us with our project – we couldn\'t be more thankful!"</p>
+      <div class="mt-auto mb-0">
+        <p class="font-bold text-lg">Haley Fraser</p>
+        <p class="text-normalLight text-sm dark:text-invertedLight">Director of Marketing, Brand and Content</p>
+      </div>
+    </div>
+    
+    <!-- Eleanor Carter Testimonial-->
+    <div class="standard-card">
+      <div class="w-full mb-4 flex justify-between items-center">
+        <picture>
+          <source srcset="/images/eleanor-carter-portrait.webp" type="image/webp">
+          <img
+            src="/images/png/eleanor-carter-portrait.png"
+            width="80"
+            height="80"
+            class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
+            alt="Eleanor Carter Portrait"
+          >
+        </picture>
+        <picture>
+          <source srcset="/images/social-suite-logo.webp" type="image/webp">
+          <img
+            src="/images/png/social-suite-logo.png"
+            class="max-w-24 invert dark:hidden"
+            alt="Socialsuite Logo"
+          >
+        </picture>
+        <picture>
+          <source srcset="/images/social-suite-logo.webp" type="image/webp">
+          <img
+            src="/images/png/social-suite-logo.png"
+            class="max-w-24 hidden dark:block"
+            alt="Socialsuite Logo - White Version"
+          >
+        </picture>
+      </div>
+      <p class="italic mb-8">"It was fantastic to work with Omar - from start to finish he was a delight to work with! Omar went above and beyond to help us deliver our project on time - going above and beyond the original scope of work to help us create an incredible website. His training on the CMS was fantastic, and I recommend Omar to anyone looking for assistance with a Webflow site!"</p>
+      <div class="mt-auto mb-0">
+        <p class="font-bold text-lg">Eleanor Carter</p>
+        <p class="text-normalLight text-sm dark:text-invertedLight">Senior Content Strategist</p>
+      </div>
+    </div>
+    
+    <!-- Victoria Hogg Testimonial-->
+    <div class="standard-card">
+      <div class="w-full mb-4 flex justify-between items-center">
+        <picture>
+          <source srcset="/images/victoria-hogg-portrait.webp" type="image/webp">
+          <img
+            src="/images/png/victoria-hogg-portrait.png"
+            width="80"
+            height="80"
+            class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
+            alt="Victoria Hogg Portrait"
+          >
+        </picture>
+        <picture>
+          <source srcset="/images/4sale-logo.webp" type="image/webp">
+          <img
+            src="/images/png/4sale-logo.png"
+            class="max-w-24 invert dark:hidden"
+            alt="4Sale Logo"
+          >
+        </picture>
+        <picture>
+          <source srcset="/images/4sale-logo.webp" type="image/webp">
+          <img
+            src="/images/png/4sale-logo.png"
+            class="max-w-24 hidden dark:block"
+            alt="4Sale Logo - White Version"
+          >
+        </picture>
+      </div>
+      <p class="italic mb-8">"I\'ve worked with Omar on multiple content projects for different companies - ranging from best-in-class tech brands to small 1-man businesses - and I can safely say Omar is the most creative, engaging, reliable, and awesome content partner I\'ve ever worked with."</p>
+      <div class="mt-auto mb-0">
+        <p class="font-bold text-lg">Victoria Hogg</p>
+        <p class="text-normalLight text-sm dark:text-invertedLight">Marketing Director</p>
+      </div>
+    </div>
+    
+    <!-- Miia Hiltunen Testimonial-->
+    <div class="standard-card">
+      <div class="w-full mb-4 flex justify-between items-center">
+        <picture>
+          <source srcset="/images/miia-hiltunen-portrait.webp" type="image/webp">
+          <img
+            src="/images/png/miia-hiltunen-portrait.png"
+            width="80"
+            height="80"
+            class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
+            alt="Miia Hiltunen Portrait"
+          >
+        </picture>
+        <picture>
+          <source srcset="/images/votech-logo.webp" type="image/webp">
+          <img
+            src="/images/png/votech-logo.png"
+            class="max-w-24 invert dark:hidden"
+            alt="Votech Logo"
+          >
+        </picture>
+        <picture>
+          <source srcset="/images/votech-logo.webp" type="image/webp">
+          <img
+            src="/images/png/votech-logo.png"
+            class="max-w-24 hidden dark:block"
+            alt="Votech Logo - White Version"
+          >
+        </picture>
+      </div>
+      <p class="italic mb-8">"For this job since the very start before even choosing Omar for it, I had such a good feeling about him. I mean go check out his page with his intro video, if your not convinced by his expertise then I\'m speechless! So professional, and in general I loved working with him. Can\'t wait for our future collabs!"</p>
+      <div class="mt-auto mb-0">
+        <p class="font-bold text-lg">Miia Hiltunen</p>
+        <p class="text-normalLight text-sm dark:text-invertedLight">Chief Growth Officer</p>
+      </div>
+    </div>
+    
+    <!-- Caitlin Riesbeck Testimonial-->
+    <div class="standard-card col-span-2">
+      <div class="w-full mb-4 flex justify-between items-center">
+        <picture>
+          <source srcset="/images/caitlin-riesbeck-portrait.webp" type="image/webp">
+          <img
+            src="/images/png/caitlin-riesbeck-portrait.png"
+            width="80"
+            height="80"
+            class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
+            alt="Caitlin Riesbeck Portrait"
+          >
+        </picture>
+        <img
+            src="/images/vim-logo.svg"
+            class="max-w-24 invert dark:hidden"
+            alt="Vim and Co. Logo"
+          >
+          <img
+            src="/images/vim-logo.svg"
+            class="max-w-24 hidden dark:block"
+            alt="Vim and Co. Logo - White Version"
+          >
+      </div>
+      <p class="italic mb-8">"Our boutique marketing agency has had the opportunity to work with Omar as a web designer and developer on multiple projects and he has truly brought value to every single one. His work is fantastic, our clients are thrilled, and beyond that we have found him to be a genuine joy to work with. Hands down cannot recommend Omar enough."</p>
+      <div class="mt-auto mb-0">
+        <p class="font-bold text-lg">Caitlin Riesbeck</p>
+        <p class="text-normalLight text-sm dark:text-invertedLight">Art Director</p>
+      </div>
+    </div>
+    ',
+    customClasses: 'pb-24'
+  -%}
+  {%- render 'partials/cta-grid',
+    title: "Let's work together",
+    subtext: "I'm currently available for full-time roles and select freelance projects.",
+    buttonText: 'Send me an email',
+    buttonUrl: 'mailto:hello@omaralmasry.com?subject=Project%20Inquiry'
+  -%}

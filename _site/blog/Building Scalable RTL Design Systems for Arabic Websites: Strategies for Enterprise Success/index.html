@@ -11,13 +11,8 @@
     <meta name="author" content="Omar Almasry">
     <title>Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success</title>
 
-    <!-- Favicons -->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/png/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/png/favicon-16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512.png">
+    <!-- Dynamic Favicon managed via /scripts/dynamic-favicon.js -->
+    <script src="/scripts/dynamic-favicon.js" defer></script>
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Social Media Meta Tags -->
@@ -277,9 +272,9 @@
       })();
     </script>
     <nav class="px-[5%] py-4 sticky top-0 z-50">
-  <!-- Progress Bar -->
-  <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-transparant">
-    <div id="progressBar" class="h-1.5 navbar-gradient w-0"></div>
+  <!-- Pixelated Progress Bar -->
+  <div id="progressBarContainer" class="absolute top-0 left-0 h-2 w-full bg-transparent overflow-hidden">
+    <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
   </div>
   <div class="flex items-center justify-between container mx-auto">
     <!-- Logo -->
@@ -306,18 +301,6 @@
             <span class="roll-text">
               <span data-text="About">About</span>
               <span data-text="About" aria-hidden="true">About</span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/blog/"
-            class="menu_link text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
-            
-          >
-            <span class="roll-text">
-              <span data-text="Blog">Blog</span>
-              <span data-text="Blog" aria-hidden="true">Blog</span>
             </span>
           </a>
         </li>
@@ -794,5 +777,6 @@
     <script src="/scripts/cursor.js" defer></script>
     <script src="/scripts/colorful-heading.js" defer></script>
     <script src="/scripts/page-transition.js" defer></script>
+    <script src="/scripts/cta-grid-animation.js" defer></script>
   </body>
 </html>

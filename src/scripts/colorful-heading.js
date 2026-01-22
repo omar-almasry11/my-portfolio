@@ -54,6 +54,29 @@ document.addEventListener('DOMContentLoaded', () => {
         return colorPool[Math.floor(Math.random() * colorPool.length)];
     };
 
+    // Target the portrait circle as well
+    const portraitCircle = document.getElementById('portraitCircle');
+    if (portraitCircle) {
+        portraitCircle.addEventListener('mouseenter', () => {
+            if (letterTimeouts.has(portraitCircle)) {
+                clearTimeout(letterTimeouts.get(portraitCircle));
+                letterTimeouts.delete(portraitCircle);
+            }
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            portraitCircle.style.transitionDuration = '0.3s';
+            portraitCircle.style.backgroundColor = randomColor;
+        });
+
+        portraitCircle.addEventListener('mouseleave', () => {
+            const timeout = setTimeout(() => {
+                portraitCircle.style.transitionDuration = '';
+                portraitCircle.style.backgroundColor = '';
+                letterTimeouts.delete(portraitCircle);
+            }, 2000);
+            letterTimeouts.set(portraitCircle, timeout);
+        });
+    }
+
     letters.forEach((letter, index) => {
         // Skip spaces
         if (letter.textContent.trim() === '') return;
@@ -70,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Pick a random color that's different from adjacent letters
             const randomColor = getRandomColorAvoidingNeighbors(index);
+            letter.style.transitionDuration = '0.3s';
             letter.style.color = randomColor;
             
             // Track the current color
@@ -81,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const timeout = setTimeout(() => {
                 // Add the delay only for the return transition
                 letter.style.transitionDelay = '0s'; // We already waited in JS
+                letter.style.transitionDuration = '';
                 
                 // Reset to original color (CSS will handle the transition)
                 letter.style.color = '';

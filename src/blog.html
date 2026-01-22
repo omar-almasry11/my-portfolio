@@ -10,5 +10,13 @@ title: "Blog"
 
 {%- render 'partials/section-standard', 
   collection: collections.posts,
+  limit: 12
 -%}
 
+{%- render 'partials/cta-section',
+  variant: 'minimal',
+  title: 'Have a project in mind?',
+  description: "Let's work together to build something exceptional.",
+  buttonText: 'Get in touch',
+  buttonUrl: 'mailto:hello@omaralmasry.com'
+-%}

@@ -8,7 +8,7 @@ logo-dark: "/images/eon-aligner-logo-dark.svg"
 customLogoClass: "mb-8 dark:mb-8"
 header-img: "/images/eon-aligner-1.webp"
 header-overview: "Patients needed a fast, intuitive way to find certified providers in their area. I architected and built a map-first locator using React and Google Maps API, with dynamic country/city filtering and real-time data from Airtable. The solution empowers the marketing team to add, edit, and remove clinic listings through a simple spreadsheet-like interface—no code changes, no deployments, no developer bottlenecks."
-order: 1
+order: 5
 ---
 
 ## Overview

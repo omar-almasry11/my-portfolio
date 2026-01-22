@@ -13,11 +13,40 @@ const initPageTransitions = () => {
 
     if (!loadGrid || gridItems.length === 0) return;
 
-    // Helper to randomize colors and SAVE them
+    // Helper to randomize colors and SAVE them, avoiding adjacent duplicates
     const randomizeAndStoreColors = () => {
         const newColors = [];
-        gridItems.forEach(item => {
-            const color = colors[Math.floor(Math.random() * colors.length)];
+        const gridSize = 10; // 10x10 grid
+        
+        gridItems.forEach((item, index) => {
+            let color;
+            let attempts = 0;
+            const maxAttempts = 10;
+            
+            do {
+                color = colors[Math.floor(Math.random() * colors.length)];
+                attempts++;
+                
+                // Check if this color is different from adjacent cells
+                const row = Math.floor(index / gridSize);
+                const col = index % gridSize;
+                
+                // Check left neighbor
+                const leftIndex = index - 1;
+                const hasLeftNeighbor = col > 0 && leftIndex >= 0;
+                const leftColor = hasLeftNeighbor ? newColors[leftIndex] : null;
+                
+                // Check top neighbor
+                const topIndex = index - gridSize;
+                const hasTopNeighbor = row > 0 && topIndex >= 0;
+                const topColor = hasTopNeighbor ? newColors[topIndex] : null;
+                
+                // Accept color if it's different from both neighbors (or no neighbors exist)
+                if (color !== leftColor && color !== topColor) {
+                    break;
+                }
+            } while (attempts < maxAttempts);
+            
             item.style.backgroundColor = color;
             newColors.push(color);
         });

@@ -11,13 +11,8 @@
     <meta name="author" content="Omar Almasry">
     <title>About Me</title>
 
-    <!-- Favicons -->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/png/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/png/favicon-16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512.png">
+    <!-- Dynamic Favicon managed via /scripts/dynamic-favicon.js -->
+    <script src="/scripts/dynamic-favicon.js" defer></script>
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Social Media Meta Tags -->
@@ -277,9 +272,9 @@
       })();
     </script>
     <nav class="px-[5%] py-4 sticky top-0 z-50">
-  <!-- Progress Bar -->
-  <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-transparant">
-    <div id="progressBar" class="h-1.5 navbar-gradient w-0"></div>
+  <!-- Pixelated Progress Bar -->
+  <div id="progressBarContainer" class="absolute top-0 left-0 h-2 w-full bg-transparent overflow-hidden">
+    <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
   </div>
   <div class="flex items-center justify-between container mx-auto">
     <!-- Logo -->
@@ -308,18 +303,6 @@
             <span class="roll-text">
               <span data-text="About">About</span>
               <span data-text="About" aria-hidden="true">About</span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/blog/"
-            class="menu_link text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
-            
-          >
-            <span class="roll-text">
-              <span data-text="Blog">Blog</span>
-              <span data-text="Blog" aria-hidden="true">Blog</span>
             </span>
           </a>
         </li>
@@ -447,206 +430,6 @@
         <img class="hidden dark:block dark:w-3/4 dark:max-w-[100px] dark:object-contain" src="/images/emplifi-logo-white.svg" alt="Emplifi Logo">
     </div>
 </div>
-  
-      
-    </div>
-  </div>
-</section>
-<section class="py-16 px-[5%] ">
-  <div class="container">
-    <div class="max-w-3xl mx-auto">
-      
-        <div class="mb-10">
-          
-            <div class="flex items-center">
-              <h2 class="leading-none">
-                What My Clients Say
-              </h2>
-            </div>
-          
-          
-            <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
-              Kind words from lovely people.
-            </p>
-          
-        </div>
-      
-      <!-- Render Dynamic Collection -->
-      
-        <!-- Render Static Content -->
-        <div class="flex flex-col gap-4 w-full sm:grid sm:grid-cols-2 sm:gap-4">
-    <!-- Haley Fraser Testimonial-->
-<div class="standard-card">
-    <div class="w-full mb-4 flex justify-between items-center">
-      <picture>
-        <source srcset="/images/haley-fraser-portrait.webp" type="image/webp">
-        <img
-          src="/images/png/haley-fraser-portrait.png"
-          width="80"
-          height="80"
-          class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
-          alt="Haley Fraser Portrait"
-        >
-      </picture>
-      <img
-          src="/images/emplifi-logo.svg"
-          class="max-w-24 dark:hidden"
-          alt="Emplifi Logo"
-        >
-        <img
-          src="/images/emplifi-logo-white.svg"
-          class="max-w-24 hidden dark:block"
-          alt="Emplifi Logo - White Version"
-        >
-    </div>
-    <p class="italic mb-8">"Omar was terrific to work with. He quickly and skillfully helped re-platform our entire blog to Webflow within our timeline and budget. Omar went above and beyond to help us with our project – we couldn't be more thankful!"</p>
-    <div class="mt-auto mb-0">
-      <p class="font-bold text-lg">Haley Fraser</p>
-      <p class="text-normalLight text-sm dark:text-invertedLight">Director of Marketing, Brand and Content</p>
-    </div>
-  </div>
-  
-  <!-- Eleanor Carter Testimonial-->
-  <div class="standard-card">
-    <div class="w-full mb-4 flex justify-between items-center">
-      <picture>
-        <source srcset="/images/eleanor-carter-portrait.webp" type="image/webp">
-        <img
-          src="/images/png/eleanor-carter-portrait.png"
-          width="80"
-          height="80"
-          class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
-          alt="Eleanor Carter Portrait"
-        >
-      </picture>
-      <picture>
-        <source srcset="/images/social-suite-logo.webp" type="image/webp">
-        <img
-          src="/images/png/social-suite-logo.png"
-          class="max-w-24 invert dark:hidden"
-          alt="Socialsuite Logo"
-        >
-      </picture>
-      <picture>
-        <source srcset="/images/social-suite-logo.webp" type="image/webp">
-        <img
-          src="/images/png/social-suite-logo.png"
-          class="max-w-24 hidden dark:block"
-          alt="Socialsuite Logo - White Version"
-        >
-      </picture>
-    </div>
-    <p class="italic mb-8">"It was fantastic to work with Omar - from start to finish he was a delight to work with! Omar went above and beyond to help us deliver our project on time - going above and beyond the original scope of work to help us create an incredible website. His training on the CMS was fantastic, and I recommend Omar to anyone looking for assistance with a Webflow site!"</p>
-    <div class="mt-auto mb-0">
-      <p class="font-bold text-lg">Eleanor Carter</p>
-      <p class="text-normalLight text-sm dark:text-invertedLight">Senior Content Strategist</p>
-    </div>
-  </div>
-  
-  <!-- Victoria Hogg Testimonial-->
-  <div class="standard-card">
-    <div class="w-full mb-4 flex justify-between items-center">
-      <picture>
-        <source srcset="/images/victoria-hogg-portrait.webp" type="image/webp">
-        <img
-          src="/images/png/victoria-hogg-portrait.png"
-          width="80"
-          height="80"
-          class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
-          alt="Victoria Hogg Portrait"
-        >
-      </picture>
-      <picture>
-        <source srcset="/images/4sale-logo.webp" type="image/webp">
-        <img
-          src="/images/png/4sale-logo.png"
-          class="max-w-24 invert dark:hidden"
-          alt="4Sale Logo"
-        >
-      </picture>
-      <picture>
-        <source srcset="/images/4sale-logo.webp" type="image/webp">
-        <img
-          src="/images/png/4sale-logo.png"
-          class="max-w-24 hidden dark:block"
-          alt="4Sale Logo - White Version"
-        >
-      </picture>
-    </div>
-    <p class="italic mb-8">"I've worked with Omar on multiple content projects for different companies - ranging from best-in-class tech brands to small 1-man businesses - and I can safely say Omar is the most creative, engaging, reliable, and awesome content partner I've ever worked with."</p>
-    <div class="mt-auto mb-0">
-      <p class="font-bold text-lg">Victoria Hogg</p>
-      <p class="text-normalLight text-sm dark:text-invertedLight">Marketing Director</p>
-    </div>
-  </div>
-  
-  <!-- Miia Hiltunen Testimonial-->
-  <div class="standard-card">
-    <div class="w-full mb-4 flex justify-between items-center">
-      <picture>
-        <source srcset="/images/miia-hiltunen-portrait.webp" type="image/webp">
-        <img
-          src="/images/png/miia-hiltunen-portrait.png"
-          width="80"
-          height="80"
-          class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
-          alt="Miia Hiltunen Portrait"
-        >
-      </picture>
-      <picture>
-        <source srcset="/images/votech-logo.webp" type="image/webp">
-        <img
-          src="/images/png/votech-logo.png"
-          class="max-w-24 invert dark:hidden"
-          alt="Votech Logo"
-        >
-      </picture>
-      <picture>
-        <source srcset="/images/votech-logo.webp" type="image/webp">
-        <img
-          src="/images/png/votech-logo.png"
-          class="max-w-24 hidden dark:block"
-          alt="Votech Logo - White Version"
-        >
-      </picture>
-    </div>
-    <p class="italic mb-8">"For this job since the very start before even choosing Omar for it, I had such a good feeling about him. I mean go check out his page with his intro video, if your not convinced by his expertise then I'm speechless! So professional, and in general I loved working with him. Can't wait for our future collabs!"</p>
-    <div class="mt-auto mb-0">
-      <p class="font-bold text-lg">Miia Hiltunen</p>
-      <p class="text-normalLight text-sm dark:text-invertedLight">Chief Growth Officer</p>
-    </div>
-  </div>
-  
-  <!-- Caitlin Riesbeck Testimonial-->
-  <div class="standard-card col-span-2">
-    <div class="w-full mb-4 flex justify-between items-center">
-      <picture>
-        <source srcset="/images/caitlin-riesbeck-portrait.webp" type="image/webp">
-        <img
-          src="/images/png/caitlin-riesbeck-portrait.png"
-          width="80"
-          height="80"
-          class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
-          alt="Caitlin Riesbeck Portrait"
-        >
-      </picture>
-      <img
-          src="/images/vim-logo.svg"
-          class="max-w-24 invert dark:hidden"
-          alt="Vim and Co. Logo"
-        >
-        <img
-          src="/images/vim-logo.svg"
-          class="max-w-24 hidden dark:block"
-          alt="Vim and Co. Logo - White Version"
-        >
-    </div>
-    <p class="italic mb-8">"Our boutique marketing agency has had the opportunity to work with Omar as a web designer and developer on multiple projects and he has truly brought value to every single one. His work is fantastic, our clients are thrilled, and beyond that we have found him to be a genuine joy to work with. Hands down cannot recommend Omar enough."</p>
-    <div class="mt-auto mb-0">
-      <p class="font-bold text-lg">Caitlin Riesbeck</p>
-      <p class="text-normalLight text-sm dark:text-invertedLight">Art Director</p>
-    </div>
-  </div>
   
       
     </div>
@@ -1187,5 +970,6 @@
     <script src="/scripts/cursor.js" defer></script>
     <script src="/scripts/colorful-heading.js" defer></script>
     <script src="/scripts/page-transition.js" defer></script>
+    <script src="/scripts/cta-grid-animation.js" defer></script>
   </body>
 </html>
