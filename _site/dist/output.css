@@ -708,9 +708,17 @@ a[aria-current=page]:is(.dark *) {
   width: 100%;
 }
 
+.\!container {
+  width: 100% !important;
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
+  }
+
+  .\!container {
+    max-width: 640px !important;
   }
 }
 
@@ -718,11 +726,19 @@ a[aria-current=page]:is(.dark *) {
   .container {
     max-width: 768px;
   }
+
+  .\!container {
+    max-width: 768px !important;
+  }
 }
 
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
+  }
+
+  .\!container {
+    max-width: 1024px !important;
   }
 }
 
@@ -730,11 +746,19 @@ a[aria-current=page]:is(.dark *) {
   .container {
     max-width: 1280px;
   }
+
+  .\!container {
+    max-width: 1280px !important;
+  }
 }
 
 @media (min-width: 1536px) {
   .container {
     max-width: 1536px;
+  }
+
+  .\!container {
+    max-width: 1536px !important;
   }
 }
 
@@ -2917,6 +2941,14 @@ nav.group,
   border-width: 0;
 }
 
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 .static {
   position: static;
 }
@@ -2955,6 +2987,14 @@ nav.group,
 
 .top-0 {
   top: 0px;
+}
+
+.-bottom-10 {
+  bottom: -2.5rem;
+}
+
+.right-0 {
+  right: 0px;
 }
 
 .isolate {
@@ -3128,6 +3168,10 @@ nav.group,
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .inline {
   display: inline;
 }
@@ -3292,6 +3336,10 @@ nav.group,
   width: 100%;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
 .max-w-24 {
   max-width: 6rem;
 }
@@ -3342,6 +3390,14 @@ nav.group,
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.max-w-xs {
+  max-width: 20rem;
 }
 
 .flex-1 {
@@ -3456,6 +3512,18 @@ nav.group,
   gap: 2rem;
 }
 
+.gap-12 {
+  gap: 3rem;
+}
+
+.gap-\[1px\] {
+  gap: 1px;
+}
+
+.gap-0 {
+  gap: 0px;
+}
+
 .gap-y-8 {
   row-gap: 2rem;
 }
@@ -3536,12 +3604,24 @@ nav.group,
   border-radius: 0.75rem;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-sm {
+  border-radius: 0.125rem;
+}
+
 .border {
   border-width: 1px;
 }
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-0 {
+  border-width: 0px;
 }
 
 .border-b {
@@ -3596,6 +3676,11 @@ nav.group,
   background-color: transparent;
 }
 
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+}
+
 .fill-current {
   fill: currentColor;
 }
@@ -3625,6 +3710,10 @@ nav.group,
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .px-2 {
@@ -3697,6 +3786,11 @@ nav.group,
   padding-bottom: 1rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pb-24 {
   padding-bottom: 6rem;
 }
@@ -3743,6 +3837,10 @@ nav.group,
 
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.font-sans {
+  font-family: Atkinson Next, Inter, sans-serif;
 }
 
 .text-2xl {
@@ -3866,6 +3964,15 @@ nav.group,
   letter-spacing: 0.1em;
 }
 
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+}
+
 .text-inverted {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
@@ -3896,8 +4003,20 @@ nav.group,
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
 }
 
+.underline {
+  text-decoration-line: underline;
+}
+
 .no-underline {
   text-decoration-line: none;
+}
+
+.decoration-primary {
+  text-decoration-color: #3d60e2;
+}
+
+.decoration-2 {
+  text-decoration-thickness: 2px;
 }
 
 .opacity-40 {
@@ -3944,6 +4063,17 @@ nav.group,
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .invert {
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -3973,12 +4103,26 @@ nav.group,
   transition-duration: 150ms;
 }
 
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Prism.js Syntax Highlighting Theme */
@@ -4179,6 +4323,14 @@ a.hover\:bg-primary:hover.button:hover {
   color: rgb(61 96 226 / var(--tw-text-opacity, 1));
 }
 
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
+.hover\:decoration-transparent:hover {
+  text-decoration-color: transparent;
+}
+
 .hover\:opacity-90:hover {
   opacity: 0.9;
 }
@@ -4266,6 +4418,10 @@ a.hover\:bg-primary:hover.button:hover {
   height: 6rem;
 }
 
+.dark\:h-32:is(.dark *) {
+  height: 8rem;
+}
+
 .dark\:w-12:is(.dark *) {
   width: 3rem;
 }
@@ -4284,6 +4440,10 @@ a.hover\:bg-primary:hover.button:hover {
 
 .dark\:w-3\/4:is(.dark *) {
   width: 75%;
+}
+
+.dark\:w-32:is(.dark *) {
+  width: 8rem;
 }
 
 .dark\:max-w-\[100px\]:is(.dark *) {
@@ -4340,9 +4500,19 @@ a.hover\:bg-primary:hover.button:hover {
   background-color: rgb(255 255 255 / 0.05);
 }
 
+.dark\:bg-gray-800:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+
 .dark\:object-contain:is(.dark *) {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.dark\:text-gray-400:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 
 .dark\:text-inverted:is(.dark *) {
@@ -4368,6 +4538,10 @@ a.hover\:bg-primary:hover.button:hover {
 .dark\:text-red-400:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+}
+
+.dark\:decoration-primaryInverted:is(.dark *) {
+  text-decoration-color: #F7CB15;
 }
 
 .dark\:shadow-lowInverted:is(.dark *) {
@@ -4410,6 +4584,10 @@ a.hover\:bg-primary:hover.button:hover {
 .dark\:hover\:text-primaryInverted:hover:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(247 203 21 / var(--tw-text-opacity, 1));
+}
+
+.dark\:hover\:decoration-transparent:hover:is(.dark *) {
+  text-decoration-color: transparent;
 }
 
 .group:hover .dark\:group-hover\:text-invertedLight:is(.dark *) {
