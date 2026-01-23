@@ -3128,6 +3128,10 @@ nav.group,
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .inline {
   display: inline;
 }
@@ -3697,6 +3701,11 @@ nav.group,
   padding-bottom: 1rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pb-24 {
   padding-bottom: 6rem;
 }
@@ -3866,6 +3875,11 @@ nav.group,
   letter-spacing: 0.1em;
 }
 
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+}
+
 .text-inverted {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
@@ -3894,6 +3908,10 @@ nav.group,
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .no-underline {
@@ -4107,12 +4125,12 @@ nav.group,
   }
 }
 
-a.hover\:bg-primary:hover.button {
+.hover\:bg-primary:hovera.button {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
 }
 
-a.hover\:bg-primary:hover.button:hover {
+.hover\:bg-primary:hovera.button:hover {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
 }
@@ -4177,6 +4195,10 @@ a.hover\:bg-primary:hover.button:hover {
 .hover\:text-savoyBlue:hover {
   --tw-text-opacity: 1;
   color: rgb(61 96 226 / var(--tw-text-opacity, 1));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .hover\:opacity-90:hover {
@@ -4343,6 +4365,11 @@ a.hover\:bg-primary:hover.button:hover {
 .dark\:object-contain:is(.dark *) {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.dark\:text-gray-400:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 
 .dark\:text-inverted:is(.dark *) {
