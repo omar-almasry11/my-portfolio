@@ -276,7 +276,7 @@
   <div id="progressBarContainer" class="absolute top-0 left-0 h-2 w-full bg-transparent overflow-hidden">
     <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
   </div>
-  <div class="flex items-center justify-between container mx-auto">
+  <div class="max-w-4xl mx-auto flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="logo flex items-center font-bold text-lg no-underline group">
       <h3 class="flex items-center m-0">
@@ -353,9 +353,8 @@
 </nav>
 
     <main>
-      <div class="min-h-svh mx-auto flex-col items-center px-[5%] py-24">
-    <div class="text-center mr-auto ml-auto">
-      <div class="max-w-3xl mr-auto ml-auto">
+      <div class="min-h-svh flex flex-col items-center px-[5%] py-24">
+    <div class="w-full max-w-4xl mx-auto text-center">
         <div id="portraitCircle" class="relative mx-auto w-56 h-56 rounded-full bg-inverted dark:bg-secondary mb-6 overflow-hidden shadow-low dark:shadow-lowInverted cursor-pointer">
             <!-- Hidden Video for Reference: 
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
@@ -365,17 +364,89 @@
             -->
             <img src="/images/png/pixel-profile-picture.png" alt="Omar Almasry Pixel Art" class="w-full h-full object-cover">
           </div>
-        <p class="home-heading text-[5rem] sm:text-9xl font-extrabold z-0 relative" id="colorfulHeading">
-          <span data-letter>H</span><span data-letter>i</span><span data-letter>&nbsp;</span><span data-letter>t</span><span data-letter>h</span><span data-letter>e</span><span data-letter>r</span><span data-letter>e</span><span data-letter>!</span>
+        <p class="home-heading text-[5rem] sm:text-9xl font-extrabold z-0 relative leading-[0.8] tracking-tighter" id="colorfulHeading">
+          Hi there!
         </p>
-        <h1 class="py-4 text-xl sm:text-2xl text-normalLight font-normal dark:text-invertedLight">
-            My name is Omar Almasry. I'm a digital designer working with agencies and in-house marketing teams to design and build digital experiences that work for eveyrone.
+        <h1 class="py-4 text-2xl sm:text-3xl text-normalLight font-normal dark:text-invertedLight">
+            My name is Omar Almasry. I'm a digital designer working with agencies and in-house marketing teams to design and build digital experiences that work for everyone.
         </h1>
-     </div>
-   </div>
+    </div>
   </div>
+  <section class="py-12">
+  <div class="max-w-4xl mx-auto px-[5%]">
+    <h3 class="mb-10 text-lg text-center text-normalLight dark:text-invertedLight font-medium">
+      Companies I've worked with
+    </h3>
+    <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 items-center justify-items-center">
+      <div class="flex justify-center">
+        <img
+          class="max-w-[70px] sm:max-w-[90px] object-contain dark:hidden"
+          src="/images/duba-holding-logo-2.svg"
+          alt="Dubai Holding Logo"
+        >
+        <img
+          class="hidden dark:block max-w-[70px] sm:max-w-[90px] object-contain"
+          src="/images/dubai-holding-logo-inverted.avif"
+          alt="Dubai Holding Logo"
+        >
+      </div>
+      <div class="flex justify-center">
+        <picture>
+          <source srcset="/images/visit-hatta-logo.webp" type="image/webp">
+          <source srcset="/images/visit-hatta-logo.png" type="image/png">
+          <img
+            class="max-w-[55px] sm:max-w-[75px] object-contain dark:hidden"
+            src="/images/visit-hatta-logo.webp"
+            alt="Visit Hatta Logo"
+          >
+        </picture>
+        <img
+          class="hidden dark:block max-w-[35px] sm:max-w-[45px] object-contain"
+          src="/images/hatta-logo-white.svg"
+          alt="Visit Hatta Logo"
+        >
+      </div>
+      <div class="flex justify-center">
+        <picture>
+          <source srcset="/images/bay-square-logo.webp" type="image/webp">
+          <source srcset="/images/bay-square-logo.png" type="image/png">
+          <img
+            class="max-w-[55px] sm:max-w-[75px] object-contain"
+            src="/images/bay-square-logo.webp"
+            alt="Bay Square Logo"
+          >
+        </picture>
+      </div>
+      <div class="flex justify-center">
+        <img
+          class="max-w-[70px] sm:max-w-[90px] object-contain dark:hidden"
+          src="/images/nakheel-logo.svg"
+          alt="Nakheel Logo"
+        >
+        <img
+          class="hidden dark:block max-w-[70px] sm:max-w-[90px] object-contain"
+          src="/images/nakheel-logo-white.svg"
+          alt="Nakheel Logo"
+        >
+      </div>
+      <div class="flex justify-center">
+        <img
+          class="max-w-[70px] sm:max-w-[90px] object-contain dark:hidden"
+          src="/images/emplifi-logo.svg"
+          alt="Emplifi Logo"
+        >
+        <img
+          class="hidden dark:block max-w-[70px] sm:max-w-[90px] object-contain"
+          src="/images/emplifi-logo-white.svg"
+          alt="Emplifi Logo"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
   <section class="py-16 px-[5%]">
-  <div class="container mx-auto">
+  <div class="max-w-4xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <!-- Left Column: Text Content -->
       <div class="flex flex-col space-y-6">
@@ -390,7 +461,7 @@
 
         <p class="text-lg text-normal dark:text-inverted">
           I'm a husband and father who loves technology and design. Remote work has been my default setting way before
-          2020. It was my thing before it became our thing.
+          2020. It was <i>my thing</i> before it became <i>our thing</i>.
         </p>
 
         <p class="text-lg text-normal dark:text-inverted">
@@ -399,208 +470,214 @@
         </p>
 
         <p class="text-lg text-normal dark:text-inverted">
-          You can learn more trivial facts about me by visiting—you guessed it—the
-          <a
-            href="/about"
-            class="font-medium underline decoration-primary decoration-2 transition duration-300 hover:text-primary hover:decoration-transparent dark:decoration-primaryInverted dark:hover:text-primaryInverted dark:hover:decoration-transparent"
-            >about page</a
-          >. Or skip directly to the case studies below.
+          You can learn more trivial facts about me by visiting the about page. Or skip directly to the case studies
+          below.
         </p>
 
-        <p class="text-lg font-bold text-normal dark:text-inverted">This is the way.</p>
+        <a
+  href="/about"
+  class="text-link flex text-lg items-center gap-2 "
+  
+>
+  Learn more about this guy
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
+     <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
+     </path>  
+    </svg>
+</a>
+
       </div>
 
       <!-- Right Column: Image Grid Animation -->
-      <div class="flex justify-center items-center">
-        <div id="pixel-image-container" class="relative w-full max-w-xs aspect-square">
-          <!-- Image Container -->
-          <div id="image-wrapper" class="absolute inset-0">
-            <img
-              id="current-image"
-              src="/images/computer-pixel-art.webp"
-              alt="Computer"
-              class="w-full h-full object-cover"
-            >
-          </div>
+      <div class="flex justify-center items-center my-6 lg:my-12">
+  <div
+    id="pixel-image-container-home-about-grid"
+    class="pixel-image-cycle relative w-full max-w-xs aspect-square"
+  >
+    <!-- Image Container -->
+    <div class="image-wrapper absolute inset-0">
+      <img
+        class="current-image w-full h-full object-cover"
+        src="/images/computer-pixel-art.webp"
+        alt="Computer"
+      >
+    </div>
 
-          <!-- Pixel Grid Overlay -->
-          <div id="pixel-grid-overlay" class="absolute inset-0 grid">
-            <!-- Pixels will be injected here -->
-          </div>
-        </div>
-      </div>
+    <!-- Pixel Grid Overlay -->
+    <div class="pixel-grid-overlay absolute inset-0 grid">
+      <!-- Pixels will be injected here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    document.addEventListener('DOMContentLoaded', () => {
+      const id = "home-about-grid";
+      const container = document.getElementById(`pixel-image-container-${id}`);
+      if (!container) return;
+
+      const currentImage = container.querySelector('.current-image');
+      const gridOverlay = container.querySelector('.pixel-grid-overlay');
+
+      if (!gridOverlay || !currentImage) return;
+
+      // Grid Configuration
+      const gridSize = 20;
+
+      // Setup Grid CSS
+      gridOverlay.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+      gridOverlay.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+
+      // Create Pixels
+      const pixels = [];
+      for (let i = 0; i < gridSize * gridSize; i++) {
+        const px = document.createElement('div');
+        px.classList.add('pixel-overlay-item');
+        px.style.backgroundColor = 'transparent';
+        px.style.opacity = '0';
+        px.style.transition = 'opacity 0.6s ease-in-out';
+        gridOverlay.appendChild(px);
+        pixels.push(px);
+      }
+
+      // Image data
+      const images = [
+        {
+          src: '/images/computer-pixel-art.webp',
+          alt: 'Computer',
+          color: '#3d60e2',
+        },
+        {
+          src: '/images/coffee-pixel-art.webp',
+          alt: 'Coffee',
+          color: '#FB8304',
+        },
+        {
+          src: '/images/maple-leaf-pixel-art.webp',
+          alt: 'Maple Leaf',
+          color: '#FE3300',
+        },
+        {
+          src: '/images/high-five-pixel-art.webp',
+          alt: 'High Five',
+          color: '#40BFAE',
+        },
+        {
+          src: '/images/canada-goose-pixel-art.webp',
+          alt: 'Canada Goose',
+          color: '#EDF060',
+        },
+      ];
+
+      let currentIndex = 0;
+      let isTransitioning = false;
+
+      function transitionToImage(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        const nextImage = images[index];
+        const transitionColor = nextImage.color;
+
+        const pixelIndices = pixels.map((_, i) => i);
+        for (let i = pixelIndices.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pixelIndices[i], pixelIndices[j]] = [pixelIndices[j], pixelIndices[i]];
+        }
+
+        const fadeInTime = pixelIndices.length * 1.2;
+
+        pixelIndices.forEach((pixelIdx, i) => {
+          setTimeout(() => {
+            pixels[pixelIdx].style.backgroundColor = transitionColor;
+            pixels[pixelIdx].style.opacity = '1';
+          }, i * 1.2);
+        });
+
+        setTimeout(() => {
+          currentImage.src = nextImage.src;
+          currentImage.alt = nextImage.alt;
+
+          setTimeout(() => {
+            pixelIndices.forEach((pixelIdx, i) => {
+              setTimeout(() => {
+                pixels[pixelIdx].style.opacity = '0';
+              }, i * 1.2);
+            });
+
+            setTimeout(() => {
+              isTransitioning = false;
+            }, pixelIndices.length * 1.2 + 300);
+          }, 200);
+        }, fadeInTime + 600);
+      }
+
+      setTimeout(() => {
+        setInterval(() => {
+          currentIndex = (currentIndex + 1) % images.length;
+          transitionToImage(currentIndex);
+        }, 4500);
+      }, 4500);
+    });
+  })();
+</script>
+
     </div>
   </div>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('pixel-image-container');
-    const imageWrapper = document.getElementById('image-wrapper');
-    const currentImage = document.getElementById('current-image');
-    const gridOverlay = document.getElementById('pixel-grid-overlay');
-
-    if (!container || !gridOverlay || !currentImage) return;
-
-    // Grid Configuration
-    const gridSize = 20; // 20x20 grid like CTA
-
-    // Setup Grid CSS
-    gridOverlay.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    gridOverlay.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-
-    // Create Pixels
-    const pixels = [];
-    for (let i = 0; i < gridSize * gridSize; i++) {
-      const px = document.createElement('div');
-      px.classList.add('pixel-overlay-item');
-      px.style.backgroundColor = 'transparent';
-      px.style.opacity = '0';
-      px.style.transition = 'opacity 0.6s ease-in-out';
-      gridOverlay.appendChild(px);
-      pixels.push(px);
-    }
-
-    // Image data - using same colors as page transition
-    const images = [
-      {
-        src: '/images/computer-pixel-art.webp',
-        alt: 'Computer',
-        color: '#3d60e2', // Blue
-      },
-      {
-        src: '/images/coffee-pixel-art.webp',
-        alt: 'Coffee',
-        color: '#FB8304', // Orange
-      },
-      {
-        src: '/images/maple-leaf-pixel-art.webp',
-        alt: 'Maple Leaf',
-        color: '#FE3300', // Red
-      },
-      {
-        src: '/images/high-five-pixel-art.webp',
-        alt: 'High Five',
-        color: '#40BFAE', // Teal
-      },
-      {
-        src: '/images/canada-goose-pixel-art.webp',
-        alt: 'Canada Goose',
-        color: '#EDF060', // Yellow
-      },
-    ];
-
-    let currentIndex = 0;
-    let isTransitioning = false;
-
-    function transitionToImage(index) {
-      if (isTransitioning) return;
-      isTransitioning = true;
-
-      const nextImage = images[index];
-      const transitionColor = nextImage.color;
-
-      // Create shuffled array for random stagger
-      const pixelIndices = pixels.map((_, i) => i);
-      for (let i = pixelIndices.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [pixelIndices[i], pixelIndices[j]] = [pixelIndices[j], pixelIndices[i]];
-      }
-
-      // Calculate total time for fade-in animation
-      const fadeInTime = pixelIndices.length * 1.2;
-
-      // Phase 1: Fade in pixels with color (covering current image)
-      pixelIndices.forEach((pixelIdx, i) => {
-        setTimeout(() => {
-          pixels[pixelIdx].style.backgroundColor = transitionColor;
-          pixels[pixelIdx].style.opacity = '1';
-        }, i * 1.2);
-      });
-
-      // Phase 2: After ALL pixels have fully covered the image, swap the image underneath
-      setTimeout(() => {
-        currentImage.src = nextImage.src;
-        currentImage.alt = nextImage.alt;
-
-        // Phase 3: Fade out pixels to reveal new image
-        setTimeout(() => {
-          pixelIndices.forEach((pixelIdx, i) => {
-            setTimeout(() => {
-              pixels[pixelIdx].style.opacity = '0';
-            }, i * 1.2);
-          });
-
-          // Reset transition lock after animation completes
-          setTimeout(() => {
-            isTransitioning = false;
-          }, pixelIndices.length * 1.2 + 300);
-        }, 200);
-      }, fadeInTime + 600); // Wait for complete fade-in + transition duration + buffer
-    }
-
-    // Start cycling
-    setTimeout(() => {
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        transitionToImage(currentIndex);
-      }, 4500); // Match CTA timing
-    }, 4500);
-  });
-</script>
 <section class="py-16 px-[5%] pb-24 pt-8">
-  <div class="container">
-    <div class="max-w-3xl mx-auto">
-      
-        <div class="mb-10">
-          
-            <div class="flex items-center">
-              <h2 class="leading-none">
-                Featured Projects
-              </h2>
-            </div>
-          
-          
-            <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
-              Interesting case studies for some projects I worked on.
-            </p>
-          
-        </div>
-      
-      <!-- Render Dynamic Collection -->
-      
-        <!-- Check if this is a grid layout (for services) -->
+  <div class="max-w-4xl mx-auto">
+    
+      <div class="mb-10">
         
-          <!-- Default single column layout -->
-          <div class="flex-col space-y-4"><div class="list-parent standard-card">
-                <!-- Light Mode Logo -->
-                
-                  <img
-                    src="/images/png/socialsuite-logo.webp"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="mb-4 ratio-square object-contain dark:hidden w-12 h-12 dark:w-12 dark:h-12"
-                  >
-                
-                <!-- Dark Mode Logo -->
-                
-                  <img
-                    src="/images/png/socialsuite-logo.webp"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="hidden dark:block ratio-square object-contain mb-4 w-12 h-12 dark:w-12 dark:h-12"
-                  >
-                
-                <h3 class="font-bold mb-2">
-                  Socialsuite
-                </h3>
-                
-                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">An ESG and outcomes measurement and reporting software platform adopted by over 165 organizations worldwide, including publicly traded companies across the NASDAQ, and NYSE, and nonprofits such as Habitat for Humanity, Scope, and Teach for America.</p>
-                
+          <div class="flex items-center">
+            <h2 class="leading-none">
+              Featured Projects
+            </h2>
+          </div>
+        
+        
+          <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
+            Interesting case studies for some projects I worked on.
+          </p>
+        
+      </div>
+    
+    <!-- Render Dynamic Collection -->
+    
+      <!-- Check if this is a grid layout (for services) -->
+      
+        <!-- Default single column layout -->
+        <div class="flex-col space-y-4"><div class="list-parent standard-card">
+              <!-- Light Mode Logo -->
+              
+                <img
+                  src="/images/png/socialsuite-logo.webp"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 ratio-square object-contain dark:hidden w-12 h-12 dark:w-12 dark:h-12"
+                >
+              
+              <!-- Dark Mode Logo -->
+              
+                <img
+                  src="/images/png/socialsuite-logo.webp"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block ratio-square object-contain mb-4 w-12 h-12 dark:w-12 dark:h-12"
+                >
+              
+              <h3 class="font-bold mb-2">
+                Socialsuite
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">An ESG and outcomes measurement and reporting software platform adopted by over 165 organizations worldwide, including publicly traded companies across the NASDAQ, and NYSE, and nonprofits such as Habitat for Humanity, Scope, and Teach for America.</p>
+              
 
-                <a
+              <a
   href="/case-studies/socialsuite/"
   class="text-link flex text-lg items-center gap-2 stretched-link"
   
@@ -612,35 +689,35 @@
     </svg>
 </a>
 
-              </div><div class="list-parent standard-card">
-                <!-- Light Mode Logo -->
-                
-                  <img
-                    src="/images/duba-holding-logo-2.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="mb-4 ratio-square object-contain dark:hidden w-20 h-20 dark:w-20 dark:h-20"
-                  >
-                
-                <!-- Dark Mode Logo -->
-                
-                  <img
-                    src="/images/dubai-holding-logo-inverted.avif"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="hidden dark:block ratio-square object-contain mb-4 w-20 h-20 dark:w-20 dark:h-20"
-                  >
-                
-                <h3 class="font-bold mb-2">
-                  Dubai Holding
-                </h3>
-                
-                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Enterprise Webflow partner for Dubai Holding, migrating and building websites across their portfolio — from destination sites to retail malls — with a focus on accessibility, bilingual support, and SEO preservation.</p>
-                
+            </div><div class="list-parent standard-card">
+              <!-- Light Mode Logo -->
+              
+                <img
+                  src="/images/duba-holding-logo-2.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 ratio-square object-contain dark:hidden w-20 h-20 dark:w-20 dark:h-20"
+                >
+              
+              <!-- Dark Mode Logo -->
+              
+                <img
+                  src="/images/dubai-holding-logo-inverted.avif"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block ratio-square object-contain mb-4 w-20 h-20 dark:w-20 dark:h-20"
+                >
+              
+              <h3 class="font-bold mb-2">
+                Dubai Holding
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Enterprise Webflow partner for Dubai Holding, migrating and building websites across their portfolio — from destination sites to retail malls — with a focus on accessibility, bilingual support, and SEO preservation.</p>
+              
 
-                <a
+              <a
   href="/case-studies/dubai-holding/"
   class="text-link flex text-lg items-center gap-2 stretched-link"
   
@@ -652,35 +729,35 @@
     </svg>
 </a>
 
-              </div><div class="list-parent standard-card">
-                <!-- Light Mode Logo -->
-                
-                  <img
-                    src="/images/color-code-labs-logo.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="mb-4 ratio-square object-contain dark:hidden w-12 h-12 dark:w-12 dark:h-12"
-                  >
-                
-                <!-- Dark Mode Logo -->
-                
-                  <img
-                    src="/images/color-code-labs-logo.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="hidden dark:block ratio-square object-contain mb-4 w-12 h-12 dark:w-12 dark:h-12"
-                  >
-                
-                <h3 class="font-bold mb-2">
-                  ColorCoded Labs
-                </h3>
-                
-                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">A tech boot camp that prepares motivated individuals with the skills they need for high-demand technology careers.</p>
-                
+            </div><div class="list-parent standard-card">
+              <!-- Light Mode Logo -->
+              
+                <img
+                  src="/images/color-code-labs-logo.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 ratio-square object-contain dark:hidden w-12 h-12 dark:w-12 dark:h-12"
+                >
+              
+              <!-- Dark Mode Logo -->
+              
+                <img
+                  src="/images/color-code-labs-logo.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block ratio-square object-contain mb-4 w-12 h-12 dark:w-12 dark:h-12"
+                >
+              
+              <h3 class="font-bold mb-2">
+                ColorCoded Labs
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">A tech boot camp that prepares motivated individuals with the skills they need for high-demand technology careers.</p>
+              
 
-                <a
+              <a
   href="/case-studies/colorcoded-labs/"
   class="text-link flex text-lg items-center gap-2 stretched-link"
   
@@ -692,35 +769,35 @@
     </svg>
 </a>
 
-              </div><div class="list-parent standard-card">
-                <!-- Light Mode Logo -->
-                
-                  <img
-                    src="/images/emplifi-logo.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="mb-4 ratio-square object-contain dark:hidden w-24 h-24 mb-0 dark:w-24 dark:h-24 dark:mb-6"
-                  >
-                
-                <!-- Dark Mode Logo -->
-                
-                  <img
-                    src="/images/emplifi-logo-white.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="hidden dark:block ratio-square object-contain mb-4 w-24 h-24 mb-0 dark:w-24 dark:h-24 dark:mb-6"
-                  >
-                
-                <h3 class="font-bold mb-2">
-                  Pixlee TurnTo
-                </h3>
-                
-                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Pixlee TurnTo, a leader in Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing tools, needed a complete migration of their high-traffic blog to Webflow to enhance performance and empower their marketing team. Following the successful migration, Pixlee TurnTo was acquired by Emplifi, a global leader in customer experience solutions.</p>
-                
+            </div><div class="list-parent standard-card">
+              <!-- Light Mode Logo -->
+              
+                <img
+                  src="/images/emplifi-logo.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 ratio-square object-contain dark:hidden w-24 h-24 mb-0 dark:w-24 dark:h-24 dark:mb-6"
+                >
+              
+              <!-- Dark Mode Logo -->
+              
+                <img
+                  src="/images/emplifi-logo-white.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block ratio-square object-contain mb-4 w-24 h-24 mb-0 dark:w-24 dark:h-24 dark:mb-6"
+                >
+              
+              <h3 class="font-bold mb-2">
+                Pixlee TurnTo
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Pixlee TurnTo, a leader in Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing tools, needed a complete migration of their high-traffic blog to Webflow to enhance performance and empower their marketing team. Following the successful migration, Pixlee TurnTo was acquired by Emplifi, a global leader in customer experience solutions.</p>
+              
 
-                <a
+              <a
   href="/case-studies/pixlee-turnto/"
   class="text-link flex text-lg items-center gap-2 stretched-link"
   
@@ -732,35 +809,35 @@
     </svg>
 </a>
 
-              </div><div class="list-parent standard-card">
-                <!-- Light Mode Logo -->
-                
-                  <img
-                    src="/images/eon-aligner-logo.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="mb-4 ratio-square object-contain dark:hidden mb-8 dark:mb-8"
-                  >
-                
-                <!-- Dark Mode Logo -->
-                
-                  <img
-                    src="/images/eon-aligner-logo-dark.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="hidden dark:block ratio-square object-contain mb-4 mb-8 dark:mb-8"
-                  >
-                
-                <h3 class="font-bold mb-2">
-                  Eon Aligner
-                </h3>
-                
-                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Eon Aligner is a dental brand specializing in clear-aligner treatment. I built a React-based doctor locator with interactive Google Maps integration, country/city filtering, and an Airtable backend that lets the marketing team manage clinic listings without developer involvement.</p>
-                
+            </div><div class="list-parent standard-card">
+              <!-- Light Mode Logo -->
+              
+                <img
+                  src="/images/eon-aligner-logo.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 ratio-square object-contain dark:hidden mb-8 dark:mb-8"
+                >
+              
+              <!-- Dark Mode Logo -->
+              
+                <img
+                  src="/images/eon-aligner-logo-dark.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block ratio-square object-contain mb-4 mb-8 dark:mb-8"
+                >
+              
+              <h3 class="font-bold mb-2">
+                Eon Aligner
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Eon Aligner is a dental brand specializing in clear-aligner treatment. I built a React-based doctor locator with interactive Google Maps integration, country/city filtering, and an Airtable backend that lets the marketing team manage clinic listings without developer involvement.</p>
+              
 
-                <a
+              <a
   href="/case-studies/eon-aligner/"
   class="text-link flex text-lg items-center gap-2 stretched-link"
   
@@ -772,36 +849,34 @@
     </svg>
 </a>
 
-              </div></div>
-        
-        
+            </div></div>
       
-    </div>
+      
+    
   </div>
 </section>
 <section class="py-16 px-[5%] pb-24">
-  <div class="container">
-    <div class="max-w-3xl mx-auto">
-      
-        <div class="mb-10">
-          
-            <div class="flex items-center">
-              <h2 class="leading-none">
-                What My Clients Say
-              </h2>
-            </div>
-          
-          
-            <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
-              Kind words from lovely people.
-            </p>
-          
-        </div>
-      
-      <!-- Render Dynamic Collection -->
-      
-        <!-- Render Static Content -->
-        <div class="flex flex-col gap-4 w-full sm:grid sm:grid-cols-2 sm:gap-4">
+  <div class="max-w-4xl mx-auto">
+    
+      <div class="mb-10">
+        
+          <div class="flex items-center">
+            <h2 class="leading-none">
+              What My Clients Say
+            </h2>
+          </div>
+        
+        
+          <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
+            Kind words from lovely people.
+          </p>
+        
+      </div>
+    
+    <!-- Render Dynamic Collection -->
+    
+      <!-- Render Static Content -->
+      <div class="flex flex-col gap-4 w-full sm:grid sm:grid-cols-2 sm:gap-4">
       <!-- Haley Fraser Testimonial-->
   <div class="standard-card">
       <div class="w-full mb-4 flex justify-between items-center">
@@ -975,8 +1050,7 @@
       </div>
     </div>
     
-      
-    </div>
+    
   </div>
 </section>
 <section class="cta-grid-container relative py-16 px-[5%] overflow-hidden">
@@ -1786,7 +1860,7 @@
   </div>
 
   <!-- Content -->
-  <div class="relative z-10 container mx-auto max-w-6xl h-full flex items-center">
+  <div class="relative z-10 container mx-auto max-w-4xl h-full flex items-center">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
       <!-- Left: Title and Subtext -->
       <div>
@@ -1831,8 +1905,8 @@
   </svg>
 </button>
 
-<footer class="py-4 px-[5%] mr-4">
-  <div class="container mx-auto">
+<footer class="py-4 px-[5%]">
+  <div class="max-w-4xl mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
       <!-- Logo -->
       <a href="/" class="logo flex items-center font-bold text-lg no-underline group">

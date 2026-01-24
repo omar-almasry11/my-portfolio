@@ -64,6 +64,36 @@
   a[aria-current=page] {
     @apply font-medium text-primary dark:text-primaryInverted;
   }
+
+  /* Custom Scrollbar Styling */
+  html {
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #3d60e2 transparent;
+  }
+
+  html.dark {
+    /* Firefox Dark Mode */
+    scrollbar-color: #F7CB15 transparent;
+  }
+
+  /* Chrome, Edge, and Safari */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #3d60e2;
+    border-radius: 10px;
+  }
+
+  .dark::-webkit-scrollbar-thumb {
+    background-color: #F7CB15;
+  }
 }
 
 .toc ul a {
@@ -462,13 +492,17 @@
     @apply z-[9];
   }
 
-  .black-cursor {
-    @apply bg-oxfordBlue opacity-40 dark:bg-primaryInverted;
+  .pixel-cursor {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='1' height='1' fill='%233d60e2'/%3E%3Crect x='1' y='0' width='1' height='1' fill='%2340BFAE'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%23FB8304'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%23FE3300'/%3E%3Crect x='0' y='1' width='1' height='1' fill='%23FE3300'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%233d60e2'/%3E%3Crect x='2' y='1' width='1' height='1' fill='%2340BFAE'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%23FB8304'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%23FB8304'/%3E%3Crect x='1' y='2' width='1' height='1' fill='%23FE3300'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%233d60e2'/%3E%3Crect x='3' y='2' width='1' height='1' fill='%2340BFAE'/%3E%3Crect x='0' y='3' width='1' height='1' fill='%2340BFAE'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%23FB8304'/%3E%3Crect x='2' y='3' width='1' height='1' fill='%23FE3300'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%233d60e2'/%3E%3C/svg%3E") !important;
+    background-size: 8px 8px !important;
+    background-repeat: repeat !important;
+    image-rendering: pixelated !important;
+    @apply opacity-95;
+    transition: opacity 300ms ease-out, transform 300ms ease-out !important;
   }
 
-  .gradient-cursor {
-    background: linear-gradient(45deg, #3d60e2, #40BFAE, #FB8304, #FE3300);
-    @apply opacity-60;
+  .black-cursor {
+    @apply bg-oxfordBlue opacity-40 dark:bg-primaryInverted;
   }
 
   .white-cursor {
@@ -489,12 +523,16 @@
   .button,
   .theme-toggle,
   .logo,
-  .home-heading,
   .footer-social-link,
   .list-parent,
   .service-card,
   .project-card {
     @apply relative z-[20] transition-all duration-300 ease-out cursor-pointer;
+  }
+
+  .home-heading,
+  .js-colorful-heading {
+    @apply relative z-[20] transition-all duration-300 ease-out cursor-none;
   }
 
   /* Social links hover behavior like menu links */
@@ -557,8 +595,9 @@
 
   /* Colorful Heading Letter Hover Effect */
   #colorfulHeading [data-letter],
-  #portraitCircle {
-    @apply inline-block cursor-pointer;
+  #portraitCircle,
+  .js-colorful-heading [data-letter] {
+    @apply inline-block cursor-none;
     transition: color 1.2s ease-out, background-color 1.2s ease-out;
   }
 }

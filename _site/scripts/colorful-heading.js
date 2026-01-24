@@ -1,124 +1,112 @@
 /**
  * Colorful Heading Hover Effect
- * Inspired by Coolors.co - letters change to vibrant colors on hover
- * and revert back to original color after a delay
+ * Optimized for SEO: Text is split into spans dynamically in JS
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const heading = document.getElementById('colorfulHeading');
-    if (!heading) return;
-
+    // Select all elements that should have the colorful effect
+    // We include 'colorfulHeading' for backward compatibility with index.html
+    const headings = document.querySelectorAll('.js-colorful-heading, #colorfulHeading');
+    
     // Color palette from the design system
     const colors = [
         '#FB8304', // Princeton Orange
         '#40BFAE', // Ocean Mist
         '#FE3300', // Blazing Flame
-        '#3d60e2'  // Savoy Blue (existing)
+        '#3d60e2'  // Savoy Blue
     ];
 
-    // Get all letter spans
-    const letters = heading.querySelectorAll('[data-letter]');
-    
-    // Track timeouts for each letter
-    const letterTimeouts = new Map();
-    
-    // Track current color for each letter
-    const currentColors = new Map();
-
-    // Helper function to get a random color different from adjacent letters
-    const getRandomColorAvoidingNeighbors = (letterIndex) => {
-        const excludeColors = [];
-        
-        // Check previous letter (if exists and not a space)
-        if (letterIndex > 0) {
-            const prevLetter = letters[letterIndex - 1];
-            if (prevLetter.textContent.trim() !== '' && currentColors.has(prevLetter)) {
-                excludeColors.push(currentColors.get(prevLetter));
-            }
+    headings.forEach(heading => {
+        // 1. Prepare for SEO: If the heading doesn't have spans yet, create them
+        // This keeps the HTML source clean with just the title text
+        if (heading.querySelectorAll('[data-letter]').length === 0) {
+            const text = heading.textContent.trim();
+            heading.innerHTML = ''; // Clear original text
+            
+            // Set aria-label for accessibility (SEO/Screen Readers still see the full text)
+            heading.setAttribute('aria-label', text);
+            
+            [...text].forEach(char => {
+                const span = document.createElement('span');
+                span.setAttribute('data-letter', '');
+                span.setAttribute('aria-hidden', 'true');
+                if (char === ' ') {
+                    span.innerHTML = '&nbsp;';
+                } else {
+                    span.textContent = char;
+                }
+                heading.appendChild(span);
+            });
         }
-        
-        // Check next letter (if exists and not a space)
-        if (letterIndex < letters.length - 1) {
-            const nextLetter = letters[letterIndex + 1];
-            if (nextLetter.textContent.trim() !== '' && currentColors.has(nextLetter)) {
-                excludeColors.push(currentColors.get(nextLetter));
-            }
-        }
-        
-        // Filter out colors that are used by adjacent letters
-        const availableColors = colors.filter(color => !excludeColors.includes(color));
-        
-        // If all colors are excluded (unlikely with 4 colors), just use any color
-        const colorPool = availableColors.length > 0 ? availableColors : colors;
-        
-        return colorPool[Math.floor(Math.random() * colorPool.length)];
-    };
 
-    // Target the portrait circle as well
+        // 2. Setup the Hover Logic
+        const letters = heading.querySelectorAll('[data-letter]');
+        const letterTimeouts = new Map();
+        const currentColors = new Map();
+
+        const getRandomColorAvoidingNeighbors = (letterIndex) => {
+            const excludeColors = [];
+            if (letterIndex > 0) {
+                const prevLevelLetter = letters[letterIndex - 1];
+                if (prevLevelLetter.textContent.trim() !== '' && currentColors.has(prevLevelLetter)) {
+                    excludeColors.push(currentColors.get(prevLevelLetter));
+                }
+            }
+            if (letterIndex < letters.length - 1) {
+                const nextLevelLetter = letters[letterIndex + 1];
+                if (nextLevelLetter.textContent.trim() !== '' && currentColors.has(nextLevelLetter)) {
+                    excludeColors.push(currentColors.get(nextLevelLetter));
+                }
+            }
+            const availableColors = colors.filter(color => !excludeColors.includes(color));
+            const colorPool = availableColors.length > 0 ? availableColors : colors;
+            return colorPool[Math.floor(Math.random() * colorPool.length)];
+        };
+
+        letters.forEach((letter, index) => {
+            if (letter.textContent.trim() === '') return;
+
+            letter.addEventListener('mouseenter', () => {
+                if (letterTimeouts.has(letter)) {
+                    clearTimeout(letterTimeouts.get(letter));
+                    letterTimeouts.delete(letter);
+                }
+                letter.style.transitionDelay = '0s';
+                const randomColor = getRandomColorAvoidingNeighbors(index);
+                letter.style.transitionDuration = '0.3s';
+                letter.style.color = randomColor;
+                currentColors.set(letter, randomColor);
+            });
+
+            letter.addEventListener('mouseleave', () => {
+                const timeout = setTimeout(() => {
+                    letter.style.transitionDelay = '0s';
+                    letter.style.transitionDuration = '';
+                    letter.style.color = '';
+                    currentColors.delete(letter);
+                    letterTimeouts.delete(letter);
+                }, 2000);
+                letterTimeouts.set(letter, timeout);
+            });
+        });
+    });
+
+    // Special handling for the portrait circle (already in original script)
     const portraitCircle = document.getElementById('portraitCircle');
     if (portraitCircle) {
+        let circleTimeout;
         portraitCircle.addEventListener('mouseenter', () => {
-            if (letterTimeouts.has(portraitCircle)) {
-                clearTimeout(letterTimeouts.get(portraitCircle));
-                letterTimeouts.delete(portraitCircle);
-            }
+            if (circleTimeout) clearTimeout(circleTimeout);
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
             portraitCircle.style.transitionDuration = '0.3s';
             portraitCircle.style.backgroundColor = randomColor;
         });
 
         portraitCircle.addEventListener('mouseleave', () => {
-            const timeout = setTimeout(() => {
+            circleTimeout = setTimeout(() => {
                 portraitCircle.style.transitionDuration = '';
                 portraitCircle.style.backgroundColor = '';
-                letterTimeouts.delete(portraitCircle);
             }, 2000);
-            letterTimeouts.set(portraitCircle, timeout);
         });
     }
-
-    letters.forEach((letter, index) => {
-        // Skip spaces
-        if (letter.textContent.trim() === '') return;
-
-        letter.addEventListener('mouseenter', () => {
-            // Clear any existing timeout for this letter
-            if (letterTimeouts.has(letter)) {
-                clearTimeout(letterTimeouts.get(letter));
-                letterTimeouts.delete(letter);
-            }
-
-            // Remove any pending return transition
-            letter.style.transitionDelay = '0s';
-            
-            // Pick a random color that's different from adjacent letters
-            const randomColor = getRandomColorAvoidingNeighbors(index);
-            letter.style.transitionDuration = '0.3s';
-            letter.style.color = randomColor;
-            
-            // Track the current color
-            currentColors.set(letter, randomColor);
-        });
-
-        letter.addEventListener('mouseleave', () => {
-            // After 2 seconds, start the 0.4s transition back to original
-            const timeout = setTimeout(() => {
-                // Add the delay only for the return transition
-                letter.style.transitionDelay = '0s'; // We already waited in JS
-                letter.style.transitionDuration = '';
-                
-                // Reset to original color (CSS will handle the transition)
-                letter.style.color = '';
-                
-                // Remove from current colors map
-                currentColors.delete(letter);
-                
-                // Clean up timeout reference
-                letterTimeouts.delete(letter);
-            }, 2000);
-
-            // Store timeout reference
-            letterTimeouts.set(letter, timeout);
-        });
-    });
 });

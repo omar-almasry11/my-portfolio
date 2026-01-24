@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Logo: Scale up small + black
     addHoverEffect('.logo', ['scale-cursor-up-small', 'black-cursor']);
 
-    // Home Heading: Scale up small + gradient brush effect
-    addHoverEffect('.home-heading', ['scale-cursor-up-small', 'gradient-cursor']);
+    // Colorful Headings: Scale up small + pixel effect + move to top
+    addHoverEffect('.home-heading, .js-colorful-heading', ['scale-cursor-up-small', 'pixel-cursor', 'cursor-top']);
 
     // Text links & Inline links: Hide custom cursor for better readability
     addHoverEffect('.text-link, footer p a, .prose a', ['cursor-hidden']);

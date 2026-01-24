@@ -276,7 +276,7 @@
   <div id="progressBarContainer" class="absolute top-0 left-0 h-2 w-full bg-transparent overflow-hidden">
     <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
   </div>
-  <div class="flex items-center justify-between container mx-auto">
+  <div class="max-w-4xl mx-auto flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="logo flex items-center font-bold text-lg no-underline group">
       <h3 class="flex items-center m-0">
@@ -353,14 +353,13 @@
 </nav>
 
     <main>
-      
-<header class="pt-16 pb-4 px-[5%] mx-auto">
+      <header class="pt-16 pb-4 px-[5%] mx-auto">
   <div class="container mx-auto max-w-4xl">
     <h1>Webflow for Enterprise Clients: A Deep Dive</h1>
     <p class="text-xl sm:text-2xl text-normalLight max-w-2xl mb-6 dark:text-invertedLight">
       Webflow is a great choice for startups and small businesses, but is it the right fit for enterprises? Let's explore the pros, cons, and risks of committing to Webflow Enterprise.
     </p>
-    
+
     <!-- Combined Metadata and Share Buttons Container -->
     <div class="flex flex-col flex-wrap justify-between gap-y-8">
       <!-- Published On & Reading Time -->
@@ -399,53 +398,68 @@
       <!-- Share Buttons -->
       <div class="flex items-center flex-nowrap gap-4">
         <!-- Share on X -->
-        <a href="https://twitter.com/share?url=/blog/Webflow for Enterprise Clients: A Deep Dive/" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:text-invertedLight">
-          <svg xmlns="http://www.w3.org/2000/svg" 
-            class="w-6 h-6 fill-current text-primary dark:text-primaryInverted" 
-            viewBox="0 0 256 256" 
-            role="img" 
-            aria-label="Share on X">
+        <a
+          href="https://twitter.com/share?url=/blog/Webflow for Enterprise Clients: A Deep Dive/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:text-invertedLight"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 fill-current text-primary dark:text-primaryInverted"
+            viewBox="0 0 256 256"
+            role="img"
+            aria-label="Share on X"
+          >
             <path d="M208,216H160L48,40H96Z" opacity="0.2"></path>
-            <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>      
+            <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
           </svg>
           <span class="text-sm hidden sm:inline whitespace-nowrap">Share on X</span>
         </a>
-      
+
         <!-- Share on LinkedIn -->
-        <a href="https://www.linkedin.com/shareArticle?url=/blog/Webflow for Enterprise Clients: A Deep Dive/" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:text-invertedLight">
-          <svg xmlns="http://www.w3.org/2000/svg" 
-            class="w-6 h-6 text-primary fill-current dark:text-primaryInverted" 
-            viewBox="0 0 256 256" 
-            role="img" 
-            aria-label="Share on LinkedIn">
+        <a
+          href="https://www.linkedin.com/shareArticle?url=/blog/Webflow for Enterprise Clients: A Deep Dive/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:text-invertedLight"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 text-primary fill-current dark:text-primaryInverted"
+            viewBox="0 0 256 256"
+            role="img"
+            aria-label="Share on LinkedIn"
+          >
             <path d="M224,40V216a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8H216A8,8,0,0,1,224,40Z" opacity="0.2"></path>
-            <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>      
+            <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
           </svg>
           <span class="text-sm hidden sm:inline whitespace-nowrap">Share on LinkedIn</span>
         </a>
-      
+
         <!-- Copy Link -->
-        <button type="button" 
+        <button
+          type="button"
           class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:hover:text-primaryInverted"
-          onclick="copyToClipboard()">
-    <svg xmlns="http://www.w3.org/2000/svg" 
-         class="w-6 h-6 text-primary fill-current dark:text-primaryInverted" 
-         viewBox="0 0 256 256" 
-         role="img" 
-         aria-label="Copy Link">
-      <path d="M218.34,119.6,183.6,154.34a46.58,46.58,0,0,1-44.31,12.26c-.31.34-.62.67-.95,1L103.6,202.34A46.63,46.63,0,1,1,37.66,136.4L72.4,101.66A46.6,46.6,0,0,1,116.71,89.4c.31-.34.62-.67,1-1L152.4,53.66a46.63,46.63,0,0,1,65.94,65.94Z" opacity="0.2"></path>
-      <path d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,7.78,8.22H152a8,8,0,0,0,8-7.78A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"></path>      
-    </svg>
-    <span class="text-sm sm:inline transition duration-300 font-medium whitespace-nowrap dark:text-invertedLight dark:hover:text-primaryInverted" id="copy-link-text">
-      Copy Link
-    </span>
-  </button>
+          onclick="copyToClipboard()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 text-primary fill-current dark:text-primaryInverted"
+            viewBox="0 0 256 256"
+            role="img"
+            aria-label="Copy Link"
+          >
+            <path d="M218.34,119.6,183.6,154.34a46.58,46.58,0,0,1-44.31,12.26c-.31.34-.62.67-.95,1L103.6,202.34A46.63,46.63,0,1,1,37.66,136.4L72.4,101.66A46.6,46.6,0,0,1,116.71,89.4c.31-.34.62-.67,1-1L152.4,53.66a46.63,46.63,0,0,1,65.94,65.94Z" opacity="0.2"></path>
+            <path d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,7.78,8.22H152a8,8,0,0,0,8-7.78A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"></path>
+          </svg>
+          <span
+            class="text-sm sm:inline transition duration-300 font-medium whitespace-nowrap dark:text-invertedLight dark:hover:text-primaryInverted"
+            id="copy-link-text"
+          >
+            Copy Link
+          </span>
+        </button>
       </div>
     </div>
   </div>
@@ -565,7 +579,8 @@
   function copyToClipboard() {
     // Use the full URL of the current page
     const fullUrl = window.location.href;
-    navigator.clipboard.writeText(fullUrl)
+    navigator.clipboard
+      .writeText(fullUrl)
       .then(() => {
         const copyTextElement = document.getElementById('copy-link-text');
         if (copyTextElement) {
@@ -585,6 +600,7 @@
   // Attach the function to the global window so inline handlers can see it.
   window.copyToClipboard = copyToClipboard;
 </script>
+
     </main>
     <!-- Back to Top Button -->
 <button
@@ -597,8 +613,8 @@
   </svg>
 </button>
 
-<footer class="py-4 px-[5%] mr-4">
-  <div class="container mx-auto">
+<footer class="py-4 px-[5%]">
+  <div class="max-w-4xl mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
       <!-- Logo -->
       <a href="/" class="logo flex items-center font-bold text-lg no-underline group">

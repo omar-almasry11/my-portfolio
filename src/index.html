@@ -2,9 +2,8 @@
 layout: layouts/layout.liquid
 title: Home
 ---
-<div class="min-h-svh mx-auto flex-col items-center px-[5%] py-24">
-    <div class="text-center mr-auto ml-auto">
-      <div class="max-w-3xl mr-auto ml-auto">
+<div class="min-h-svh flex flex-col items-center px-[5%] py-24">
+    <div class="w-full max-w-4xl mx-auto text-center">
         <div id="portraitCircle" class="relative mx-auto w-56 h-56 rounded-full bg-inverted dark:bg-secondary mb-6 overflow-hidden shadow-low dark:shadow-lowInverted cursor-pointer">
             <!-- Hidden Video for Reference: 
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
@@ -14,15 +13,15 @@ title: Home
             -->
             <img src="/images/png/pixel-profile-picture.png" alt="Omar Almasry Pixel Art" class="w-full h-full object-cover">
           </div>
-        <p class="home-heading text-[5rem] sm:text-9xl font-extrabold z-0 relative" id="colorfulHeading">
-          <span data-letter>H</span><span data-letter>i</span><span data-letter>&nbsp;</span><span data-letter>t</span><span data-letter>h</span><span data-letter>e</span><span data-letter>r</span><span data-letter>e</span><span data-letter>!</span>
+        <p class="home-heading text-[5rem] sm:text-9xl font-extrabold z-0 relative leading-[0.8] tracking-tighter" id="colorfulHeading">
+          Hi there!
         </p>
-        <h1 class="py-4 text-xl sm:text-2xl text-normalLight font-normal dark:text-invertedLight">
-            My name is Omar Almasry. I'm a digital designer working with agencies and in-house marketing teams to design and build digital experiences that work for eveyrone.
+        <h1 class="py-4 text-2xl sm:text-3xl text-normalLight font-normal dark:text-invertedLight">
+            My name is Omar Almasry. I'm a digital designer working with agencies and in-house marketing teams to design and build digital experiences that work for everyone.
         </h1>
-     </div>
-   </div>
+    </div>
   </div>
+  {% render 'partials/section-clients' %}
   {% render 'partials/section-about-grid' %}
   {%- render 'partials/section-standard', 
     header: 'Featured Projects',

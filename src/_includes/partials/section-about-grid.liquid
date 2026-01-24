@@ -1,5 +1,5 @@
 <section class="py-16 px-[5%]">
-  <div class="container mx-auto">
+  <div class="max-w-4xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <!-- Left Column: Text Content -->
       <div class="flex flex-col space-y-6">
@@ -14,7 +14,7 @@
 
         <p class="text-lg text-normal dark:text-inverted">
           I'm a husband and father who loves technology and design. Remote work has been my default setting way before
-          2020. It was my thing before it became our thing.
+          2020. It was <i>my thing</i> before it became <i>our thing</i>.
         </p>
 
         <p class="text-lg text-normal dark:text-inverted">
@@ -23,152 +23,15 @@
         </p>
 
         <p class="text-lg text-normal dark:text-inverted">
-          You can learn more trivial facts about me by visiting—you guessed it—the
-          <a
-            href="/about"
-            class="font-medium underline decoration-primary decoration-2 transition duration-300 hover:text-primary hover:decoration-transparent dark:decoration-primaryInverted dark:hover:text-primaryInverted dark:hover:decoration-transparent"
-            >about page</a
-          >. Or skip directly to the case studies below.
+          You can learn more trivial facts about me by visiting the about page. Or skip directly to the case studies
+          below.
         </p>
 
-        <p class="text-lg font-bold text-normal dark:text-inverted">This is the way.</p>
+        {% render 'partials/text-link', url: '/about', label: 'Learn more about this guy' %}
       </div>
 
       <!-- Right Column: Image Grid Animation -->
-      <div class="flex justify-center items-center">
-        <div id="pixel-image-container" class="relative w-full max-w-xs aspect-square">
-          <!-- Image Container -->
-          <div id="image-wrapper" class="absolute inset-0">
-            <img
-              id="current-image"
-              src="/images/computer-pixel-art.webp"
-              alt="Computer"
-              class="w-full h-full object-cover"
-            >
-          </div>
-
-          <!-- Pixel Grid Overlay -->
-          <div id="pixel-grid-overlay" class="absolute inset-0 grid">
-            <!-- Pixels will be injected here -->
-          </div>
-        </div>
-      </div>
+      {% render 'partials/pixel-image-cycle', id: 'home-about-grid' %}
     </div>
   </div>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('pixel-image-container');
-    const imageWrapper = document.getElementById('image-wrapper');
-    const currentImage = document.getElementById('current-image');
-    const gridOverlay = document.getElementById('pixel-grid-overlay');
-
-    if (!container || !gridOverlay || !currentImage) return;
-
-    // Grid Configuration
-    const gridSize = 20; // 20x20 grid like CTA
-
-    // Setup Grid CSS
-    gridOverlay.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    gridOverlay.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-
-    // Create Pixels
-    const pixels = [];
-    for (let i = 0; i < gridSize * gridSize; i++) {
-      const px = document.createElement('div');
-      px.classList.add('pixel-overlay-item');
-      px.style.backgroundColor = 'transparent';
-      px.style.opacity = '0';
-      px.style.transition = 'opacity 0.6s ease-in-out';
-      gridOverlay.appendChild(px);
-      pixels.push(px);
-    }
-
-    // Image data - using same colors as page transition
-    const images = [
-      {
-        src: '/images/computer-pixel-art.webp',
-        alt: 'Computer',
-        color: '#3d60e2', // Blue
-      },
-      {
-        src: '/images/coffee-pixel-art.webp',
-        alt: 'Coffee',
-        color: '#FB8304', // Orange
-      },
-      {
-        src: '/images/maple-leaf-pixel-art.webp',
-        alt: 'Maple Leaf',
-        color: '#FE3300', // Red
-      },
-      {
-        src: '/images/high-five-pixel-art.webp',
-        alt: 'High Five',
-        color: '#40BFAE', // Teal
-      },
-      {
-        src: '/images/canada-goose-pixel-art.webp',
-        alt: 'Canada Goose',
-        color: '#EDF060', // Yellow
-      },
-    ];
-
-    let currentIndex = 0;
-    let isTransitioning = false;
-
-    function transitionToImage(index) {
-      if (isTransitioning) return;
-      isTransitioning = true;
-
-      const nextImage = images[index];
-      const transitionColor = nextImage.color;
-
-      // Create shuffled array for random stagger
-      const pixelIndices = pixels.map((_, i) => i);
-      for (let i = pixelIndices.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [pixelIndices[i], pixelIndices[j]] = [pixelIndices[j], pixelIndices[i]];
-      }
-
-      // Calculate total time for fade-in animation
-      const fadeInTime = pixelIndices.length * 1.2;
-
-      // Phase 1: Fade in pixels with color (covering current image)
-      pixelIndices.forEach((pixelIdx, i) => {
-        setTimeout(() => {
-          pixels[pixelIdx].style.backgroundColor = transitionColor;
-          pixels[pixelIdx].style.opacity = '1';
-        }, i * 1.2);
-      });
-
-      // Phase 2: After ALL pixels have fully covered the image, swap the image underneath
-      setTimeout(() => {
-        currentImage.src = nextImage.src;
-        currentImage.alt = nextImage.alt;
-
-        // Phase 3: Fade out pixels to reveal new image
-        setTimeout(() => {
-          pixelIndices.forEach((pixelIdx, i) => {
-            setTimeout(() => {
-              pixels[pixelIdx].style.opacity = '0';
-            }, i * 1.2);
-          });
-
-          // Reset transition lock after animation completes
-          setTimeout(() => {
-            isTransitioning = false;
-          }, pixelIndices.length * 1.2 + 300);
-        }, 200);
-      }, fadeInTime + 600); // Wait for complete fade-in + transition duration + buffer
-    }
-
-    // Start cycling
-    setTimeout(() => {
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        transitionToImage(currentIndex);
-      }, 4500); // Match CTA timing
-    }, 4500);
-  });
-</script>

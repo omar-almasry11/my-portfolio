@@ -1,0 +1,133 @@
+<div class="flex justify-center items-center my-6 lg:my-12">
+  <div
+    id="pixel-image-container-{{ id | default: 'main' }}"
+    class="pixel-image-cycle relative w-full max-w-xs aspect-square"
+  >
+    <!-- Image Container -->
+    <div class="image-wrapper absolute inset-0">
+      <img
+        class="current-image w-full h-full object-cover"
+        src="/images/computer-pixel-art.webp"
+        alt="Computer"
+      >
+    </div>
+
+    <!-- Pixel Grid Overlay -->
+    <div class="pixel-grid-overlay absolute inset-0 grid">
+      <!-- Pixels will be injected here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    document.addEventListener('DOMContentLoaded', () => {
+      const id = "{{ id | default: 'main' }}";
+      const container = document.getElementById(`pixel-image-container-${id}`);
+      if (!container) return;
+
+      const currentImage = container.querySelector('.current-image');
+      const gridOverlay = container.querySelector('.pixel-grid-overlay');
+
+      if (!gridOverlay || !currentImage) return;
+
+      // Grid Configuration
+      const gridSize = 20;
+
+      // Setup Grid CSS
+      gridOverlay.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+      gridOverlay.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+
+      // Create Pixels
+      const pixels = [];
+      for (let i = 0; i < gridSize * gridSize; i++) {
+        const px = document.createElement('div');
+        px.classList.add('pixel-overlay-item');
+        px.style.backgroundColor = 'transparent';
+        px.style.opacity = '0';
+        px.style.transition = 'opacity 0.6s ease-in-out';
+        gridOverlay.appendChild(px);
+        pixels.push(px);
+      }
+
+      // Image data
+      const images = [
+        {
+          src: '/images/computer-pixel-art.webp',
+          alt: 'Computer',
+          color: '#3d60e2',
+        },
+        {
+          src: '/images/coffee-pixel-art.webp',
+          alt: 'Coffee',
+          color: '#FB8304',
+        },
+        {
+          src: '/images/maple-leaf-pixel-art.webp',
+          alt: 'Maple Leaf',
+          color: '#FE3300',
+        },
+        {
+          src: '/images/high-five-pixel-art.webp',
+          alt: 'High Five',
+          color: '#40BFAE',
+        },
+        {
+          src: '/images/canada-goose-pixel-art.webp',
+          alt: 'Canada Goose',
+          color: '#EDF060',
+        },
+      ];
+
+      let currentIndex = 0;
+      let isTransitioning = false;
+
+      function transitionToImage(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        const nextImage = images[index];
+        const transitionColor = nextImage.color;
+
+        const pixelIndices = pixels.map((_, i) => i);
+        for (let i = pixelIndices.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pixelIndices[i], pixelIndices[j]] = [pixelIndices[j], pixelIndices[i]];
+        }
+
+        const fadeInTime = pixelIndices.length * 1.2;
+
+        pixelIndices.forEach((pixelIdx, i) => {
+          setTimeout(() => {
+            pixels[pixelIdx].style.backgroundColor = transitionColor;
+            pixels[pixelIdx].style.opacity = '1';
+          }, i * 1.2);
+        });
+
+        setTimeout(() => {
+          currentImage.src = nextImage.src;
+          currentImage.alt = nextImage.alt;
+
+          setTimeout(() => {
+            pixelIndices.forEach((pixelIdx, i) => {
+              setTimeout(() => {
+                pixels[pixelIdx].style.opacity = '0';
+              }, i * 1.2);
+            });
+
+            setTimeout(() => {
+              isTransitioning = false;
+            }, pixelIndices.length * 1.2 + 300);
+          }, 200);
+        }, fadeInTime + 600);
+      }
+
+      setTimeout(() => {
+        setInterval(() => {
+          currentIndex = (currentIndex + 1) % images.length;
+          transitionToImage(currentIndex);
+        }, 4500);
+      }, 4500);
+    });
+  })();
+</script>

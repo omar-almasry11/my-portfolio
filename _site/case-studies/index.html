@@ -276,7 +276,7 @@
   <div id="progressBarContainer" class="absolute top-0 left-0 h-2 w-full bg-transparent overflow-hidden">
     <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
   </div>
-  <div class="flex items-center justify-between container mx-auto">
+  <div class="max-w-4xl mx-auto flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="logo flex items-center font-bold text-lg no-underline group">
       <h3 class="flex items-center m-0">
@@ -354,74 +354,74 @@
 
     <main>
       <section class="py-20 px-[5%]">
-  <div class="container">
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-4xl mx-auto">
     <!-- Main Heading -->
-    <h1 class="mb-6">
+    <h1
+      id="pageTitle"
+      class="mb-6 js-colorful-heading "
+    >
       Case Studies
     </h1>
     
       <!-- Supporting Text -->
-      <p class="text-2xl text-normalLight max-w-2xl ml-0 text-normalLight dark:text-invertedLight">
+      <p class="text-2xl sm:text-3xl text-normalLight max-w-2xl ml-0 dark:text-invertedLight">
         I like to document different projects I work on.
       </p>
     
   </div>
-  </div>
 </section>
 <section class="py-16 px-[5%] ">
-  <div class="container">
-    <div class="max-w-3xl mx-auto">
-      
-        <div class="mb-10">
-          
-            <div class="flex items-center">
-              <h2 class="leading-none">
-                Default Header
-              </h2>
-            </div>
-          
-          
-            <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
-              Default Subheader
-            </p>
-          
-        </div>
-      
-      <!-- Render Dynamic Collection -->
-      
-        <!-- Check if this is a grid layout (for services) -->
+  <div class="max-w-4xl mx-auto">
+    
+      <div class="mb-10">
         
-          <!-- Default single column layout -->
-          <div class="flex-col space-y-4"><div class="list-parent standard-card">
-                <!-- Light Mode Logo -->
-                
-                  <img
-                    src="/images/png/socialsuite-logo.webp"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="mb-4 ratio-square object-contain dark:hidden w-12 h-12 dark:w-12 dark:h-12"
-                  >
-                
-                <!-- Dark Mode Logo -->
-                
-                  <img
-                    src="/images/png/socialsuite-logo.webp"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="hidden dark:block ratio-square object-contain mb-4 w-12 h-12 dark:w-12 dark:h-12"
-                  >
-                
-                <h3 class="font-bold mb-2">
-                  Socialsuite
-                </h3>
-                
-                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">An ESG and outcomes measurement and reporting software platform adopted by over 165 organizations worldwide, including publicly traded companies across the NASDAQ, and NYSE, and nonprofits such as Habitat for Humanity, Scope, and Teach for America.</p>
-                
+          <div class="flex items-center">
+            <h2 class="leading-none">
+              Default Header
+            </h2>
+          </div>
+        
+        
+          <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
+            Default Subheader
+          </p>
+        
+      </div>
+    
+    <!-- Render Dynamic Collection -->
+    
+      <!-- Check if this is a grid layout (for services) -->
+      
+        <!-- Default single column layout -->
+        <div class="flex-col space-y-4"><div class="list-parent standard-card">
+              <!-- Light Mode Logo -->
+              
+                <img
+                  src="/images/png/socialsuite-logo.webp"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 ratio-square object-contain dark:hidden w-12 h-12 dark:w-12 dark:h-12"
+                >
+              
+              <!-- Dark Mode Logo -->
+              
+                <img
+                  src="/images/png/socialsuite-logo.webp"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block ratio-square object-contain mb-4 w-12 h-12 dark:w-12 dark:h-12"
+                >
+              
+              <h3 class="font-bold mb-2">
+                Socialsuite
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">An ESG and outcomes measurement and reporting software platform adopted by over 165 organizations worldwide, including publicly traded companies across the NASDAQ, and NYSE, and nonprofits such as Habitat for Humanity, Scope, and Teach for America.</p>
+              
 
-                <a
+              <a
   href="/case-studies/socialsuite/"
   class="text-link flex text-lg items-center gap-2 stretched-link"
   
@@ -433,35 +433,35 @@
     </svg>
 </a>
 
-              </div><div class="list-parent standard-card">
-                <!-- Light Mode Logo -->
-                
-                  <img
-                    src="/images/duba-holding-logo-2.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="mb-4 ratio-square object-contain dark:hidden w-20 h-20 dark:w-20 dark:h-20"
-                  >
-                
-                <!-- Dark Mode Logo -->
-                
-                  <img
-                    src="/images/dubai-holding-logo-inverted.avif"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="hidden dark:block ratio-square object-contain mb-4 w-20 h-20 dark:w-20 dark:h-20"
-                  >
-                
-                <h3 class="font-bold mb-2">
-                  Dubai Holding
-                </h3>
-                
-                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Enterprise Webflow partner for Dubai Holding, migrating and building websites across their portfolio — from destination sites to retail malls — with a focus on accessibility, bilingual support, and SEO preservation.</p>
-                
+            </div><div class="list-parent standard-card">
+              <!-- Light Mode Logo -->
+              
+                <img
+                  src="/images/duba-holding-logo-2.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 ratio-square object-contain dark:hidden w-20 h-20 dark:w-20 dark:h-20"
+                >
+              
+              <!-- Dark Mode Logo -->
+              
+                <img
+                  src="/images/dubai-holding-logo-inverted.avif"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block ratio-square object-contain mb-4 w-20 h-20 dark:w-20 dark:h-20"
+                >
+              
+              <h3 class="font-bold mb-2">
+                Dubai Holding
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Enterprise Webflow partner for Dubai Holding, migrating and building websites across their portfolio — from destination sites to retail malls — with a focus on accessibility, bilingual support, and SEO preservation.</p>
+              
 
-                <a
+              <a
   href="/case-studies/dubai-holding/"
   class="text-link flex text-lg items-center gap-2 stretched-link"
   
@@ -473,35 +473,35 @@
     </svg>
 </a>
 
-              </div><div class="list-parent standard-card">
-                <!-- Light Mode Logo -->
-                
-                  <img
-                    src="/images/color-code-labs-logo.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="mb-4 ratio-square object-contain dark:hidden w-12 h-12 dark:w-12 dark:h-12"
-                  >
-                
-                <!-- Dark Mode Logo -->
-                
-                  <img
-                    src="/images/color-code-labs-logo.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="hidden dark:block ratio-square object-contain mb-4 w-12 h-12 dark:w-12 dark:h-12"
-                  >
-                
-                <h3 class="font-bold mb-2">
-                  ColorCoded Labs
-                </h3>
-                
-                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">A tech boot camp that prepares motivated individuals with the skills they need for high-demand technology careers.</p>
-                
+            </div><div class="list-parent standard-card">
+              <!-- Light Mode Logo -->
+              
+                <img
+                  src="/images/color-code-labs-logo.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 ratio-square object-contain dark:hidden w-12 h-12 dark:w-12 dark:h-12"
+                >
+              
+              <!-- Dark Mode Logo -->
+              
+                <img
+                  src="/images/color-code-labs-logo.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block ratio-square object-contain mb-4 w-12 h-12 dark:w-12 dark:h-12"
+                >
+              
+              <h3 class="font-bold mb-2">
+                ColorCoded Labs
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">A tech boot camp that prepares motivated individuals with the skills they need for high-demand technology careers.</p>
+              
 
-                <a
+              <a
   href="/case-studies/colorcoded-labs/"
   class="text-link flex text-lg items-center gap-2 stretched-link"
   
@@ -513,35 +513,35 @@
     </svg>
 </a>
 
-              </div><div class="list-parent standard-card">
-                <!-- Light Mode Logo -->
-                
-                  <img
-                    src="/images/emplifi-logo.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="mb-4 ratio-square object-contain dark:hidden w-24 h-24 mb-0 dark:w-24 dark:h-24 dark:mb-6"
-                  >
-                
-                <!-- Dark Mode Logo -->
-                
-                  <img
-                    src="/images/emplifi-logo-white.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="hidden dark:block ratio-square object-contain mb-4 w-24 h-24 mb-0 dark:w-24 dark:h-24 dark:mb-6"
-                  >
-                
-                <h3 class="font-bold mb-2">
-                  Pixlee TurnTo
-                </h3>
-                
-                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Pixlee TurnTo, a leader in Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing tools, needed a complete migration of their high-traffic blog to Webflow to enhance performance and empower their marketing team. Following the successful migration, Pixlee TurnTo was acquired by Emplifi, a global leader in customer experience solutions.</p>
-                
+            </div><div class="list-parent standard-card">
+              <!-- Light Mode Logo -->
+              
+                <img
+                  src="/images/emplifi-logo.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 ratio-square object-contain dark:hidden w-24 h-24 mb-0 dark:w-24 dark:h-24 dark:mb-6"
+                >
+              
+              <!-- Dark Mode Logo -->
+              
+                <img
+                  src="/images/emplifi-logo-white.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block ratio-square object-contain mb-4 w-24 h-24 mb-0 dark:w-24 dark:h-24 dark:mb-6"
+                >
+              
+              <h3 class="font-bold mb-2">
+                Pixlee TurnTo
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Pixlee TurnTo, a leader in Social User-Generated Content (UGC), Ratings & Reviews, and Influencer Marketing tools, needed a complete migration of their high-traffic blog to Webflow to enhance performance and empower their marketing team. Following the successful migration, Pixlee TurnTo was acquired by Emplifi, a global leader in customer experience solutions.</p>
+              
 
-                <a
+              <a
   href="/case-studies/pixlee-turnto/"
   class="text-link flex text-lg items-center gap-2 stretched-link"
   
@@ -553,35 +553,35 @@
     </svg>
 </a>
 
-              </div><div class="list-parent standard-card">
-                <!-- Light Mode Logo -->
-                
-                  <img
-                    src="/images/eon-aligner-logo.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="mb-4 ratio-square object-contain dark:hidden mb-8 dark:mb-8"
-                  >
-                
-                <!-- Dark Mode Logo -->
-                
-                  <img
-                    src="/images/eon-aligner-logo-dark.svg"
-                    alt="Logo"
-                    width="64"
-                    height="64"
-                    class="hidden dark:block ratio-square object-contain mb-4 mb-8 dark:mb-8"
-                  >
-                
-                <h3 class="font-bold mb-2">
-                  Eon Aligner
-                </h3>
-                
-                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Eon Aligner is a dental brand specializing in clear-aligner treatment. I built a React-based doctor locator with interactive Google Maps integration, country/city filtering, and an Airtable backend that lets the marketing team manage clinic listings without developer involvement.</p>
-                
+            </div><div class="list-parent standard-card">
+              <!-- Light Mode Logo -->
+              
+                <img
+                  src="/images/eon-aligner-logo.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 ratio-square object-contain dark:hidden mb-8 dark:mb-8"
+                >
+              
+              <!-- Dark Mode Logo -->
+              
+                <img
+                  src="/images/eon-aligner-logo-dark.svg"
+                  alt="Logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block ratio-square object-contain mb-4 mb-8 dark:mb-8"
+                >
+              
+              <h3 class="font-bold mb-2">
+                Eon Aligner
+              </h3>
+              
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Eon Aligner is a dental brand specializing in clear-aligner treatment. I built a React-based doctor locator with interactive Google Maps integration, country/city filtering, and an Airtable backend that lets the marketing team manage clinic listings without developer involvement.</p>
+              
 
-                <a
+              <a
   href="/case-studies/eon-aligner/"
   class="text-link flex text-lg items-center gap-2 stretched-link"
   
@@ -593,11 +593,10 @@
     </svg>
 </a>
 
-              </div></div>
-        
-        
+            </div></div>
       
-    </div>
+      
+    
   </div>
 </section>
 
@@ -613,8 +612,8 @@
   </svg>
 </button>
 
-<footer class="py-4 px-[5%] mr-4">
-  <div class="container mx-auto">
+<footer class="py-4 px-[5%]">
+  <div class="max-w-4xl mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
       <!-- Logo -->
       <a href="/" class="logo flex items-center font-bold text-lg no-underline group">
