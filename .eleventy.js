@@ -82,6 +82,16 @@ eleventyConfig.addCollection("caseStudies", function (collectionApi) {
   // Add a global shortcode to get the current year
   eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
 
+  // JSON filter to parse strings
+  eleventyConfig.addFilter("from_json", function(value) {
+    try {
+      return JSON.parse(value);
+    } catch (e) {
+      console.error("Error parsing JSON in from_json filter:", e);
+      return [];
+    }
+  });
+
   // Markdown Configuration for Table of Contents and Syntax Highlighting
 let markdownLib = markdownIt({ 
   html: true,

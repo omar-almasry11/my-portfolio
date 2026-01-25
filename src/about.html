@@ -20,25 +20,21 @@ title: About Me
     <p class='mb-6'>I'm a technology optimist and design obsessive who swallowed the AI pill. And now, I'm curious to see how deep the rabbit hole goes.</p>
   </div>
   <div class="sticky top-24">
-    {% render 'partials/pixel-image-cycle', id: 'about-page' %}
+    {% assign aboutImages = "[
+      { \"src\": \"/images/red-and-blue-pills-pixel-art.webp\", \"alt\": \"Red and Blue Pills\", \"color\": \"#FE3300\" },
+      { \"src\": \"/images/accessibility-pixel-art.webp\", \"alt\": \"Accessibility Icon\", \"color\": \"#3d60e2\" },
+      { \"src\": \"/images/mandalorian-pixel-art.webp\", \"alt\": \"Mandalorian\", \"color\": \"#EDF060\" }
+    ]" | from_json %}
+    {% render 'partials/pixel-image-cycle', id: 'about-page', images: aboutImages %}
   </div>
 </div>
-<p class='mb-6'>I'm the kind of person who enjoys walks in nature with a cup of coffee. And maybe a book by the lake if the weather allows. I also love writing—it's been part of my life since childhood. I even wrote for a living for a couple of years. I love building Lego sets, and use my daughter as an excuse to mask my childish hobbies. I mean, of course I don’t like Pokémon cards. Like what kind of adult loves that, right?</p>
+<p class='mb-6'>I'm the kind of person who enjoys walks in nature with a cup of coffee. And maybe a book by the lake if the weather allows. I also love writing—it's been part of my life since childhood. I even wrote for a living for a couple of years. I love building Lego sets, and use my daughter as an excuse to mask my childish hobbies. And of course I don\’t like vintage Pokémon cards. What kind of adult loves that, right?</p>
 <p class='mb-6'>Recently, I've developed a passion for web accessibility. It just made sense to build a web that works for everyone—not just everyone like me. I'm currently working towards my CPACC certification and contributing accessibility fixes to open-source projects. I've even landed a few merged PRs on projects like Angular—small contributions, but educational and rewarding. I kind of fell in love with open source after that.</p>
 <p class='mb-12'>These days, I'm most interested in work where accessibility isn't an afterthought—where it's just how things are built.</p>
-{% endcapture %}
 
-{%- render 'partials/section-standard', 
-  header: 'Who is this guy?',
-  subheader: "A question that I've been trying to answer. And still trying to answer.",
-  content: whoIsThisGuyContent
--%}
-
-
-{% capture myLifeInCardsContent %}
 <div class="flex flex-col gap-4 sm:grid grid-cols-6 gap-4">
   <!-- Location Card -->
-  <div class="standard-card col-span-3 justify-center">
+  <div class="standard-card col-span-2 justify-center">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
@@ -54,7 +50,7 @@ title: About Me
   </div>
 
   <!-- Time Card -->
-  <div class="standard-card col-span-3 justify-center">
+  <div class="standard-card col-span-2 justify-center">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
@@ -77,7 +73,7 @@ title: About Me
   </div>
 
   <!-- Languages Card -->
-  <div class="standard-card col-span-4">
+  <div class="standard-card col-span-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
@@ -94,21 +90,6 @@ title: About Me
       <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">French (FR)</p>
    </div>
 
-   <!-- Coffee Card -->
-  <div class="standard-card col-span-2 justify-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
-        role="img"
-        aria-label="Coffee Cup Icon"
-        viewBox="0 0 256 256"
-      >
-      <path d="M208,88v48a88,88,0,0,1-51.3,80H83.3A88,88,0,0,1,32,136V88Z" opacity="0.2"></path>
-      <path d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z"></path>
-      </svg>       
-      <h3 class="text-lg sm:text-2xl font-bold">Avg. Espresso Shots/Day</h3>
-      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">5.2</p>
-   </div>
     <!-- Webflow Partner Card -->
   <div class="standard-card col-span-2">
       <h3 class="text-lg sm:text-2xl font-bold">Webflow Premium Partner</h3>
@@ -123,7 +104,7 @@ title: About Me
 
     <!-- Clients Globe Card -->
   <div class="standard-card col-span-4 justify-center">      
-      <h3 class="text-lg sm:text-2xl font-bold">Client Locations</h3>
+      <h3 class="text-lg sm:text-2xl font-bold">Global Experience</h3>
       <p class="text-lg sm:text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">I've had the pleasure of working with clients from 11 different countries on 5 continents.</p>
       <div class="globe-embed w-full aspect-square max-w-100 sm:max-w-full"></div>
    </div>
@@ -131,10 +112,11 @@ title: About Me
 {% endcapture %}
 
 {%- render 'partials/section-standard', 
-  header: 'My Life in Cards',
-  subheader: 'Tiny snapshots from my everyday life.',
-  content: myLifeInCardsContent
+  header: 'Who is this guy?',
+  subheader: "A question that I've been trying to answer. And still trying to answer.",
+  content: whoIsThisGuyContent
 -%}
+
 
 
 <script>

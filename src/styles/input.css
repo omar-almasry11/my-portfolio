@@ -23,6 +23,23 @@
     @apply font-medium underline decoration-primary decoration-2 transition duration-300 hover:text-primary hover:decoration-transparent dark:decoration-primaryInverted dark:hover:text-primaryInverted dark:hover:decoration-transparent;
   }
 
+  /* Style for links within markdown content (prose) */
+  .prose a {
+    @apply relative inline-flex items-center gap-1 no-underline font-bold text-normal hover:text-primary dark:text-inverted dark:hover:text-primaryInverted transition-colors duration-300;
+  }
+
+  .prose a::after {
+    content: "";
+    @apply w-4 h-4 bg-current transition-transform duration-300;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z'%3E%3C/path%3E%3C/svg%3E");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+  }
+
+  .prose a:hover::after {
+    transform: translate(2px, -2px);
+  }
+
   a,
   button,
   [role="button"] {

@@ -602,6 +602,61 @@ a:hover:is(.dark *) {
   text-decoration-color: transparent;
 }
 
+/* Style for links within markdown content (prose) */
+
+.prose a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 34 / var(--tw-text-opacity, 1));
+  text-decoration-line: none;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.group.prose a {
+  position: relative;
+}
+
+.prose a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(61 96 226 / var(--tw-text-opacity, 1));
+}
+
+.prose a:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(242 242 242 / var(--tw-text-opacity, 1));
+}
+
+.prose a:hover:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(247 203 21 / var(--tw-text-opacity, 1));
+}
+
+.prose a::after {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  background-color: currentColor;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z'%3E%3C/path%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z'%3E%3C/path%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+.prose a:hover::after {
+  transform: translate(2px, -2px);
+}
+
 a,
   button,
   [role="button"] {
@@ -3056,10 +3111,6 @@ nav.group,
   grid-column: span 2 / span 2;
 }
 
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
@@ -3807,6 +3858,10 @@ nav.group,
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .text-left {
@@ -4653,21 +4708,9 @@ a.hover\:bg-primary:hover.button:hover {
 }
 
 @media (min-width: 1024px) {
-  .lg\:col-span-5 {
-    grid-column: span 5 / span 5;
-  }
-
-  .lg\:col-span-7 {
-    grid-column: span 7 / span 7;
-  }
-
   .lg\:my-12 {
     margin-top: 3rem;
     margin-bottom: 3rem;
-  }
-
-  .lg\:mb-0 {
-    margin-bottom: 0px;
   }
 
   .lg\:mt-8 {
@@ -4678,24 +4721,12 @@ a.hover\:bg-primary:hover.button:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .lg\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
   .lg\:justify-end {
     justify-content: flex-end;
   }
 
   .lg\:gap-12 {
     gap: 3rem;
-  }
-
-  .lg\:gap-8 {
-    gap: 2rem;
-  }
-
-  .lg\:gap-6 {
-    gap: 1.5rem;
   }
 
   .lg\:text-2xl {

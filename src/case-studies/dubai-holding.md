@@ -47,7 +47,7 @@ Migrating an enterprise portfolio to a new platform is high-stakes work. Each we
 
 ## Featured Project: Visit Hatta
 
-<a href="https://www.visithatta.com/" target="_blank" class="text-sm text-gray-500 dark:text-gray-400 hover:underline mb-4 inline-block">visithatta.com ↗</a>
+[visithatta.com](https://www.visithatta.com/)
 
 Visit Hatta is the official website for Dubai's largest nature reserve, welcoming over 350,000 visitors per season. The site needed to serve both English and Arabic audiences with a seamless bilingual experience.
 
@@ -84,9 +84,9 @@ Visit Hatta is the official website for Dubai's largest nature reserve, welcomin
 
 ## Featured Project: Nad Al Sheba Mall
 
-<a href="https://www.nadalshebamall.ae/" target="_blank" class="text-sm text-gray-500 dark:text-gray-400 hover:underline mb-4 inline-block">nadalshebamall.ae ↗</a>
+[nadalshebamall.ae](https://www.nadalshebamall.ae/)
 
-For Dubai Holding's retail properties, I designed and built a component library that prioritized accessibility from the ground up. This library was first implemented for Nad Al Sheba Mall and later reused for <a href="https://www.circlemall.ae/" target="_blank" class="underline">Circle Mall</a>.
+For Dubai Holding's retail properties, I designed and built a component library that prioritized accessibility from the ground up. This library was first implemented for Nad Al Sheba Mall and later reused for [Circle Mall](https://www.circlemall.ae/).
 
 ### What I Delivered
 
@@ -115,13 +115,13 @@ Beyond the featured projects, I worked with several other teams across Dubai Hol
 
 <section class="py-8">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full items-start">
-    <div class="w-full">
+    <div class="w-full text-lg">
       <img src="/images/bay-avenue-final.webp" alt="Bay Avenue website" class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted" />
-      <p class="text-sm text-gray-500 dark:text-gray-400 mt-2"><a href="https://www.bayavenue.ae/" target="_blank" class="hover:underline">Bay Avenue ↗</a></p>
+      <p class="mt-2">[Bay Avenue](https://www.bayavenue.ae/)</p>
     </div>
-    <div class="w-full">
+    <div class="w-full text-lg">
       <img src="/images/souq-jumeirah-final.webp" alt="Souk Madinat Jumeirah website" class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted" />
-      <p class="text-sm text-gray-500 dark:text-gray-400 mt-2"><a href="https://www.soukmadinatjumeirah.ae/en" target="_blank" class="hover:underline">Souk Madinat Jumeirah ↗</a></p>
+      <p class="mt-2">[Souk Madinat Jumeirah](https://www.soukmadinatjumeirah.ae/en)</p>
     </div>
   </div>
 </section>
@@ -133,13 +133,17 @@ I also contributed to website migrations for Dubai Holding's **Nakheel** brand p
 ## Technical Approach
 
 ### Migration Methodology
+
 Each migration followed a structured process: auditing the existing site, mapping content and URL structures, implementing proper 301 redirects, and validating SEO preservation post-launch.
 
 ### Accessibility Standards
+
 Component libraries were built with accessibility as a foundation — proper heading hierarchy, ARIA labels, keyboard navigation, and color contrast ratios meeting WCAG AA requirements.
 
 ### Bilingual Implementation
+
 Leveraged Webflow's native localization features combined with custom CSS for RTL layouts, ensuring consistent experiences across language variants.
 
 ### Performance Optimization
+
 Implemented image optimization, efficient code patterns, and CDN delivery to achieve fast load times across all properties.
