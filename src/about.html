@@ -106,7 +106,7 @@ title: About Me
   <div class="standard-card col-span-4 justify-center">      
       <h3 class="text-lg sm:text-2xl font-bold">Global Experience</h3>
       <p class="text-lg sm:text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">I've had the pleasure of working with clients from 11 different countries on 5 continents.</p>
-      <div class="globe-embed w-full aspect-square max-w-100 sm:max-w-full"></div>
+      <div class="globe-embed w-full aspect-square max-w-[350px] sm:max-w-[450px] mx-auto"></div>
    </div>
 </div>
 {% endcapture %}
@@ -169,11 +169,11 @@ title: About Me
           const scene = new THREE.Scene();
           scene.background = null;
   
-          const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+          const camera = new THREE.PerspectiveCamera(75, globeContainer.clientWidth / globeContainer.clientHeight, 0.1, 1000);
           const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   
           renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
-          renderer.setPixelRatio(window.devicePixelRatio);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio for performance
           globeContainer.appendChild(renderer.domElement);
   
         const texture = new THREE.TextureLoader().load('/images/png/globe-texture-pixel-art.png');
@@ -213,6 +213,19 @@ title: About Me
           controls.addEventListener('end', () => {
               autoRotateTimeout = setTimeout(() => isUserInteracting = false, 1000);
           });
+
+          // Handle Window Resize
+          function onWindowResize() {
+              const width = globeContainer.clientWidth;
+              const height = globeContainer.clientHeight;
+              
+              camera.aspect = width / height;
+              camera.updateProjectionMatrix();
+              
+              renderer.setSize(width, height);
+          }
+
+          window.addEventListener('resize', onWindowResize);
   
           function animate() {
               requestAnimationFrame(animate);

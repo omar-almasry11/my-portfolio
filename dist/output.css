@@ -3454,6 +3454,14 @@ nav.group,
   max-width: 20rem;
 }
 
+.max-w-full {
+  max-width: 100%;
+}
+
+.max-w-\[350px\] {
+  max-width: 350px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -3476,6 +3484,10 @@ nav.group,
 
 .resize-y {
   resize: vertical;
+}
+
+.resize {
+  resize: both;
 }
 
 .list-none {
@@ -4561,6 +4573,10 @@ a.hover\:bg-primary:hover.button:hover {
 
   .sm\:max-w-full {
     max-width: 100%;
+  }
+
+  .sm\:max-w-\[450px\] {
+    max-width: 450px;
   }
 
   .sm\:grid-cols-2 {
