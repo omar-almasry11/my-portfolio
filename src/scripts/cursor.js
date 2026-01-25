@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addHoverEffect('.menu_link', ['scale-cursor-up']);
 
     // Buttons & Theme Toggle & Back to Top: White color only (no scale) + Move to top
-    addHoverEffect('.button, .theme-toggle, #back-to-top', ['white-cursor', 'cursor-top'], ['scale-cursor-up', 'scale-cursor-up-small']);
+    addHoverEffect('.button, .theme-toggle, #back-to-top', ['white-cursor', 'cursor-top', 'pixel-cursor'], ['scale-cursor-up', 'scale-cursor-up-small']);
 
     // Footer Social Links: Scale up small (appears behind link like nav links)
     addHoverEffect('.footer-social-link', ['scale-cursor-up-small']);

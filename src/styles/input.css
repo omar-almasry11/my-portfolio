@@ -56,6 +56,7 @@
   .footer-social-link,
   .logo,
   input[type="radio"],
+  #back-to-top,
   .stretched-link::after {
     cursor: url('../images/pixel-art-pointer.svg?v=1') 10 0, pointer !important;
   }
@@ -576,6 +577,7 @@
   .theme-toggle:hover,
   #back-to-top:hover {
     @apply scale-[1.03] shadow-md;
+    cursor: url('../images/pixel-art-pointer.svg?v=1') 10 0, pointer !important;
   }
 
   /* Prevent global link styles from affecting buttons */
