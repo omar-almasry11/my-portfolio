@@ -3246,10 +3246,6 @@ nav.group,
   display: block;
 }
 
-.inline-block {
-  display: inline-block;
-}
-
 .inline {
   display: inline;
 }
@@ -3824,6 +3820,10 @@ nav.group,
   padding-bottom: 2rem;
 }
 
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
 .pb-24 {
   padding-bottom: 6rem;
 }
@@ -3858,10 +3858,6 @@ nav.group,
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pb-12 {
-  padding-bottom: 3rem;
 }
 
 .text-left {
@@ -4038,10 +4034,6 @@ nav.group,
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
-}
-
-.underline {
-  text-decoration-line: underline;
 }
 
 .no-underline {
@@ -4329,10 +4321,6 @@ a.hover\:bg-primary:hover.button:hover {
 .hover\:text-savoyBlue:hover {
   --tw-text-opacity: 1;
   color: rgb(61 96 226 / var(--tw-text-opacity, 1));
-}
-
-.hover\:underline:hover {
-  text-decoration-line: underline;
 }
 
 .hover\:opacity-90:hover {
