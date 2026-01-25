@@ -565,6 +565,10 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(0 0 34 / var(--tw-text-opacity, 1));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  cursor: url('../images/pixel-art-arrow.svg?v=1') 0 0, auto !important;
 }
 
 html.dark {
@@ -659,8 +663,21 @@ a:hover:is(.dark *) {
 
 a,
   button,
-  [role="button"] {
-  cursor: pointer;
+  [role="button"],
+  .cursor-pointer,
+  .standard-card,
+  #portraitCircle,
+  .menu_link,
+  .btn-next,
+  .btn-submit,
+  .btn-prev,
+  .service-card,
+  .project-card,
+  .footer-social-link,
+  .logo,
+  input[type="radio"],
+  .stretched-link::after {
+  cursor: url('../images/pixel-art-pointer.svg?v=1') 10 0, pointer !important;
 }
 
 h1 {
@@ -1620,9 +1637,9 @@ html.dark {
   --tw-shadow: 0px 1px 3px rgba(0, 0, 34, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.10), 0px 2px 1px rgba(0, 0, 0, 0.08);
   --tw-shadow-colored: 0px 1px 3px var(--tw-shadow-color), 0px 1px 1px var(--tw-shadow-color), 0px 2px 1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  transition-property: all;
+  transition-property: background-color,border-color,color,box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition-duration: 300ms;
 }
 
 .group.standard-card {
@@ -2655,7 +2672,6 @@ input[type="radio"] {
   -webkit-appearance: none;
   border-radius: 50%;
   border: 2px solid #515751;
-  cursor: pointer;
   transition: all 0.2s ease;
 }
 
@@ -2688,7 +2704,6 @@ input[type="radio"]:focus {
 
 .btn-next,
   .btn-submit {
-  cursor: pointer;
   transition: all 0.2s ease;
 }
 
@@ -2709,7 +2724,6 @@ input[type="radio"]:focus {
 }
 
 .btn-prev {
-  cursor: pointer;
   transition: all 0.2s ease;
 }
 
@@ -2866,7 +2880,6 @@ a.button.cursor_dot:hover {
   position: relative;
   z-index: 20;
   display: inline-block;
-  cursor: pointer;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
@@ -2895,8 +2908,7 @@ a.button.cursor_dot:hover {
   .project-card {
   position: relative;
   z-index: 20;
-  cursor: pointer;
-  transition-property: all;
+  transition-property: background-color,border-color,color,box-shadow,transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -2917,7 +2929,7 @@ a.button.cursor_dot:hover {
   position: relative;
   z-index: 20;
   cursor: none;
-  transition-property: all;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -3426,6 +3438,10 @@ nav.group,
   max-width: 56rem;
 }
 
+.max-w-\[350px\] {
+  max-width: 350px;
+}
+
 .max-w-\[35px\] {
   max-width: 35px;
 }
@@ -3452,14 +3468,6 @@ nav.group,
 
 .max-w-xs {
   max-width: 20rem;
-}
-
-.max-w-full {
-  max-width: 100%;
-}
-
-.max-w-\[350px\] {
-  max-width: 350px;
 }
 
 .flex-1 {
@@ -3844,6 +3852,10 @@ nav.group,
   padding-bottom: 1rem;
 }
 
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -4212,7 +4224,6 @@ nav.group,
   z-index: 10;
   /* Above the card content but potentially below other links if needed */
   pointer-events: auto;
-  cursor: pointer;
 }
 
 /* Ensure child links are accessible if needed, though we should avoid nested links */
@@ -4559,6 +4570,10 @@ a.hover\:bg-primary:hover.button:hover {
     display: grid;
   }
 
+  .sm\:max-w-\[450px\] {
+    max-width: 450px;
+  }
+
   .sm\:max-w-\[45px\] {
     max-width: 45px;
   }
@@ -4573,10 +4588,6 @@ a.hover\:bg-primary:hover.button:hover {
 
   .sm\:max-w-full {
     max-width: 100%;
-  }
-
-  .sm\:max-w-\[450px\] {
-    max-width: 450px;
   }
 
   .sm\:grid-cols-2 {

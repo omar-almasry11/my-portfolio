@@ -12,7 +12,8 @@
   }
 
   html {
-    @apply text-normal bg-normal;
+    @apply text-normal bg-normal transition-colors duration-300;
+    cursor: url('../images/pixel-art-arrow.svg?v=1') 0 0, auto !important;
   }
 
   html.dark {
@@ -42,8 +43,21 @@
 
   a,
   button,
-  [role="button"] {
-    cursor: pointer;
+  [role="button"],
+  .cursor-pointer,
+  .standard-card,
+  #portraitCircle,
+  .menu_link,
+  .btn-next,
+  .btn-submit,
+  .btn-prev,
+  .service-card,
+  .project-card,
+  .footer-social-link,
+  .logo,
+  input[type="radio"],
+  .stretched-link::after {
+    cursor: url('../images/pixel-art-pointer.svg?v=1') 10 0, pointer !important;
   }
 
   h1 {
@@ -127,7 +141,7 @@
 
   /* Custom Component Styles */
   .standard-card {
-    @apply border border-normal rounded-md flex flex-col justify-start items-start h-full p-6 no-underline transition-all shadow-low w-full dark:shadow-lowInverted relative dark:border-inverted;
+    @apply border border-normal rounded-md flex flex-col justify-start items-start h-full p-6 no-underline transition-[background-color,border-color,color,box-shadow] duration-300 shadow-low w-full dark:shadow-lowInverted relative dark:border-inverted;
   }
 
   .prose {
@@ -374,7 +388,6 @@
     -webkit-appearance: none;
     border-radius: 50%;
     border: 2px solid #515751;
-    cursor: pointer;
     transition: all 0.2s ease;
   }
 
@@ -406,7 +419,6 @@
   /* Button styles for form */
   .btn-next,
   .btn-submit {
-    cursor: pointer;
     transition: all 0.2s ease;
   }
 
@@ -427,7 +439,6 @@
   }
 
   .btn-prev {
-    cursor: pointer;
     transition: all 0.2s ease;
   }
 
@@ -530,7 +541,7 @@
 
   /* Interactive Elements Layering */
   .menu_link {
-    @apply relative z-20 inline-block transition-colors duration-300 cursor-pointer;
+    @apply relative z-20 inline-block transition-colors duration-300;
   }
 
   .menu_link:hover {
@@ -544,12 +555,12 @@
   .list-parent,
   .service-card,
   .project-card {
-    @apply relative z-[20] transition-all duration-300 ease-out cursor-pointer;
+    @apply relative z-[20] transition-[background-color,border-color,color,box-shadow,transform] duration-300 ease-out;
   }
 
   .home-heading,
   .js-colorful-heading {
-    @apply relative z-[20] transition-all duration-300 ease-out cursor-none;
+    @apply relative z-[20] transition-colors duration-300 ease-out cursor-none;
   }
 
   /* Social links hover behavior like menu links */
@@ -653,7 +664,6 @@
   left: 0;
   z-index: 10; /* Above the card content but potentially below other links if needed */
   pointer-events: auto;
-  cursor: pointer;
 }
 
 /* Ensure child links are accessible if needed, though we should avoid nested links */
