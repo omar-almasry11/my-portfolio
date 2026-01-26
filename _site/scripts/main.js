@@ -136,6 +136,9 @@ const backToTopButton = document.getElementById('back-to-top');
 let backToTopTicking = false;
 
 function checkScroll() {
+  if (!backToTopButton) {
+    return;
+  }
   if (!backToTopTicking) {
     requestAnimationFrame(() => {
       if (window.scrollY > 300) {
@@ -150,6 +153,7 @@ function checkScroll() {
 }
 
 window.addEventListener('scroll', checkScroll, { passive: true });
+window.addEventListener('load', checkScroll);
 
 backToTopButton?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });

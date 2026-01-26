@@ -3002,6 +3002,16 @@ a.button.cursor_dot:hover {
 #back-to-top {
   width: 3rem;
   height: 3rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+#back-to-top.hidden {
+  display: flex;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
 }
 
 .button:hover,
@@ -4229,6 +4239,13 @@ nav.group,
 /* Custom Cursor Styles using Tailwind */
 
 @media (max-width: 1024px) {
+  #back-to-top.cursor-wrapper {
+    display: flex;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+  }
+
   .cursor-wrapper {
     display: none;
   }
@@ -4353,6 +4370,13 @@ nav.group,
   --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
   --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
   --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+}
+
+.dark\:hidden:is(.dark *)#back-to-top {
+  display: flex;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
 }
 
 .hover\:scale-105:hover {

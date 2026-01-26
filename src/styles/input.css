@@ -598,6 +598,16 @@
   #back-to-top {
     width: 3rem;
     height: 3rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  #back-to-top.hidden {
+    display: flex;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
   }
 
   .button:hover,
