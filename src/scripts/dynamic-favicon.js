@@ -60,15 +60,17 @@
         return `rgb(${r}, ${g}, ${b})`;
     }
 
-    function draw() {
+    function draw(advance = true) {
         if (!img.complete) return;
 
-        progress += (1000 / fps) / transitionSpeed;
-        
-        if (progress >= 1) {
-            progress = 0;
-            currentColorIndex = nextColorIndex;
-            nextColorIndex = (nextColorIndex + 1) % palette.length;
+        if (advance) {
+            progress += (1000 / fps) / transitionSpeed;
+            
+            if (progress >= 1) {
+                progress = 0;
+                currentColorIndex = nextColorIndex;
+                nextColorIndex = (nextColorIndex + 1) % palette.length;
+            }
         }
 
         const color = interpolateColor(palette[currentColorIndex], palette[nextColorIndex], progress);
@@ -93,7 +95,35 @@
         appleIcon.href = dataUrl;
     }
 
+    let intervalId = null;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function start() {
+        if (intervalId) return;
+        intervalId = setInterval(() => draw(true), 1000 / fps);
+    }
+
+    function stop() {
+        if (!intervalId) return;
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+
+    function syncAnimationState() {
+        if (document.hidden || prefersReducedMotion.matches) {
+            stop();
+            draw(false);
+            return;
+        }
+
+        start();
+    }
+
     img.onload = () => {
-        setInterval(draw, 1000 / fps);
+        draw(false);
+        syncAnimationState();
     };
+
+    document.addEventListener('visibilitychange', syncAnimationState);
+    prefersReducedMotion.addEventListener('change', syncAnimationState);
 })();

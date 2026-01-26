@@ -65,9 +65,38 @@
         });
     };
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let intervalId = null;
+
+    function start() {
+        if (intervalId || prefersReducedMotion.matches) return;
+        intervalId = setInterval(cycleColors, 4500);
+    }
+
+    function stop() {
+        if (!intervalId) return;
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+
+    function syncAnimationState() {
+        if (document.hidden) {
+            stop();
+            return;
+        }
+
+        if (prefersReducedMotion.matches) {
+            stop();
+            return;
+        }
+
+        start();
+    }
+
     // Start the animation loop
     initializeGrid();
-    
-    // Cycle every 4.5 seconds
-    setInterval(cycleColors, 4500);
+    syncAnimationState();
+
+    document.addEventListener('visibilitychange', syncAnimationState);
+    prefersReducedMotion.addEventListener('change', syncAnimationState);
 })();

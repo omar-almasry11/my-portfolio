@@ -53,6 +53,28 @@ const initPageTransitions = () => {
         sessionStorage.setItem('transitionColors', JSON.stringify(newColors));
     };
 
+    const applyStoredColorsOrRandomize = () => {
+        const storedColors = sessionStorage.getItem('transitionColors');
+        if (storedColors) {
+            try {
+                const parsedColors = JSON.parse(storedColors);
+                if (Array.isArray(parsedColors) && parsedColors.length === gridItems.length) {
+                    gridItems.forEach((item, index) => {
+                        item.style.backgroundColor = parsedColors[index];
+                    });
+                    return;
+                }
+            } catch (err) {
+                // Ignore invalid stored data and regenerate
+            }
+        }
+
+        randomizeAndStoreColors();
+    };
+
+    // Ensure initial grid colors follow the adjacency rule
+    applyStoredColorsOrRandomize();
+
     // 1. Initial animation on page load (Fading OUT the grid)
     const tlIn = gsap.timeline({
         onComplete: () => {

@@ -568,7 +568,7 @@ html {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
-  cursor: url('../images/pixel-art-arrow.svg?v=1') 0 0, auto !important;
+  cursor: url('../images/pixel-art-arrow.svg?v=2') 0 0, auto;
 }
 
 html.dark {
@@ -676,8 +676,9 @@ a,
   .footer-social-link,
   .logo,
   input[type="radio"],
+  #back-to-top,
   .stretched-link::after {
-  cursor: url('../images/pixel-art-pointer.svg?v=1') 10 0, pointer !important;
+  cursor: url('../images/pixel-art-pointer.svg?v=2') 10 0, pointer !important;
 }
 
 h1 {
@@ -2867,10 +2868,23 @@ a.button.cursor_dot:hover {
   background-color: rgb(247 203 21 / var(--tw-bg-opacity, 1));
 }
 
+.brush-cursor {
+  background-image: url('../images/brush-pixel-art.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  image-rendering: pixelated !important;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0px;
+  opacity: 1;
+  background-color: transparent !important;
+  transition: opacity 300ms ease-out, transform 300ms ease-out !important;
+}
+
 .white-cursor {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)) !important;
-  transform: scale(2) !important;
   opacity: 0.5 !important;
 }
 
@@ -2924,10 +2938,13 @@ a.button.cursor_dot:hover {
   position: relative;
 }
 
-.home-heading,
-  .js-colorful-heading {
+.home-heading {
   position: relative;
   z-index: 20;
+  margin-left: auto;
+  margin-right: auto;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: none;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2935,8 +2952,23 @@ a.button.cursor_dot:hover {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-.group.home-heading,.group
-  .js-colorful-heading {
+.group.home-heading {
+  position: relative;
+}
+
+.js-colorful-heading {
+  position: relative;
+  z-index: 20;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: none;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.group.js-colorful-heading {
   position: relative;
 }
 
@@ -2956,6 +2988,20 @@ a.button.cursor_dot:hover {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+}
+
+#back-to-top {
+  position: fixed;
+}
+
+#back-to-top,
+  #back-to-top * {
+  cursor: url('../images/pixel-art-pointer.svg?v=2') 10 0, pointer !important;
+}
+
+#back-to-top {
+  width: 3rem;
+  height: 3rem;
 }
 
 .button:hover,
@@ -3057,6 +3103,10 @@ nav.group,
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.pointer-events-none {
+  pointer-events: none;
 }
 
 .static {
@@ -4274,12 +4324,12 @@ nav.group,
   }
 }
 
-a.hover\:bg-primary:hover.button {
+.hover\:bg-primary:hovera.button {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
 }
 
-a.hover\:bg-primary:hover.button:hover {
+.hover\:bg-primary:hovera.button:hover {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
 }

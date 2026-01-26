@@ -254,21 +254,61 @@
         const colors = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2', '#EDF060'];
         const items = document.querySelectorAll('.load_grid-item');
         const storedColors = sessionStorage.getItem('transitionColors');
+        const gridSize = 10; // 10x10 grid
 
-        if (storedColors) {
-          const colorArray = JSON.parse(storedColors);
+        const applyColors = (colorArray) => {
           items.forEach((item, i) => {
             if (colorArray[i]) item.style.backgroundColor = colorArray[i];
           });
-        } else {
+        };
+
+        const generateColors = () => {
           const newColors = [];
-          items.forEach((item) => {
-            const color = colors[Math.floor(Math.random() * colors.length)];
+          items.forEach((item, index) => {
+            let color;
+            let attempts = 0;
+            const maxAttempts = 10;
+
+            do {
+              color = colors[Math.floor(Math.random() * colors.length)];
+              attempts++;
+
+              const row = Math.floor(index / gridSize);
+              const col = index % gridSize;
+
+              const leftIndex = index - 1;
+              const hasLeftNeighbor = col > 0 && leftIndex >= 0;
+              const leftColor = hasLeftNeighbor ? newColors[leftIndex] : null;
+
+              const topIndex = index - gridSize;
+              const hasTopNeighbor = row > 0 && topIndex >= 0;
+              const topColor = hasTopNeighbor ? newColors[topIndex] : null;
+
+              if (color !== leftColor && color !== topColor) {
+                break;
+              }
+            } while (attempts < maxAttempts);
+
             item.style.backgroundColor = color;
             newColors.push(color);
           });
+
           sessionStorage.setItem('transitionColors', JSON.stringify(newColors));
+        };
+
+        if (storedColors) {
+          try {
+            const colorArray = JSON.parse(storedColors);
+            if (Array.isArray(colorArray) && colorArray.length === items.length) {
+              applyColors(colorArray);
+              return;
+            }
+          } catch (err) {
+            // Ignore invalid stored data and regenerate
+          }
         }
+
+        generateColors();
       })();
     </script>
     <nav class="px-[5%] py-4 sticky top-0 z-50">
@@ -1555,10 +1595,17 @@
     <!-- Back to Top Button -->
 <button
   id="back-to-top"
-  class="fixed bottom-4 right-4 z-50 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted"
+  class="fixed bottom-4 right-4 z-50 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted flex items-center justify-center p-0"
   aria-label="Back to top"
 >
-  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    fill="currentColor"
+    viewBox="0 0 256 256"
+    class="pointer-events-none"
+  >
     <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm37.66-101.66a8,8,0,0,1-11.32,11.32L136,107.31V168a8,8,0,0,1-16,0V107.31l-18.34,18.35a8,8,0,0,1-11.32-11.32l32-32a8,8,0,0,1,11.32,0Z"></path>
   </svg>
 </button>

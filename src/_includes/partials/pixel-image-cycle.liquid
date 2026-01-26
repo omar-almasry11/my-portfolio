@@ -96,12 +96,15 @@
 
       let currentIndex = 0;
       let isTransitioning = false;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let cycleIntervalId = null;
+      let cycleStartTimeoutId = null;
 
       // Add soft transition to image
       currentImage.style.transition = 'opacity 0.2s ease-in-out';
 
       function transitionToImage(index) {
-        if (isTransitioning) return;
+        if (isTransitioning || document.hidden || prefersReducedMotion.matches) return;
         isTransitioning = true;
 
         const nextImage = images[index];
@@ -161,12 +164,39 @@
         }, fadeInStartEnd + 50);
       }
 
-      setTimeout(() => {
-        setInterval(() => {
-          currentIndex = (currentIndex + 1) % images.length;
-          transitionToImage(currentIndex);
-        }, 3500);
-      }, 2500);
+      function startCycle() {
+        if (cycleIntervalId || prefersReducedMotion.matches) return;
+        cycleStartTimeoutId = setTimeout(() => {
+          cycleIntervalId = setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            transitionToImage(currentIndex);
+          }, 3500);
+        }, 2500);
+      }
+
+      function stopCycle() {
+        if (cycleStartTimeoutId) {
+          clearTimeout(cycleStartTimeoutId);
+          cycleStartTimeoutId = null;
+        }
+        if (cycleIntervalId) {
+          clearInterval(cycleIntervalId);
+          cycleIntervalId = null;
+        }
+      }
+
+      function syncAnimationState() {
+        if (document.hidden || prefersReducedMotion.matches) {
+          stopCycle();
+          return;
+        }
+
+        startCycle();
+      }
+
+      syncAnimationState();
+      document.addEventListener('visibilitychange', syncAnimationState);
+      prefersReducedMotion.addEventListener('change', syncAnimationState);
     });
   })();
 </script>

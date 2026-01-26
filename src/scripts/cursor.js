@@ -29,15 +29,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const animate = () => {
+        if (!isRunning) return;
         cursorX = lerp(cursorX, mouseX, 0.2);
         cursorY = lerp(cursorY, mouseY, 0.2);
 
         cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
 
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
     };
 
-    animate();
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let animationFrameId = null;
+    let isRunning = false;
+
+    function start() {
+        if (isRunning || prefersReducedMotion.matches) return;
+        isRunning = true;
+        animationFrameId = requestAnimationFrame(animate);
+    }
+
+    function stop() {
+        if (!isRunning) return;
+        isRunning = false;
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
+    }
+
+    function syncAnimationState() {
+        if (document.hidden || prefersReducedMotion.matches) {
+            stop();
+            return;
+        }
+
+        start();
+    }
+
+    syncAnimationState();
+    document.addEventListener('visibilitychange', syncAnimationState);
+    prefersReducedMotion.addEventListener('change', syncAnimationState);
 
     // Hover Effects Logic
     const addHoverEffect = (selector, classesToAdd, classesToRemove = []) => {
@@ -55,8 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             el.addEventListener('mouseleave', () => {
                 classesToAdd.forEach(cls => {
-                    if (cls.includes('top')) cursor.classList.remove(cls);
-                    else cursorDot.classList.remove(cls);
+                    cursor.classList.remove(cls);
+                    cursorDot.classList.remove(cls);
                 });
             });
         });
@@ -66,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addHoverEffect('.menu_link', ['scale-cursor-up']);
 
     // Buttons & Theme Toggle & Back to Top: White color only (no scale) + Move to top
-    addHoverEffect('.button, .theme-toggle, #back-to-top', ['white-cursor', 'cursor-top', 'pixel-cursor'], ['scale-cursor-up', 'scale-cursor-up-small']);
+    addHoverEffect('.button, .theme-toggle, #back-to-top', ['white-cursor', 'cursor-top'], ['scale-cursor-up', 'scale-cursor-up-small', 'pixel-cursor', 'brush-cursor']);
 
     // Footer Social Links: Scale up small (appears behind link like nav links)
     addHoverEffect('.footer-social-link', ['scale-cursor-up-small']);
@@ -77,8 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Logo: Scale up small + black
     addHoverEffect('.logo', ['scale-cursor-up-small', 'black-cursor']);
 
-    // Colorful Headings: Scale up small + pixel effect + move to top
-    addHoverEffect('.home-heading, .js-colorful-heading', ['scale-cursor-up-small', 'pixel-cursor', 'cursor-top']);
+    // Colorful Headings: Scale up small + brush effect + move to top
+    addHoverEffect('.home-heading, .js-colorful-heading', ['scale-cursor-up-small', 'brush-cursor', 'cursor-top'], ['pixel-cursor']);
 
     // Text links & Inline links: Hide custom cursor for better readability
     addHoverEffect('.text-link, footer p a, .prose a', ['cursor-hidden']);

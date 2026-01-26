@@ -207,6 +207,9 @@ if (typeof window.reinitializeComponents === 'undefined') {
 // =============================
 // 🖼️ Accessible Lightbox Functionality
 // =============================
+let lightboxKeydownBound = false;
+let lightboxState = null;
+
 function initLightbox() {
   const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
   let currentImageIndex = 0;
@@ -239,6 +242,9 @@ function initLightbox() {
   
   // Add click listeners to triggers
   lightboxTriggers.forEach((trigger, index) => {
+    if (trigger.dataset.lightboxBound === 'true') return;
+    trigger.dataset.lightboxBound = 'true';
+
     trigger.addEventListener('click', () => {
       currentImageIndex = index;
       openLightbox();
@@ -254,57 +260,74 @@ function initLightbox() {
     });
   });
   
-  // Lightbox controls
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightboxPrev.addEventListener('click', showPreviousImage);
-  lightboxNext.addEventListener('click', showNextImage);
-  
-  // Image zoom and pan functionality
-  lightboxImage.addEventListener('click', handleImageClick);
-  lightboxImage.addEventListener('dblclick', handleImageDoubleClick);
-  lightboxImage.addEventListener('mousedown', handleMouseDown);
-  lightboxImage.addEventListener('mousemove', handleMouseMove);
-  lightboxImage.addEventListener('mouseup', handleMouseUp);
-  lightboxImage.addEventListener('mouseleave', handleMouseUp);
-  lightboxImage.addEventListener('wheel', handleWheel, { passive: false });
-  
-  // Touch events for mobile
-  lightboxImage.addEventListener('touchstart', handleTouchStart, { passive: false });
-  lightboxImage.addEventListener('touchmove', handleTouchMove, { passive: false });
-  lightboxImage.addEventListener('touchend', handleTouchEnd);
-  
-  // Overlay click to close - only on overlay background
-  lightboxOverlay.addEventListener('click', (e) => {
-    // Close only if clicking on the dark overlay background
-    if (e.target === lightboxOverlay) {
-      closeLightbox();
-    }
-  });
-  
-  // Content area click to close - but not on image or controls
-  lightboxContent.addEventListener('click', (e) => {
-    // Close if clicking on content area but not on image, controls, or their children
-    if (e.target === lightboxContent) {
-      closeLightbox();
-    }
-  });
-  
-  // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (!lightboxOverlay.classList.contains('active')) return;
+  if (lightboxOverlay.dataset.bound !== 'true') {
+    lightboxOverlay.dataset.bound = 'true';
+
+    // Lightbox controls
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', showPreviousImage);
+    lightboxNext.addEventListener('click', showNextImage);
     
-    switch (e.key) {
-      case 'Escape':
+    // Image zoom and pan functionality
+    lightboxImage.addEventListener('click', handleImageClick);
+    lightboxImage.addEventListener('dblclick', handleImageDoubleClick);
+    lightboxImage.addEventListener('mousedown', handleMouseDown);
+    lightboxImage.addEventListener('mousemove', handleMouseMove);
+    lightboxImage.addEventListener('mouseup', handleMouseUp);
+    lightboxImage.addEventListener('mouseleave', handleMouseUp);
+    lightboxImage.addEventListener('wheel', handleWheel, { passive: false });
+    
+    // Touch events for mobile
+    lightboxImage.addEventListener('touchstart', handleTouchStart, { passive: false });
+    lightboxImage.addEventListener('touchmove', handleTouchMove, { passive: false });
+    lightboxImage.addEventListener('touchend', handleTouchEnd);
+    
+    // Overlay click to close - only on overlay background
+    lightboxOverlay.addEventListener('click', (e) => {
+      // Close only if clicking on the dark overlay background
+      if (e.target === lightboxOverlay) {
         closeLightbox();
-        break;
-      case 'ArrowLeft':
-        if (!isZoomed) showPreviousImage();
-        break;
-      case 'ArrowRight':
-        if (!isZoomed) showNextImage();
-        break;
-    }
-  });
+      }
+    });
+    
+    // Content area click to close - but not on image or controls
+    lightboxContent.addEventListener('click', (e) => {
+      // Close if clicking on content area but not on image, controls, or their children
+      if (e.target === lightboxContent) {
+        closeLightbox();
+      }
+    });
+  }
+
+  lightboxState = {
+    overlay: lightboxOverlay,
+    get isZoomed() {
+      return isZoomed;
+    },
+    showPreviousImage,
+    showNextImage,
+    closeLightbox
+  };
+
+  // Keyboard navigation
+  if (!lightboxKeydownBound) {
+    lightboxKeydownBound = true;
+    document.addEventListener('keydown', (e) => {
+      if (!lightboxState || !lightboxState.overlay.classList.contains('active')) return;
+      
+      switch (e.key) {
+        case 'Escape':
+          lightboxState.closeLightbox();
+          break;
+        case 'ArrowLeft':
+          if (!lightboxState.isZoomed) lightboxState.showPreviousImage();
+          break;
+        case 'ArrowRight':
+          if (!lightboxState.isZoomed) lightboxState.showNextImage();
+          break;
+      }
+    });
+  }
   
   function openLightbox() {
     updateLightboxImage();

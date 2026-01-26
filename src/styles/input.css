@@ -13,7 +13,7 @@
 
   html {
     @apply text-normal bg-normal transition-colors duration-300;
-    cursor: url('../images/pixel-art-arrow.svg?v=1') 0 0, auto !important;
+    cursor: url('../images/pixel-art-arrow.svg?v=2') 0 0, auto;
   }
 
   html.dark {
@@ -58,7 +58,7 @@
   input[type="radio"],
   #back-to-top,
   .stretched-link::after {
-    cursor: url('../images/pixel-art-pointer.svg?v=1') 10 0, pointer !important;
+    cursor: url('../images/pixel-art-pointer.svg?v=2') 10 0, pointer !important;
   }
 
   h1 {
@@ -534,9 +534,19 @@
     @apply bg-oxfordBlue opacity-40 dark:bg-primaryInverted;
   }
 
+  .brush-cursor {
+    background-image: url('../images/brush-pixel-art.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    image-rendering: pixelated !important;
+    @apply w-6 h-6 opacity-100 bg-transparent rounded-none;
+    background-color: transparent !important;
+    transition: opacity 300ms ease-out, transform 300ms ease-out !important;
+  }
+
   .white-cursor {
     @apply bg-white !important;
-    transform: scale(2) !important;
     opacity: 0.5 !important;
   }
 
@@ -559,9 +569,12 @@
     @apply relative z-[20] transition-[background-color,border-color,color,box-shadow,transform] duration-300 ease-out;
   }
 
-  .home-heading,
+  .home-heading {
+    @apply relative z-[20] transition-colors duration-300 ease-out cursor-none w-fit mx-auto;
+  }
+
   .js-colorful-heading {
-    @apply relative z-[20] transition-colors duration-300 ease-out cursor-none;
+    @apply relative z-[20] transition-colors duration-300 ease-out cursor-none w-fit;
   }
 
   /* Social links hover behavior like menu links */
@@ -573,11 +586,24 @@
     @apply transition-colors duration-300;
   }
 
+  #back-to-top {
+    position: fixed;
+  }
+
+  #back-to-top,
+  #back-to-top * {
+    cursor: url('../images/pixel-art-pointer.svg?v=2') 10 0, pointer !important;
+  }
+
+  #back-to-top {
+    width: 3rem;
+    height: 3rem;
+  }
+
   .button:hover,
   .theme-toggle:hover,
   #back-to-top:hover {
     @apply scale-[1.03] shadow-md;
-    cursor: url('../images/pixel-art-pointer.svg?v=1') 10 0, pointer !important;
   }
 
   /* Prevent global link styles from affecting buttons */
