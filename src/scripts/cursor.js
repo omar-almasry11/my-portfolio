@@ -4,6 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!supportsHover) return;
+
     const cursor = document.querySelector('.cursor-wrapper');
     const cursorDot = document.querySelector('.cursor_dot');
 

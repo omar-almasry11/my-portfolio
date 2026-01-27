@@ -555,8 +555,10 @@
     @apply relative z-20 inline-block transition-colors duration-300;
   }
 
-  .menu_link:hover {
-    @apply text-white dark:text-normal !important;
+  @media (min-width: 1025px) {
+    .menu_link:hover {
+      @apply text-white dark:text-normal !important;
+    }
   }
 
   .button,
@@ -659,6 +661,19 @@
     @apply relative z-20;
   }
 
+  #mainNav {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms ease-out, transform 300ms ease-out;
+    will-change: opacity, transform;
+  }
+
+  #mainNav.nav-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
   /* Colorful Heading Letter Hover Effect */
   #colorfulHeading [data-letter],
   #portraitCircle,
@@ -739,5 +754,22 @@
   .cta-grid,
   .cta-grid-item {
     transition: none !important;
+  }
+}
+
+/* Disable hover-based animations on touch devices */
+@media (hover: none), (pointer: coarse) {
+  *:hover {
+    animation: none !important;
+    transition-duration: 0ms !important;
+  }
+
+  .hover\:scale-105:hover,
+  .group:hover .group-hover\:scale-105 {
+    transform: none !important;
+  }
+
+  .hover\:opacity-90:hover {
+    opacity: 1 !important;
   }
 }

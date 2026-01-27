@@ -96,6 +96,7 @@ function updatePixelColors() {
 }
 
 let progressBarTicking = false;
+let resizeProgressBarTimeout = null;
 
 function updateProgressBar() {
   if (!progressBarTicking) {
@@ -127,6 +128,63 @@ window.addEventListener('scroll', updateProgressBar, { passive: true });
 
 // Initialize on load if already scrolled
 window.addEventListener('load', updateProgressBar);
+
+function rebuildProgressBar() {
+  if (!progressBar) return;
+  progressBar.innerHTML = '';
+  pixels = [];
+  totalPixels = 0;
+  pixelsInitialized = false;
+  updateProgressBar();
+}
+
+window.addEventListener('resize', () => {
+  if (resizeProgressBarTimeout) {
+    clearTimeout(resizeProgressBarTimeout);
+  }
+  resizeProgressBarTimeout = setTimeout(() => {
+    rebuildProgressBar();
+  }, 150);
+}, { passive: true });
+
+
+// =============================
+// 📱 Hide Navbar on Scroll Down (Mobile Only)
+// =============================
+const mainNav = document.getElementById('mainNav');
+let lastScrollY = window.scrollY;
+let navTicking = false;
+
+function handleNavScroll() {
+  if (!navTicking) {
+    requestAnimationFrame(() => {
+      // Only apply on mobile (< 640px, matching Tailwind's sm breakpoint)
+      if (window.innerWidth < 640 && mainNav) {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > lastScrollY && currentScrollY > 80) {
+          // Scrolling down & past threshold — hide
+          mainNav.classList.add('nav-hidden');
+        } else {
+          // Scrolling up — show
+          mainNav.classList.remove('nav-hidden');
+        }
+        lastScrollY = currentScrollY;
+      } else if (mainNav) {
+        // On desktop, always make sure nav is visible
+        mainNav.classList.remove('nav-hidden');
+      }
+      navTicking = false;
+    });
+    navTicking = true;
+  }
+}
+
+window.addEventListener('scroll', handleNavScroll, { passive: true });
+window.addEventListener('resize', () => {
+  if (mainNav && window.innerWidth >= 640) {
+    mainNav.classList.remove('nav-hidden');
+  }
+}, { passive: true });
 
 
 // =============================
@@ -216,6 +274,7 @@ let lightboxState = null;
 
 function initLightbox() {
   const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+  const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   let currentImageIndex = 0;
   let images = [];
   let isZoomed = false;
@@ -275,11 +334,13 @@ function initLightbox() {
     // Image zoom and pan functionality
     lightboxImage.addEventListener('click', handleImageClick);
     lightboxImage.addEventListener('dblclick', handleImageDoubleClick);
-    lightboxImage.addEventListener('mousedown', handleMouseDown);
-    lightboxImage.addEventListener('mousemove', handleMouseMove);
-    lightboxImage.addEventListener('mouseup', handleMouseUp);
-    lightboxImage.addEventListener('mouseleave', handleMouseUp);
-    lightboxImage.addEventListener('wheel', handleWheel, { passive: false });
+    if (supportsHover) {
+      lightboxImage.addEventListener('mousedown', handleMouseDown);
+      lightboxImage.addEventListener('mousemove', handleMouseMove);
+      lightboxImage.addEventListener('mouseup', handleMouseUp);
+      lightboxImage.addEventListener('mouseleave', handleMouseUp);
+      lightboxImage.addEventListener('wheel', handleWheel, { passive: false });
+    }
     
     // Touch events for mobile
     lightboxImage.addEventListener('touchstart', handleTouchStart, { passive: false });

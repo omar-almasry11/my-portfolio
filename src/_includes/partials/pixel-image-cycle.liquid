@@ -117,13 +117,16 @@
         }
 
         const stagger = 0.8;
-        const fadeInStartEnd = pixelIndices.length * stagger;
+        const pixelCoverage = 0.7;
+        const pixelMaxOpacity = 0.6;
+        const activePixelIndices = pixelIndices.filter(() => Math.random() < pixelCoverage);
+        const fadeInStartEnd = activePixelIndices.length * stagger;
 
         // Phase 1: Pixels fade in
-        pixelIndices.forEach((pixelIdx, i) => {
+        activePixelIndices.forEach((pixelIdx, i) => {
           setTimeout(() => {
             pixels[pixelIdx].style.backgroundColor = transitionColor;
-            pixels[pixelIdx].style.opacity = '1';
+            pixels[pixelIdx].style.opacity = String(pixelMaxOpacity);
           }, i * stagger);
         });
 
@@ -140,7 +143,7 @@
 
               // Phase 3: Reveal immediately after swap
               setTimeout(() => {
-                pixelIndices.forEach((pixelIdx, i) => {
+                activePixelIndices.forEach((pixelIdx, i) => {
                   setTimeout(() => {
                     pixels[pixelIdx].style.opacity = '0';
                   }, i * stagger);
@@ -148,7 +151,7 @@
 
                 setTimeout(() => {
                   isTransitioning = false;
-                }, pixelIndices.length * stagger + 300);
+                }, activePixelIndices.length * stagger + 300);
               }, 100); 
             };
 
@@ -171,7 +174,7 @@
             currentIndex = (currentIndex + 1) % images.length;
             transitionToImage(currentIndex);
           }, 3500);
-        }, 2500);
+        }, 1000);
       }
 
       function stopCycle() {

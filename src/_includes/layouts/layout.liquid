@@ -113,6 +113,10 @@
         generateColors();
       })();
     </script>
+    <!-- Pixelated Progress Bar (fixed, always visible) -->
+    <div id="progressBarContainer" class="fixed top-0 left-0 h-2 w-full bg-transparent overflow-hidden z-[60]">
+      <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
+    </div>
     {% render 'partials/navbar', page: page %}
     <main>
       {{ content }}

@@ -311,44 +311,73 @@
         generateColors();
       })();
     </script>
-    <nav class="px-[5%] py-4 sticky top-0 z-50">
-  <!-- Pixelated Progress Bar -->
-  <div id="progressBarContainer" class="absolute top-0 left-0 h-2 w-full bg-transparent overflow-hidden">
-    <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
-  </div>
-  <div class="max-w-4xl mx-auto flex items-center justify-between">
+    <!-- Pixelated Progress Bar (fixed, always visible) -->
+    <div id="progressBarContainer" class="fixed top-0 left-0 h-2 w-full bg-transparent overflow-hidden z-[60]">
+      <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
+    </div>
+    <nav id="mainNav" class="px-[5%] py-4 sticky top-0 z-50 transition-transform duration-300">
+  <div class="max-w-4xl mx-auto flex items-end sm:items-center justify-between">
     <!-- Logo -->
     <a href="/" class="logo flex items-center font-bold text-lg no-underline group">
       <h3 class="flex items-center m-0">
-        <span class="text-4xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
+        <span class="text-5xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
           >O</span
         >
-        <span class="text-4xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
+        <span class="text-5xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
           >.</span
         >
       </h3>
     </a>
 
     <!-- Navigation Links & Button -->
-    <div class="flex items-center space-x-8">
-      <ul class="flex items-center space-x-12 m-0 p-0 list-none">
-        <li>
-          <a
-            href="/about/"
-            class="menu_link text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
-            
+    <div class="flex flex-wrap items-center justify-end gap-x-3 gap-y-2 sm:flex-nowrap sm:gap-8">
+      <!-- Dark Mode Toggle: own row on mobile (right-aligned), inline after Contact on desktop -->
+      <div class="w-full flex justify-end sm:w-auto sm:order-last">
+        <button
+          id="themeToggle"
+          class="theme-toggle px-2 py-2 bg-inverted rounded-full shadow-low dark:shadow-lowInveted dark:bg-normal"
+        >
+          <span class="sr-only">Toggle dark mode</span>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 fill-current text-primaryInverted hover:text-inverted block dark:hidden"
+            role="img"
+            aria-label="Dark Mode"
+            viewBox="0 0 256 256"
           >
-            <span class="roll-text">
-              <span data-text="About">About</span>
-              <span data-text="About" aria-hidden="true">About</span>
-            </span>
-          </a>
-        </li>
-      </ul>
+            <path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56A104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 fill-current text-normal dark:hover:text-invertedLight hidden dark:block"
+            role="img"
+            aria-label="Light Mode"
+            viewBox="0 0 256 256"
+          >
+            <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- About Link -->
+      <a
+        href="/about/"
+        class="menu_link text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+        
+      >
+        <span class="roll-text">
+          <span data-text="About">About</span>
+          <span data-text="About" aria-hidden="true">About</span>
+        </span>
+      </a>
+
+      <!-- Contact Button -->
       
   <a
     href="mailto:hello@omaralmasry.com"
-    class="button flex items-center mr-auto ml-auto px-6 py-3 bg-primary text-lg text-inverted font-medium rounded-full shadow-low no-underline transition duration-300 dark:bg-primaryInverted dark:text-normal dark:shadow-lowInverted relative z-0 overflow-hidden group"
+    class="button flex items-center px-6 py-3 bg-primary text-lg text-inverted font-medium rounded-full shadow-low no-underline transition duration-300 dark:bg-primaryInverted dark:text-normal dark:shadow-lowInverted relative z-0 overflow-hidden group"
     aria-label="Contact"
   >
     <span class="relative z-10 flex items-center">
@@ -360,34 +389,6 @@
   </a>
 
 
-
-      <!-- Dark Mode Toggle -->
-      <button
-        id="themeToggle"
-        class="theme-toggle px-2 py-2 bg-inverted rounded-full shadow-low dark:shadow-lowInveted dark:bg-normal"
-      >
-        <span class="sr-only">Toggle dark mode</span>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5 fill-current text-primaryInverted hover:text-inverted block dark:hidden"
-          role="img"
-          aria-label="Dark Mode"
-          viewBox="0 0 256 256"
-        >
-          <path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
-        </svg>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5 fill-current text-normal dark:hover:text-invertedLight hidden dark:block"
-          role="img"
-          aria-label="Light Mode"
-          viewBox="0 0 256 256"
-        >
-          <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
-        </svg>
-      </button>
     </div>
   </div>
 </nav>
@@ -666,10 +667,10 @@
       <!-- Logo -->
       <a href="/" class="logo flex items-center font-bold text-lg no-underline group">
         <h3 class="flex items-center m-0">
-          <span class="text-4xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
+          <span class="text-5xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
             >O</span
           >
-          <span class="text-4xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
+          <span class="text-5xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
             >.</span
           >
         </h3>

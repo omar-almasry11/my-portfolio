@@ -311,46 +311,75 @@
         generateColors();
       })();
     </script>
-    <nav class="px-[5%] py-4 sticky top-0 z-50">
-  <!-- Pixelated Progress Bar -->
-  <div id="progressBarContainer" class="absolute top-0 left-0 h-2 w-full bg-transparent overflow-hidden">
-    <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
-  </div>
-  <div class="max-w-4xl mx-auto flex items-center justify-between">
+    <!-- Pixelated Progress Bar (fixed, always visible) -->
+    <div id="progressBarContainer" class="fixed top-0 left-0 h-2 w-full bg-transparent overflow-hidden z-[60]">
+      <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
+    </div>
+    <nav id="mainNav" class="px-[5%] py-4 sticky top-0 z-50 transition-transform duration-300">
+  <div class="max-w-4xl mx-auto flex items-end sm:items-center justify-between">
     <!-- Logo -->
     <a href="/" class="logo flex items-center font-bold text-lg no-underline group">
       <h3 class="flex items-center m-0">
-        <span class="text-4xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
+        <span class="text-5xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
           >O</span
         >
-        <span class="text-4xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
+        <span class="text-5xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
           >.</span
         >
       </h3>
     </a>
 
     <!-- Navigation Links & Button -->
-    <div class="flex items-center space-x-8">
-      <ul class="flex items-center space-x-12 m-0 p-0 list-none">
-        <li>
-          <a
-            href="/about/"
-            class="menu_link text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
-            
-              aria-current="page"
-            
+    <div class="flex flex-wrap items-center justify-end gap-x-3 gap-y-2 sm:flex-nowrap sm:gap-8">
+      <!-- Dark Mode Toggle: own row on mobile (right-aligned), inline after Contact on desktop -->
+      <div class="w-full flex justify-end sm:w-auto sm:order-last">
+        <button
+          id="themeToggle"
+          class="theme-toggle px-2 py-2 bg-inverted rounded-full shadow-low dark:shadow-lowInveted dark:bg-normal"
+        >
+          <span class="sr-only">Toggle dark mode</span>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 fill-current text-primaryInverted hover:text-inverted block dark:hidden"
+            role="img"
+            aria-label="Dark Mode"
+            viewBox="0 0 256 256"
           >
-            <span class="roll-text">
-              <span data-text="About">About</span>
-              <span data-text="About" aria-hidden="true">About</span>
-            </span>
-          </a>
-        </li>
-      </ul>
+            <path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56A104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 fill-current text-normal dark:hover:text-invertedLight hidden dark:block"
+            role="img"
+            aria-label="Light Mode"
+            viewBox="0 0 256 256"
+          >
+            <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- About Link -->
+      <a
+        href="/about/"
+        class="menu_link text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+        
+          aria-current="page"
+        
+      >
+        <span class="roll-text">
+          <span data-text="About">About</span>
+          <span data-text="About" aria-hidden="true">About</span>
+        </span>
+      </a>
+
+      <!-- Contact Button -->
       
   <a
     href="mailto:hello@omaralmasry.com"
-    class="button flex items-center mr-auto ml-auto px-6 py-3 bg-primary text-lg text-inverted font-medium rounded-full shadow-low no-underline transition duration-300 dark:bg-primaryInverted dark:text-normal dark:shadow-lowInverted relative z-0 overflow-hidden group"
+    class="button flex items-center px-6 py-3 bg-primary text-lg text-inverted font-medium rounded-full shadow-low no-underline transition duration-300 dark:bg-primaryInverted dark:text-normal dark:shadow-lowInverted relative z-0 overflow-hidden group"
     aria-label="Contact"
   >
     <span class="relative z-10 flex items-center">
@@ -362,34 +391,6 @@
   </a>
 
 
-
-      <!-- Dark Mode Toggle -->
-      <button
-        id="themeToggle"
-        class="theme-toggle px-2 py-2 bg-inverted rounded-full shadow-low dark:shadow-lowInveted dark:bg-normal"
-      >
-        <span class="sr-only">Toggle dark mode</span>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5 fill-current text-primaryInverted hover:text-inverted block dark:hidden"
-          role="img"
-          aria-label="Dark Mode"
-          viewBox="0 0 256 256"
-        >
-          <path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
-        </svg>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5 fill-current text-normal dark:hover:text-invertedLight hidden dark:block"
-          role="img"
-          aria-label="Light Mode"
-          viewBox="0 0 256 256"
-        >
-          <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
-        </svg>
-      </button>
     </div>
   </div>
 </nav>
@@ -425,7 +426,7 @@
         
         
           <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
-            A question that I've been trying to answer. And still trying to answer.
+            The question I've been —and still— trying to answer.
           </p>
         
       </div>
@@ -436,10 +437,10 @@
       
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-start mt-4 lg:mt-8">
   <div class="flex flex-col">
-    <p class='mb-6'>I've been fascinated by technology and design since I was a kid. I wanted to be an 'inventor'—whatever I thought that meant at the time. As a 90s kid, I was fortunate enough to experience the world before and after the internet. You know, when getting online was a process in and of itself.</p>
-    <p class='mb-6'>At first, I thought architecture school was the answer to my burning desire to make things. Five years of studying how structure, aesthetics, and function come together. Turns out, you can't design and build an architectural masterpiece on your own—too many people, too much money, too many years.</p>
-    <p class='mb-6'>But on the web? You can 'invent' something in weeks. Design it, build it, watch people use it. That's the digital architecture I was looking for all along. After building my first website, I knew this was what I was meant to be doing.</p>
-    <p class='mb-6'>Born and raised in Egypt. Immigrated to Canada in 2025. And switched careers more than a couple of times.</p>
+    <p class='mb-6'>I've been fascinated by technology and design since I was a kid. I wanted to be an 'inventor'—whatever I thought that meant at the time. As a 90s kid, I was fortunate enough to experience the world before and after the internet. I kind of had the oppurtunity to "get my hands dirty" before everything happened on a screen.</p>
+    <p class='mb-6'>At first, I thought architecture was the answer to my burning desire to make things. Five years of studying how structure, aesthetics, and function come together. Turns out, you can't design and build an architectural masterpiece on your own—too many people, too much money, too many years.</p>
+    <p class='mb-6'>But on the web? You can 'invent' something in weeks. Design it, build it, watch people use it. That's the "inventing process" I was looking for all along. After building my first website, I knew this was what I was meant to be doing.</p>
+    <p class='mb-6'>Born and raised in Egypt, immigrated to Canada, and sucessfully switched careers more than a couple of times.</p>
     <p class='mb-6'>I'm a technology optimist and design obsessive who swallowed the AI pill. And now, I'm curious to see how deep the rabbit hole goes.</p>
   </div>
   <div class="sticky top-24">
@@ -560,13 +561,16 @@
         }
 
         const stagger = 0.8;
-        const fadeInStartEnd = pixelIndices.length * stagger;
+        const pixelCoverage = 0.7;
+        const pixelMaxOpacity = 0.6;
+        const activePixelIndices = pixelIndices.filter(() => Math.random() < pixelCoverage);
+        const fadeInStartEnd = activePixelIndices.length * stagger;
 
         // Phase 1: Pixels fade in
-        pixelIndices.forEach((pixelIdx, i) => {
+        activePixelIndices.forEach((pixelIdx, i) => {
           setTimeout(() => {
             pixels[pixelIdx].style.backgroundColor = transitionColor;
-            pixels[pixelIdx].style.opacity = '1';
+            pixels[pixelIdx].style.opacity = String(pixelMaxOpacity);
           }, i * stagger);
         });
 
@@ -583,7 +587,7 @@
 
               // Phase 3: Reveal immediately after swap
               setTimeout(() => {
-                pixelIndices.forEach((pixelIdx, i) => {
+                activePixelIndices.forEach((pixelIdx, i) => {
                   setTimeout(() => {
                     pixels[pixelIdx].style.opacity = '0';
                   }, i * stagger);
@@ -591,7 +595,7 @@
 
                 setTimeout(() => {
                   isTransitioning = false;
-                }, pixelIndices.length * stagger + 300);
+                }, activePixelIndices.length * stagger + 300);
               }, 100); 
             };
 
@@ -614,7 +618,7 @@
             currentIndex = (currentIndex + 1) % images.length;
             transitionToImage(currentIndex);
           }, 3500);
-        }, 2500);
+        }, 1000);
       }
 
       function stopCycle() {
@@ -646,8 +650,8 @@
 
   </div>
 </div>
-<p class='mb-6'>I'm the kind of person who enjoys walks in nature with a cup of coffee. And maybe a book by the lake if the weather allows. I also love writing—it's been part of my life since childhood. I even wrote for a living for a couple of years. I love building Lego sets, and use my daughter as an excuse to mask my childish hobbies. And of course I don\’t like vintage Pokémon cards. What kind of adult loves that, right?</p>
-<p class='mb-6'>Recently, I've developed a passion for web accessibility. It just made sense to build a web that works for everyone—not just everyone like me. I'm currently working towards my CPACC certification and contributing accessibility fixes to open-source projects. I've even landed a few merged PRs on projects like Angular—small contributions, but educational and rewarding. I kind of fell in love with open source after that.</p>
+<p class='mb-6'>I'm the kind of person who enjoys walks in nature with a cup of coffee. And maybe a book by the lake if the weather allows. I also love writing—it's been part of my life since childhood. I even wrote for a living for a couple of years. I love building Lego sets, and use my daughter as an excuse to mask my childish hobbies. And of course I don’t like vintage Pokémon cards. What kind of adult loves that, right?</p>
+<p class='mb-6'>I've recently develpod a passion for web accessibility. It just made sense to build a web that works for everyone—not just everyone like me. I'm currently working towards my CPACC certification and contributing accessibility fixes to open-source projects. I've even landed a few merged PRs on projects like Angular—small contributions, but educational and rewarding. I kind of fell in love with open source after that.</p>
 <p class='mb-12'>These days, I'm most interested in work where accessibility isn't an afterthought—where it's just how things are built.</p>
 
 <div class="flex flex-col gap-4 sm:grid grid-cols-6 gap-4">
@@ -874,10 +878,10 @@
       <!-- Logo -->
       <a href="/" class="logo flex items-center font-bold text-lg no-underline group">
         <h3 class="flex items-center m-0">
-          <span class="text-4xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
+          <span class="text-5xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
             >O</span
           >
-          <span class="text-4xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
+          <span class="text-5xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
             >.</span
           >
         </h3>
