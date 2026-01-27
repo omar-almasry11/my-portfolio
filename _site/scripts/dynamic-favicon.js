@@ -7,7 +7,8 @@
     const palette = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2', '#EDF060'];
     const portraitSrc = '/images/png/pixel-profile-picture.png';
     const transitionSpeed = 2000; // 2 seconds
-    const fps = 30; // Frames per second for smooth interpolation
+    const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+    const fps = isCoarsePointer ? 10 : 15; // Lower FPS to reduce CPU/battery impact
 
     let currentColorIndex = 0;
     let nextColorIndex = 1;

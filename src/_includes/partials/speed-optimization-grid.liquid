@@ -15,8 +15,10 @@
                 <img
                   src="{{ project.image }}"
                   alt="{{ project.description }}"
+                  {% if project.width and project.height %}width="{{ project.width }}" height="{{ project.height }}"{% endif %}
                   class="lightbox-trigger w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                   tabindex="0"
                   role="button"
                   aria-label="Click to view {{ project.description }} in full size"

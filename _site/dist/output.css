@@ -558,6 +558,12 @@ video {
   font-family: Atkinson Next;
 
   src: url('/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf');
+
+  font-style: normal;
+
+  font-weight: 100 900;
+
+  font-display: swap;
 }
 
 html {
@@ -3118,6 +3124,11 @@ nav.group,
   transition: color 1.2s ease-out, background-color 1.2s ease-out;
 }
 
+.colorful-word {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -3687,8 +3698,8 @@ nav.group,
        column-gap: 1rem;
 }
 
-.gap-y-2 {
-  row-gap: 0.5rem;
+.gap-y-4 {
+  row-gap: 1rem;
 }
 
 .gap-y-6 {
@@ -3989,11 +4000,6 @@ nav.group,
   font-family: Atkinson Next, Inter, sans-serif;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -4017,8 +4023,8 @@ nav.group,
   font-size: 10rem;
 }
 
-.text-\[5rem\] {
-  font-size: 5rem;
+.text-\[4rem\] {
+  font-size: 4rem;
 }
 
 .text-base {
@@ -4237,8 +4243,6 @@ nav.group,
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* Prism.js Syntax Highlighting Theme */
 
 .toc ul a {
   font-weight: 500;

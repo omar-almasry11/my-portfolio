@@ -99,6 +99,7 @@
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
       let cycleIntervalId = null;
       let cycleStartTimeoutId = null;
+      let isVisible = true;
 
       // Add soft transition to image
       currentImage.style.transition = 'opacity 0.2s ease-in-out';
@@ -189,12 +190,22 @@
       }
 
       function syncAnimationState() {
-        if (document.hidden || prefersReducedMotion.matches) {
+        if (document.hidden || prefersReducedMotion.matches || !isVisible) {
           stopCycle();
           return;
         }
 
         startCycle();
+      }
+
+      if ('IntersectionObserver' in window) {
+        const imageCycleObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            isVisible = entry.isIntersecting;
+            syncAnimationState();
+          });
+        }, { rootMargin: '200px 0px', threshold: 0.1 });
+        imageCycleObserver.observe(container);
       }
 
       syncAnimationState();

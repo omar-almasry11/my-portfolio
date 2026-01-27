@@ -11,6 +11,16 @@
     <meta name="author" content="Omar Almasry">
     <title>Eon Aligner</title>
 
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
+    </noscript>
+
     <!-- Dynamic Favicon managed via /scripts/dynamic-favicon.js -->
     <script src="/scripts/dynamic-favicon.js" defer></script>
     <link rel="manifest" href="/site.webmanifest">
@@ -22,8 +32,11 @@
       content="Eon Aligner is a dental brand specializing in clear-aligner treatment. I built a React-based doctor locator with interactive Google Maps integration, country/city filtering, and an Airtable backend that lets the marketing team manage clinic listings without developer involvement."
     >
     <meta property="og:image" content="/images/png/og.png">
-    <meta property="og:url" content="https://omaralmasry.com">
+    <meta property="og:url" content="https://omaralmasry.com/case-studies/eon-aligner/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Omar Almasry - Digital Designer">
+    <meta property="og:locale" content="en_US">
+    <link rel="canonical" href="https://omaralmasry.com/case-studies/eon-aligner/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Eon Aligner">
     <meta
@@ -330,7 +343,7 @@
     </a>
 
     <!-- Navigation Links & Button -->
-    <div class="flex flex-wrap items-center justify-end gap-x-3 gap-y-2 sm:flex-nowrap sm:gap-8">
+    <div class="flex flex-wrap items-center justify-end gap-x-3 gap-y-4 sm:flex-nowrap sm:gap-8">
       <!-- Dark Mode Toggle: own row on mobile (right-aligned), inline after Contact on desktop -->
       <div class="w-full flex justify-end sm:w-auto sm:order-last">
         <button
@@ -421,6 +434,7 @@
         <img
           src="/images/eon-aligner-1.webp"
           alt="Eon Aligner Hero Image"
+          width="3024" height="1654"
           class="w-full h-auto max-h-[800px] object-cover object-top"
         >
       </div>
@@ -1483,7 +1497,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="/scripts/main.js" defer></script>
     <script src="/scripts/cursor.js" defer></script>
     <script src="/scripts/colorful-heading.js" defer></script>

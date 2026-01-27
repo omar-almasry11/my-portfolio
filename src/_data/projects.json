@@ -2,17 +2,23 @@
   "startupSprints": [
     {
       "title": "248.ai",
-      "image": "/images/248-screencapture.png",
+      "image": "/images/248-screencapture.webp",
+      "width": 1739,
+      "height": 2866,
       "url": "https://www.248.ai/"
     },
     {
       "title": "Salney",
-      "image": "/images/salney-screencapture.png",
+      "image": "/images/salney-screencapture.webp",
+      "width": 807,
+      "height": 1330,
       "url": "https://www.salney.com/"
     },
     {
       "title": "Meezy",
-      "image": "/images/meezy-screencapture.png",
+      "image": "/images/meezy-screencapture.webp",
+      "width": 807,
+      "height": 1330,
       "url": "https://meezy-lp.webflow.io/"
     }
   ],
@@ -20,52 +26,72 @@
     {
       "title": "E-commerce Website - Before",
       "description": "E-commerce website performance before optimization",
-      "image": "/images/png/speed-optimization-1-a.webp"
+      "image": "/images/png/speed-optimization-1-a.webp",
+      "width": 1596,
+      "height": 1804
     },
     {
       "title": "E-commerce Website - After",
       "description": "E-commerce website performance after optimization",
-      "image": "/images/png/speed-optimization-1-b.webp"
+      "image": "/images/png/speed-optimization-1-b.webp",
+      "width": 1596,
+      "height": 1804
     },
     {
       "title": "Corporate Website - Before", 
       "description": "Corporate website performance before optimization",
-      "image": "/images/png/speed-optimization-2-a.webp"
+      "image": "/images/png/speed-optimization-2-a.webp",
+      "width": 1596,
+      "height": 1804
     },
     {
       "title": "Corporate Website - After", 
       "description": "Corporate website performance after optimization",
-      "image": "/images/png/speed-optimization-2-b.webp"
+      "image": "/images/png/speed-optimization-2-b.webp",
+      "width": 1596,
+      "height": 1804
     },
     {
       "title": "Webflow Site - Before",
       "description": "Webflow website performance before optimization",
-      "image": "/images/png/speed-optimization-3-a.webp"
+      "image": "/images/png/speed-optimization-3-a.webp",
+      "width": 1596,
+      "height": 1804
     },
     {
       "title": "Webflow Site - After",
       "description": "Webflow website performance after optimization",
-      "image": "/images/png/speed-optimization-3-b.webp"
+      "image": "/images/png/speed-optimization-3-b.webp",
+      "width": 1596,
+      "height": 1804
     },
     {
       "title": "Service-Based Website - Before",
       "description": "Service-based website performance before optimization",
-      "image": "/images/png/speed-optimization-4-a.webp"
+      "image": "/images/png/speed-optimization-4-a.webp",
+      "width": 1596,
+      "height": 1804
     },
     {
       "title": "Service-Based Website - After",
       "description": "Service-based website performance after optimization",
-      "image": "/images/png/speed-optimization-4-b.webp"
+      "image": "/images/png/speed-optimization-4-b.webp",
+      "width": 1596,
+      "height": 1804
     },
     {
       "title": "Content-Heavy Website - Before",
       "description": "Content-heavy website performance before optimization",
-      "image": "/images/png/speed-optimization-5a.webp"
+      "image": "/images/png/speed-optimization-5a.webp",
+      "width": 1596,
+      "height": 1804
     },
     {
       "title": "Content-Heavy Website - After",
       "description": "Content-heavy website performance after optimization",
-      "image": "/images/png/speed-optimization-5b.webp"
+      "image": "/images/png/speed-optimization-5b.webp",
+      "width": 1596,
+      "height": 1804
     }
   ]
 }

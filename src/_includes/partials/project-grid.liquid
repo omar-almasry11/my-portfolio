@@ -15,8 +15,10 @@
                 <img
                   src="{{ project.image }}"
                   alt="{{ project.title }}"
+                  {% if project.width and project.height %}width="{{ project.width }}" height="{{ project.height }}"{% endif %}
                   class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 >
               </div>
 

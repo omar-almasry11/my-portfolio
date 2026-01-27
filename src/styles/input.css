@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Prism.js Syntax Highlighting Theme */
-@import url('https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css');
-
 @layer base {
   @font-face {
     font-family: Atkinson Next;
     src: url('/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf');
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
   }
 
   html {
@@ -680,6 +680,11 @@
   .js-colorful-heading [data-letter] {
     @apply inline-block cursor-none;
     transition: color 1.2s ease-out, background-color 1.2s ease-out;
+  }
+
+  .colorful-word {
+    display: inline-flex;
+    white-space: nowrap;
   }
 }
 

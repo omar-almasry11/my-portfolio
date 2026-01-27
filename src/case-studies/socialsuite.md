@@ -7,6 +7,8 @@ logo: "/images/png/socialsuite-logo.webp"
 logo-dark: "/images/png/socialsuite-logo.webp"
 customLogoClass: "w-12 h-12 dark:w-12 dark:h-12"
 header-img: "/images/socialsuite-hero-img.webp"
+header-img-width: 2880
+header-img-height: 1738
 header-overview: "Socialsuite is a global leader in ESG and impact measurement software serving 150+ organizations worldwide—including YMCA, Big Brothers Big Sisters, and publicly traded companies. Following a comprehensive rebrand, I partnered with their team to redesign their entire web presence, translating new brand guidelines into a sophisticated digital experience that serves dual audiences: mission-driven nonprofits and enterprise corporations navigating ESG compliance."
 order: 1
 ---

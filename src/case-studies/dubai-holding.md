@@ -7,6 +7,8 @@ logo: "/images/duba-holding-logo-2.svg"
 logo-dark: "/images/dubai-holding-logo-inverted.avif"
 customLogoClass: "w-20 h-20 dark:w-20 dark:h-20"
 header-img: "/images/dubai-holding-hero-img.webp"
+header-img-width: 1305
+header-img-height: 2299
 header-overview: "As a Webflow Enterprise client, Dubai Holding needed a trusted partner to migrate and consolidate their digital presence. I worked with multiple teams across their organization to migrate websites from Sitefinity and WordPress to Webflow, design scalable component libraries, implement bilingual experiences, and ensure accessibility compliance — all while preserving their hard-earned SEO rankings."
 order: 2
 ---

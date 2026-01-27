@@ -1,12 +1,13 @@
 ---
 layout: /layouts/layout.liquid
-title: About Me
+title: About | Digital Designer
+description: Learn about Omar Almasry, a digital designer from Egypt now based in Toronto. 7+ years building websites for clients across 11 countries, specializing in Webflow, accessibility, and performance.
 ---
 
 {%- render 'partials/page-header',
   headerTitle: 'About Me',
   headerSubtitle: 'Some trivial information about who I am, what I do, and what I love.',
-  mainTitleClass: 'text-[5rem] sm:text-9xl font-extrabold leading-[0.8] tracking-tighter',
+  mainTitleClass: 'text-[4rem] sm:text-9xl font-extrabold leading-[0.8] tracking-tighter',
   mainTitleId: 'colorfulHeading'
 -%}
 
@@ -95,10 +96,16 @@ title: About Me
       <h3 class="text-lg sm:text-2xl font-bold">Webflow Premium Partner</h3>
       <p class="text-lg sm:text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">Recognized by Webflow as a trusted professional for building high-quality websites.</p>
       <a href="https://webflow.com/@omar-almasrys-workspace" target="_blank" rel="noopener noreferrer">
-      <img src="/images/premium-partner.png" class="max-w-40 shadow-medium dark:shadow-mediumInverted sm:max-w-full mb-4" aria-label="Webflow Premium Partner Label">
+      <picture>
+        <source srcset="/images/premium-partner.webp" type="image/webp">
+        <img src="/images/premium-partner.png" width="468" height="85" loading="lazy" class="max-w-40 shadow-medium dark:shadow-mediumInverted sm:max-w-full mb-4" aria-label="Webflow Premium Partner Label">
+      </picture>
   </a>
   <a href="https://www.credential.net/a9f3dd6a-ca55-42b2-9b1d-c5f17b6e5a11#acc.41dbHFiS" target="_blank" rel="noopener noreferrer">
-    <img src="/images/webflow-practitioner-certificate.png" class="max-w-40 shadow-medium dark:shadow-mediumInverted sm:max-w-full" aria-label="Webflow Practitioner Certificate">
+    <picture>
+      <source srcset="/images/webflow-practitioner-certificate.webp" type="image/webp">
+      <img src="/images/webflow-practitioner-certificate.png" width="400" height="400" loading="lazy" class="max-w-40 shadow-medium dark:shadow-mediumInverted sm:max-w-full" aria-label="Webflow Practitioner Certificate">
+    </picture>
 </a>
     </div>
 
@@ -151,89 +158,152 @@ title: About Me
       // =============================
       const globeContainer = document.querySelector('.globe-embed');
       if (globeContainer) {
-          const script = document.createElement('script');
-          script.src = 'https://cdn.jsdelivr.net/npm/three@0.138.1/build/three.min.js';
-          script.defer = true;
-          script.onload = () => {
-              // Load OrbitControls AFTER Three.js is available
-              const orbitScript = document.createElement('script');
-              orbitScript.src = 'https://cdn.jsdelivr.net/npm/three@0.138.1/examples/js/controls/OrbitControls.js';
-              orbitScript.defer = true;
-              orbitScript.onload = initGlobe; // Initialize globe after OrbitControls is loaded
-              document.body.appendChild(orbitScript);
-          };
-          document.body.appendChild(script);
-      }
-  
-      function initGlobe() {
-          const scene = new THREE.Scene();
-          scene.background = null;
-  
-          const camera = new THREE.PerspectiveCamera(75, globeContainer.clientWidth / globeContainer.clientHeight, 0.1, 1000);
-          const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  
-          renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
-          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio for performance
-          globeContainer.appendChild(renderer.domElement);
-  
-        const texture = new THREE.TextureLoader().load('/images/png/globe-texture-pixel-art.png');
-        texture.minFilter = THREE.NearestFilter;
-        texture.magFilter = THREE.NearestFilter;
-
-        const globe = new THREE.Mesh(
-            new THREE.SphereGeometry(5, 64, 64),
-            new THREE.MeshStandardMaterial({
-                map: texture,
-                roughness: 0.8,
-                metalness: 0.2
-            })
-        );
-          scene.add(globe);
-  
-          const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-          scene.add(ambientLight);
-  
-          const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-          directionalLight.position.set(10, 10, 10);
-          scene.add(directionalLight);
-  
-          camera.position.set(0, 0, 12);
-          const controls = new THREE.OrbitControls(camera, renderer.domElement);
-          controls.enableDamping = true;
-          controls.enableZoom = false;
-  
+          const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+          const isSmallScreen = window.matchMedia('(max-width: 640px)').matches;
+          let globeInitialized = false;
+          let isVisible = false;
+          let isAnimating = false;
+          let animationFrameId = null;
+          let scene;
+          let camera;
+          let renderer;
+          let globe;
+          let controls;
           let isUserInteracting = false;
           let autoRotateTimeout;
-  
-          controls.addEventListener('start', () => {
-              isUserInteracting = true;
-              if (autoRotateTimeout) clearTimeout(autoRotateTimeout);
-          });
-  
-          controls.addEventListener('end', () => {
-              autoRotateTimeout = setTimeout(() => isUserInteracting = false, 1000);
-          });
 
-          // Handle Window Resize
-          function onWindowResize() {
-              const width = globeContainer.clientWidth;
-              const height = globeContainer.clientHeight;
-              
-              camera.aspect = width / height;
-              camera.updateProjectionMatrix();
-              
-              renderer.setSize(width, height);
-          }
+          const startAnimation = () => {
+              if (isAnimating || !renderer || document.hidden || prefersReducedMotion.matches || !isVisible) return;
+              isAnimating = true;
+              animate();
+          };
 
-          window.addEventListener('resize', onWindowResize);
-  
+          const stopAnimation = () => {
+              if (!isAnimating) return;
+              isAnimating = false;
+              if (animationFrameId) {
+                  cancelAnimationFrame(animationFrameId);
+                  animationFrameId = null;
+              }
+          };
+
+          const handleVisibilityChange = () => {
+              if (document.hidden || prefersReducedMotion.matches || !isVisible) {
+                  stopAnimation();
+                  return;
+              }
+              startAnimation();
+          };
+
+          const loadGlobeScripts = () => {
+              if (globeInitialized) {
+                  startAnimation();
+                  return;
+              }
+              globeInitialized = true;
+              const script = document.createElement('script');
+              script.src = 'https://cdn.jsdelivr.net/npm/three@0.138.1/build/three.min.js';
+              script.defer = true;
+              script.onload = () => {
+                  // Load OrbitControls AFTER Three.js is available
+                  const orbitScript = document.createElement('script');
+                  orbitScript.src = 'https://cdn.jsdelivr.net/npm/three@0.138.1/examples/js/controls/OrbitControls.js';
+                  orbitScript.defer = true;
+                  orbitScript.onload = initGlobe; // Initialize globe after OrbitControls is loaded
+                  document.body.appendChild(orbitScript);
+              };
+              document.body.appendChild(script);
+          };
+
+          const initGlobe = () => {
+              scene = new THREE.Scene();
+              scene.background = null;
+
+              camera = new THREE.PerspectiveCamera(75, globeContainer.clientWidth / globeContainer.clientHeight, 0.1, 1000);
+              renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+              renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
+              renderer.setPixelRatio(isSmallScreen ? 1 : Math.min(window.devicePixelRatio, 2));
+              globeContainer.appendChild(renderer.domElement);
+
+              const texture = new THREE.TextureLoader().load('/images/png/globe-texture-pixel-art.png');
+              texture.minFilter = THREE.NearestFilter;
+              texture.magFilter = THREE.NearestFilter;
+
+              globe = new THREE.Mesh(
+                  new THREE.SphereGeometry(5, 64, 64),
+                  new THREE.MeshStandardMaterial({
+                      map: texture,
+                      roughness: 0.8,
+                      metalness: 0.2
+                  })
+              );
+              scene.add(globe);
+
+              const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+              scene.add(ambientLight);
+
+              const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+              directionalLight.position.set(10, 10, 10);
+              scene.add(directionalLight);
+
+              camera.position.set(0, 0, 12);
+              controls = new THREE.OrbitControls(camera, renderer.domElement);
+              controls.enableDamping = true;
+              controls.enableZoom = false;
+
+              controls.addEventListener('start', () => {
+                  isUserInteracting = true;
+                  if (autoRotateTimeout) clearTimeout(autoRotateTimeout);
+              });
+
+              controls.addEventListener('end', () => {
+                  autoRotateTimeout = setTimeout(() => isUserInteracting = false, 1000);
+              });
+
+              // Handle Window Resize
+              function onWindowResize() {
+                  if (!camera || !renderer) return;
+                  const width = globeContainer.clientWidth;
+                  const height = globeContainer.clientHeight;
+                  
+                  camera.aspect = width / height;
+                  camera.updateProjectionMatrix();
+                  
+                  renderer.setSize(width, height);
+              }
+
+              window.addEventListener('resize', onWindowResize);
+              startAnimation();
+          };
+
           function animate() {
-              requestAnimationFrame(animate);
-              if (!isUserInteracting) globe.rotation.y += 0.001;
-              controls.update();
-              renderer.render(scene, camera);
+              if (!isAnimating) return;
+              animationFrameId = requestAnimationFrame(animate);
+              if (!isUserInteracting && globe) globe.rotation.y += 0.001;
+              if (controls) controls.update();
+              if (renderer && scene && camera) renderer.render(scene, camera);
           }
-          animate();
+
+          if ('IntersectionObserver' in window) {
+              const globeObserver = new IntersectionObserver((entries) => {
+                  entries.forEach((entry) => {
+                      isVisible = entry.isIntersecting;
+                      if (entry.isIntersecting) {
+                          loadGlobeScripts();
+                      } else {
+                          stopAnimation();
+                      }
+                  });
+              }, { rootMargin: '200px 0px', threshold: 0.1 });
+              globeObserver.observe(globeContainer);
+          } else {
+              isVisible = true;
+              loadGlobeScripts();
+          }
+
+          document.addEventListener('visibilitychange', handleVisibilityChange);
+          prefersReducedMotion.addEventListener('change', handleVisibilityChange);
       }
   });
   </script>

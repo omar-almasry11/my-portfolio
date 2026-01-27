@@ -26,6 +26,7 @@ layout: "/layouts/layout.liquid"
         <img
           src="{{ header-img }}"
           alt="{{ title }} Hero Image"
+          {% if header-img-width and header-img-height %}width="{{ header-img-width }}" height="{{ header-img-height }}"{% endif %}
           class="w-full h-auto max-h-[800px] object-cover object-top"
         >
       </div>

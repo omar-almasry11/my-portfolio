@@ -24,16 +24,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = heading.textContent.trim();
             heading.innerHTML = '';
             heading.setAttribute('aria-label', text);
-            [...text].forEach(char => {
-                const span = document.createElement('span');
-                span.setAttribute('data-letter', '');
-                span.setAttribute('aria-hidden', 'true');
-                if (char === ' ') {
-                    span.innerHTML = '&nbsp;';
-                } else {
-                    span.textContent = char;
+
+            const words = text.split(' ');
+            words.forEach((word, wordIndex) => {
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'colorful-word';
+                wordSpan.setAttribute('aria-hidden', 'true');
+
+                [...word].forEach(char => {
+                    const letterSpan = document.createElement('span');
+                    letterSpan.setAttribute('data-letter', '');
+                    letterSpan.setAttribute('aria-hidden', 'true');
+                    letterSpan.textContent = char;
+                    wordSpan.appendChild(letterSpan);
+                });
+
+                heading.appendChild(wordSpan);
+
+                if (wordIndex < words.length - 1) {
+                    heading.appendChild(document.createTextNode(' '));
                 }
-                heading.appendChild(span);
             });
         }
         return heading.querySelectorAll('[data-letter]');

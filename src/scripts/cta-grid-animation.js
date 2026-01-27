@@ -66,6 +66,7 @@
     };
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let isVisible = true;
     let intervalId = null;
 
     function start() {
@@ -80,7 +81,7 @@
     }
 
     function syncAnimationState() {
-        if (document.hidden) {
+        if (document.hidden || !isVisible) {
             stop();
             return;
         }
@@ -96,6 +97,16 @@
     // Start the animation loop
     initializeGrid();
     syncAnimationState();
+
+    if ('IntersectionObserver' in window) {
+        const ctaGridObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                isVisible = entry.isIntersecting;
+                syncAnimationState();
+            });
+        }, { rootMargin: '200px 0px', threshold: 0.1 });
+        ctaGridObserver.observe(ctaGrid);
+    }
 
     document.addEventListener('visibilitychange', syncAnimationState);
     prefersReducedMotion.addEventListener('change', syncAnimationState);
