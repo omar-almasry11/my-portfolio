@@ -4392,12 +4392,12 @@ nav.group,
   }
 }
 
-.hover\:bg-primary:hovera.button {
+a.hover\:bg-primary:hover.button {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
 }
 
-.hover\:bg-primary:hovera.button:hover {
+a.hover\:bg-primary:hover.button:hover {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
 }
