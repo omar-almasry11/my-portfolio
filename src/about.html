@@ -12,8 +12,9 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
 -%}
 
 {% capture whoIsThisGuyContent %}
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-start mt-4 lg:mt-8">
+<div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-4 lg:gap-8 items-start">
   <div class="flex flex-col">
+    <p class="text-xl sm:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-4">The question I’ve always been trying to answer.</p>
     <p class='mb-6'>I've been fascinated by technology and design since I was a kid. I wanted to be an 'inventor'—whatever I thought that meant at the time. As a 90s kid, I was fortunate enough to experience the world before and after the internet. I kind of had the oppurtunity to "get my hands dirty" before everything happened on a screen.</p>
     <p class='mb-6'>At first, I thought architecture was the answer to my burning desire to make things. Five years of studying how structure, aesthetics, and function come together. Turns out, you can't design and build an architectural masterpiece on your own—too many people, too much money, too many years.</p>
     <p class='mb-6'>But on the web? You can 'invent' something in weeks. Design it, build it, watch people use it. That's the "inventing process" I was looking for all along. After building my first website, I knew this was what I was meant to be doing.</p>
@@ -120,8 +121,8 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
 
 {%- render 'partials/section-standard', 
   header: 'Who is this guy?',
-  subheader: "The question I've been —and still— trying to answer.",
-  content: whoIsThisGuyContent
+  content: whoIsThisGuyContent,
+  customClasses: 'pt-8'
 -%}
 
 

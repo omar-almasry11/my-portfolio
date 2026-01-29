@@ -1,16 +1,16 @@
 <section class="py-16 px-[5%] {{ customClasses | default: '' }}">
   <div class="max-w-4xl mx-auto">
     {% if header or subheader %}
-      <div class="mb-10">
+      <div class="mb-2">
         {% if header %}
-          <div class="flex items-center">
-            <h2 class="leading-none">
+          <div class="flex items-center {% if subheader %}mb-2{% endif %}">
+            <h2 class="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight mb-0">
               {{ header | default: 'Default Header' }}
             </h2>
           </div>
         {% endif %}
         {% if subheader %}
-          <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
+          <p class="text-xl sm:text-2xl text-normalLight leading-tight dark:text-invertedLight max-w-2xl">
             {{ subheader | default: 'Default Subheader' }}
           </p>
         {% endif %}

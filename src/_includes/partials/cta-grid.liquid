@@ -8,13 +8,13 @@
 
   <!-- Content -->
   <div class="relative z-10 container mx-auto max-w-4xl h-full flex items-center">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center w-full">
       <!-- Left: Title and Subtext -->
       <div>
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-normal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-normal leading-[1.1] tracking-tight">
           {{ title | default: "Let's work together" }}
         </h2>
-        <p class="text-xl md:text-2xl text-normal opacity-90">
+        <p class="text-xl md:text-2xl text-normal opacity-90 leading-tight">
           {{ subtext | default: "I'm currently available for full-time roles and select freelance projects." }}
         </p>
       </div>

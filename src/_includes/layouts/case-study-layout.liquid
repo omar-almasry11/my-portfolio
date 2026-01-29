@@ -5,8 +5,8 @@ layout: "/layouts/layout.liquid"
   <div class="container mx-auto">
     <!-- Intro Text -->
     <div class="max-w-4xl mb-16">
-      <h1 class="text-5xl md:text-7xl mb-8">{{ title }}</h1>
-      <p class="text-xl md:text-2xl text-normalLight dark:text-invertedLight leading-relaxed mb-10">
+      <h1 class="text-5xl md:text-7xl mb-4 leading-[1.1] tracking-tight">{{ title }}</h1>
+      <p class="text-xl md:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-10">
         {{ header-overview }}
       </p>
       {% if project-link %}
@@ -26,7 +26,9 @@ layout: "/layouts/layout.liquid"
         <img
           src="{{ header-img }}"
           alt="{{ title }} Hero Image"
-          {% if header-img-width and header-img-height %}width="{{ header-img-width }}" height="{{ header-img-height }}"{% endif %}
+          {% if header-img-width and header-img-height %}
+            width="{{ header-img-width }}" height="{{ header-img-height }}"
+          {% endif %}
           class="w-full h-auto max-h-[800px] object-cover object-top"
         >
       </div>
