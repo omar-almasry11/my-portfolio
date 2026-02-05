@@ -6,7 +6,7 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
 
 {%- render 'partials/page-header',
   headerTitle: 'About Me',
-  headerSubtitle: 'Some trivial information about who I am, what I do, and what I love.',
+  headerSubtitle: 'A little bit about who I am, what I do, and what I love.',
   mainTitleClass: 'text-[4rem] sm:text-9xl font-extrabold leading-[0.8] tracking-tighter',
   mainTitleId: 'colorfulHeading'
 -%}
@@ -14,25 +14,25 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
 {% capture whoIsThisGuyContent %}
 <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-4 lg:gap-8 items-start">
   <div class="flex flex-col">
-    <p class="text-xl sm:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-4">The question I’ve always been trying to answer.</p>
-    <p>I've been fascinated by technology and design since I was a kid. I wanted to be an 'inventor'—whatever I thought that meant at the time. As a 90s kid, I was fortunate enough to experience the world before and after the internet. I kind of had the oppurtunity to "get my hands dirty" before everything happened on a screen.</p>
-    <p>At first, I thought architecture was the answer to my burning desire to make things. Five years of studying how structure, aesthetics, and function come together. Turns out, you can't design and build an architectural masterpiece on your own—too many people, too much money, too many years.</p>
-    <p>But on the web? You can 'invent' something in weeks. Design it, build it, watch people use it. That's the "inventing process" I was looking for all along. After building my first website, I knew this was what I was meant to be doing.</p>
-    <p>Born and raised in Egypt, immigrated to Canada, and sucessfully switched careers more than a couple of times.</p>
-    <p>I'm a technology optimist and design obsessive who swallowed the AI pill. And now, I'm curious to see how deep the rabbit hole goes.</p>
+    <p class="text-xl sm:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-4">The question I've always been trying to answer.</p>
+    <p>I've been fascinated by technology and design since I was a kid. I wanted to be an "inventor" — whatever I thought that meant at the time. As a 90s kid, I got to experience the world before and after the internet, and actually get my hands dirty before everything happened on a screen.</p>
+    <p>For a while I thought architecture was the answer to that urge to make things. Five years of studying how structure, aesthetics, and function come together. Eventually I realised you don't design and build an architectural masterpiece on your own — too many people, too much money, too many years.</p>
+    <p>On the web, it's different. You can "invent" something in weeks. Design it, build it, ship it, watch people use it. That's the process I was looking for all along. After building my first website, I knew this was what I was meant to be doing.</p>
+    <p>I was born and raised in Egypt, immigrated to Canada, and have successfully switched careers more than a couple of times. I'm a technology optimist and design obsessive who happily swallowed the AI pill — now I'm just seeing how deep the rabbit hole goes.</p>
   </div>
   <div class="sticky top-24">
     {% assign aboutImages = "[
       { \"src\": \"/images/red-and-blue-pills-pixel-art.webp\", \"alt\": \"Red and Blue Pills\", \"color\": \"#FE3300\" },
-      { \"src\": \"/images/accessibility-pixel-art.webp\", \"alt\": \"Accessibility Icon\", \"color\": \"#3d60e2\" },
-      { \"src\": \"/images/mandalorian-pixel-art.webp\", \"alt\": \"Mandalorian\", \"color\": \"#EDF060\" }
+      { \"src\": \"/images/earth-pixel-art.webp\", \"alt\": \"Earth Globe\", \"color\": \"#40BFAE\" },
+      { \"src\": \"/images/mandalorian-pixel-art.webp\", \"alt\": \"Mandalorian\", \"color\": \"#EDF060\" },
+      { \"src\": \"/images/canada-goose-pixel-art.webp\", \"alt\": \"Canada Goose\", \"color\": \"#FB8304\" }
     ]" | from_json %}
     {% render 'partials/pixel-image-cycle', id: 'about-page', images: aboutImages %}
   </div>
 </div>
-<p>I'm the kind of person who enjoys walks in nature with a cup of coffee. And maybe a book by the lake if the weather allows. I also love writing—it's been part of my life since childhood. I even wrote for a living for a couple of years. I love building Lego sets, and use my daughter as an excuse to mask my childish hobbies. And of course I don't like vintage Pokémon cards. I mean, what kind of adult loves that, right?</p>
-<p>I've recently develpod a passion for web accessibility. It just made sense to build a web that works for everyone—not just everyone like me. I'm currently working towards my CPACC certification and contributing accessibility fixes to open-source projects. I've even landed a few merged PRs on projects like Angular—small contributions, but educational and rewarding. I kind of fell in love with open source after that.</p>
-<p class='mb-12'>These days, I'm most interested in work where accessibility isn't an afterthought—where it's just how things are built.</p>
+<p>I'm the kind of person who enjoys walks in nature with a coffee in hand, maybe a book by the lake if the weather allows. I love writing (I even did it professionally for a few years), building Lego sets, and pretending my daughter is the one who's obsessed with them. And of course I definitely don't collect vintage Pokémon cards. What kind of adult would do that?</p>
+<p>Recently I've developed a serious passion for web accessibility. It just makes sense to build a web that works for everyone — not just everyone like me. I'm currently working towards my CPACC certification and contributing accessibility fixes to open-source projects. I've even had a few PRs merged into projects like Angular — small contributions, but educational and addictive.</p>
+<p class='mb-12'>These days, I'm most interested in work where accessibility isn't an afterthought — it's just how things are built.</p>
 
 <div class="flex flex-col gap-4 sm:grid grid-cols-6 gap-4">
   <!-- Location Card -->
@@ -86,9 +86,9 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
       <path d="M224,184H144l40-80ZM96,127.56h0A95.78,95.78,0,0,0,128,56H64A95.78,95.78,0,0,0,96,127.56Z" opacity="0.2"></path>
       <path d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.7,87.7,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z"></path>        
   </svg>
-      <h3 class="text-lg sm:text-2xl font-bold">Languages Spoken</h3>
-      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">English (EN)</p>
-      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">Arabic (AR)</p>
+      <h3 class="text-lg sm:text-2xl font-bold mb-2">Languages Spoken</h3>
+      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight mb-1">English (EN)</p>
+      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight mb-1">Arabic (AR)</p>
       <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">French (FR)</p>
    </div>
 

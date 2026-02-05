@@ -3355,6 +3355,10 @@ nav.group,
   margin-top: auto;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -3555,6 +3559,10 @@ nav.group,
   max-width: 42px;
 }
 
+.max-w-\[52rem\] {
+  max-width: 52rem;
+}
+
 .max-w-\[66px\] {
   max-width: 66px;
 }
@@ -3579,12 +3587,8 @@ nav.group,
   max-width: 20rem;
 }
 
-.max-w-5xl {
-  max-width: 64rem;
-}
-
-.max-w-\[52rem\] {
-  max-width: 52rem;
+.max-w-\[50px\] {
+  max-width: 50px;
 }
 
 .flex-1 {
@@ -4746,6 +4750,10 @@ nav.group,
 
   .sm\:max-w-full {
     max-width: 100%;
+  }
+
+  .sm\:max-w-\[66px\] {
+    max-width: 66px;
   }
 
   .sm\:grid-cols-2 {
