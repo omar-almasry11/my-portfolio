@@ -2,9 +2,9 @@
 layout: "/layouts/layout.liquid"
 ---
 <header class="pt-24 pb-4 px-[5%] mx-auto">
-  <div class="container mx-auto">
+  <div class="container mx-auto max-w-4xl">
     <!-- Intro Text -->
-    <div class="max-w-4xl mb-16">
+    <div class="mb-16">
       <h1 class="text-5xl md:text-7xl mb-4 leading-[1.1] tracking-tight">{{ title }}</h1>
       <p class="text-xl md:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-10">
         {{ header-overview }}
@@ -36,7 +36,7 @@ layout: "/layouts/layout.liquid"
   </div>
 </header>
 <section class="pt-12 pb-24 px-[5%]">
-  <div class="container mx-auto">
+  <div class="container mx-auto max-w-4xl">
     <article class="prose mx-auto max-w-4xl">
       {{ content }}
     </article>
