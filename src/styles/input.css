@@ -46,7 +46,6 @@
   [role="button"],
   .cursor-pointer,
   .standard-card,
-  #portraitCircle,
   .menu_link,
   .btn-next,
   .btn-submit,
@@ -59,6 +58,11 @@
   #back-to-top,
   .stretched-link::after {
     cursor: url('../images/pixel-art-pointer.svg?v=2') 10 0, pointer !important;
+  }
+
+  /* Brush cursor for portrait - hide system cursor */
+  #portraitCircle {
+    cursor: none !important;
   }
 
   h1 {

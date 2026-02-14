@@ -672,7 +672,6 @@ a,
   [role="button"],
   .cursor-pointer,
   .standard-card,
-  #portraitCircle,
   .menu_link,
   .btn-next,
   .btn-submit,
@@ -685,6 +684,12 @@ a,
   #back-to-top,
   .stretched-link::after {
   cursor: url('../images/pixel-art-pointer.svg?v=2') 10 0, pointer !important;
+}
+
+/* Brush cursor for portrait - hide system cursor */
+
+#portraitCircle {
+  cursor: none !important;
 }
 
 h1 {
@@ -3359,6 +3364,10 @@ nav.group,
   margin-top: auto;
 }
 
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -3701,6 +3710,14 @@ nav.group,
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-0\.5 {
+  gap: 0.125rem;
+}
+
+.gap-0 {
+  gap: 0px;
 }
 
 .gap-x-3 {
@@ -4839,6 +4856,14 @@ nav.group,
 
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .md\:justify-end {
+    justify-content: flex-end;
   }
 
   .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {

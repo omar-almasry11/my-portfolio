@@ -165,17 +165,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const portraitCircle = document.getElementById('portraitCircle');
         if (portraitCircle) {
             let circleTimeout;
+            let currentCircleColor = null;
+            
             portraitCircle.addEventListener('mouseenter', () => {
-                if (circleTimeout) clearTimeout(circleTimeout);
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                // Clear any pending timeout to prevent color reset
+                if (circleTimeout) {
+                    clearTimeout(circleTimeout);
+                    circleTimeout = null;
+                }
+                
+                // Get a random color different from the current one
+                const availableColors = currentCircleColor 
+                    ? colors.filter(color => color !== currentCircleColor)
+                    : colors;
+                const randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
+                
+                portraitCircle.style.transitionDelay = '0s';
                 portraitCircle.style.transitionDuration = '0.3s';
                 portraitCircle.style.backgroundColor = randomColor;
+                currentCircleColor = randomColor;
             });
 
             portraitCircle.addEventListener('mouseleave', () => {
                 circleTimeout = setTimeout(() => {
+                    portraitCircle.style.transitionDelay = '0s';
                     portraitCircle.style.transitionDuration = '';
                     portraitCircle.style.backgroundColor = '';
+                    currentCircleColor = null;
+                    circleTimeout = null;
                 }, 2000);
             });
         }

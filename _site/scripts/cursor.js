@@ -114,6 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Colorful Headings: Scale up small + brush effect + move to top
     addHoverEffect('.home-heading, .js-colorful-heading', ['scale-cursor-up-small', 'brush-cursor', 'cursor-top'], ['pixel-cursor']);
 
+    // Portrait Circle: Brush cursor + scale up small + move to top
+    addHoverEffect('#portraitCircle', ['scale-cursor-up-small', 'brush-cursor', 'cursor-top'], ['pixel-cursor']);
+
     // Text links & Inline links: Hide custom cursor for better readability
     addHoverEffect('.text-link, footer p a, .prose a', ['cursor-hidden']);
 
