@@ -12,12 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const headings = document.querySelectorAll('.js-colorful-heading, #colorfulHeading');
     
     // Color palette from the design system
-    const colors = [
-        '#FB8304', // Princeton Orange
-        '#40BFAE', // Ocean Mist
-        '#FE3300', // Blazing Flame
-        '#3d60e2'  // Savoy Blue
-    ];
+    const colors = ['#2E4A8E', '#D4952A', '#5A5A68', '#000022', '#4A6AB0'];
 
     const prepareHeadingLetters = (heading) => {
         if (heading.querySelectorAll('[data-letter]').length === 0) {
@@ -81,12 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
         };
 
-        const getRandomColorDifferent = (currentColor = null) => {
-            const pool = currentColor ? colors.filter(color => color !== currentColor) : colors;
-            const fallbackPool = pool.length > 0 ? pool : colors;
-            return fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
-        };
-
         if (supportsHover && !prefersReducedMotion) {
             const letterTimeouts = new Map();
             lettersArray.forEach((letter, index) => {
@@ -120,8 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const staggerDelay = 100;
             const cycleDelay = 3000;
             let cycleTimeoutId = null;
-            const portraitCircle = document.getElementById('portraitCircle');
-            let portraitCircleColor = null;
 
             const applyRandomStagger = () => {
                 const shuffledLetters = [...nonSpaceLetters].sort(() => Math.random() - 0.5);
@@ -134,14 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         currentColors.set(letter, randomColor);
                     }, staggerIndex * staggerDelay);
                 });
-                if (portraitCircle) {
-                    const circleDelay = shuffledLetters.length * staggerDelay;
-                    setTimeout(() => {
-                        portraitCircleColor = getRandomColorDifferent(portraitCircleColor);
-                        portraitCircle.style.transitionDuration = '0.3s';
-                        portraitCircle.style.backgroundColor = portraitCircleColor;
-                    }, circleDelay);
-                }
             };
 
             const scheduleNextCycle = () => {
@@ -160,41 +139,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Special handling for the portrait circle (already in original script)
-    if (supportsHover && !prefersReducedMotion) {
-        const portraitCircle = document.getElementById('portraitCircle');
-        if (portraitCircle) {
-            let circleTimeout;
-            let currentCircleColor = null;
-            
-            portraitCircle.addEventListener('mouseenter', () => {
-                // Clear any pending timeout to prevent color reset
-                if (circleTimeout) {
-                    clearTimeout(circleTimeout);
-                    circleTimeout = null;
-                }
-                
-                // Get a random color different from the current one
-                const availableColors = currentCircleColor 
-                    ? colors.filter(color => color !== currentCircleColor)
-                    : colors;
-                const randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
-                
-                portraitCircle.style.transitionDelay = '0s';
-                portraitCircle.style.transitionDuration = '0.3s';
-                portraitCircle.style.backgroundColor = randomColor;
-                currentCircleColor = randomColor;
-            });
-
-            portraitCircle.addEventListener('mouseleave', () => {
-                circleTimeout = setTimeout(() => {
-                    portraitCircle.style.transitionDelay = '0s';
-                    portraitCircle.style.transitionDuration = '';
-                    portraitCircle.style.backgroundColor = '';
-                    currentCircleColor = null;
-                    circleTimeout = null;
-                }, 2000);
-            });
-        }
-    }
 });

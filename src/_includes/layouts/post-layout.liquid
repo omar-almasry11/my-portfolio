@@ -2,7 +2,7 @@
 layout: "/layouts/layout.liquid"
 ---
 <header class="pt-16 pb-4 px-[5%] mx-auto">
-  <div class="container mx-auto max-w-4xl">
+  <div class="container mx-auto max-w-6xl">
     <h1>{{ title }}</h1>
     <p class="text-xl sm:text-2xl text-normalLight max-w-2xl mb-6 leading-tight dark:text-invertedLight">
       {{ description }}
@@ -50,7 +50,7 @@ layout: "/layouts/layout.liquid"
           href="https://twitter.com/share?url={{ page.url }}"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:text-invertedLight"
+          class="flex items-center gap-2 text-normalLight hover:text-lapis-light transition duration-300 dark:text-invertedLight dark:hover:text-amber-light"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ layout: "/layouts/layout.liquid"
           href="https://www.linkedin.com/shareArticle?url={{ page.url }}"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:text-invertedLight"
+          class="flex items-center gap-2 text-normalLight hover:text-lapis-light transition duration-300 dark:text-invertedLight dark:hover:text-amber-light"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ layout: "/layouts/layout.liquid"
         <!-- Copy Link -->
         <button
           type="button"
-          class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:hover:text-primaryInverted"
+          class="flex items-center gap-2 text-normalLight hover:text-lapis-light transition duration-300 dark:hover:text-amber-light"
           onclick="copyToClipboard()"
         >
           <svg
@@ -113,8 +113,8 @@ layout: "/layouts/layout.liquid"
   </div>
 </header>
 
-<section class="py-12 px-[5%] max-w-4xl mx-auto">
-  <article class="prose">
+<section class="py-12 px-[5%] max-w-6xl mx-auto">
+  <article class="prose max-w-4xl mx-auto">
     {{ content }}
   </article>
 </section>

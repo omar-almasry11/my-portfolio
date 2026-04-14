@@ -7,7 +7,8 @@
  */
 
 const initPageTransitions = () => {
-    const colors = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2', '#EDF060'];
+    /** Brand mosaic palette — keep in sync with :root in input.css */
+    const colors = ['#C48A1E', '#8A9BB5', '#4A5C8A', '#2A4494'];
     const loadGrid = document.querySelector(".load_grid");
     const gridItems = document.querySelectorAll(".load_grid-item");
 
@@ -16,8 +17,8 @@ const initPageTransitions = () => {
     // Helper to randomize colors and SAVE them, avoiding adjacent duplicates
     const randomizeAndStoreColors = () => {
         const newColors = [];
-        const gridSize = 10; // 10x10 grid
-        
+        const cols = parseInt(loadGrid.dataset.gridCols, 10) || Math.max(1, Math.round(Math.sqrt(gridItems.length)));
+
         gridItems.forEach((item, index) => {
             let color;
             let attempts = 0;
@@ -28,8 +29,8 @@ const initPageTransitions = () => {
                 attempts++;
                 
                 // Check if this color is different from adjacent cells
-                const row = Math.floor(index / gridSize);
-                const col = index % gridSize;
+                const row = Math.floor(index / cols);
+                const col = index % cols;
                 
                 // Check left neighbor
                 const leftIndex = index - 1;
@@ -37,7 +38,7 @@ const initPageTransitions = () => {
                 const leftColor = hasLeftNeighbor ? newColors[leftIndex] : null;
                 
                 // Check top neighbor
-                const topIndex = index - gridSize;
+                const topIndex = index - cols;
                 const hasTopNeighbor = row > 0 && topIndex >= 0;
                 const topColor = hasTopNeighbor ? newColors[topIndex] : null;
                 

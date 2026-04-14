@@ -4,7 +4,7 @@
  */
 
 (function() {
-    const palette = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2', '#EDF060'];
+    const palette = ['#2E4A8E', '#D4952A', '#F5F1EB', '#5A5A68', '#000022'];
     const portraitSrc = '/images/png/pixel-profile-picture.png';
     const transitionSpeed = 2000; // 2 seconds
     const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;

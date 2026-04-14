@@ -3,7 +3,7 @@ layout: "/layouts/layout.liquid"
 ---
 <header class="pt-16 pb-8 px-[5%] mx-auto">
   <div class="container mx-auto">
-    <div class="max-w-4xl mx-auto text-left">
+    <div class="max-w-6xl mx-auto text-left">
       <h1>{{ title }}</h1>
 
       {% if description %}
@@ -19,7 +19,7 @@ layout: "/layouts/layout.liquid"
   {% assign contentParts = content | split: '---PROJECTS-BREAK---' %}
   <section class="prose py-12 px-[5%]">
     <div class="container mx-auto">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <article class="prose">
           {{ contentParts[0] }}
         </article>
@@ -36,7 +36,7 @@ layout: "/layouts/layout.liquid"
   {% endif %}
   <section class="prose py-12 px-[5%]">
     <div class="container mx-auto">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <article class="prose">
           {{ contentParts[1] }}
         </article>
@@ -46,7 +46,7 @@ layout: "/layouts/layout.liquid"
 {% else %}
   <section class="prose py-12 px-[5%]">
     <div class="container mx-auto">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <article class="prose">
           {{ content }}
         </article>

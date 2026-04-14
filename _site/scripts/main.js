@@ -16,140 +16,11 @@ if (savedTheme) {
 themeToggle?.addEventListener('click', () => {
   const isDarkMode = document.documentElement.classList.toggle('dark');
   localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  
-  // Update progress bar pixel colors to match new theme
-  if (typeof updatePixelColors === 'function') {
-    updatePixelColors();
-  }
 });
 
 
 // =============================
-// 📏 Pixelated Progress Bar
-// =============================
-const progressBar = document.getElementById('progressBar');
-const lightModeColors = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2']; // Orange, Teal, Red, Blue
-const darkModeColors = ['#FB8304', '#40BFAE', '#FE3300', '#EDF060']; // Orange, Teal, Red, Yellow
-let pixelsInitialized = false;
-let totalPixels = 0;
-let pixels = [];
-
-// Helper to get current theme colors
-function getCurrentColors() {
-  const isDarkMode = document.documentElement.classList.contains('dark');
-  return isDarkMode ? darkModeColors : lightModeColors;
-}
-
-// Initialize pixels once on first scroll
-function initializePixels() {
-  if (pixelsInitialized) return;
-  
-  // Calculate how many pixels fit in the viewport width
-  const viewportWidth = window.innerWidth;
-  const pixelWidth = 4; // Each pixel is 4px wide
-  const pixelsPerRow = Math.floor(viewportWidth / pixelWidth);
-  totalPixels = pixelsPerRow * 2; // 2 rows of pixels
-  
-  // Create pixels
-  const colors = getCurrentColors();
-  for (let i = 0; i < totalPixels; i++) {
-    const pixel = document.createElement('div');
-    pixel.className = 'progress-pixel';
-    
-    // Assign random color from palette, avoiding adjacent duplicates
-    let color;
-    if (i === 0) {
-      color = colors[Math.floor(Math.random() * colors.length)];
-    } else {
-      // Avoid same color as previous pixel
-      const prevColor = pixels[i - 1].style.backgroundColor;
-      const availableColors = colors.filter(c => c !== prevColor);
-      color = availableColors[Math.floor(Math.random() * availableColors.length)] || colors[0];
-    }
-    
-    pixel.style.backgroundColor = color;
-    pixel.style.opacity = '0'; // Start hidden
-    progressBar.appendChild(pixel);
-    pixels.push(pixel);
-  }
-  
-  pixelsInitialized = true;
-}
-
-// Function to update pixel colors when theme changes
-function updatePixelColors() {
-  if (!pixelsInitialized || pixels.length === 0) return;
-  
-  const colors = getCurrentColors();
-  pixels.forEach((pixel, index) => {
-    let color;
-    if (index === 0) {
-      color = colors[Math.floor(Math.random() * colors.length)];
-    } else {
-      // Avoid same color as previous pixel
-      const prevColor = pixels[index - 1].style.backgroundColor;
-      const availableColors = colors.filter(c => c !== prevColor);
-      color = availableColors[Math.floor(Math.random() * availableColors.length)] || colors[0];
-    }
-    pixel.style.backgroundColor = color;
-  });
-}
-
-let progressBarTicking = false;
-let resizeProgressBarTimeout = null;
-
-function updateProgressBar() {
-  if (!progressBarTicking) {
-    requestAnimationFrame(() => {
-      if (!pixelsInitialized) {
-        initializePixels();
-      }
-      
-      const scrollTop = window.scrollY;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const progress = Math.min(Math.max(scrollTop / docHeight, 0), 1);
-      
-      // Calculate how many pixels to show
-      const pixelsToShow = Math.floor(progress * totalPixels);
-      
-      // Show/hide pixels based on scroll progress
-      pixels.forEach((pixel, index) => {
-        pixel.style.opacity = index < pixelsToShow ? '1' : '0';
-      });
-      
-      progressBarTicking = false;
-    });
-    progressBarTicking = true;
-  }
-}
-
-// Use passive event listeners to improve scrolling performance
-window.addEventListener('scroll', updateProgressBar, { passive: true });
-
-// Initialize on load if already scrolled
-window.addEventListener('load', updateProgressBar);
-
-function rebuildProgressBar() {
-  if (!progressBar) return;
-  progressBar.innerHTML = '';
-  pixels = [];
-  totalPixels = 0;
-  pixelsInitialized = false;
-  updateProgressBar();
-}
-
-window.addEventListener('resize', () => {
-  if (resizeProgressBarTimeout) {
-    clearTimeout(resizeProgressBarTimeout);
-  }
-  resizeProgressBarTimeout = setTimeout(() => {
-    rebuildProgressBar();
-  }, 150);
-}, { passive: true });
-
-
-// =============================
-// 📱 Hide Navbar on Scroll Down (Mobile Only)
+// 📱 Navbar Scroll: Logo Morph + Mobile Hide
 // =============================
 const mainNav = document.getElementById('mainNav');
 let lastScrollY = window.scrollY;
@@ -158,20 +29,26 @@ let navTicking = false;
 function handleNavScroll() {
   if (!navTicking) {
     requestAnimationFrame(() => {
-      // Only apply on mobile (< 640px, matching Tailwind's sm breakpoint)
-      if (window.innerWidth < 640 && mainNav) {
-        const currentScrollY = window.scrollY;
+      if (mainNav) {
+        const currentScrollY = Math.max(window.scrollY, 0);
+
         if (currentScrollY > lastScrollY && currentScrollY > 80) {
-          // Scrolling down & past threshold — hide
-          mainNav.classList.add('nav-hidden');
+          mainNav.classList.add('nav-logo-compact');
+        } else if (currentScrollY < lastScrollY || currentScrollY <= 12) {
+          mainNav.classList.remove('nav-logo-compact');
+        }
+
+        if (window.innerWidth < 640) {
+          if (currentScrollY > lastScrollY && currentScrollY > 80) {
+            mainNav.classList.add('nav-hidden');
+          } else {
+            mainNav.classList.remove('nav-hidden');
+          }
         } else {
-          // Scrolling up — show
           mainNav.classList.remove('nav-hidden');
         }
+
         lastScrollY = currentScrollY;
-      } else if (mainNav) {
-        // On desktop, always make sure nav is visible
-        mainNav.classList.remove('nav-hidden');
       }
       navTicking = false;
     });
@@ -185,6 +62,64 @@ window.addEventListener('resize', () => {
     mainNav.classList.remove('nav-hidden');
   }
 }, { passive: true });
+
+
+// =============================
+// 🔤 Hero Greeting Rotator
+// =============================
+function initHeroGreetingRotator() {
+  const greetingWord = document.getElementById('heroGreetingWord');
+  if (!greetingWord) return;
+
+  const greetings = [
+    { text: 'Hi', lang: 'en' },
+    { text: 'Bonjour', lang: 'fr' },
+    { text: 'مرحبا', lang: 'ar' }
+  ];
+
+  const rotator = greetingWord.closest('.hero-greeting-rotator');
+
+  const setGreetingMeta = (entry) => {
+    const rtl = entry.lang === 'ar';
+    const dir = rtl ? 'rtl' : 'ltr';
+    greetingWord.setAttribute('lang', entry.lang);
+    greetingWord.setAttribute('dir', dir);
+    if (rotator) {
+      rotator.setAttribute('lang', entry.lang);
+      rotator.setAttribute('dir', dir);
+    }
+  };
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cycleMs = 3600;
+  const fadeMs = 320;
+
+  let index = 0;
+  setGreetingMeta(greetings[index]);
+  greetingWord.textContent = greetings[index].text;
+
+  const showNext = () => {
+    index = (index + 1) % greetings.length;
+    const entry = greetings[index];
+
+    if (prefersReducedMotion) {
+      setGreetingMeta(entry);
+      greetingWord.textContent = entry.text;
+      return;
+    }
+
+    greetingWord.style.opacity = '0';
+    window.setTimeout(() => {
+      setGreetingMeta(entry);
+      greetingWord.textContent = entry.text;
+      greetingWord.style.opacity = '1';
+    }, fadeMs);
+  };
+
+  window.setInterval(showNext, cycleMs);
+}
+
+document.addEventListener('DOMContentLoaded', initHeroGreetingRotator);
 
 
 // =============================
@@ -672,3 +607,5 @@ function createLightboxOverlay() {
 
 // Initialize lightbox when DOM is loaded
 document.addEventListener('DOMContentLoaded', initLightbox);
+
+

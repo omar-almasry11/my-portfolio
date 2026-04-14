@@ -11,6 +11,8 @@ header-img-width: 2600
 header-img-height: 2756
 header-overview: "Pixlee TurnTo needed a complete migration of their high-traffic blog to Webflow to enhance performance and empower their marketing team. This project involved migrating over 850 pages from WordPress to Webflow, implementing advanced filtering features, optimizing performance, and preserving critical SEO rankings to maintain traffic and visibility for their extensive audience. Following the migration, Pixlee TurnTo was acquired by Emplifi, a global leader in customer experience solutions."
 order: 4
+categories:
+  - Web Design / Dev
 ---
 
 ## About the Project

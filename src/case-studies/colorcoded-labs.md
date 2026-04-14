@@ -11,6 +11,8 @@ header-img-width: 2510
 header-img-height: 1430
 header-overview: "ColorCoded Labs is a tech training bootcamp that's based in Colombus, Ohio. This bootcamp focuses on underrepresented talent in the tech industry, and has a job placement program that helps connects their graduates with employers who want to diversify their workforce."
 order: 3
+categories:
+  - Web Design / Dev
 ---
 
 ## Project Overview

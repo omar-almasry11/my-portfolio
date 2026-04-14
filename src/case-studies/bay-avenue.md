@@ -12,6 +12,8 @@ header-img-height: 1200
 header-overview: "Bay Avenue is a prominent retail destination in Dubai, managed by Dubai Holding. The project involved creating a bilingual (Arabic and English) website on Webflow, migrating from an older platform to enhance performance, usability, and SEO. Additionally, the design templates were utilized for two other retail destinations, Bay Square and Souk Madinat Jumeirah, to ensure brand consistency across all three websites."
 order: 4
 archived: true
+categories:
+  - Web Design / Dev
 ---
 
 ## My Role

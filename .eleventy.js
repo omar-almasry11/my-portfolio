@@ -82,6 +82,13 @@ eleventyConfig.addCollection("caseStudies", function (collectionApi) {
   // Add a global shortcode to get the current year
   eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
 
+  eleventyConfig.addFilter("nextCaseStudy", function (caseStudies, currentUrl) {
+    if (!Array.isArray(caseStudies) || !currentUrl) return null;
+    const idx = caseStudies.findIndex((item) => item.url === currentUrl);
+    if (idx === -1 || idx >= caseStudies.length - 1) return null;
+    return caseStudies[idx + 1];
+  });
+
   // JSON filter to parse strings
   eleventyConfig.addFilter("from_json", function(value) {
     try {

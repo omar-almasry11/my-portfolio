@@ -1,0 +1,109 @@
+{%- comment -%}
+  Featured projects in a 2-column grid using standard-card style.
+{%- endcomment -%}
+<section class="py-20 md:py-28 px-[5%] {{ customClasses | default: '' }}">
+  <div class="max-w-6xl mx-auto">
+    {% if header or subheader %}
+      <div class="mb-10 md:mb-12">
+        {% if header %}
+          <h2 class="text-2xl sm:text-4xl font-bold leading-[1.1] tracking-tight mb-0">
+            {{ header }}
+          </h2>
+        {% endif %}
+        {% if subheader %}
+          <p class="text-xl sm:text-2xl text-normalLight leading-tight dark:text-invertedLight max-w-2xl mt-4 mb-0">
+            {{ subheader }}
+          </p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if collection and collection.size > 0 %}
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {% for item in collection limit: limit %}
+          <article class="standard-card case-study-cursor-card group relative overflow-hidden !p-0">
+            <a
+              href="{{ item.url }}"
+              class="stretched-link block focus:outline-none"
+              aria-label="View case study: {{ item.data.title }}"
+            >
+              <span class="sr-only">View case study: {{ item.data.title }}</span>
+            </a>
+
+            {% if item.data['card-img'] %}
+              <div class="case-study-media aspect-[4/3] overflow-hidden rounded-t-md">
+                <img
+                  src="{{ item.data['card-img'] }}"
+                  alt="{{ item.data.title }}"
+                  {% if item.data['card-img-width'] and item.data['card-img-height'] %}
+                    width="{{ item.data['card-img-width'] }}"
+                    height="{{ item.data['card-img-height'] }}"
+                  {% endif %}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+            {% elsif item.data.header-img %}
+              <div class="case-study-media aspect-[4/3] overflow-hidden rounded-t-md">
+                <img
+                  src="{{ item.data.header-img }}"
+                  alt="{{ item.data.title }}"
+                  {% if item.data['header-img-width'] and item.data['header-img-height'] %}
+                    width="{{ item.data['header-img-width'] }}"
+                    height="{{ item.data['header-img-height'] }}"
+                  {% endif %}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+            {% elsif item.data.logo %}
+              <div class="case-study-media aspect-[4/3] overflow-hidden rounded-t-md flex items-center justify-center bg-card dark:bg-invertedSecondary p-10">
+                {% if item.data['logo-dark'] %}
+                  <img src="{{ item.data.logo }}" alt="{{ item.data.title }}" class="max-h-16 w-auto object-contain dark:hidden" loading="lazy" decoding="async">
+                  <img src="{{ item.data['logo-dark'] }}" alt="{{ item.data.title }}" class="max-h-16 w-auto object-contain hidden dark:block" loading="lazy" decoding="async">
+                {% else %}
+                  <img src="{{ item.data.logo }}" alt="{{ item.data.title }}" class="max-h-16 w-auto object-contain" loading="lazy" decoding="async">
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <div class="case-study-content p-6 flex flex-col flex-1">
+              {% if item.data.categories and item.data.categories.size > 0 %}
+                <ul class="flex flex-wrap gap-2 mb-3 pointer-events-none" role="list" aria-label="Project categories">
+                  {% for cat in item.data.categories %}
+                    <li>
+                      <span class="case-study-tag">{{ cat }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              <h3 class="text-2xl font-bold tracking-tight text-normal dark:text-inverted mb-2 leading-snug">
+                {{ item.data.title }}
+              </h3>
+              {% if item.data.description %}
+                <p class="text-base text-normalLight dark:text-invertedLight leading-snug mb-4">
+                  {{ item.data.description }}
+                </p>
+              {% endif %}
+              <div class="mt-auto">
+                <span class="inline-flex items-center gap-2 text-primary dark:text-primaryInverted font-medium text-md sm:text-md pointer-events-none" aria-hidden="true">
+                  View case study
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 sm:w-6 sm:h-6 fill-current shrink-0 transition-transform duration-200 group-hover:translate-x-1"
+                    viewBox="0 0 256 256"
+                    aria-hidden="true"
+                  >
+                    <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>

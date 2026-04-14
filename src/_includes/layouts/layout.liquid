@@ -13,13 +13,8 @@
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link
-      rel="preload"
-      href="/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    >
+    <link rel="preload" href="/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/DMSans-VariableFont.ttf" as="font" type="font/ttf" crossorigin>
 
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
     <link
@@ -73,11 +68,11 @@
     <div class="load_grid"></div>
     <script>
       (function () {
-        const colors = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2', '#EDF060'];
+        const colors = ['#C48A1E', '#8A9BB5', '#4A5C8A', '#2A4494'];
         const loadGrid = document.querySelector('.load_grid');
 
-        // Calculate grid size to create perfect squares
-        const squareSize = Math.min(window.innerWidth, window.innerHeight) / 20; // Adjust denominator for desired square size
+        // Square size: base minDim/10 (2× vs original /20), then ×1.5 for 50% larger cells
+        const squareSize = (Math.min(window.innerWidth, window.innerHeight) / 10) * 1.5;
         const cols = Math.ceil(window.innerWidth / squareSize);
         const rows = Math.ceil(window.innerHeight / squareSize);
         const totalItems = cols * rows;
@@ -85,6 +80,7 @@
         // Update CSS grid template
         loadGrid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
         loadGrid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+        loadGrid.dataset.gridCols = String(cols);
 
         // Generate grid items
         for (let i = 0; i < totalItems; i++) {
@@ -151,10 +147,6 @@
         generateColors();
       })();
     </script>
-    <!-- Pixelated Progress Bar (fixed, always visible) -->
-    <div id="progressBarContainer" class="fixed top-0 left-0 h-2 w-full bg-transparent overflow-hidden z-[60]">
-      <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
-    </div>
     {% render 'partials/navbar', page: page %}
     <main>
       {{ content }}
@@ -170,9 +162,14 @@
 
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="/scripts/main.js" defer></script>
     <script src="/scripts/cursor.js" defer></script>
     <script src="/scripts/colorful-heading.js" defer></script>
+    <script src="/scripts/color-block-fill.js" defer></script>
+    <script src="/scripts/about-card-pixel-fill.js" defer></script>
+    <script src="/scripts/case-study-card-pixel-hover.js" defer></script>
+    <script src="/scripts/hero-cell-pixel-scroll.js" defer></script>
     <script src="/scripts/page-transition.js" defer></script>
     <script src="/scripts/cta-grid-animation.js" defer></script>
   </body>

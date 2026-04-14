@@ -11,6 +11,8 @@ header-img-width: 3024
 header-img-height: 1654
 header-overview: "Patients needed a fast, intuitive way to find certified providers in their area. I architected and built a map-first locator using React and Google Maps API, with dynamic country/city filtering and real-time data from Airtable. The solution empowers the marketing team to add, edit, and remove clinic listings through a simple spreadsheet-like interface—no code changes, no deployments, no developer bottlenecks."
 order: 5
+categories:
+  - Web Development
 ---
 
 ## Overview

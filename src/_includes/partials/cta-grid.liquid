@@ -1,4 +1,4 @@
-<section class="cta-grid-container relative py-16 px-[5%] overflow-hidden">
+<section class="cta-grid-container">
   <!-- Animated Grid Background -->
   <div class="cta-grid absolute inset-0 grid grid-cols-20 grid-rows-20">
     {% for i in (1..400) %}
@@ -7,28 +7,28 @@
   </div>
 
   <!-- Content -->
-  <div class="relative z-10 container mx-auto max-w-4xl h-full flex items-center">
-    <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center w-full">
+  <div class="relative z-10 container mx-auto max-w-6xl">
+    <div class="flex w-full flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
       <!-- Left: Title and Subtext -->
-      <div>
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-normal leading-[1.1] tracking-tight">
+      <div class="min-w-0 lg:max-w-[58%]">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white leading-[1.1] tracking-tight">
           {{ title | default: "Let's work together" }}
         </h2>
-        <p class="text-xl md:text-2xl text-normal opacity-90 leading-tight">
+        <p class="max-w-[28ch] text-xl text-white leading-tight md:max-w-[30ch] md:text-2xl">
           {{ subtext | default: "I'm currently available for full-time roles and select freelance projects." }}
         </p>
       </div>
 
       <!-- Right: Button -->
-      <div class="flex justify-start lg:justify-end">
+      <div class="flex w-full shrink-0 justify-start lg:w-auto lg:justify-end">
         <a
           href="{{ buttonUrl | default: 'mailto:hello@omaralmasry.com?subject=Project%20Inquiry' }}"
-          class="inline-flex items-center px-8 py-4 bg-inverted text-normal font-medium text-lg rounded-full shadow-high no-underline transition duration-300 hover:scale-105"
+          class="footer-cta-cursor-link group inline-flex items-center justify-center gap-2 rounded-md border-2 border-solid px-8 py-4 text-lg font-semibold no-underline transition-[border-color] duration-500 ease-out"
         >
-          <span class="text-inverted">{{ buttonText | default: 'Send me an email' }}</span>
+          <span class="text-inherit">{{ buttonText | default: 'Send me an email' }}</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5 ml-2 fill-current text-inverted"
+            class="h-5 w-5 shrink-0 fill-current transition-transform duration-200 group-hover:translate-x-1 sm:h-6 sm:w-6"
             viewBox="0 0 256 256"
           >
             <path d="M224,56l-96,88L32,56Z" opacity="0.2"></path>

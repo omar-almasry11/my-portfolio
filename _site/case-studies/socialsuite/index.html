@@ -6,20 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="An ESG and outcomes measurement and reporting software platform adopted by over 165 organizations worldwide, including publicly traded companies across the NASDAQ, and NYSE, and nonprofits such as Habitat for Humanity, Scope, and Teach for America."
+      content="Brand identity and website design for a global ESG platform serving 150+ organizations — including YMCA, Big Brothers Big Sisters, and publicly traded companies on NASDAQ and NYSE."
     >
     <meta name="author" content="Omar Almasry">
     <title>Socialsuite</title>
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link
-      rel="preload"
-      href="/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    >
+    <link rel="preload" href="/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/DMSans-VariableFont.ttf" as="font" type="font/ttf" crossorigin>
 
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
     <link
@@ -40,7 +35,7 @@
     <meta property="og:title" content="Socialsuite">
     <meta
       property="og:description"
-      content="An ESG and outcomes measurement and reporting software platform adopted by over 165 organizations worldwide, including publicly traded companies across the NASDAQ, and NYSE, and nonprofits such as Habitat for Humanity, Scope, and Teach for America."
+      content="Brand identity and website design for a global ESG platform serving 150+ organizations — including YMCA, Big Brothers Big Sisters, and publicly traded companies on NASDAQ and NYSE."
     >
     <meta property="og:image" content="/images/png/og.png">
     <meta property="og:url" content="https://omaralmasry.com/case-studies/socialsuite/">
@@ -52,7 +47,7 @@
     <meta name="twitter:title" content="Socialsuite">
     <meta
       name="twitter:description"
-      content="An ESG and outcomes measurement and reporting software platform adopted by over 165 organizations worldwide, including publicly traded companies across the NASDAQ, and NYSE, and nonprofits such as Habitat for Humanity, Scope, and Teach for America."
+      content="Brand identity and website design for a global ESG platform serving 150+ organizations — including YMCA, Big Brothers Big Sisters, and publicly traded companies on NASDAQ and NYSE."
     >
     <meta name="twitter:image" content="/images/png/og.png">
 
@@ -73,11 +68,11 @@
     <div class="load_grid"></div>
     <script>
       (function () {
-        const colors = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2', '#EDF060'];
+        const colors = ['#C48A1E', '#8A9BB5', '#4A5C8A', '#2A4494'];
         const loadGrid = document.querySelector('.load_grid');
 
-        // Calculate grid size to create perfect squares
-        const squareSize = Math.min(window.innerWidth, window.innerHeight) / 20; // Adjust denominator for desired square size
+        // Square size: base minDim/10 (2× vs original /20), then ×1.5 for 50% larger cells
+        const squareSize = (Math.min(window.innerWidth, window.innerHeight) / 10) * 1.5;
         const cols = Math.ceil(window.innerWidth / squareSize);
         const rows = Math.ceil(window.innerHeight / squareSize);
         const totalItems = cols * rows;
@@ -85,6 +80,7 @@
         // Update CSS grid template
         loadGrid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
         loadGrid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+        loadGrid.dataset.gridCols = String(cols);
 
         // Generate grid items
         for (let i = 0; i < totalItems; i++) {
@@ -151,29 +147,22 @@
         generateColors();
       })();
     </script>
-    <!-- Pixelated Progress Bar (fixed, always visible) -->
-    <div id="progressBarContainer" class="fixed top-0 left-0 h-2 w-full bg-transparent overflow-hidden z-[60]">
-      <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
-    </div>
     <nav id="mainNav" class="px-[5%] py-4 sticky top-0 z-50 transition-transform duration-300">
-  <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
+  <div class="max-w-6xl mx-auto flex w-full items-center justify-between gap-3">
     <!-- Logo -->
-    <a href="/" class="logo flex shrink-0 items-center font-bold text-lg no-underline group">
-      <h3 class="flex items-center m-0">
-        <span class="text-5xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
-          >O</span
-        >
-        <span class="text-5xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
-          >.</span
-        >
-      </h3>
+    <a href="/" class="logo logo-nav flex shrink-0 items-center font-bold no-underline group" aria-label="Omar Almasry, home">
+      <span class="logo-morph text-xl sm:text-2xl text-normalLight dark:text-invertedLight group-hover:text-lapis-light dark:group-hover:text-amber-light transition-colors duration-300"
+        ><span class="logo-letter-o">O</span
+        ><span class="logo-rest-clip"><span class="logo-rest">mar Almasry</span></span
+        ><span class="logo-dot text-primary dark:text-primaryInverted">.</span></span
+      >
     </a>
 
-    <!-- About, Contact, theme toggle: single row on mobile (no stacked toggle) -->
+    <!-- About, Contact, theme toggle: single row on mobile -->
     <div class="flex min-w-0 items-center justify-end gap-2.5 sm:gap-7 md:gap-8">
       <a
         href="/about/"
-        class="menu_link shrink-0 text-normalLight text-base sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+        class="menu_link shrink-0 min-h-[44px] flex items-center text-normalLight text-base sm:text-lg font-medium hover:text-inverted no-underline dark:text-invertedLight dark:hover:text-inverted"
         
       >
         <span class="roll-text">
@@ -183,52 +172,43 @@
       </a>
 
       <div class="flex shrink-0 items-center gap-4 sm:gap-7 md:gap-8">
-      
-  <a
-    href="mailto:hello@omaralmasry.com"
-    class="button flex items-center bg-primary text-inverted font-medium rounded-full shadow-low no-underline transition duration-300 dark:bg-primaryInverted dark:text-normal dark:shadow-lowInverted relative z-0 overflow-hidden group
-      
-        px-4 py-2 text-base sm:px-6 sm:py-3 sm:text-lg
-      "
-    aria-label="Contact"
-  >
-    <span class="relative z-10 flex items-center">
-      <span>Contact</span>
-      <span class="ml-1.5 sm:ml-2">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="22" height="22" fill="currentColor" viewBox="0 0 256 256"><path d="M184,213.27A80,80,0,0,1,74.7,184l-40-69.32a20,20,0,0,1,34.64-20L55.08,70A20,20,0,0,1,89.73,50l6.92,12h0a20,20,0,0,1,34.64-20l30,52A20,20,0,0,1,196,74l17.31,30A80,80,0,0,1,184,213.27Z" opacity="0.2"></path><path d="M220.17,100,202.86,70a28,28,0,0,0-38.24-10.25,27.69,27.69,0,0,0-9,8.34L138.2,38a28,28,0,0,0-48.48,0A28,28,0,0,0,48.15,74l1.59,2.76A27.67,27.67,0,0,0,38,80.41a28,28,0,0,0-10.24,38.25l40,69.32a87.47,87.47,0,0,0,53.43,41,88.56,88.56,0,0,0,22.92,3,88,88,0,0,0,76.06-132Zm-6.66,62.64A72,72,0,0,1,81.62,180l-40-69.32a12,12,0,0,1,20.78-12L81.63,132a8,8,0,1,0,13.85-8L62,66A12,12,0,1,1,82.78,54L114,108a8,8,0,1,0,13.85-8L103.57,58h0a12,12,0,1,1,20.78-12l33.42,57.9a48,48,0,0,0-5.54,60.6,8,8,0,0,0,13.24-9A32,32,0,0,1,172.78,112a8,8,0,0,0,2.13-10.4L168.23,90A12,12,0,1,1,189,78l17.31,30A71.56,71.56,0,0,1,213.51,162.62ZM184.25,31.71A8,8,0,0,1,194,26a59.62,59.62,0,0,1,36.53,28l.33.57a8,8,0,1,1-13.85,8l-.33-.57a43.67,43.67,0,0,0-26.8-20.5A8,8,0,0,1,184.25,31.71ZM80.89,237a8,8,0,0,1-11.23,1.33A119.56,119.56,0,0,1,40.06,204a8,8,0,0,1,13.86-8,103.67,103.67,0,0,0,25.64,29.72A8,8,0,0,1,80.89,237Z"></path></svg>
-      </span>
-    </span>
-  </a>
-
-
-
-      <button
-        id="themeToggle"
-        type="button"
-        class="theme-toggle shrink-0 px-2 py-2 bg-inverted rounded-full shadow-low dark:shadow-lowInverted dark:bg-normal"
-      >
-        <span class="sr-only">Toggle dark mode</span>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5 fill-current text-primaryInverted hover:text-inverted block dark:hidden"
-          role="img"
-          aria-label="Dark Mode"
-          viewBox="0 0 256 256"
+        <a
+          href="mailto:hello@omaralmasry.com"
+          class="menu_link shrink-0 min-h-[44px] flex items-center text-normalLight text-base sm:text-lg font-medium hover:text-inverted no-underline dark:text-invertedLight dark:hover:text-inverted"
         >
-          <path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56A104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
-        </svg>
+          <span class="roll-text">
+            <span data-text="Contact">Contact</span>
+            <span data-text="Contact" aria-hidden="true">Contact</span>
+          </span>
+        </a>
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5 fill-current text-normal dark:hover:text-invertedLight hidden dark:block"
-          role="img"
-          aria-label="Light Mode"
-          viewBox="0 0 256 256"
+        <button
+          id="themeToggle"
+          type="button"
+          class="theme-toggle shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center bg-inverted rounded-lg shadow-low dark:shadow-lowInverted dark:bg-normal"
         >
-          <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
-        </svg>
-      </button>
+          <span class="sr-only">Toggle dark mode</span>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 fill-current text-primaryInverted hover:text-inverted block dark:hidden"
+            role="img"
+            aria-label="Dark Mode"
+            viewBox="0 0 256 256"
+          >
+            <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 fill-current text-normal dark:hover:text-amber-light hidden dark:block"
+            role="img"
+            aria-label="Light Mode"
+            viewBox="0 0 256 256"
+          >
+            <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -236,27 +216,43 @@
 
     <main>
       <header class="pt-24 pb-4 px-[5%] mx-auto">
-  <div class="container mx-auto max-w-4xl">
-    <!-- Intro Text -->
-    <div class="mb-16">
-      <h1 class="text-5xl md:text-7xl mb-4 leading-[1.1] tracking-tight">Socialsuite</h1>
-      <p class="text-xl md:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-10">
-        Socialsuite is a global leader in ESG and impact measurement software serving 150+ organizations worldwide—including YMCA, Big Brothers Big Sisters, and publicly traded companies. Following a comprehensive rebrand, I partnered with their team to redesign their entire web presence, translating new brand guidelines into a sophisticated digital experience that serves dual audiences: mission-driven nonprofits and enterprise corporations navigating ESG compliance.
-      </p>
-      <a
-  href="https://www.socialsuitehq.com/"
-  class="text-link flex text-lg items-center gap-2 text-xl font-bold"
-  
-    target="_blank" rel="noopener noreferrer"
-  
->
-  View live website
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 256 256"><path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"></path></svg>
-</a>
-
+  <div class="container mx-auto max-w-6xl">
+    <div class="mb-12">
+      <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-3 text-normal dark:text-inverted">Socialsuite</h1>
+      
+        <p class="text-xl sm:text-2xl font-medium text-normalLight dark:text-invertedLight mb-4">Brand Identity & Website Design</p>
+      
+      
+        <p class="text-base sm:text-xl text-normalLight font-normal dark:text-invertedLight max-w-[40rem] leading-relaxed mb-0">Transforming an ESG software leader's digital presence — designing a sophisticated website that speaks to both mission-driven nonprofits and enterprise corporations.</p>
+      
     </div>
 
-    <!-- Full-Width Hero Image -->
+    
+      <div class="cs-meta-bar grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mb-12 py-6 border-y border-normal dark:border-inverted">
+        
+          <div>
+            <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">Client</p>
+            <p class="text-base font-semibold text-normal dark:text-inverted mb-0">Socialsuite</p>
+          </div>
+        
+          <div>
+            <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">Industry</p>
+            <p class="text-base font-semibold text-normal dark:text-inverted mb-0">ESG & Impact Measurement</p>
+          </div>
+        
+          <div>
+            <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">Timeline</p>
+            <p class="text-base font-semibold text-normal dark:text-inverted mb-0">6 weeks</p>
+          </div>
+        
+          <div>
+            <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">Role</p>
+            <p class="text-base font-semibold text-normal dark:text-inverted mb-0">Lead Designer & Developer</p>
+          </div>
+        
+      </div>
+    
+
     
       <div class="w-full rounded-2xl overflow-hidden shadow-medium dark:shadow-mediumInverted">
         <img
@@ -272,34 +268,33 @@
   </div>
 </header>
 <section class="pt-12 pb-24 px-[5%]">
-  <div class="container mx-auto max-w-4xl">
-    <article class="prose mx-auto max-w-4xl">
-      <h2 id="project-overview" tabindex="-1">Project Overview</h2>
-<p><strong>Client:</strong> Socialsuite<br>
-<strong>Industry:</strong> ESG &amp; Impact Measurement Technology<br>
-<strong>Project Type:</strong> Complete Website Redesign &amp; Visual Identity Overhaul<br>
-<strong>Timeline:</strong> 6 weeks (November-December 2022)<br>
-<strong>My Role:</strong> Lead Designer &amp; Developer</p>
+  <div class="container mx-auto max-w-6xl min-w-0">
+    <article class="prose case-study-prose mx-auto max-w-4xl">
+      <h2 id="overview" tabindex="-1">Overview</h2>
+<p>Socialsuite is a global leader in ESG and impact measurement software, serving 150+ organizations worldwide — from nonprofits like YMCA and Habitat for Humanity to publicly traded companies on NASDAQ and NYSE. Following a comprehensive rebrand, I led the complete redesign of their web presence, translating new brand guidelines into a digital experience that serves two distinct audiences while driving measurable conversion improvements.</p>
 <hr>
 <h2 id="the-challenge" tabindex="-1">The Challenge</h2>
-<p>SocialSuite, a global leader in ESG and impact measurement software serving 150+ organizations worldwide—including YMCA, Big Brothers Big Sisters, and publicly traded companies—had just completed a comprehensive rebrand. Their existing website had become a critical bottleneck: outdated visuals, a confusing user experience, and alarmingly low conversion rates that didn't match their market position.</p>
-<h3 id="the-core-problems" tabindex="-1">The Core Problems</h3>
-<p><strong>1. Visual Identity Disconnect</strong><br>
-The existing site relied heavily on generic stock illustrations and outdated branding that failed to communicate their premium positioning as an enterprise software provider serving both Fortune 500 companies and leading nonprofits.</p>
-<p><strong>2. Poor Conversion Performance</strong><br>
-With a homepage conversion rate of just 2.15%, the site was actively hindering growth. The client's goal was ambitious but necessary: double conversions to 4.5% while maintaining lead quality.</p>
-<p><strong>3. Audience Confusion</strong><br>
-A single &quot;Book a Demo&quot; flow attempted to serve two dramatically different audiences:</p>
-<ul>
-<li>
-<p><strong>Social Impact users:</strong> Nonprofits ($1-10M revenue) focused on community impact reporting</p>
-</li>
-<li>
-<p><strong>ESG users:</strong> Public companies ($10M-2B market cap) navigating regulatory compliance</p>
-</li>
-</ul>
-<p>This one-size-fits-all approach created friction at every touchpoint.</p>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+<p>Socialsuite had a problem: their website didn't match their market position.</p>
+<p>As a platform serving both Fortune 500 companies and leading nonprofits, they needed a digital presence that could speak credibly to both. Instead, they had outdated visuals, a confusing user experience, and a homepage conversion rate of just 2.15%.</p>
+<p>The goal was ambitious: double conversions to 4.5% — without sacrificing lead quality.</p>
+<div class="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
+  <div class="standard-card text-center">
+    <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">01</p>
+    <p class="font-semibold text-normal dark:text-inverted mb-2">Visual Identity Disconnect</p>
+    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">The existing site relied on generic stock illustrations and outdated branding that failed to communicate their premium positioning as an enterprise software provider.</p>
+  </div>
+  <div class="standard-card text-center">
+    <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">02</p>
+    <p class="font-semibold text-normal dark:text-inverted mb-2">Poor Conversion Performance</p>
+    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">A homepage conversion rate of just 2.15% was actively hindering growth.</p>
+  </div>
+  <div class="standard-card text-center">
+    <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">03</p>
+    <p class="font-semibold text-normal dark:text-inverted mb-2">Audience Confusion</p>
+    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">A single "Book a Demo" flow attempted to serve two dramatically different audiences — creating friction at every touchpoint.</p>
+  </div>
+</div>
+<div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
   <div class="space-y-4">
     <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl shadow-low dark:shadow-lowInverted">
       <img src="/images/socialsuite-before-1.webp" alt="Socialsuite Old Homepage Top" class="w-full h-auto rounded-lg shadow-sm">
@@ -314,48 +309,108 @@ A single &quot;Book a Demo&quot; flow attempted to serve two dramatically differ
   </div>
 </div>
 <hr>
+<h2 id="the-core-insight" tabindex="-1">The Core Insight</h2>
+<p>The real problem wasn't design — it was clarity.</p>
+<p>One message can't resonate with both audiences. The website needed to feel like two experiences in one — unified by brand, differentiated by intent.</p>
+<div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
+  <div class="cs-audience-card standard-card" style="border-left: 3px solid #00a0aa;">
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-4">Social Impact Users</p>
+    <ul class="space-y-3 text-sm text-normalLight dark:text-invertedLight m-0 p-0 list-none">
+      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Who:</span> Nonprofits ($1–10M revenue)</li>
+      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Focus:</span> Community impact reporting</li>
+      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Buyers:</span> Program directors, grant writers</li>
+      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Tone:</span> Approachable, mission-focused</li>
+    </ul>
+  </div>
+  <div class="cs-audience-card standard-card" style="border-left: 3px solid #014682;">
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-4">ESG Users</p>
+    <ul class="space-y-3 text-sm text-normalLight dark:text-invertedLight m-0 p-0 list-none">
+      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Who:</span> Public companies ($10M–2B market cap)</li>
+      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Focus:</span> Regulatory compliance</li>
+      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Buyers:</span> C-suite, sustainability officers</li>
+      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Tone:</span> Professional, data-driven</li>
+    </ul>
+  </div>
+</div>
+<hr>
 <h2 id="discovery-%26-strategy" tabindex="-1">Discovery &amp; Strategy</h2>
-<h3 id="understanding-two-distinct-audiences" tabindex="-1">Understanding Two Distinct Audiences</h3>
-<p><strong>Social Impact Segment</strong></p>
-<ul>
-<li>Mission-driven nonprofits and NGOs</li>
-<li>Primary need: Demonstrating community impact to funders</li>
-<li>Decision makers: Program directors, grant writers, executive directors</li>
-<li>Pain points: Complex reporting requirements, limited technical resources</li>
-<li>Tone: Approachable, mission-focused, impact-driven</li>
-</ul>
-<p><strong>ESG Segment</strong></p>
-<ul>
-<li>Public and pre-IPO companies beginning ESG journey</li>
-<li>Primary need: Meeting regulatory requirements and investor expectations</li>
-<li>Decision makers: C-suite executives, sustainability officers, investor relations</li>
-<li>Pain points: Navigating complex frameworks (TCFD, GRI, SASB), stakeholder pressure</li>
-<li>Tone: Professional, data-driven, compliance-focused</li>
-</ul>
-<h3 id="competitive-analysis-%26-design-direction" tabindex="-1">Competitive Analysis &amp; Design Direction</h3>
+<p>I mapped each audience's journey separately — understanding that a nonprofit program director and a Fortune 500 sustainability officer have completely different pain points, vocabularies, and trust signals.</p>
+<p>This informed everything: navigation structure, content hierarchy, imagery choices, and CTA placement.</p>
+<h3 id="competitive-analysis" tabindex="-1">Competitive Analysis</h3>
 <p>I analyzed the client's reference sites (Slack, Wealthsimple, Pingboard, Flyhyer) and identified key patterns:</p>
 <ul>
 <li>Clean, spacious layouts with generous whitespace</li>
 <li>Custom illustrations that reinforce brand personality</li>
 <li>Clear, benefit-focused value propositions above the fold</li>
 <li>Conversion-optimized CTAs with minimal friction</li>
-<li>Strong visual hierarchy guiding users to key actions</li>
 </ul>
 <h3 id="strategic-approach" tabindex="-1">Strategic Approach</h3>
-<p><strong>Visual Strategy</strong><br>
+<p><strong>Visual Strategy</strong>
 Move from generic SaaS aesthetics to a sophisticated, purpose-driven design language that bridges corporate professionalism with nonprofit authenticity.</p>
-<p><strong>Conversion Strategy</strong><br>
+<p><strong>Conversion Strategy</strong>
 Implement separate, optimized demo flows and tailored value propositions for each audience. By reducing form friction through progressive disclosure and strategically placing social proof throughout the user journey, we streamlined the path to action and increased overall trust.</p>
-<div class="w-full my-12">
-  <img src="/images/socialsuite-form.webp" alt="Socialsuite conversion-optimized form design" class="w-full h-auto rounded-2xl shadow-medium">
+<div class="not-prose w-full my-12">
+  <img src="/images/socialsuite-form.webp" alt="Socialsuite conversion-optimized form design" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
 </div>
 <hr>
-<h2 id="visual-identity-development" tabindex="-1">Visual Identity Development</h2>
-<p>Based on the rebrand, I created an extended color palette, typography system, iconography set, and a photo asset guidelines to ensure brand consistency across all touchpoints.</p>
-<h3 id="color-system-%26-typography" tabindex="-1">Color System &amp; Typography</h3>
-<p>The rebrand provided a sophisticated color palette that I needed to translate into a functional web system:</p>
+<h2 id="early-exploration" tabindex="-1">Early Exploration</h2>
+<p>Before any visual design, I focused on content strategy and page structure. Working with the Socialsuite team, I created wireframes to map out user flows and content hierarchy — ensuring we solved the structural problems before layering on brand.</p>
+<p>The homepage needed to quickly route two different audiences to relevant content, while industry-specific pages had to speak directly to sector needs (like metals and mining companies navigating ESG compliance).</p>
+<p>These wireframes became our alignment tool — getting stakeholder buy-in on structure before committing to pixels.</p>
+<div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+  <div class="space-y-4">
+    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl shadow-low dark:shadow-lowInverted">
+      <img src="/images/png/socialsuite-wireframe-1.png" alt="Socialsuite homepage wireframe showing content hierarchy and user pathways" class="w-full h-auto rounded-lg shadow-sm">
+    </div>
+    <p class="text-xs uppercase tracking-widest opacity-50 text-center">Homepage wireframe — mapping content hierarchy and user pathways</p>
+  </div>
+  <div class="space-y-4">
+    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl shadow-low dark:shadow-lowInverted">
+      <img src="/images/png/socialsuite-wireframe-2.png" alt="Socialsuite industry page wireframe with tailored structure for sector-specific audiences" class="w-full h-auto rounded-lg shadow-sm">
+    </div>
+    <p class="text-xs uppercase tracking-widest opacity-50 text-center">Industry page wireframe — tailored structure for sector-specific audiences</p>
+  </div>
+</div>
+<hr>
+<h2 id="visual-direction" tabindex="-1">Visual Direction</h2>
+<p>With structure locked, I explored how the brand palette could shape the emotional tone of the site. The rebrand provided a rich color system — but how bold should we go?</p>
+<p>I tested three directions:</p>
+<div class="not-prose grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
+  <div class="cs-direction-card">
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction A</p>
+    <h3 class="text-lg font-bold text-normal dark:text-inverted mb-3">Energetic & Bold</h3>
+    <div class="rounded-xl overflow-hidden shadow-low dark:shadow-lowInverted mb-4">
+      <img src="/images/png/socialsuite-hero-color-attempt-3.png" alt="Socialsuite hero Direction A — Warm & Bold with yellow-gold background" class="w-full h-auto">
+    </div>
+    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">A yellow-gold background paired with teal accents created energy and optimism — but risked feeling too playful for enterprise audiences.</p>
+  </div>
+  <div class="cs-direction-card">
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction B</p>
+    <h3 class="text-lg font-bold text-normal dark:text-inverted mb-3">Premium & Confident</h3>
+    <div class="rounded-xl overflow-hidden shadow-low dark:shadow-lowInverted mb-4">
+      <img src="/images/png/direction-b.png" alt="Socialsuite hero Direction B — Cool & Confident with deep teal gradient" class="w-full h-auto">
+    </div>
+    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">A deep ocean-to-teal gradient anchored by the brand's circular motifs — bold and contemporary, with a sophistication that signals enterprise credibility without feeling cold.</p>
+  </div>
+  <div class="cs-direction-card">
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction C</p>
+    <h3 class="text-lg font-bold text-normal dark:text-inverted mb-3">Clear & Minimal</h3>
+    <div class="rounded-xl overflow-hidden shadow-low dark:shadow-lowInverted mb-4">
+      <img src="/images/png/socialsuite-hero-color-attempt-1.png" alt="Socialsuite hero Direction C — Subtle & Premium with light background" class="w-full h-auto">
+    </div>
+    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">A clean, light background let the product UI and brand shapes take centre stage — the most restrained option, prioritising clarity and content over colour.</p>
+  </div>
+</div>
+<h3 id="the-decision" tabindex="-1">The Decision</h3>
+<div class="not-prose cs-decision-callout my-10">
+  <p class="text-base sm:text-lg text-normal dark:text-inverted mb-0">We landed on a variation of <strong>Direction B — the teal gradient</strong>. It struck the right balance: distinctive enough to feel fresh, professional enough for enterprise credibility, and flexible enough to work across both nonprofit and corporate audiences.</p>
+</div>
+<hr>
+<h2 id="visual-identity-system" tabindex="-1">Visual Identity System</h2>
+<p>The rebrand gave me a sophisticated color palette and logo geometry. My job was to extend this into a complete digital design system — one that could flex between nonprofit warmth and enterprise credibility.</p>
+<h3 id="color-system" tabindex="-1">Color System</h3>
 <p><strong>Primary Colors</strong></p>
-<div class="flex flex-wrap gap-8 tracking-tight my-8">
+<div class="not-prose flex flex-wrap gap-8 tracking-tight my-8">
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-16 h-16 rounded-xl shadow-low dark:shadow-lowInverted" style="background-color: #014682;"></div>
     <div class="mt-2 text-center sm:text-left">
@@ -372,7 +427,7 @@ Implement separate, optimized demo flows and tailored value propositions for eac
   </div>
 </div>
 <p><strong>Secondary Palette</strong></p>
-<div class="flex flex-wrap gap-8 tracking-tight my-8">
+<div class="not-prose flex flex-wrap gap-8 tracking-tight my-8">
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-16 h-16 rounded-xl shadow-low dark:shadow-lowInverted" style="background-color: #00a0c8;"></div>
     <div class="mt-2 text-center sm:text-left">
@@ -396,12 +451,11 @@ Implement separate, optimized demo flows and tailored value propositions for eac
   </div>
 </div>
 <p><strong>Deep Water Gradient</strong></p>
-<div class="w-full h-32 rounded-2xl my-6 shadow-medium dark:shadow-mediumInverted" style="background: linear-gradient(90deg, #014682 0%, #00a0aa 100%);"></div>
-<p>A sophisticated blue-to-teal gradient that added depth while maintaining accessibility—used strategically in hero sections to create visual interest without overwhelming content.</p>
-<p><strong>Typography: Roboto</strong></p>
-<div class="w-full my-12 space-y-12">
-  <!-- Specimen Header -->
-  <div class="flex items-baseline gap-6 border-b border-slate-200 dark:border-white/10 pb-8">
+<div class="not-prose w-full h-32 rounded-2xl my-6 shadow-medium dark:shadow-mediumInverted" style="background: linear-gradient(90deg, #014682 0%, #00a0aa 100%);"></div>
+<p>A sophisticated blue-to-teal gradient that added depth while maintaining accessibility — used strategically in hero sections to create visual interest without overwhelming content.</p>
+<h3 id="typography" tabindex="-1">Typography</h3>
+<div class="not-prose w-full my-12 space-y-12">
+  <div class="flex items-baseline gap-6 border-b border-normal dark:border-inverted pb-8">
     <span class="text-[10rem] md:text-[12rem] font-bold tracking-tighter text-normal dark:text-inverted leading-none" style="font-family: 'Roboto', sans-serif;">Aa</span>
     <div class="flex flex-col">
       <span class="text-3xl font-mono opacity-50">Roboto</span>
@@ -412,62 +466,45 @@ Implement separate, optimized demo flows and tailored value propositions for eac
       </div>
     </div>
   </div>
-  <!-- Character Set -->
   <div class="space-y-4">
-    <p class="text-xs uppercase tracking-[0.2em] opacity-40 font-bold">Characters & Numbers</p>
+    <p class="text-xs uppercase tracking-[0.2em] opacity-40 font-bold mb-0">Characters & Numbers</p>
     <div class="text-4xl md:text-6xl tracking-[0.15em] text-normal dark:text-inverted leading-[1.4]" style="font-family: 'Roboto', sans-serif;">
-        ABCDEFGHIJKLMN<br>
-        OPQRSTUVWXYZ<br>
-        abcdefghijklmn<br>
-        opqrstuvwxyz<br>
-        1234567890!@#$%
+      ABCDEFGHIJKLMN<br>
+      OPQRSTUVWXYZ<br>
+      abcdefghijklmn<br>
+      opqrstuvwxyz<br>
+      1234567890!@#$%
     </div>
   </div>
-  <!-- Rationale -->
   <div class="max-w-3xl">
-    <p class="text-xl md:text-xl leading-relaxed text-normalLight dark:text-invertedLight">
+    <p class="text-xl leading-relaxed text-normalLight dark:text-invertedLight">
       I selected Roboto for its versatility and clean, modern aesthetic. Its excellent readability across screen sizes and weights made it ideal for both data-heavy ESG content and emotion-driven impact storytelling.
     </p>
   </div>
 </div>
 <h3 id="custom-illustration-system" tabindex="-1">Custom Illustration System</h3>
-<div class="w-full my-12">
-  <img src="/images/socialsuite-custom-illustration-system-1.webp" alt="Socialsuite Custom Illustration System featured" class="w-full h-auto rounded-2xl shadow-medium">
+<div class="not-prose w-full my-12">
+  <img src="/images/socialsuite-custom-illustration-system-1.webp" alt="Socialsuite Custom Illustration System" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
 </div>
-<p><strong>The Brief's Direction</strong></p>
 <blockquote>
 <p>&quot;Custom design over stock photos... visual identity to be driven by our mission and vision&quot;</p>
 </blockquote>
-<p><strong>My Approach</strong><br>
-Rather than generic SaaS illustrations, I developed a distinctive visual system that merged authentic photography with geometric abstraction:</p>
-<div class="space-y-8 my-12">
-  <img src="/images/socialsuite-custom-illustration-system-2.webp" alt="Socialsuite Illustration Approach 1" class="w-full h-auto rounded-2xl shadow-medium">
-  <img src="/images/socialsuite-custom-illustration-system-3.webp" alt="Socialsuite Illustration Approach 2" class="w-full h-auto rounded-2xl shadow-medium">
+<p>Rather than generic SaaS illustrations, I developed a distinctive visual system that merged authentic photography with geometric abstraction:</p>
+<div class="not-prose space-y-8 my-12">
+  <img src="/images/socialsuite-custom-illustration-system-2.webp" alt="Socialsuite Illustration Approach 1" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+  <img src="/images/socialsuite-custom-illustration-system-3.webp" alt="Socialsuite Illustration Approach 2" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
 </div>
-<p><strong>Circular Frame System</strong><br>
-Inspired by the client's new logo geometry, I created a series of circular frames using concentric line work. These frames served multiple purposes:</p>
+<h3 id="photography-%26-circular-frames" tabindex="-1">Photography &amp; Circular Frames</h3>
+<p>Inspired by the client's logo geometry, I created a series of circular frames using concentric line work. These frames:</p>
 <ul>
-<li><strong>Brand consistency:</strong> Echoed the circular motifs in the updated logo</li>
-<li><strong>Visual hierarchy:</strong> Drew attention to key imagery while maintaining clean layouts</li>
-<li><strong>Versatility:</strong> Worked across both nonprofit (warmer, human-focused) and corporate (cooler, professional) contexts</li>
+<li><strong>Echoed the logo</strong> — maintaining brand consistency through circular motifs</li>
+<li><strong>Created visual hierarchy</strong> — drawing attention to key imagery</li>
+<li><strong>Flexed across audiences</strong> — warm and human for nonprofits, professional for enterprise</li>
 </ul>
-<p><strong>Photography Treatment</strong></p>
-<ul>
-<li>Black-and-white photography for timeless, professional feel</li>
-<li>Subtle color overlays derived from brand palette (teal, blue, green gradients)</li>
-<li>Real people in authentic moments—no staged stock photography</li>
-<li>Images showing diverse industries: nonprofits, mining, tech, manufacturing</li>
-</ul>
-<p><strong>Expanding the Logo Concept</strong><br>
-The SocialSuite logo is constructed from overlapping circles—a visual representation of connection and impact. When the team decided to move away from traditional illustrations entirely, I saw an opportunity to expand on this circular language as a design system. By using concentric circles, overlapping geometric shapes, and circular frames throughout the site, I created visual interest and brand cohesion without relying on illustration.</p>
-<p>Those circular elements became the &quot;illustrations&quot;—adding depth and visual appeal to sections that would typically feature custom graphics, while maintaining the clean, professional aesthetic the rebrand required.</p>
-<div class="space-y-8 my-12">
-  <img src="/images/socialsuite-circles-concept-1.webp" alt="Socialsuite Logo Geometry Concept 1" class="w-full h-auto rounded-2xl shadow-medium">
-  <img src="/images/socialsuite-circles-concept-2.webp" alt="Socialsuite Logo Geometry Concept 2" class="w-full h-auto rounded-2xl shadow-medium">
-</div>
-<p><strong>Icon System</strong><br>
-To ensure visual consistency across all touchpoints, I implemented the Phosphor icon library—a free, open-source, MIT-licensed icon system. The duotone style aligned perfectly with the brand's modern aesthetic while providing the SocialSuite team with a comprehensive library for use across their website, product interface, and marketing materials. This created a unified visual language that extended beyond the website redesign.</p>
-<div class="grid grid-cols-3 md:grid-cols-6 gap-4 my-10">
+<p>Photography was treated in black-and-white with subtle brand color overlays — real people in authentic moments, showing diverse industries from nonprofits to mining to manufacturing.</p>
+<h3 id="icon-system" tabindex="-1">Icon System</h3>
+<p>I implemented the Phosphor icon library in duotone style — aligning with the brand's modern aesthetic while providing a comprehensive library for use across the website, product, and marketing materials.</p>
+<div class="not-prose grid grid-cols-3 md:grid-cols-6 gap-4 my-10">
   <div class="aspect-square bg-slate-50 dark:bg-white/5 rounded-xl flex items-center justify-center p-4 shadow-low dark:shadow-lowInverted">
     <img src="/images/socialsuite-icon-usage-1.svg" alt="Socialsuite Icon 1" class="w-full h-full object-contain opacity-80">
   </div>
@@ -487,851 +524,93 @@ To ensure visual consistency across all touchpoints, I implemented the Phosphor 
     <img src="/images/socialsuite-icon-usage-6.svg" alt="Socialsuite Icon 6" class="w-full h-full object-contain opacity-80">
   </div>
 </div>
-<h2 id="project-images" tabindex="-1">Project Images</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
-  <img src="/images/socialsuite-finished-product-1.webp" alt="Socialsuite Finished Product Design 1" class="w-full h-auto rounded-2xl shadow-medium">
-  <img src="/images/socialsuite-finished-product-2.webp" alt="Socialsuite Finished Product Design 2" class="w-full h-auto rounded-2xl shadow-medium">
+<hr>
+<h2 id="key-design-decisions" tabindex="-1">Key Design Decisions</h2>
+<div class="not-prose grid grid-cols-1 gap-6 my-10">
+  <div class="standard-card">
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 01</p>
+    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Expanding Logo Geometry Into a Design System</h3>
+    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The Socialsuite logo is built from overlapping circles — a visual metaphor for connection and impact. When the team decided against traditional illustrations, I saw an opportunity: expand this circular language into a complete visual system. Concentric circles, overlapping shapes, and circular photo frames became the vocabulary — creating brand cohesion without relying on generic SaaS illustrations.</p>
+  </div>
+  <div class="standard-card">
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 02</p>
+    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Photography Treatment Over Illustration</h3>
+    <p class="text-base text-normalLight dark:text-invertedLight mb-4">Rather than typical tech illustrations, I proposed black-and-white photography with subtle brand color overlays. This achieved three things:</p>
+    <ul class="text-sm text-normalLight dark:text-invertedLight space-y-2 m-0 pl-5 list-disc">
+      <li><span class="font-semibold text-normal dark:text-inverted">Authenticity</span> — real people, real impact</li>
+      <li><span class="font-semibold text-normal dark:text-inverted">Flexibility</span> — works for both nonprofit and enterprise audiences</li>
+      <li><span class="font-semibold text-normal dark:text-inverted">Sophistication</span> — elevates beyond typical SaaS aesthetics</li>
+    </ul>
+  </div>
+  <div class="standard-card">
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 03</p>
+    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Progressive Disclosure in Forms</h3>
+    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The original demo form asked for everything upfront — creating friction. I redesigned it with progressive disclosure: start simple, reveal complexity only when needed. This reduced perceived effort while maintaining lead quality for the sales team.</p>
+  </div>
 </div>
+<div class="not-prose space-y-8 my-12">
+  <img src="/images/socialsuite-circles-concept-1.webp" alt="Socialsuite Logo Geometry Applied" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+  <img src="/images/socialsuite-circles-concept-2.webp" alt="Socialsuite Circular Design System" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+</div>
+<hr>
+<h2 id="the-solution" tabindex="-1">The Solution</h2>
+<p>A website that speaks two languages.</p>
+<p>The final design creates distinct pathways for each audience while maintaining unified brand integrity. Nonprofits see mission-focused messaging and impact stories. Enterprise users see compliance frameworks and ROI data.</p>
+<p>Same brand. Different conversations.</p>
+<div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+  <img src="/images/socialsuite-finished-product-1.webp" alt="Socialsuite Final Design — Desktop" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+  <img src="/images/socialsuite-finished-product-2.webp" alt="Socialsuite Final Design — Pages" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+</div>
+<hr>
+<h2 id="outcome" tabindex="-1">Outcome</h2>
+<p>The redesigned website launched in December 2022.</p>
+<div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
+  <div class="standard-card text-center py-8">
+    <p class="text-4xl sm:text-5xl font-extrabold text-normal dark:text-inverted mb-2">165+</p>
+    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Organizations served worldwide</p>
+  </div>
+  <div class="standard-card text-center py-8">
+    <p class="text-4xl sm:text-5xl font-extrabold text-normal dark:text-inverted mb-2">2×</p>
+    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Conversion rate target</p>
+  </div>
+</div>
+<div class="not-prose standard-card my-10">
+  <blockquote class="m-0 p-0 border-none">
+    <p class="text-lg sm:text-xl italic text-normal dark:text-inverted leading-relaxed mb-4">"It was fantastic to work with Omar - from start to finish he was a delight to work with! Omar went above and beyond to help us deliver our project on time - going above and beyond the original scope of work to help us create an incredible website. His training on the CMS was fantastic, and I recommend Omar to anyone looking for assistance with a Webflow site!"</p>
+    <footer class="flex flex-col">
+      <span class="font-bold text-normal dark:text-inverted">Eleanor Carter</span>
+      <span class="text-sm text-normalLight dark:text-invertedLight">Senior Content Strategist</span>
+    </footer>
+  </blockquote>
+</div>
+<p>The visual system has since been adopted across Socialsuite's product interface, sales materials, and investor presentations.</p>
+<hr>
+<h2 id="reflection" tabindex="-1">Reflection</h2>
+<p>This project reinforced something I believe deeply: the best design solutions often come from constraints.</p>
+<p>When the team decided against traditional illustrations, it pushed me to expand the logo geometry into a full visual system — a solution that ended up being more distinctive and ownable than any illustration library could have been.</p>
+<p>It also taught me the value of designing for clarity over cleverness. Two audiences, two journeys, one cohesive brand. That's the balance enterprise software demands.</p>
 
     </article>
-  </div>
-</section><section class="cta-grid-container relative py-16 px-[5%] overflow-hidden">
-  <!-- Animated Grid Background -->
-  <div class="cta-grid absolute inset-0 grid grid-cols-20 grid-rows-20">
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-      <div class="cta-grid-item"></div>
-    
-  </div>
 
-  <!-- Content -->
-  <div class="relative z-10 container mx-auto max-w-4xl h-full flex items-center">
-    <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center w-full">
-      <!-- Left: Title and Subtext -->
-      <div>
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-normal leading-[1.1] tracking-tight">
-          Let's work together
-        </h2>
-        <p class="text-xl md:text-2xl text-normal opacity-90 leading-tight">
-          I'm currently available for full-time roles and select freelance projects.
-        </p>
-      </div>
-
-      <!-- Right: Button -->
-      <div class="flex justify-start lg:justify-end">
+    
+    
+      <div class="mt-16 flex w-full min-w-0 justify-end border-t border-normal pt-12 dark:border-inverted">
         <a
-          href="mailto:hello@omaralmasry.com?subject=Project%20Inquiry"
-          class="inline-flex items-center px-8 py-4 bg-inverted text-normal font-medium text-lg rounded-full shadow-high no-underline transition duration-300 hover:scale-105"
+          href="/case-studies/dubai-holding/"
+          class="case-study-next-link group inline-flex min-w-0 max-w-full flex-wrap items-center justify-end gap-2 rounded-md px-6 py-3 text-left text-primary dark:text-primaryInverted font-semibold no-underline hover:text-lapis-light dark:hover:text-amber-light transition-colors duration-300"
         >
-          <span class="text-inverted">Send me an email</span>
+          <span class="min-w-0 break-words">Next Case Study: Dubai Holding</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5 ml-2 fill-current text-inverted"
+            class="w-4 h-4 sm:w-6 sm:h-6 fill-current shrink-0 transition-transform duration-200 group-hover:translate-x-1"
             viewBox="0 0 256 256"
+            aria-hidden="true"
           >
-            <path d="M224,56l-96,88L32,56Z" opacity="0.2"></path>
-            <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
+            <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
           </svg>
         </a>
       </div>
-    </div>
+    
   </div>
 </section>
 
@@ -1339,142 +618,942 @@ To ensure visual consistency across all touchpoints, I implemented the Phosphor 
     <!-- Back to Top Button -->
 <button
   id="back-to-top"
-  class="fixed bottom-4 right-4 z-50 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted flex items-center justify-center p-0 hidden"
+  class="fixed bottom-6 right-4 z-50 flex h-8 w-8 items-center justify-center rounded-lg bg-normal p-0 text-normal shadow-low transition-[color,box-shadow] duration-300 hover:text-lapis-light sm:bottom-7 dark:bottom-4 dark:bg-inverted dark:text-inverted dark:shadow-mediumInverted dark:hover:text-amber-light hidden"
   aria-label="Back to top"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="100%"
     fill="currentColor"
     viewBox="0 0 256 256"
-    class="pointer-events-none"
+    class="pointer-events-none h-6 w-6 sm:h-7 sm:w-7"
   >
-    <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm37.66-101.66a8,8,0,0,1-11.32,11.32L136,107.31V168a8,8,0,0,1-16,0V107.31l-18.34,18.35a8,8,0,0,1-11.32-11.32l32-32a8,8,0,0,1,11.32,0Z"></path>
+    <path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"></path>
   </svg>
 </button>
 
-<footer class="pt-12 pb-6 px-[5%]">
-  <div class="max-w-4xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 mb-3">
-      <!-- Logo -->
-      <div class="flex-1 flex justify-center md:justify-start items-center">
-        <a href="/" class="logo flex items-center font-bold text-lg no-underline group">
-          <h3 class="flex items-center m-0">
-            <span class="text-5xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
-              >O</span
-            >
-            <span class="text-5xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
-              >.</span
-            >
-          </h3>
-        </a>
-      </div>
-
-      <!-- Built with text -->
-      <div class="flex-1 flex flex-col gap-1 items-center justify-center">
-        <p class="text-xs text-center mb-0">
-          Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a> and
-          <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">TailwindCSS</a>. Hosted on
-          <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
-        </p>
-        <p class="text-xs text-center mb-0">
-          Icons from <a href="https://phosphoricons.com/" target="_blank" rel="noopener noreferrer">Phosphor Icons</a>.
-        </p>
-      </div>
-
-      <!-- Social Icons -->
-      <div class="flex-1 flex justify-center md:justify-end items-center">
-        <nav class="flex space-x-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
-          <!-- Medium -->
-          <a href="https://github.com/omar-almasry11" target="_blank" rel="noopener noreferrer" class="hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 fill-current hover:text-savoyBlue dark:hover:text-primaryInverted"
-              role="img"
-              aria-label="GitHub"
-              viewBox="0 0 256 256"
-            >
-              <path d="M128,128A56,56,0,1,1,72,72,56,56,0,0,1,128,128Zm56-56c-13.25,0-24,25.07-24,56s10.75,56,24,56,24-25.07,24-56S197.25,72,184,72Z" opacity="0.2"></path><path d="M72,64a64,64,0,1,0,64,64A64.07,64.07,0,0,0,72,64Zm0,112a48,48,0,1,1,48-48A48.05,48.05,0,0,1,72,176ZM184,64c-5.68,0-16.4,2.76-24.32,21.25C154.73,96.8,152,112,152,128s2.73,31.2,7.68,42.75C167.6,189.24,178.32,192,184,192s16.4-2.76,24.32-21.25C213.27,159.2,216,144,216,128s-2.73-31.2-7.68-42.75C200.4,66.76,189.68,64,184,64Zm0,112c-5.64,0-16-18.22-16-48s10.36-48,16-48,16,18.22,16,48S189.64,176,184,176ZM248,72V184a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Z"></path>
-            </svg>
-          </a>
-          <!-- Github -->
-          <a
-            href="https://github.com/omar-almasry11"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer-social-link"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 fill-current"
-              role="img"
-              aria-label="GitHub"
-              viewBox="0 0 256 256"
-            >
-              <path d="M208,104v8a48,48,0,0,1-48,48H136a32,32,0,0,1,32,32v40H104V192a32,32,0,0,1,32-32H112a48,48,0,0,1-48-48v-8a49.28,49.28,0,0,1,8.51-27.3A51.92,51.92,0,0,1,76,32a52,52,0,0,1,43.83,24h32.34A52,52,0,0,1,196,32a51.92,51.92,0,0,1,3.49,44.7A49.28,49.28,0,0,1,208,104Z" opacity="0.2"></path><path d="M208.3,75.68A59.74,59.74,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58,58,0,0,0,208.3,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.76,41.76,0,0,1,200,104Z"></path>
-            </svg>
-          </a>
-
-          <!-- Codepen -->
-          <a
-            href="https://codepen.io/omaralmasry579"
-            target="_blank"
-            class="focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300 hide visibility: hidden"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 fill-current"
-              role="img"
-              aria-label="Codepen"
-              viewBox="0 0 256 256"
-            >
-              <path d="M232,160,128,216,24,160l104-56Z" opacity="0.2"></path>
-              <path d="M235.79,89l-104-56a8,8,0,0,0-7.58,0l-104,56A8,8,0,0,0,16,96v64a8,8,0,0,0,4.21,7.05l104,56a8,8,0,0,0,7.58,0l104-56A8,8,0,0,0,240,160V96A8,8,0,0,0,235.79,89ZM224,146.61,189.45,128,224,109.39Zm-51.43-27.7L136,99.22V53.39L215.13,96Zm-44.57,24L100.3,128,128,113.09,155.7,128Zm-8-89.52V99.22L83.43,118.91,40.87,96Zm-88,56L66.55,128,32,146.61Zm51.43,27.7L120,156.78v45.83L40.87,160ZM136,202.61V156.78l36.57-19.69L215.13,160Z"></path>
-            </svg>
-          </a>
-
-          <!-- LinkedIn -->
-          <a
-            href="https://www.linkedin.com/in/omar-al-masry-608a1581/"
-            target="_blank"
-            class="footer-social-link focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 fill-current"
-              role="img"
-              aria-label="LinkedIn"
-              viewBox="0 0 256 256"
-            >
-              <path d="M224,40V216a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8H216A8,8,0,0,1,224,40Z" opacity="0.2"></path><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
-            </svg>
-          </a>
-
-          <!-- Email -->
-          <a
-            href="mailto:hello@omaralmasry.com"
-            class="footer-social-link focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 fill-current"
-              role="img"
-              aria-label="Email"
-              viewBox="0 0 256 256"
-            >
-              <path d="M224,56l-96,88L32,56Z" opacity="0.2"></path><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
-            </svg>
-          </a>
-        </nav>
-      </div>
+<footer>
+  <!-- CTA Grid Section -->
+  <div class="cta-grid-container">
+    <!-- Animated Grid Background -->
+    <div class="cta-grid absolute inset-0 grid grid-cols-20 grid-rows-20">
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
     </div>
 
-    <!-- Copyright - Now below the main wrapper -->
-    <div class="w-full flex items-center justify-center">
-      <p class="text-xs text-center text-normalLight dark:text-invertedLight mb-0">
-        © 2026 Omar Almasry. All rights reserved.
-      </p>
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto max-w-6xl">
+      <div class="flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+        <!-- Left: Title and Subtext -->
+        <div class="min-w-0 lg:max-w-[58%]">
+          <h2 class="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.1] tracking-tight">
+            Let's work together
+          </h2>
+          <p class="max-w-[32ch] text-lg text-white leading-snug">
+            I'm currently available for full-time roles and select freelance projects.
+          </p>
+        </div>
+
+        <!-- Right: Button -->
+        <div class="flex w-full shrink-0 justify-start lg:w-auto lg:justify-end">
+          <a
+            href="mailto:hello@omaralmasry.com?subject=Project%20Inquiry"
+            class="footer-cta-cursor-link group inline-flex min-w-0 max-w-full flex-wrap items-center justify-center gap-2 rounded-md border-2 border-solid px-6 py-3 text-left font-semibold no-underline transition-[border-color] duration-500 ease-out"
+          >
+            <span class="min-w-0 break-words text-inherit">Send me an email</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+              class="h-4 w-4 shrink-0 fill-current transition-transform duration-200 group-hover:translate-x-1 sm:h-6 sm:w-6"
+              viewBox="0 0 256 256"
+            >
+              <path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bar -->
+  <div class="border-t border-normal bg-normal pt-8 pb-16 px-[5%] text-normal dark:border-inverted dark:bg-oxford dark:pb-12 dark:text-inverted">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col items-center gap-6 md:flex-row md:items-center md:gap-4 lg:gap-8">
+        <!-- Logo -->
+        <div class="flex w-full shrink-0 justify-center md:flex-1 md:justify-start">
+          <a href="/" class="logo logo-nav flex shrink-0 items-center font-bold no-underline group">
+            <span class="logo-morph text-xl sm:text-2xl text-normalLight transition-colors duration-300 group-hover:text-lapis-light dark:text-invertedLight dark:group-hover:text-amber-light"
+              ><span class="logo-letter-o">O</span
+              ><span class="logo-rest-clip"><span class="logo-rest">mar Almasry</span></span
+              ><span class="logo-dot text-primary dark:text-primaryInverted">.</span></span
+            >
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="flex w-full min-w-0 justify-center md:flex-1 md:px-2">
+          <p class="mb-0 text-center text-xs text-normalLight opacity-90 dark:text-inverted">
+            © 2026 Omar Almasry. All rights reserved.
+          </p>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex w-full shrink-0 justify-center md:flex-1 md:justify-end">
+          <nav class="flex space-x-4 text-primary focus:outline-none focus:ring-2 focus:ring-teal-500 dark:text-inverted">
+            <!-- GitHub (hidden for now) -->
+            <a
+              href="https://github.com/omar-almasry11"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social-link hidden"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 fill-current"
+                role="img"
+                aria-label="GitHub"
+                viewBox="0 0 256 256"
+              >
+                <path d="M208,104v8a48,48,0,0,1-48,48H136a32,32,0,0,1,32,32v40H104V192a32,32,0,0,1,32-32H112a48,48,0,0,1-48-48v-8a49.28,49.28,0,0,1,8.51-27.3A51.92,51.92,0,0,1,76,32a52,52,0,0,1,43.83,24h32.34A52,52,0,0,1,196,32a51.92,51.92,0,0,1,3.49,44.7A49.28,49.28,0,0,1,208,104Z" opacity="0.2"></path><path d="M208.3,75.68A59.74,59.74,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58,58,0,0,0,208.3,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.76,41.76,0,0,1,200,104Z"></path>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/omar-al-masry-608a1581/"
+              target="_blank"
+              class="footer-social-link focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 fill-current"
+                role="img"
+                aria-label="LinkedIn"
+                viewBox="0 0 256 256"
+              >
+                <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+              </svg>
+            </a>
+
+            <!-- Email -->
+            <a
+              href="mailto:hello@omaralmasry.com"
+              class="footer-social-link focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 fill-current"
+                role="img"
+                aria-label="Email"
+                viewBox="0 0 256 256"
+              >
+                <path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z"></path>
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
@@ -1489,9 +1568,14 @@ To ensure visual consistency across all touchpoints, I implemented the Phosphor 
 
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="/scripts/main.js" defer></script>
     <script src="/scripts/cursor.js" defer></script>
     <script src="/scripts/colorful-heading.js" defer></script>
+    <script src="/scripts/color-block-fill.js" defer></script>
+    <script src="/scripts/about-card-pixel-fill.js" defer></script>
+    <script src="/scripts/case-study-card-pixel-hover.js" defer></script>
+    <script src="/scripts/hero-cell-pixel-scroll.js" defer></script>
     <script src="/scripts/page-transition.js" defer></script>
     <script src="/scripts/cta-grid-animation.js" defer></script>
   </body>

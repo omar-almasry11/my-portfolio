@@ -1,7 +1,7 @@
 <!-- Project Grid Component -->
 <section class="py-12 px-[5%] {{ customClasses | default: '' }}">
   <div class="container mx-auto">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       {% if title %}
         <h2 class="text-3xl md:text-4xl font-bold mb-8 text-left">{{ title }}</h2>
       {% endif %}
@@ -31,7 +31,7 @@
                     href="{{ project.url }}"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-link stretched-link inline-flex items-center gap-2 text-primary dark:text-primaryInverted hover:text-primaryLight dark:hover:text-primaryLight transition-colors duration-200 no-underline"
+                    class="text-link stretched-link inline-flex items-center gap-2 text-primary dark:text-primaryInverted hover:text-lapis-light dark:hover:text-amber-light transition-colors duration-200 no-underline"
                   >
                     <span>View Project</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 256 256">

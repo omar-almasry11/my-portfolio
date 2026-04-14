@@ -11,6 +11,9 @@ header-img-width: 1305
 header-img-height: 2299
 header-overview: "As a Webflow Enterprise client, Dubai Holding needed a trusted partner to migrate and consolidate their digital presence. I worked with multiple teams across their organization to migrate websites from Sitefinity and WordPress to Webflow, design scalable component libraries, implement bilingual experiences, and ensure accessibility compliance — all while preserving their hard-earned SEO rankings."
 order: 2
+categories:
+  - Web Design / Dev
+  - Accessibility
 ---
 
 ## My Role

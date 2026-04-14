@@ -1,70 +1,141 @@
 ---
 layout: /layouts/layout.liquid
 title: About | Digital Designer
-description: Learn about Omar Almasry, a digital designer from Egypt now based in Toronto. 7+ years building websites for clients across 11 countries, specializing in Webflow, accessibility, and performance.
+description: Learn about Omar Almasry, a digital designer from Egypt now based in Toronto. Working with agencies and in-house teams to build accessible, high-performance digital experiences.
 ---
 
-{%- render 'partials/page-header',
-  headerTitle: 'About Me',
-  headerSubtitle: 'A little bit about who I am, what I do, and what I love.',
-  mainTitleClass: 'text-[4rem] sm:text-9xl font-extrabold leading-[0.8] tracking-tighter',
-  mainTitleId: 'colorfulHeading'
--%}
+<section class="pt-0 pb-6">
+  <div class="hero-grid hero-grid--about">
+    <div class="hero-cell hero-cell--amber-tl" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--soft-c3r1" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--light-c3r2" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--grey-bl" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--light-c3r2" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--coral-r" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--fill-c4r5" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--fill-c5r5" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--fill-c6r5" aria-hidden="true"></div>
 
-{% capture whoIsThisGuyContent %}
-<div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-4 lg:gap-8 items-start">
-  <div class="flex flex-col">
-    <p class="text-xl sm:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-4">The question I've always been trying to answer.</p>
-    <p>I've been fascinated by technology and design since I was a kid. I wanted to be an "inventor" — whatever I thought that meant at the time. As a 90s kid, I got to experience the world before and after the internet, and actually get my hands dirty before everything happened on a screen.</p>
-    <p>For a while I thought architecture was the answer to that urge to make things. Five years of studying how structure, aesthetics, and function come together. Eventually I realised you don't design and build an architectural masterpiece on your own — too many people, too much money, too many years.</p>
-    <p>On the web, it's different. You can "invent" something in weeks. Design it, build it, ship it, watch people use it. That's the process I was looking for all along. After building my first website, I knew this was what I was meant to be doing.</p>
-    <p>I was born and raised in Egypt, immigrated to Canada, and have successfully switched careers more than a couple of times. I'm a technology optimist and design obsessive who happily swallowed the AI pill — now I'm just seeing how deep the rabbit hole goes.</p>
+    <div class="hero-grid__greeting">
+      <h1 id="aboutTitle" class="home-heading hero-greeting-line w-full text-left text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl mb-0">
+        About
+      </h1>
+    </div>
+
+    <div class="hero-grid__intro">
+      <p class="hero-intro text-left text-base sm:text-xl text-normalLight font-normal dark:text-invertedLight max-w-[40rem] leading-snug mb-0">
+        Who I am, what I do, and how I work with teams around the world.
+      </p>
+    </div>
+
+    <!-- 19 fillers: no portrait (home has 15 +4 cells for the image). Bare tracks show ::before as grey. -->
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
   </div>
-  <div class="sticky top-24">
-    {% assign aboutImages = "[
-      { \"src\": \"/images/red-and-blue-pills-pixel-art.webp\", \"alt\": \"Red and Blue Pills\", \"color\": \"#FE3300\" },
-      { \"src\": \"/images/earth-pixel-art.webp\", \"alt\": \"Earth Globe\", \"color\": \"#40BFAE\" },
-      { \"src\": \"/images/mandalorian-pixel-art.webp\", \"alt\": \"Mandalorian\", \"color\": \"#EDF060\" },
-      { \"src\": \"/images/canada-goose-pixel-art.webp\", \"alt\": \"Canada Goose\", \"color\": \"#FB8304\" }
-    ]" | from_json %}
-    {% render 'partials/pixel-image-cycle', id: 'about-page', images: aboutImages %}
-  </div>
+</section>
+
+{% capture aboutContent %}
+<div class="about-prose-wrap mb-16 w-full max-w-[56.25rem]">
+  <section class="about-prose-section" aria-labelledby="about-who-heading">
+    <h2 id="about-who-heading" class="about-prose-label">Who I am</h2>
+    <div class="about-prose-body">
+      <p>My name is Omar Almasry.</p>
+      <p>But you can call me Moe.</p>
+      <p>After some reflecting and research, I came to the conclusion that my professional title is "Digital Designer". But I'm more than that really.</p>
+      <p>You see, while I was in architecture school, I kind of fell in love with branding, and marketing in general.</p>
+      <p>Don't get me wrong, architecture is an incredible field of study. You spend years learning about how aesthetics, function, and structure come together. Interesting stuff, and the knowledge is certainly transferrable. I would say it was time well spent.</p>
+      <p>But branding and technology? That was my true calling. It was the mix of two things that I really found interesting. I would just go to the library and borrow all the branding and graphic design books I could find. I even tried to go for a minor in marketing at that point but it wasn't really an option. At that point, I already knew what I wanted to do.</p>
+      <p>As a 90s kid, Pokemon cards and Tamiya race car kits were - and kinda still are - my thing. I really appreciated good art and putting things together. Digital design was the way it all clicked. You get to design things and use technology to bring them to life. And I'm the kind of person who enjoys the simple things, which reflects in my work. Less is definitely more.</p>
+      <p>I was born and raised in Egypt, moved to Canada, and somewhere along the way ended up working with clients across 11 countries on 5 continents. I've helped global enterprise brands, fast-growing SaaS companies, tech bootcamps, dental clinics, and everything in between.</p>
+    </div>
+  </section>
+
+  <section class="about-prose-section" aria-labelledby="about-what-heading">
+    <h2 id="about-what-heading" class="about-prose-label">What I do</h2>
+    <div class="about-prose-body">
+      <p>The work has been wildly varied, but the thread running through all of it is the same - figure out what actually needs to be communicated, then build the clearest, most considered way to say it.</p>
+      <p>These days I'm based in Toronto. When I'm not designing, I'm probably walking by the lake with a coffee, playing with my daughter, or falling deeper into a book.</p>
+      <p>For the past nine years I've been self-employed, which means I've never had the luxury of just doing "my part." I've written the briefs, managed the client relationships, made the calls when things went sideways, and shipped the final product. I've worked with clients directly, and as a contractor for multiple agencies so, I totally understand the client management and business side of things.</p>
+    </div>
+  </section>
+
+  <section class="about-prose-section" aria-labelledby="about-how-heading">
+    <h2 id="about-how-heading" class="about-prose-label">How I work</h2>
+    <div class="about-prose-body">
+      <p>I think in systems. Whether it's a brand identity, a website, or a design component, I'm always asking how the pieces fit together and how they'll hold up over time. Good design isn't just how something looks on launch day - it's how it scales, how it adapts, and whether the team inheriting it can actually work with it.</p>
+      <p>I work closely with the people I take on - I ask a lot of questions upfront, I explain my thinking, and I push back when I think there's a better direction. Not because I'm difficult, but because that's how you end up with work worth being proud of.</p>
+    </div>
+  </section>
 </div>
-<p>I'm the kind of person who enjoys walks in nature with a coffee in hand, maybe a book by the lake if the weather allows. I love writing (I even did it professionally for a few years), building Lego sets, and pretending my daughter is the one who's obsessed with them. And of course I definitely don't collect vintage Pokémon cards. What kind of adult would do that?</p>
-<p>Recently I've developed a serious passion for web accessibility. It just makes sense to build a web that works for everyone — not just everyone like me. I'm currently working towards my CPACC certification and contributing accessibility fixes to open-source projects. I've even had a few PRs merged into projects like Angular — small contributions, but educational and addictive.</p>
-<p class='mb-12'>These days, I'm most interested in work where accessibility isn't an afterthought — it's just how things are built.</p>
 
 <div class="flex flex-col gap-4 sm:grid grid-cols-6 gap-4">
+
+  <!-- CPACC Certified Card -->
+  <div class="standard-card about-pixel-card col-span-4">
+    <h3 class="text-lg sm:text-xl font-bold">CPACC Certified</h3>
+    <p class="text-sm sm:text-base font-light text-normalLight dark:text-invertedLight mb-4">Certified Professional in Accessibility Core Competencies (IAAP) — committed to designing inclusive digital experiences that work for everyone.</p>
+    <div class="about-credentials-stack flex w-full flex-col gap-8 pt-2">
+      <div class="about-credentials-item flex w-full max-w-40 sm:max-w-full justify-start px-0 sm:px-0">
+        <div data-iframe-width="150" data-iframe-height="200" data-share-badge-id="e2d4a2de-f74b-4c74-b4ac-2fe682fab1ef" data-share-badge-host="https://www.credly.com"></div>
+        <script type="text/javascript" async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Webflow Certified Partner Card -->
+  <div class="standard-card about-pixel-card col-span-2">
+    <h3 class="text-lg sm:text-xl font-bold">Webflow Certified Partner</h3>
+    <p class="text-sm sm:text-base font-light mb-4 text-normalLight dark:text-invertedLight">Recognized by Webflow as a trusted professional for building high-quality websites.</p>
+    <div class="about-credentials-stack flex w-full flex-col items-start gap-6 pt-2">
+      <a href="https://webflow.com/@omar-almasrys-workspace" class="about-credentials-item block w-full max-w-[8.5rem] sm:max-w-36 px-0 sm:px-0" target="_blank" rel="noopener noreferrer">
+        <picture>
+          <source srcset="/images/webflow-certified-partner.webp" type="image/webp">
+          <img src="/images/webflow-certified-partner.png" width="480" height="97" loading="lazy" class="w-full h-auto" aria-label="Webflow Certified Partner Label">
+        </picture>
+      </a>
+    </div>
+  </div>
+
+  <!-- Global Experience Card -->
+  <div class="standard-card about-pixel-card col-span-6 justify-center">
+    <h3 class="text-lg sm:text-xl font-bold">Global Experience</h3>
+    <p class="text-sm sm:text-base font-light mb-4 text-normalLight dark:text-invertedLight max-w-lg">I've had the pleasure of working with clients from 11 different countries on 5 continents.</p>
+    <div class="globe-embed w-full aspect-square max-w-[350px] sm:max-w-[450px] mx-auto"></div>
+  </div>
+
   <!-- Location Card -->
-  <div class="standard-card col-span-2 justify-center">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
-      role="img"
-      aria-label="Location Pin"
-      viewBox="0 0 256 256"
-    >
-      <path d="M128,24a80,80,0,0,0-80,80c0,72,80,128,80,128s80-56,80-128A80,80,0,0,0,128,24Zm0,112a32,32,0,1,1,32-32A32,32,0,0,1,128,136Z" opacity="0.2"></path>
-      <path d="M200,224H150.54A266.56,266.56,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25a88,88,0,0,0-176,0c0,31.4,14.51,64.68,42,96.25A266.56,266.56,0,0,0,105.46,224H56a8,8,0,0,0,0,16H200a8,8,0,0,0,0-16ZM56,104a72,72,0,0,1,144,0c0,57.23-55.47,105-72,118C111.47,209,56,161.23,56,104Zm112,0a40,40,0,1,0-40,40A40,40,0,0,0,168,104Zm-64,0a24,24,0,1,1,24,24A24,24,0,0,1,104,104Z"></path>
+  <div class="standard-card about-pixel-card col-span-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current mb-4 text-primary dark:text-primaryInverted shrink-0" viewBox="0 0 256 256" aria-hidden="true">
+      <path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"></path>
     </svg>
-    <h3 class="text-lg sm:text-2xl font-bold">Current Location</h3>
-    <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">Toronto, ON, Canada</p>
+    <h3 class="text-lg sm:text-xl font-bold mb-2">Current Location</h3>
+    <p class="text-sm sm:text-base font-light text-normalLight dark:text-invertedLight">Toronto, ON, Canada</p>
   </div>
 
   <!-- Time Card -->
-  <div class="standard-card col-span-2 justify-center">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
-      role="img"
-      aria-label="Clock Icon"
-      viewBox="0 0 256 256"
-    >
-      <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path>
+  <div class="standard-card about-pixel-card col-span-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current mb-4 text-primary dark:text-primaryInverted shrink-0" viewBox="0 0 256 256" aria-hidden="true">
       <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
     </svg>
-    <h3 class="text-lg sm:text-2xl font-bold">Local Time</h3>
-    <div class="local-time font-light flex items-center text-lg sm:text-2xl text-normalLight dark:text-invertedLight">
+    <h3 class="text-lg sm:text-xl font-bold mb-2">Local Time</h3>
+    <div class="local-time font-light flex items-center text-sm sm:text-base text-normalLight dark:text-invertedLight">
       <span id="hours" class="time-part w-[2ch] text-center">14</span>
       <span class="colon mx-0.5">:</span>
       <span id="minutes" class="time-part w-[2ch] text-center">34</span>
@@ -75,76 +146,33 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
   </div>
 
   <!-- Languages Card -->
-  <div class="standard-card col-span-2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
-        role="img"
-        aria-label="Languages Icon"
-        viewBox="0 0 256 256"
-      >
-      <path d="M224,184H144l40-80ZM96,127.56h0A95.78,95.78,0,0,0,128,56H64A95.78,95.78,0,0,0,96,127.56Z" opacity="0.2"></path>
-      <path d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.7,87.7,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z"></path>        
-  </svg>
-      <h3 class="text-lg sm:text-2xl font-bold mb-2">Languages Spoken</h3>
-      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight mb-1">English (EN)</p>
-      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight mb-1">Arabic (AR)</p>
-      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">French (FR)</p>
-   </div>
+  <div class="standard-card about-pixel-card col-span-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current mb-4 text-primary dark:text-primaryInverted shrink-0" viewBox="0 0 256 256" aria-hidden="true">
+      <path d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.76,87.76,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z"></path>
+    </svg>
+    <h3 class="text-lg sm:text-xl font-bold mb-2">Languages Spoken</h3>
+    <p class="text-sm sm:text-base font-light text-normalLight dark:text-invertedLight mb-1">English (EN)</p>
+    <p class="text-sm sm:text-base font-light text-normalLight dark:text-invertedLight mb-1">Arabic (AR)</p>
+    <p class="text-sm sm:text-base font-light text-normalLight dark:text-invertedLight">French (FR)</p>
+  </div>
 
-    <!-- Webflow Partner Card -->
-  <div class="standard-card col-span-2">
-      <h3 class="text-lg sm:text-2xl font-bold">Webflow Certified Partner</h3>
-      <p class="text-lg sm:text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">Recognized by Webflow as a trusted professional for building high-quality websites.</p>
-      <div class="about-credentials-stack flex w-full flex-col gap-8 pt-2">
-        <div class="about-credentials-item flex w-full max-w-40 sm:max-w-full mx-auto justify-center px-2 sm:px-0">
-          <div data-iframe-width="150" data-iframe-height="200" data-share-badge-id="e2d4a2de-f74b-4c74-b4ac-2fe682fab1ef" data-share-badge-host="https://www.credly.com"></div>
-          <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-        </div>
-        <a href="https://webflow.com/@omar-almasrys-workspace" class="about-credentials-item block w-full max-w-40 sm:max-w-full mx-auto px-2 sm:px-0" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset="/images/webflow-certified-partner.webp" type="image/webp">
-            <img src="/images/webflow-certified-partner.png" width="480" height="97" loading="lazy" class="w-full h-auto" aria-label="Webflow Certified Partner Label">
-          </picture>
-        </a>
-        <a href="https://www.credential.net/a9f3dd6a-ca55-42b2-9b1d-c5f17b6e5a11#acc.41dbHFiS" class="about-credentials-item block w-full max-w-40 sm:max-w-full mx-auto px-2 sm:px-0" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset="/images/webflow-practitioner-certificate.webp" type="image/webp">
-            <img src="/images/webflow-practitioner-certificate.png" width="400" height="400" loading="lazy" class="w-full h-auto" aria-label="Webflow Practitioner Certificate">
-          </picture>
-        </a>
-      </div>
-    </div>
-
-    <!-- Clients Globe Card -->
-  <div class="standard-card col-span-4 justify-center">      
-      <h3 class="text-lg sm:text-2xl font-bold">Global Experience</h3>
-      <p class="text-lg sm:text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">I've had the pleasure of working with clients from 11 different countries on 5 continents.</p>
-      <div class="globe-embed w-full aspect-square max-w-[350px] sm:max-w-[450px] mx-auto"></div>
-   </div>
 </div>
 {% endcapture %}
 
-{%- render 'partials/section-standard', 
-  header: 'Who is this guy?',
-  content: whoIsThisGuyContent,
-  customClasses: 'pt-8'
+{%- render 'partials/section-standard',
+  content: aboutContent,
+  customClasses: 'pt-12 md:pt-20'
 -%}
-
 
 
 <script>
   window.addEventListener('load', () => {
-      // =============================
-      // 🕒 Time Display Optimization
-      // =============================
       function updateTime() {
           const now = new Date();
           const options = { timeZone: 'America/Toronto', hour12: false };
           const timeString = now.toLocaleTimeString('en-US', options);
           const [hours, minutes, seconds] = timeString.split(':');
 
-          // Get timezone abbreviation (EST or EDT)
           const timeZoneString = now.toLocaleDateString('en-US', {
               timeZone: 'America/Toronto',
               timeZoneName: 'short'
@@ -158,11 +186,8 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
       }
   
       setInterval(updateTime, 1000);
-      updateTime(); // Run immediately
+      updateTime();
   
-      // =============================
-      // 🌍 Lazy Load the Globe (Only If Needed)
-      // =============================
       const globeContainer = document.querySelector('.globe-embed');
       if (globeContainer) {
           const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -212,11 +237,10 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
               script.src = 'https://cdn.jsdelivr.net/npm/three@0.138.1/build/three.min.js';
               script.defer = true;
               script.onload = () => {
-                  // Load OrbitControls AFTER Three.js is available
                   const orbitScript = document.createElement('script');
                   orbitScript.src = 'https://cdn.jsdelivr.net/npm/three@0.138.1/examples/js/controls/OrbitControls.js';
                   orbitScript.defer = true;
-                  orbitScript.onload = initGlobe; // Initialize globe after OrbitControls is loaded
+                  orbitScript.onload = initGlobe;
                   document.body.appendChild(orbitScript);
               };
               document.body.appendChild(script);
@@ -233,9 +257,9 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
               renderer.setPixelRatio(isSmallScreen ? 1 : Math.min(window.devicePixelRatio, 2));
               globeContainer.appendChild(renderer.domElement);
 
-              const texture = new THREE.TextureLoader().load('/images/png/globe-texture-pixel-art.png');
-              texture.minFilter = THREE.NearestFilter;
-              texture.magFilter = THREE.NearestFilter;
+              const texture = new THREE.TextureLoader().load('/images/globe-texture.webp');
+              texture.minFilter = THREE.LinearFilter;
+              texture.magFilter = THREE.LinearFilter;
 
               globe = new THREE.Mesh(
                   new THREE.SphereGeometry(5, 64, 64),
@@ -268,7 +292,6 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
                   autoRotateTimeout = setTimeout(() => isUserInteracting = false, 1000);
               });
 
-              // Handle Window Resize
               function onWindowResize() {
                   if (!camera || !renderer) return;
                   const width = globeContainer.clientWidth;
@@ -313,4 +336,4 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
           prefersReducedMotion.addEventListener('change', handleVisibilityChange);
       }
   });
-  </script>
+</script>

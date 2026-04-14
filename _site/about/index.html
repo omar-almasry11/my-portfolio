@@ -6,20 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="Learn about Omar Almasry, a digital designer from Egypt now based in Toronto. 7+ years building websites for clients across 11 countries, specializing in Webflow, accessibility, and performance."
+      content="Learn about Omar Almasry, a digital designer from Egypt now based in Toronto. Working with agencies and in-house teams to build accessible, high-performance digital experiences."
     >
     <meta name="author" content="Omar Almasry">
     <title>About | Digital Designer</title>
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link
-      rel="preload"
-      href="/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    >
+    <link rel="preload" href="/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/DMSans-VariableFont.ttf" as="font" type="font/ttf" crossorigin>
 
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
     <link
@@ -40,7 +35,7 @@
     <meta property="og:title" content="About | Digital Designer">
     <meta
       property="og:description"
-      content="Learn about Omar Almasry, a digital designer from Egypt now based in Toronto. 7+ years building websites for clients across 11 countries, specializing in Webflow, accessibility, and performance."
+      content="Learn about Omar Almasry, a digital designer from Egypt now based in Toronto. Working with agencies and in-house teams to build accessible, high-performance digital experiences."
     >
     <meta property="og:image" content="/images/png/og.png">
     <meta property="og:url" content="https://omaralmasry.com/about/">
@@ -52,7 +47,7 @@
     <meta name="twitter:title" content="About | Digital Designer">
     <meta
       name="twitter:description"
-      content="Learn about Omar Almasry, a digital designer from Egypt now based in Toronto. 7+ years building websites for clients across 11 countries, specializing in Webflow, accessibility, and performance."
+      content="Learn about Omar Almasry, a digital designer from Egypt now based in Toronto. Working with agencies and in-house teams to build accessible, high-performance digital experiences."
     >
     <meta name="twitter:image" content="/images/png/og.png">
 
@@ -73,11 +68,11 @@
     <div class="load_grid"></div>
     <script>
       (function () {
-        const colors = ['#FB8304', '#40BFAE', '#FE3300', '#3d60e2', '#EDF060'];
+        const colors = ['#C48A1E', '#8A9BB5', '#4A5C8A', '#2A4494'];
         const loadGrid = document.querySelector('.load_grid');
 
-        // Calculate grid size to create perfect squares
-        const squareSize = Math.min(window.innerWidth, window.innerHeight) / 20; // Adjust denominator for desired square size
+        // Square size: base minDim/10 (2× vs original /20), then ×1.5 for 50% larger cells
+        const squareSize = (Math.min(window.innerWidth, window.innerHeight) / 10) * 1.5;
         const cols = Math.ceil(window.innerWidth / squareSize);
         const rows = Math.ceil(window.innerHeight / squareSize);
         const totalItems = cols * rows;
@@ -85,6 +80,7 @@
         // Update CSS grid template
         loadGrid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
         loadGrid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+        loadGrid.dataset.gridCols = String(cols);
 
         // Generate grid items
         for (let i = 0; i < totalItems; i++) {
@@ -151,29 +147,22 @@
         generateColors();
       })();
     </script>
-    <!-- Pixelated Progress Bar (fixed, always visible) -->
-    <div id="progressBarContainer" class="fixed top-0 left-0 h-2 w-full bg-transparent overflow-hidden z-[60]">
-      <div id="progressBar" class="pixel-progress-bar h-full w-0"></div>
-    </div>
     <nav id="mainNav" class="px-[5%] py-4 sticky top-0 z-50 transition-transform duration-300">
-  <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
+  <div class="max-w-6xl mx-auto flex w-full items-center justify-between gap-3">
     <!-- Logo -->
-    <a href="/" class="logo flex shrink-0 items-center font-bold text-lg no-underline group">
-      <h3 class="flex items-center m-0">
-        <span class="text-5xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
-          >O</span
-        >
-        <span class="text-5xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
-          >.</span
-        >
-      </h3>
+    <a href="/" class="logo logo-nav flex shrink-0 items-center font-bold no-underline group" aria-label="Omar Almasry, home">
+      <span class="logo-morph text-xl sm:text-2xl text-normalLight dark:text-invertedLight group-hover:text-lapis-light dark:group-hover:text-amber-light transition-colors duration-300"
+        ><span class="logo-letter-o">O</span
+        ><span class="logo-rest-clip"><span class="logo-rest">mar Almasry</span></span
+        ><span class="logo-dot text-primary dark:text-primaryInverted">.</span></span
+      >
     </a>
 
-    <!-- About, Contact, theme toggle: single row on mobile (no stacked toggle) -->
+    <!-- About, Contact, theme toggle: single row on mobile -->
     <div class="flex min-w-0 items-center justify-end gap-2.5 sm:gap-7 md:gap-8">
       <a
         href="/about/"
-        class="menu_link shrink-0 text-normalLight text-base sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+        class="menu_link shrink-0 min-h-[44px] flex items-center text-normalLight text-base sm:text-lg font-medium hover:text-inverted no-underline dark:text-invertedLight dark:hover:text-inverted"
         
           aria-current="page"
         
@@ -185,354 +174,188 @@
       </a>
 
       <div class="flex shrink-0 items-center gap-4 sm:gap-7 md:gap-8">
-      
-  <a
-    href="mailto:hello@omaralmasry.com"
-    class="button flex items-center bg-primary text-inverted font-medium rounded-full shadow-low no-underline transition duration-300 dark:bg-primaryInverted dark:text-normal dark:shadow-lowInverted relative z-0 overflow-hidden group
-      
-        px-4 py-2 text-base sm:px-6 sm:py-3 sm:text-lg
-      "
-    aria-label="Contact"
-  >
-    <span class="relative z-10 flex items-center">
-      <span>Contact</span>
-      <span class="ml-1.5 sm:ml-2">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="22" height="22" fill="currentColor" viewBox="0 0 256 256"><path d="M184,213.27A80,80,0,0,1,74.7,184l-40-69.32a20,20,0,0,1,34.64-20L55.08,70A20,20,0,0,1,89.73,50l6.92,12h0a20,20,0,0,1,34.64-20l30,52A20,20,0,0,1,196,74l17.31,30A80,80,0,0,1,184,213.27Z" opacity="0.2"></path><path d="M220.17,100,202.86,70a28,28,0,0,0-38.24-10.25,27.69,27.69,0,0,0-9,8.34L138.2,38a28,28,0,0,0-48.48,0A28,28,0,0,0,48.15,74l1.59,2.76A27.67,27.67,0,0,0,38,80.41a28,28,0,0,0-10.24,38.25l40,69.32a87.47,87.47,0,0,0,53.43,41,88.56,88.56,0,0,0,22.92,3,88,88,0,0,0,76.06-132Zm-6.66,62.64A72,72,0,0,1,81.62,180l-40-69.32a12,12,0,0,1,20.78-12L81.63,132a8,8,0,1,0,13.85-8L62,66A12,12,0,1,1,82.78,54L114,108a8,8,0,1,0,13.85-8L103.57,58h0a12,12,0,1,1,20.78-12l33.42,57.9a48,48,0,0,0-5.54,60.6,8,8,0,0,0,13.24-9A32,32,0,0,1,172.78,112a8,8,0,0,0,2.13-10.4L168.23,90A12,12,0,1,1,189,78l17.31,30A71.56,71.56,0,0,1,213.51,162.62ZM184.25,31.71A8,8,0,0,1,194,26a59.62,59.62,0,0,1,36.53,28l.33.57a8,8,0,1,1-13.85,8l-.33-.57a43.67,43.67,0,0,0-26.8-20.5A8,8,0,0,1,184.25,31.71ZM80.89,237a8,8,0,0,1-11.23,1.33A119.56,119.56,0,0,1,40.06,204a8,8,0,0,1,13.86-8,103.67,103.67,0,0,0,25.64,29.72A8,8,0,0,1,80.89,237Z"></path></svg>
-      </span>
-    </span>
-  </a>
-
-
-
-      <button
-        id="themeToggle"
-        type="button"
-        class="theme-toggle shrink-0 px-2 py-2 bg-inverted rounded-full shadow-low dark:shadow-lowInverted dark:bg-normal"
-      >
-        <span class="sr-only">Toggle dark mode</span>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5 fill-current text-primaryInverted hover:text-inverted block dark:hidden"
-          role="img"
-          aria-label="Dark Mode"
-          viewBox="0 0 256 256"
+        <a
+          href="mailto:hello@omaralmasry.com"
+          class="menu_link shrink-0 min-h-[44px] flex items-center text-normalLight text-base sm:text-lg font-medium hover:text-inverted no-underline dark:text-invertedLight dark:hover:text-inverted"
         >
-          <path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56A104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
-        </svg>
+          <span class="roll-text">
+            <span data-text="Contact">Contact</span>
+            <span data-text="Contact" aria-hidden="true">Contact</span>
+          </span>
+        </a>
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5 fill-current text-normal dark:hover:text-invertedLight hidden dark:block"
-          role="img"
-          aria-label="Light Mode"
-          viewBox="0 0 256 256"
+        <button
+          id="themeToggle"
+          type="button"
+          class="theme-toggle shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center bg-inverted rounded-lg shadow-low dark:shadow-lowInverted dark:bg-normal"
         >
-          <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
-        </svg>
-      </button>
+          <span class="sr-only">Toggle dark mode</span>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 fill-current text-primaryInverted hover:text-inverted block dark:hidden"
+            role="img"
+            aria-label="Dark Mode"
+            viewBox="0 0 256 256"
+          >
+            <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 fill-current text-normal dark:hover:text-amber-light hidden dark:block"
+            role="img"
+            aria-label="Light Mode"
+            viewBox="0 0 256 256"
+          >
+            <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
 </nav>
 
     <main>
-      <section class="pt-24 pb-12 px-[5%]">
-  <div class="max-w-4xl mx-auto">
-    <!-- Main Heading -->
-    <h1
-      id="colorfulHeading"
-      class="mb-4 js-colorful-heading text-[4rem] sm:text-9xl font-extrabold leading-[0.8] tracking-tighter"
-    >
-      About Me
-    </h1>
-    
-      <!-- Supporting Text -->
-      <p class="text-xl sm:text-3xl text-normalLight max-w-2xl ml-0 leading-tight dark:text-invertedLight">
-        A little bit about who I am, what I do, and what I love.
+      
+<section class="pt-0 pb-6">
+  <div class="hero-grid hero-grid--about">
+    <div class="hero-cell hero-cell--amber-tl" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--soft-c3r1" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--light-c3r2" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--grey-bl" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--light-c3r2" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--coral-r" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--fill-c4r5" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--fill-c5r5" aria-hidden="true"></div>
+    <div class="hero-cell hero-cell--fill-c6r5" aria-hidden="true"></div>
+
+    <div class="hero-grid__greeting">
+      <h1 id="aboutTitle" class="home-heading hero-greeting-line w-full text-left text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl mb-0">
+        About
+      </h1>
+    </div>
+
+    <div class="hero-grid__intro">
+      <p class="hero-intro text-left text-base sm:text-xl text-normalLight font-normal dark:text-invertedLight max-w-[40rem] leading-snug mb-0">
+        Who I am, what I do, and how I work with teams around the world.
       </p>
-    
+    </div>
+
+    <!-- 19 fillers: no portrait (home has 15 +4 cells for the image). Bare tracks show ::before as grey. -->
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
+    <div class="hero-cell" aria-hidden="true"></div>
   </div>
 </section>
-<section class="py-16 px-[5%] pt-8">
-  <div class="max-w-4xl mx-auto">
-    
-      <div class="mb-2">
-        
-          <div class="flex items-center ">
-            <h2 class="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight mb-0">
-              Who is this guy?
-            </h2>
-          </div>
-        
-        
-      </div>
+
+<section class="py-16 px-[5%] pt-12 md:pt-20">
+  <div class="max-w-6xl mx-auto">
     
     <!-- Render Dynamic Collection -->
     
       <!-- Render Static Content -->
       
-<div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-4 lg:gap-8 items-start">
-  <div class="flex flex-col">
-    <p class="text-xl sm:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-4">The question I've always been trying to answer.</p>
-    <p>I've been fascinated by technology and design since I was a kid. I wanted to be an "inventor" — whatever I thought that meant at the time. As a 90s kid, I got to experience the world before and after the internet, and actually get my hands dirty before everything happened on a screen.</p>
-    <p>For a while I thought architecture was the answer to that urge to make things. Five years of studying how structure, aesthetics, and function come together. Eventually I realised you don't design and build an architectural masterpiece on your own — too many people, too much money, too many years.</p>
-    <p>On the web, it's different. You can "invent" something in weeks. Design it, build it, ship it, watch people use it. That's the process I was looking for all along. After building my first website, I knew this was what I was meant to be doing.</p>
-    <p>I was born and raised in Egypt, immigrated to Canada, and have successfully switched careers more than a couple of times. I'm a technology optimist and design obsessive who happily swallowed the AI pill — now I'm just seeing how deep the rabbit hole goes.</p>
-  </div>
-  <div class="sticky top-24">
-    
-    <div class="flex justify-center items-center my-6 lg:my-12">
-  <div
-    id="pixel-image-container-about-page"
-    class="pixel-image-cycle relative w-full max-w-xs aspect-square"
-  >
-    <!-- Image Container -->
-    <div class="image-wrapper absolute inset-0">
-      
-        
-        
-      
-      <img
-        class="current-image w-full h-full object-cover"
-        src="/images/red-and-blue-pills-pixel-art.webp"
-        alt="Red and Blue Pills"
-      >
+<div class="about-prose-wrap mb-16 w-full max-w-[56.25rem]">
+  <section class="about-prose-section" aria-labelledby="about-who-heading">
+    <h2 id="about-who-heading" class="about-prose-label">Who I am</h2>
+    <div class="about-prose-body">
+      <p>My name is Omar Almasry.</p>
+      <p>But you can call me Moe.</p>
+      <p>After some reflecting and research, I came to the conclusion that my professional title is "Digital Designer". But I'm more than that really.</p>
+      <p>You see, while I was in architecture school, I kind of fell in love with branding, and marketing in general.</p>
+      <p>Don't get me wrong, architecture is an incredible field of study. You spend years learning about how aesthetics, function, and structure come together. Interesting stuff, and the knowledge is certainly transferrable. I would say it was time well spent.</p>
+      <p>But branding and technology? That was my true calling. It was the mix of two things that I really found interesting. I would just go to the library and borrow all the branding and graphic design books I could find. I even tried to go for a minor in marketing at that point but it wasn't really an option. At that point, I already knew what I wanted to do.</p>
+      <p>As a 90s kid, Pokemon cards and Tamiya race car kits were - and kinda still are - my thing. I really appreciated good art and putting things together. Digital design was the way it all clicked. You get to design things and use technology to bring them to life. And I'm the kind of person who enjoys the simple things, which reflects in my work. Less is definitely more.</p>
+      <p>I was born and raised in Egypt, moved to Canada, and somewhere along the way ended up working with clients across 11 countries on 5 continents. I've helped global enterprise brands, fast-growing SaaS companies, tech bootcamps, dental clinics, and everything in between.</p>
     </div>
+  </section>
 
-    <!-- Pixel Grid Overlay -->
-    <div class="pixel-grid-overlay absolute inset-0 grid">
-      <!-- Pixels will be injected here -->
+  <section class="about-prose-section" aria-labelledby="about-what-heading">
+    <h2 id="about-what-heading" class="about-prose-label">What I do</h2>
+    <div class="about-prose-body">
+      <p>The work has been wildly varied, but the thread running through all of it is the same - figure out what actually needs to be communicated, then build the clearest, most considered way to say it.</p>
+      <p>These days I'm based in Toronto. When I'm not designing, I'm probably walking by the lake with a coffee, playing with my daughter, or falling deeper into a book.</p>
+      <p>For the past nine years I've been self-employed, which means I've never had the luxury of just doing "my part." I've written the briefs, managed the client relationships, made the calls when things went sideways, and shipped the final product. I've worked with clients directly, and as a contractor for multiple agencies so, I totally understand the client management and business side of things.</p>
     </div>
-  </div>
+  </section>
+
+  <section class="about-prose-section" aria-labelledby="about-how-heading">
+    <h2 id="about-how-heading" class="about-prose-label">How I work</h2>
+    <div class="about-prose-body">
+      <p>I think in systems. Whether it's a brand identity, a website, or a design component, I'm always asking how the pieces fit together and how they'll hold up over time. Good design isn't just how something looks on launch day - it's how it scales, how it adapts, and whether the team inheriting it can actually work with it.</p>
+      <p>I work closely with the people I take on - I ask a lot of questions upfront, I explain my thinking, and I push back when I think there's a better direction. Not because I'm difficult, but because that's how you end up with work worth being proud of.</p>
+    </div>
+  </section>
 </div>
-
-<script>
-  (function () {
-    document.addEventListener('DOMContentLoaded', () => {
-      const id = "about-page";
-      const container = document.getElementById(`pixel-image-container-${id}`);
-      if (!container) return;
-
-      const currentImage = container.querySelector('.current-image');
-      const gridOverlay = container.querySelector('.pixel-grid-overlay');
-
-      if (!gridOverlay || !currentImage) return;
-
-      // Grid Configuration
-      const gridSize = 20;
-
-      // Setup Grid CSS
-      gridOverlay.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-      gridOverlay.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-
-      // Create Pixels
-      const pixels = [];
-      for (let i = 0; i < gridSize * gridSize; i++) {
-        const px = document.createElement('div');
-        px.classList.add('pixel-overlay-item');
-        px.style.backgroundColor = 'transparent';
-        px.style.opacity = '0';
-        px.style.transition = 'opacity 0.4s ease-in-out';
-        gridOverlay.appendChild(px);
-        pixels.push(px);
-      }
-
-      // Image data
-      const defaultImages = [
-        {
-          src: '/images/computer-pixel-art.webp',
-          alt: 'Computer',
-          color: '#3d60e2',
-        },
-        {
-          src: '/images/coffee-pixel-art.webp',
-          alt: 'Coffee',
-          color: '#FB8304',
-        },
-        {
-          src: '/images/maple-leaf-pixel-art.webp',
-          alt: 'Maple Leaf',
-          color: '#FE3300',
-        },
-        {
-          src: '/images/high-five-pixel-art.webp',
-          alt: 'High Five',
-          color: '#40BFAE',
-        },
-        {
-          src: '/images/canada-goose-pixel-art.webp',
-          alt: 'Canada Goose',
-          color: '#EDF060',
-        },
-      ];
-
-      const images = [{"src":"/images/red-and-blue-pills-pixel-art.webp","alt":"Red and Blue Pills","color":"#FE3300"},{"src":"/images/earth-pixel-art.webp","alt":"Earth Globe","color":"#40BFAE"},{"src":"/images/mandalorian-pixel-art.webp","alt":"Mandalorian","color":"#EDF060"},{"src":"/images/canada-goose-pixel-art.webp","alt":"Canada Goose","color":"#FB8304"}] || defaultImages;
-
-      // Pre-load images to prevent glitches
-      images.forEach(img => {
-        const preloader = new Image();
-        preloader.src = img.src;
-      });
-
-      let currentIndex = 0;
-      let isTransitioning = false;
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      let cycleIntervalId = null;
-      let cycleStartTimeoutId = null;
-      let isVisible = true;
-
-      // Add soft transition to image
-      currentImage.style.transition = 'opacity 0.2s ease-in-out';
-
-      function transitionToImage(index) {
-        if (isTransitioning || document.hidden || prefersReducedMotion.matches) return;
-        isTransitioning = true;
-
-        const nextImage = images[index];
-        const transitionColor = nextImage.color;
-
-        const pixelIndices = pixels.map((_, i) => i);
-        for (let i = pixelIndices.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [pixelIndices[i], pixelIndices[j]] = [pixelIndices[j], pixelIndices[i]];
-        }
-
-        const stagger = 0.8;
-        const pixelCoverage = 0.7;
-        const pixelMaxOpacity = 0.6;
-        const activePixelIndices = pixelIndices.filter(() => Math.random() < pixelCoverage);
-        const fadeInStartEnd = activePixelIndices.length * stagger;
-
-        // Phase 1: Pixels fade in
-        activePixelIndices.forEach((pixelIdx, i) => {
-          setTimeout(() => {
-            pixels[pixelIdx].style.backgroundColor = transitionColor;
-            pixels[pixelIdx].style.opacity = String(pixelMaxOpacity);
-          }, i * stagger);
-        });
-
-        // Phase 2: Swap images at peak coverage
-        setTimeout(() => {
-          currentImage.style.opacity = '0';
-          
-          // Wait for the tiny fade out to complete
-          setTimeout(() => {
-            // Setup a one-time load listener for the new image
-            const onImageLoad = () => {
-              currentImage.removeEventListener('load', onImageLoad);
-              currentImage.style.opacity = '1';
-
-              // Phase 3: Reveal immediately after swap
-              setTimeout(() => {
-                activePixelIndices.forEach((pixelIdx, i) => {
-                  setTimeout(() => {
-                    pixels[pixelIdx].style.opacity = '0';
-                  }, i * stagger);
-                });
-
-                setTimeout(() => {
-                  isTransitioning = false;
-                }, activePixelIndices.length * stagger + 300);
-              }, 100); 
-            };
-
-            currentImage.addEventListener('load', onImageLoad);
-            currentImage.src = nextImage.src;
-            currentImage.alt = nextImage.alt;
-            
-            // Fallback for cached images or load failure
-            if (currentImage.complete) {
-              onImageLoad();
-            }
-          }, 200); 
-        }, fadeInStartEnd + 50);
-      }
-
-      function startCycle() {
-        if (cycleIntervalId || prefersReducedMotion.matches) return;
-        cycleStartTimeoutId = setTimeout(() => {
-          cycleIntervalId = setInterval(() => {
-            currentIndex = (currentIndex + 1) % images.length;
-            transitionToImage(currentIndex);
-          }, 3500);
-        }, 3500);
-      }
-
-      function stopCycle() {
-        if (cycleStartTimeoutId) {
-          clearTimeout(cycleStartTimeoutId);
-          cycleStartTimeoutId = null;
-        }
-        if (cycleIntervalId) {
-          clearInterval(cycleIntervalId);
-          cycleIntervalId = null;
-        }
-      }
-
-      function syncAnimationState() {
-        if (document.hidden || prefersReducedMotion.matches || !isVisible) {
-          stopCycle();
-          return;
-        }
-
-        startCycle();
-      }
-
-      if ('IntersectionObserver' in window) {
-        const imageCycleObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            isVisible = entry.isIntersecting;
-            syncAnimationState();
-          });
-        }, { rootMargin: '200px 0px', threshold: 0.1 });
-        imageCycleObserver.observe(container);
-      }
-
-      syncAnimationState();
-      document.addEventListener('visibilitychange', syncAnimationState);
-      prefersReducedMotion.addEventListener('change', syncAnimationState);
-    });
-  })();
-</script>
-
-  </div>
-</div>
-<p>I'm the kind of person who enjoys walks in nature with a coffee in hand, maybe a book by the lake if the weather allows. I love writing (I even did it professionally for a few years), building Lego sets, and pretending my daughter is the one who's obsessed with them. And of course I definitely don't collect vintage Pokémon cards. What kind of adult would do that?</p>
-<p>Recently I've developed a serious passion for web accessibility. It just makes sense to build a web that works for everyone — not just everyone like me. I'm currently working towards my CPACC certification and contributing accessibility fixes to open-source projects. I've even had a few PRs merged into projects like Angular — small contributions, but educational and addictive.</p>
-<p class='mb-12'>These days, I'm most interested in work where accessibility isn't an afterthought — it's just how things are built.</p>
 
 <div class="flex flex-col gap-4 sm:grid grid-cols-6 gap-4">
+
+  <!-- CPACC Certified Card -->
+  <div class="standard-card about-pixel-card col-span-4">
+    <h3 class="text-lg sm:text-xl font-bold">CPACC Certified</h3>
+    <p class="text-sm sm:text-base font-light text-normalLight dark:text-invertedLight mb-4">Certified Professional in Accessibility Core Competencies (IAAP) — committed to designing inclusive digital experiences that work for everyone.</p>
+    <div class="about-credentials-stack flex w-full flex-col gap-8 pt-2">
+      <div class="about-credentials-item flex w-full max-w-40 sm:max-w-full justify-start px-0 sm:px-0">
+        <div data-iframe-width="150" data-iframe-height="200" data-share-badge-id="e2d4a2de-f74b-4c74-b4ac-2fe682fab1ef" data-share-badge-host="https://www.credly.com"></div>
+        <script type="text/javascript" async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Webflow Certified Partner Card -->
+  <div class="standard-card about-pixel-card col-span-2">
+    <h3 class="text-lg sm:text-xl font-bold">Webflow Certified Partner</h3>
+    <p class="text-sm sm:text-base font-light mb-4 text-normalLight dark:text-invertedLight">Recognized by Webflow as a trusted professional for building high-quality websites.</p>
+    <div class="about-credentials-stack flex w-full flex-col items-start gap-6 pt-2">
+      <a href="https://webflow.com/@omar-almasrys-workspace" class="about-credentials-item block w-full max-w-[8.5rem] sm:max-w-36 px-0 sm:px-0" target="_blank" rel="noopener noreferrer">
+        <picture>
+          <source srcset="/images/webflow-certified-partner.webp" type="image/webp">
+          <img src="/images/webflow-certified-partner.png" width="480" height="97" loading="lazy" class="w-full h-auto" aria-label="Webflow Certified Partner Label">
+        </picture>
+      </a>
+    </div>
+  </div>
+
+  <!-- Global Experience Card -->
+  <div class="standard-card about-pixel-card col-span-6 justify-center">
+    <h3 class="text-lg sm:text-xl font-bold">Global Experience</h3>
+    <p class="text-sm sm:text-base font-light mb-4 text-normalLight dark:text-invertedLight max-w-lg">I've had the pleasure of working with clients from 11 different countries on 5 continents.</p>
+    <div class="globe-embed w-full aspect-square max-w-[350px] sm:max-w-[450px] mx-auto"></div>
+  </div>
+
   <!-- Location Card -->
-  <div class="standard-card col-span-2 justify-center">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
-      role="img"
-      aria-label="Location Pin"
-      viewBox="0 0 256 256"
-    >
-      <path d="M128,24a80,80,0,0,0-80,80c0,72,80,128,80,128s80-56,80-128A80,80,0,0,0,128,24Zm0,112a32,32,0,1,1,32-32A32,32,0,0,1,128,136Z" opacity="0.2"></path>
-      <path d="M200,224H150.54A266.56,266.56,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25a88,88,0,0,0-176,0c0,31.4,14.51,64.68,42,96.25A266.56,266.56,0,0,0,105.46,224H56a8,8,0,0,0,0,16H200a8,8,0,0,0,0-16ZM56,104a72,72,0,0,1,144,0c0,57.23-55.47,105-72,118C111.47,209,56,161.23,56,104Zm112,0a40,40,0,1,0-40,40A40,40,0,0,0,168,104Zm-64,0a24,24,0,1,1,24,24A24,24,0,0,1,104,104Z"></path>
+  <div class="standard-card about-pixel-card col-span-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current mb-4 text-primary dark:text-primaryInverted shrink-0" viewBox="0 0 256 256" aria-hidden="true">
+      <path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"></path>
     </svg>
-    <h3 class="text-lg sm:text-2xl font-bold">Current Location</h3>
-    <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">Toronto, ON, Canada</p>
+    <h3 class="text-lg sm:text-xl font-bold mb-2">Current Location</h3>
+    <p class="text-sm sm:text-base font-light text-normalLight dark:text-invertedLight">Toronto, ON, Canada</p>
   </div>
 
   <!-- Time Card -->
-  <div class="standard-card col-span-2 justify-center">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
-      role="img"
-      aria-label="Clock Icon"
-      viewBox="0 0 256 256"
-    >
-      <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path>
+  <div class="standard-card about-pixel-card col-span-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current mb-4 text-primary dark:text-primaryInverted shrink-0" viewBox="0 0 256 256" aria-hidden="true">
       <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
     </svg>
-    <h3 class="text-lg sm:text-2xl font-bold">Local Time</h3>
-    <div class="local-time font-light flex items-center text-lg sm:text-2xl text-normalLight dark:text-invertedLight">
+    <h3 class="text-lg sm:text-xl font-bold mb-2">Local Time</h3>
+    <div class="local-time font-light flex items-center text-sm sm:text-base text-normalLight dark:text-invertedLight">
       <span id="hours" class="time-part w-[2ch] text-center">14</span>
       <span class="colon mx-0.5">:</span>
       <span id="minutes" class="time-part w-[2ch] text-center">34</span>
@@ -543,53 +366,16 @@
   </div>
 
   <!-- Languages Card -->
-  <div class="standard-card col-span-2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
-        role="img"
-        aria-label="Languages Icon"
-        viewBox="0 0 256 256"
-      >
-      <path d="M224,184H144l40-80ZM96,127.56h0A95.78,95.78,0,0,0,128,56H64A95.78,95.78,0,0,0,96,127.56Z" opacity="0.2"></path>
-      <path d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.7,87.7,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z"></path>        
-  </svg>
-      <h3 class="text-lg sm:text-2xl font-bold mb-2">Languages Spoken</h3>
-      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight mb-1">English (EN)</p>
-      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight mb-1">Arabic (AR)</p>
-      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">French (FR)</p>
-   </div>
+  <div class="standard-card about-pixel-card col-span-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current mb-4 text-primary dark:text-primaryInverted shrink-0" viewBox="0 0 256 256" aria-hidden="true">
+      <path d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.76,87.76,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z"></path>
+    </svg>
+    <h3 class="text-lg sm:text-xl font-bold mb-2">Languages Spoken</h3>
+    <p class="text-sm sm:text-base font-light text-normalLight dark:text-invertedLight mb-1">English (EN)</p>
+    <p class="text-sm sm:text-base font-light text-normalLight dark:text-invertedLight mb-1">Arabic (AR)</p>
+    <p class="text-sm sm:text-base font-light text-normalLight dark:text-invertedLight">French (FR)</p>
+  </div>
 
-    <!-- Webflow Partner Card -->
-  <div class="standard-card col-span-2">
-      <h3 class="text-lg sm:text-2xl font-bold">Webflow Certified Partner</h3>
-      <p class="text-lg sm:text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">Recognized by Webflow as a trusted professional for building high-quality websites.</p>
-      <div class="about-credentials-stack flex w-full flex-col gap-8 pt-2">
-        <div class="about-credentials-item flex w-full max-w-40 sm:max-w-full mx-auto justify-center px-2 sm:px-0">
-          <div data-iframe-width="150" data-iframe-height="200" data-share-badge-id="e2d4a2de-f74b-4c74-b4ac-2fe682fab1ef" data-share-badge-host="https://www.credly.com"></div>
-          <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-        </div>
-        <a href="https://webflow.com/@omar-almasrys-workspace" class="about-credentials-item block w-full max-w-40 sm:max-w-full mx-auto px-2 sm:px-0" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset="/images/webflow-certified-partner.webp" type="image/webp">
-            <img src="/images/webflow-certified-partner.png" width="480" height="97" loading="lazy" class="w-full h-auto" aria-label="Webflow Certified Partner Label">
-          </picture>
-        </a>
-        <a href="https://www.credential.net/a9f3dd6a-ca55-42b2-9b1d-c5f17b6e5a11#acc.41dbHFiS" class="about-credentials-item block w-full max-w-40 sm:max-w-full mx-auto px-2 sm:px-0" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset="/images/webflow-practitioner-certificate.webp" type="image/webp">
-            <img src="/images/webflow-practitioner-certificate.png" width="400" height="400" loading="lazy" class="w-full h-auto" aria-label="Webflow Practitioner Certificate">
-          </picture>
-        </a>
-      </div>
-    </div>
-
-    <!-- Clients Globe Card -->
-  <div class="standard-card col-span-4 justify-center">      
-      <h3 class="text-lg sm:text-2xl font-bold">Global Experience</h3>
-      <p class="text-lg sm:text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">I've had the pleasure of working with clients from 11 different countries on 5 continents.</p>
-      <div class="globe-embed w-full aspect-square max-w-[350px] sm:max-w-[450px] mx-auto"></div>
-   </div>
 </div>
 
     
@@ -597,16 +383,12 @@
 </section>
 <script>
   window.addEventListener('load', () => {
-      // =============================
-      // 🕒 Time Display Optimization
-      // =============================
       function updateTime() {
           const now = new Date();
           const options = { timeZone: 'America/Toronto', hour12: false };
           const timeString = now.toLocaleTimeString('en-US', options);
           const [hours, minutes, seconds] = timeString.split(':');
 
-          // Get timezone abbreviation (EST or EDT)
           const timeZoneString = now.toLocaleDateString('en-US', {
               timeZone: 'America/Toronto',
               timeZoneName: 'short'
@@ -620,11 +402,8 @@
       }
   
       setInterval(updateTime, 1000);
-      updateTime(); // Run immediately
+      updateTime();
   
-      // =============================
-      // 🌍 Lazy Load the Globe (Only If Needed)
-      // =============================
       const globeContainer = document.querySelector('.globe-embed');
       if (globeContainer) {
           const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -674,11 +453,10 @@
               script.src = 'https://cdn.jsdelivr.net/npm/three@0.138.1/build/three.min.js';
               script.defer = true;
               script.onload = () => {
-                  // Load OrbitControls AFTER Three.js is available
                   const orbitScript = document.createElement('script');
                   orbitScript.src = 'https://cdn.jsdelivr.net/npm/three@0.138.1/examples/js/controls/OrbitControls.js';
                   orbitScript.defer = true;
-                  orbitScript.onload = initGlobe; // Initialize globe after OrbitControls is loaded
+                  orbitScript.onload = initGlobe;
                   document.body.appendChild(orbitScript);
               };
               document.body.appendChild(script);
@@ -695,9 +473,9 @@
               renderer.setPixelRatio(isSmallScreen ? 1 : Math.min(window.devicePixelRatio, 2));
               globeContainer.appendChild(renderer.domElement);
 
-              const texture = new THREE.TextureLoader().load('/images/png/globe-texture-pixel-art.png');
-              texture.minFilter = THREE.NearestFilter;
-              texture.magFilter = THREE.NearestFilter;
+              const texture = new THREE.TextureLoader().load('/images/globe-texture.webp');
+              texture.minFilter = THREE.LinearFilter;
+              texture.magFilter = THREE.LinearFilter;
 
               globe = new THREE.Mesh(
                   new THREE.SphereGeometry(5, 64, 64),
@@ -730,7 +508,6 @@
                   autoRotateTimeout = setTimeout(() => isUserInteracting = false, 1000);
               });
 
-              // Handle Window Resize
               function onWindowResize() {
                   if (!camera || !renderer) return;
                   const width = globeContainer.clientWidth;
@@ -775,148 +552,948 @@
           prefersReducedMotion.addEventListener('change', handleVisibilityChange);
       }
   });
-  </script>
+</script>
 
     </main>
     <!-- Back to Top Button -->
 <button
   id="back-to-top"
-  class="fixed bottom-4 right-4 z-50 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted flex items-center justify-center p-0 hidden"
+  class="fixed bottom-6 right-4 z-50 flex h-8 w-8 items-center justify-center rounded-lg bg-normal p-0 text-normal shadow-low transition-[color,box-shadow] duration-300 hover:text-lapis-light sm:bottom-7 dark:bottom-4 dark:bg-inverted dark:text-inverted dark:shadow-mediumInverted dark:hover:text-amber-light hidden"
   aria-label="Back to top"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="100%"
     fill="currentColor"
     viewBox="0 0 256 256"
-    class="pointer-events-none"
+    class="pointer-events-none h-6 w-6 sm:h-7 sm:w-7"
   >
-    <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm37.66-101.66a8,8,0,0,1-11.32,11.32L136,107.31V168a8,8,0,0,1-16,0V107.31l-18.34,18.35a8,8,0,0,1-11.32-11.32l32-32a8,8,0,0,1,11.32,0Z"></path>
+    <path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"></path>
   </svg>
 </button>
 
-<footer class="pt-12 pb-6 px-[5%]">
-  <div class="max-w-4xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 mb-3">
-      <!-- Logo -->
-      <div class="flex-1 flex justify-center md:justify-start items-center">
-        <a href="/" class="logo flex items-center font-bold text-lg no-underline group">
-          <h3 class="flex items-center m-0">
-            <span class="text-5xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
-              >O</span
-            >
-            <span class="text-5xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
-              >.</span
-            >
-          </h3>
-        </a>
-      </div>
-
-      <!-- Built with text -->
-      <div class="flex-1 flex flex-col gap-1 items-center justify-center">
-        <p class="text-xs text-center mb-0">
-          Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a> and
-          <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">TailwindCSS</a>. Hosted on
-          <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
-        </p>
-        <p class="text-xs text-center mb-0">
-          Icons from <a href="https://phosphoricons.com/" target="_blank" rel="noopener noreferrer">Phosphor Icons</a>.
-        </p>
-      </div>
-
-      <!-- Social Icons -->
-      <div class="flex-1 flex justify-center md:justify-end items-center">
-        <nav class="flex space-x-4 focus:outline-none focus:ring-2 focus:ring-teal-500">
-          <!-- Medium -->
-          <a href="https://github.com/omar-almasry11" target="_blank" rel="noopener noreferrer" class="hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 fill-current hover:text-savoyBlue dark:hover:text-primaryInverted"
-              role="img"
-              aria-label="GitHub"
-              viewBox="0 0 256 256"
-            >
-              <path d="M128,128A56,56,0,1,1,72,72,56,56,0,0,1,128,128Zm56-56c-13.25,0-24,25.07-24,56s10.75,56,24,56,24-25.07,24-56S197.25,72,184,72Z" opacity="0.2"></path><path d="M72,64a64,64,0,1,0,64,64A64.07,64.07,0,0,0,72,64Zm0,112a48,48,0,1,1,48-48A48.05,48.05,0,0,1,72,176ZM184,64c-5.68,0-16.4,2.76-24.32,21.25C154.73,96.8,152,112,152,128s2.73,31.2,7.68,42.75C167.6,189.24,178.32,192,184,192s16.4-2.76,24.32-21.25C213.27,159.2,216,144,216,128s-2.73-31.2-7.68-42.75C200.4,66.76,189.68,64,184,64Zm0,112c-5.64,0-16-18.22-16-48s10.36-48,16-48,16,18.22,16,48S189.64,176,184,176ZM248,72V184a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Z"></path>
-            </svg>
-          </a>
-          <!-- Github -->
-          <a
-            href="https://github.com/omar-almasry11"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer-social-link"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 fill-current"
-              role="img"
-              aria-label="GitHub"
-              viewBox="0 0 256 256"
-            >
-              <path d="M208,104v8a48,48,0,0,1-48,48H136a32,32,0,0,1,32,32v40H104V192a32,32,0,0,1,32-32H112a48,48,0,0,1-48-48v-8a49.28,49.28,0,0,1,8.51-27.3A51.92,51.92,0,0,1,76,32a52,52,0,0,1,43.83,24h32.34A52,52,0,0,1,196,32a51.92,51.92,0,0,1,3.49,44.7A49.28,49.28,0,0,1,208,104Z" opacity="0.2"></path><path d="M208.3,75.68A59.74,59.74,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58,58,0,0,0,208.3,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.76,41.76,0,0,1,200,104Z"></path>
-            </svg>
-          </a>
-
-          <!-- Codepen -->
-          <a
-            href="https://codepen.io/omaralmasry579"
-            target="_blank"
-            class="focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300 hide visibility: hidden"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 fill-current"
-              role="img"
-              aria-label="Codepen"
-              viewBox="0 0 256 256"
-            >
-              <path d="M232,160,128,216,24,160l104-56Z" opacity="0.2"></path>
-              <path d="M235.79,89l-104-56a8,8,0,0,0-7.58,0l-104,56A8,8,0,0,0,16,96v64a8,8,0,0,0,4.21,7.05l104,56a8,8,0,0,0,7.58,0l104-56A8,8,0,0,0,240,160V96A8,8,0,0,0,235.79,89ZM224,146.61,189.45,128,224,109.39Zm-51.43-27.7L136,99.22V53.39L215.13,96Zm-44.57,24L100.3,128,128,113.09,155.7,128Zm-8-89.52V99.22L83.43,118.91,40.87,96Zm-88,56L66.55,128,32,146.61Zm51.43,27.7L120,156.78v45.83L40.87,160ZM136,202.61V156.78l36.57-19.69L215.13,160Z"></path>
-            </svg>
-          </a>
-
-          <!-- LinkedIn -->
-          <a
-            href="https://www.linkedin.com/in/omar-al-masry-608a1581/"
-            target="_blank"
-            class="footer-social-link focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 fill-current"
-              role="img"
-              aria-label="LinkedIn"
-              viewBox="0 0 256 256"
-            >
-              <path d="M224,40V216a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8H216A8,8,0,0,1,224,40Z" opacity="0.2"></path><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
-            </svg>
-          </a>
-
-          <!-- Email -->
-          <a
-            href="mailto:hello@omaralmasry.com"
-            class="footer-social-link focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 fill-current"
-              role="img"
-              aria-label="Email"
-              viewBox="0 0 256 256"
-            >
-              <path d="M224,56l-96,88L32,56Z" opacity="0.2"></path><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
-            </svg>
-          </a>
-        </nav>
-      </div>
+<footer>
+  <!-- CTA Grid Section -->
+  <div class="cta-grid-container">
+    <!-- Animated Grid Background -->
+    <div class="cta-grid absolute inset-0 grid grid-cols-20 grid-rows-20">
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
+        <div class="cta-grid-item"></div>
+      
     </div>
 
-    <!-- Copyright - Now below the main wrapper -->
-    <div class="w-full flex items-center justify-center">
-      <p class="text-xs text-center text-normalLight dark:text-invertedLight mb-0">
-        © 2026 Omar Almasry. All rights reserved.
-      </p>
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto max-w-6xl">
+      <div class="flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+        <!-- Left: Title and Subtext -->
+        <div class="min-w-0 lg:max-w-[58%]">
+          <h2 class="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.1] tracking-tight">
+            Let's work together
+          </h2>
+          <p class="max-w-[32ch] text-lg text-white leading-snug">
+            I'm currently available for full-time roles and select freelance projects.
+          </p>
+        </div>
+
+        <!-- Right: Button -->
+        <div class="flex w-full shrink-0 justify-start lg:w-auto lg:justify-end">
+          <a
+            href="mailto:hello@omaralmasry.com?subject=Project%20Inquiry"
+            class="footer-cta-cursor-link group inline-flex min-w-0 max-w-full flex-wrap items-center justify-center gap-2 rounded-md border-2 border-solid px-6 py-3 text-left font-semibold no-underline transition-[border-color] duration-500 ease-out"
+          >
+            <span class="min-w-0 break-words text-inherit">Send me an email</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+              class="h-4 w-4 shrink-0 fill-current transition-transform duration-200 group-hover:translate-x-1 sm:h-6 sm:w-6"
+              viewBox="0 0 256 256"
+            >
+              <path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bar -->
+  <div class="border-t border-normal bg-normal pt-8 pb-16 px-[5%] text-normal dark:border-inverted dark:bg-oxford dark:pb-12 dark:text-inverted">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col items-center gap-6 md:flex-row md:items-center md:gap-4 lg:gap-8">
+        <!-- Logo -->
+        <div class="flex w-full shrink-0 justify-center md:flex-1 md:justify-start">
+          <a href="/" class="logo logo-nav flex shrink-0 items-center font-bold no-underline group">
+            <span class="logo-morph text-xl sm:text-2xl text-normalLight transition-colors duration-300 group-hover:text-lapis-light dark:text-invertedLight dark:group-hover:text-amber-light"
+              ><span class="logo-letter-o">O</span
+              ><span class="logo-rest-clip"><span class="logo-rest">mar Almasry</span></span
+              ><span class="logo-dot text-primary dark:text-primaryInverted">.</span></span
+            >
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="flex w-full min-w-0 justify-center md:flex-1 md:px-2">
+          <p class="mb-0 text-center text-xs text-normalLight opacity-90 dark:text-inverted">
+            © 2026 Omar Almasry. All rights reserved.
+          </p>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex w-full shrink-0 justify-center md:flex-1 md:justify-end">
+          <nav class="flex space-x-4 text-primary focus:outline-none focus:ring-2 focus:ring-teal-500 dark:text-inverted">
+            <!-- GitHub (hidden for now) -->
+            <a
+              href="https://github.com/omar-almasry11"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social-link hidden"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 fill-current"
+                role="img"
+                aria-label="GitHub"
+                viewBox="0 0 256 256"
+              >
+                <path d="M208,104v8a48,48,0,0,1-48,48H136a32,32,0,0,1,32,32v40H104V192a32,32,0,0,1,32-32H112a48,48,0,0,1-48-48v-8a49.28,49.28,0,0,1,8.51-27.3A51.92,51.92,0,0,1,76,32a52,52,0,0,1,43.83,24h32.34A52,52,0,0,1,196,32a51.92,51.92,0,0,1,3.49,44.7A49.28,49.28,0,0,1,208,104Z" opacity="0.2"></path><path d="M208.3,75.68A59.74,59.74,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58,58,0,0,0,208.3,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.76,41.76,0,0,1,200,104Z"></path>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/omar-al-masry-608a1581/"
+              target="_blank"
+              class="footer-social-link focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 fill-current"
+                role="img"
+                aria-label="LinkedIn"
+                viewBox="0 0 256 256"
+              >
+                <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+              </svg>
+            </a>
+
+            <!-- Email -->
+            <a
+              href="mailto:hello@omaralmasry.com"
+              class="footer-social-link focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 fill-current"
+                role="img"
+                aria-label="Email"
+                viewBox="0 0 256 256"
+              >
+                <path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z"></path>
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
@@ -931,9 +1508,14 @@
 
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="/scripts/main.js" defer></script>
     <script src="/scripts/cursor.js" defer></script>
     <script src="/scripts/colorful-heading.js" defer></script>
+    <script src="/scripts/color-block-fill.js" defer></script>
+    <script src="/scripts/about-card-pixel-fill.js" defer></script>
+    <script src="/scripts/case-study-card-pixel-hover.js" defer></script>
+    <script src="/scripts/hero-cell-pixel-scroll.js" defer></script>
     <script src="/scripts/page-transition.js" defer></script>
     <script src="/scripts/cta-grid-animation.js" defer></script>
   </body>
