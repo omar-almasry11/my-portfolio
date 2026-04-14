@@ -11,6 +11,7 @@ const initHeroCellPixelScroll = () => {
 
   const CELL_TARGET = 28;
   let resizeTimer;
+  let lastHeroGridWidth = -1;
 
   const parseFillFromBackgroundImage = (backgroundImage) => {
     if (!backgroundImage || backgroundImage === 'none') return null;
@@ -74,7 +75,10 @@ const initHeroCellPixelScroll = () => {
         cell.appendChild(wrapper);
       });
 
-      if (!allSquares.length) return;
+      if (!allSquares.length) {
+        lastHeroGridWidth = grid.offsetWidth;
+        return;
+      }
 
       const heroH = grid.offsetHeight || 1;
       /** Scroll distance for a full dissolve — fraction of hero height, not the whole section exit */
@@ -94,11 +98,15 @@ const initHeroCellPixelScroll = () => {
             /** Begin a bit before hero top hits viewport top; end after fixed scroll, not full hero height */
             start: () => `top top-=${startLeadPx}`,
             end: () => `+=${dissolveScrollPx}`,
-            scrub: 0.45,
+            /** Shorter scrub on touch: less rubber-band “bounce” reversing the fade */
+            scrub: window.matchMedia('(pointer: coarse)').matches ? 0.2 : 0.45,
+            fastScrollEnd: true,
             invalidateOnRefresh: true,
           },
         }
       );
+
+      lastHeroGridWidth = grid.offsetWidth;
     };
 
     build();
@@ -128,11 +136,36 @@ const initHeroCellPixelScroll = () => {
     () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
+        const grid = document.querySelector('.hero-grid');
+        if (!grid) return;
+        const w = grid.offsetWidth;
+        /** iOS Safari fires resize when the URL bar shows/hides; width is unchanged — skip rebuild to avoid a one-frame “flash” at opacity 1 */
+        if (
+          window.matchMedia('(pointer: coarse)').matches &&
+          lastHeroGridWidth > 0 &&
+          w === lastHeroGridWidth
+        ) {
+          ScrollTrigger.refresh();
+          return;
+        }
         homeBuild?.();
       }, 200);
     },
     { passive: true }
   );
+
+  window.addEventListener(
+    'orientationchange',
+    () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        homeBuild?.();
+      }, 300);
+    },
+    { passive: true }
+  );
+
+  document.fonts?.ready?.then(() => ScrollTrigger.refresh());
 };
 
 window.addEventListener('load', initHeroCellPixelScroll);

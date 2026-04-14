@@ -14,8 +14,48 @@ const initColorBlockMosaicFill = () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
+  /** iOS: rubber-band scroll reverses scrub tweens; normalizeScroll fixes that. */
+  if (window.matchMedia('(pointer: coarse)').matches) {
+    if (typeof ScrollTrigger.normalizeScroll === 'function') {
+      ScrollTrigger.normalizeScroll(true);
+    }
+    ScrollTrigger.config({ ignoreMobileResize: true });
+  }
+
   const CELL_TARGET = 28;
   let resizeTimer;
+
+  /** Mirrors :root / .cb--* in input.css — fallback if getComputedStyle is empty (Safari edge cases). */
+  const CLASS_FALLBACK_COLORS = {
+    'cb--gold-1': '#8a9bb5',
+    'cb--blue': '#2a4494',
+    'cb--navy-1': '#c48a1e',
+    'cb--mid': '#4a5c8a',
+  };
+
+  const isTransparentColor = (value) => {
+    if (!value || value === 'transparent') return true;
+    const m = String(value).match(
+      /rgba?\(\s*([\d.]+%?)\s*,\s*([\d.]+%?)\s*,\s*([\d.]+%?)(?:\s*,\s*([\d.]+%?))?\s*\)/i
+    );
+    if (m && m[4] !== undefined && parseFloat(m[4]) === 0) return true;
+    return false;
+  };
+
+  const resolveBlockColor = (block) => {
+    const computed = getComputedStyle(block).backgroundColor;
+    if (!isTransparentColor(computed)) return computed;
+    for (const token of block.classList) {
+      if (CLASS_FALLBACK_COLORS[token]) return CLASS_FALLBACK_COLORS[token];
+    }
+    return null;
+  };
+
+  const refreshScrollTriggersSoon = () => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => ScrollTrigger.refresh());
+    });
+  };
 
   const build = () => {
     const blocks = document.querySelectorAll('.color-block');
@@ -27,8 +67,8 @@ const initColorBlockMosaicFill = () => {
       if (oldWrapper) oldWrapper.remove();
       block.classList.remove('cb-has-squares');
 
-      const color = getComputedStyle(block).backgroundColor;
-      if (!color || color === 'transparent' || color === 'rgba(0, 0, 0, 0)') return;
+      const color = resolveBlockColor(block);
+      if (!color) return;
 
       const rect = block.getBoundingClientRect();
       if (rect.width === 0 || rect.height === 0) return;
@@ -38,15 +78,18 @@ const initColorBlockMosaicFill = () => {
       const cols = Math.max(1, Math.round(W / CELL_TARGET));
       const s = W / cols;
       const rows = Math.max(1, Math.ceil(H / s));
+      const lastRowPx = rows === 1 ? H : Math.max(1, H - (rows - 1) * s);
+      const rowTemplate =
+        rows === 1 ? `${H}px` : `repeat(${rows - 1}, ${s}px) ${lastRowPx}px`;
 
       block.classList.add('cb-has-squares');
 
       const wrapper = document.createElement('div');
       wrapper.className = 'cb-sq-wrapper';
       wrapper.style.cssText =
-        `position:absolute;top:0;left:0;width:100%;height:100%;` +
+        `position:absolute;inset:0;pointer-events:none;overflow:hidden;box-sizing:border-box;` +
         `display:grid;grid-template-columns:repeat(${cols},${s}px);` +
-        `grid-template-rows:repeat(${rows},${s}px);`;
+        `grid-template-rows:${rowTemplate};`;
 
       const frag = document.createDocumentFragment();
       for (let i = 0; i < cols * rows; i++) {
@@ -73,9 +116,14 @@ const initColorBlockMosaicFill = () => {
           start: 'top 90%',
           end: 'center 50%',
           scrub: 0.4,
+          fastScrollEnd: true,
+          invalidateOnRefresh: true,
         },
       });
     });
+
+    refreshScrollTriggersSoon();
+    document.fonts?.ready?.then(() => ScrollTrigger.refresh());
   };
 
   build();
