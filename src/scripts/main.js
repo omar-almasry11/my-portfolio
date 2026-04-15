@@ -20,31 +20,16 @@ themeToggle?.addEventListener('click', () => {
 
 
 // =============================
-// 📱 Navbar Scroll: Logo Morph + Mobile Hide
+// 📱 Navbar Scroll: Desktop Logo Morph
+// Mobile: navbar stays fully visible at all times — hiding it on scroll
+// caused iOS scroll stalls due to sticky-position + transform compositor
+// interactions.
 // =============================
 const mainNav = document.getElementById('mainNav');
-/**
- * Directional-commitment thresholds kill iOS navbar flicker.
- * The browser URL-bar collapse, elastic overscroll, and momentum
- * reversals routinely yank scrollY by 20–60px in the "wrong" direction
- * mid-gesture. A plain delta filter can't reject those; we instead
- * require that the scroll travel *since the last direction flip*
- * exceed a threshold before we toggle the navbar state.
- */
 const NAV_REVEAL_TOP = 12;
 const NAV_COMPACT_AT = 80;
-const NAV_COMMIT_TRAVEL = 28;
-const NAV_NOISE_FLOOR = 2;
 
-let lastY = Math.max(window.scrollY, 0);
-let directionAnchorY = lastY;
-let lastDirection = 0;
 let navTicking = false;
-
-function getMaxScrollY() {
-  const doc = document.documentElement;
-  return Math.max(0, (doc.scrollHeight || 0) - window.innerHeight);
-}
 
 function handleNavScroll() {
   if (navTicking || !mainNav) return;
@@ -52,60 +37,25 @@ function handleNavScroll() {
   requestAnimationFrame(() => {
     navTicking = false;
 
-    const maxY = getMaxScrollY();
-    const currentY = Math.min(Math.max(window.scrollY, 0), maxY);
-    const delta = currentY - lastY;
-    const isMobile = window.innerWidth < 640;
-
-    if (currentY <= NAV_REVEAL_TOP) {
-      mainNav.classList.remove('nav-logo-compact');
+    if (window.innerWidth < 640) {
       mainNav.classList.remove('nav-hidden');
-      lastY = currentY;
-      directionAnchorY = currentY;
-      lastDirection = 0;
       return;
     }
 
-    if (Math.abs(delta) < NAV_NOISE_FLOOR) return;
-
-    const dir = delta > 0 ? 1 : -1;
-    if (dir !== lastDirection) {
-      directionAnchorY = lastY;
-      lastDirection = dir;
-    }
-    lastY = currentY;
-
-    const travelSinceFlip = Math.abs(currentY - directionAnchorY);
-    if (travelSinceFlip < NAV_COMMIT_TRAVEL) return;
-
-    if (dir === 1 && currentY > NAV_COMPACT_AT) {
-      mainNav.classList.add('nav-logo-compact');
-      if (isMobile) mainNav.classList.add('nav-hidden');
-    } else if (dir === -1) {
+    const currentY = Math.max(window.scrollY, 0);
+    if (currentY <= NAV_REVEAL_TOP) {
       mainNav.classList.remove('nav-logo-compact');
-      mainNav.classList.remove('nav-hidden');
+    } else if (currentY > NAV_COMPACT_AT) {
+      mainNav.classList.add('nav-logo-compact');
     }
-
-    if (!isMobile) mainNav.classList.remove('nav-hidden');
+    mainNav.classList.remove('nav-hidden');
   });
 }
 
-function resetNavBaseline() {
-  lastY = Math.max(window.scrollY, 0);
-  directionAnchorY = lastY;
-  lastDirection = 0;
-}
-
 window.addEventListener('scroll', handleNavScroll, { passive: true });
-window.addEventListener('touchstart', resetNavBaseline, { passive: true });
 window.addEventListener('resize', () => {
-  if (!mainNav) return;
-  if (window.innerWidth >= 640) mainNav.classList.remove('nav-hidden');
-  resetNavBaseline();
+  if (mainNav) mainNav.classList.remove('nav-hidden');
 }, { passive: true });
-if (window.visualViewport) {
-  window.visualViewport.addEventListener('resize', resetNavBaseline);
-}
 
 
 // =============================
