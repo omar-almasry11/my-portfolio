@@ -737,6 +737,19 @@
     box-sizing: border-box;
   }
 
+  /*
+   * Mobile path: opacity is derived from two CSS custom properties.
+   *   --t  (per-square, set once at build time): random dissolve threshold 0..1
+   *   --p  (per-wrapper, updated on scroll):     progress 0..1
+   * When p < t, square is fully opaque. When p crosses t it fades over a
+   * 0.15-wide window. Setting --p once on the wrapper cascades to all
+   * squares — no JS per-square writes, no ScrollTrigger, iOS scroll stays
+   * native.
+   */
+  .hero-cell-sq-wrapper--css .hero-cell-sq {
+    opacity: clamp(0, calc((var(--t) - var(--p) + 0.15) / 0.15), 1);
+  }
+
   /* Portrait: columns 5–6, rows 1–2 */
   .hero-grid__portrait {
     grid-column: 5 / 7;

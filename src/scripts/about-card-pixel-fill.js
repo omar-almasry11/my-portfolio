@@ -7,6 +7,8 @@
 const initAboutCardPixelFill = () => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  // Mobile: skip scroll-scrubbed overlay — keeps iOS scroll fling smooth.
+  if (window.innerWidth < 640) return;
 
   gsap.registerPlugin(ScrollTrigger);
 

@@ -20,17 +20,14 @@ themeToggle?.addEventListener('click', () => {
 
 
 // =============================
-// 📱 Navbar Scroll: Logo Morph + Mobile Hide
+// 📱 Navbar Scroll: Desktop Logo Morph + Mobile Hide
+// Hide animation is applied to .nav-inner (inner wrapper), NOT #mainNav
+// itself — #mainNav is position:sticky and iOS stalls the scroll gesture
+// when a sticky element's own transform changes mid-scroll.
+// Directional-commitment threshold prevents flicker from iOS URL-bar
+// jerks, elastic overscroll, and momentum micro-reversals.
 // =============================
 const mainNav = document.getElementById('mainNav');
-/**
- * Directional-commitment thresholds kill iOS navbar flicker.
- * The browser URL-bar collapse, elastic overscroll, and momentum
- * reversals routinely yank scrollY by 20–60px in the "wrong" direction
- * mid-gesture. A plain delta filter can't reject those; we instead
- * require that the scroll travel *since the last direction flip*
- * exceed a threshold before we toggle the navbar state.
- */
 const NAV_REVEAL_TOP = 12;
 const NAV_COMPACT_AT = 80;
 const NAV_COMMIT_TRAVEL = 28;
@@ -41,19 +38,13 @@ let directionAnchorY = lastY;
 let lastDirection = 0;
 let navTicking = false;
 
-function getMaxScrollY() {
-  const doc = document.documentElement;
-  return Math.max(0, (doc.scrollHeight || 0) - window.innerHeight);
-}
-
 function handleNavScroll() {
   if (navTicking || !mainNav) return;
   navTicking = true;
   requestAnimationFrame(() => {
     navTicking = false;
 
-    const maxY = getMaxScrollY();
-    const currentY = Math.min(Math.max(window.scrollY, 0), maxY);
+    const currentY = Math.max(window.scrollY, 0);
     const delta = currentY - lastY;
     const isMobile = window.innerWidth < 640;
 

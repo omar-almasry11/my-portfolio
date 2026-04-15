@@ -11,6 +11,10 @@
 const initColorBlockMosaicFill = () => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  // Mobile: skip. Scroll-scrubbed opacity on ~100+ squares per block + the
+  // per-block ResizeObserver firing when lazy logos load is what causes the
+  // mid-testimonials stall on iOS. Blocks already have CSS background colors.
+  if (window.innerWidth < 640) return;
 
   gsap.registerPlugin(ScrollTrigger);
 

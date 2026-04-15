@@ -20,15 +20,22 @@ themeToggle?.addEventListener('click', () => {
 
 
 // =============================
-// 📱 Navbar Scroll: Desktop Logo Morph
-// Mobile: navbar stays fully visible at all times — hiding it on scroll
-// caused iOS scroll stalls due to sticky-position + transform compositor
-// interactions.
+// 📱 Navbar Scroll: Desktop Logo Morph + Mobile Hide
+// Hide animation is applied to .nav-inner (inner wrapper), NOT #mainNav
+// itself — #mainNav is position:sticky and iOS stalls the scroll gesture
+// when a sticky element's own transform changes mid-scroll.
+// Directional-commitment threshold prevents flicker from iOS URL-bar
+// jerks, elastic overscroll, and momentum micro-reversals.
 // =============================
 const mainNav = document.getElementById('mainNav');
 const NAV_REVEAL_TOP = 12;
 const NAV_COMPACT_AT = 80;
+const NAV_COMMIT_TRAVEL = 28;
+const NAV_NOISE_FLOOR = 2;
 
+let lastY = Math.max(window.scrollY, 0);
+let directionAnchorY = lastY;
+let lastDirection = 0;
 let navTicking = false;
 
 function handleNavScroll() {
@@ -37,25 +44,59 @@ function handleNavScroll() {
   requestAnimationFrame(() => {
     navTicking = false;
 
-    if (window.innerWidth < 640) {
+    const currentY = Math.max(window.scrollY, 0);
+    const delta = currentY - lastY;
+    const isMobile = window.innerWidth < 640;
+
+    if (currentY <= NAV_REVEAL_TOP) {
+      mainNav.classList.remove('nav-logo-compact');
       mainNav.classList.remove('nav-hidden');
+      lastY = currentY;
+      directionAnchorY = currentY;
+      lastDirection = 0;
       return;
     }
 
-    const currentY = Math.max(window.scrollY, 0);
-    if (currentY <= NAV_REVEAL_TOP) {
-      mainNav.classList.remove('nav-logo-compact');
-    } else if (currentY > NAV_COMPACT_AT) {
-      mainNav.classList.add('nav-logo-compact');
+    if (Math.abs(delta) < NAV_NOISE_FLOOR) return;
+
+    const dir = delta > 0 ? 1 : -1;
+    if (dir !== lastDirection) {
+      directionAnchorY = lastY;
+      lastDirection = dir;
     }
-    mainNav.classList.remove('nav-hidden');
+    lastY = currentY;
+
+    const travelSinceFlip = Math.abs(currentY - directionAnchorY);
+    if (travelSinceFlip < NAV_COMMIT_TRAVEL) return;
+
+    if (dir === 1 && currentY > NAV_COMPACT_AT) {
+      mainNav.classList.add('nav-logo-compact');
+      if (isMobile) mainNav.classList.add('nav-hidden');
+    } else if (dir === -1) {
+      mainNav.classList.remove('nav-logo-compact');
+      mainNav.classList.remove('nav-hidden');
+    }
+
+    if (!isMobile) mainNav.classList.remove('nav-hidden');
   });
 }
 
+function resetNavBaseline() {
+  lastY = Math.max(window.scrollY, 0);
+  directionAnchorY = lastY;
+  lastDirection = 0;
+}
+
 window.addEventListener('scroll', handleNavScroll, { passive: true });
+window.addEventListener('touchstart', resetNavBaseline, { passive: true });
 window.addEventListener('resize', () => {
-  if (mainNav) mainNav.classList.remove('nav-hidden');
+  if (!mainNav) return;
+  if (window.innerWidth >= 640) mainNav.classList.remove('nav-hidden');
+  resetNavBaseline();
 }, { passive: true });
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', resetNavBaseline);
+}
 
 
 // =============================
