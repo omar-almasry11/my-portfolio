@@ -1302,15 +1302,22 @@
     }
   }
 
-  #mainNav {
+  /*
+   * Hide animation is applied to .nav-inner, NOT #mainNav itself.
+   * #mainNav is position:sticky, and iOS Safari stalls scroll gestures
+   * when a sticky element's own transform changes mid-scroll because
+   * the compositor has to re-resolve sticky position every frame.
+   * Transforming a non-sticky child sidesteps that reconciliation.
+   */
+  #mainNav .nav-inner {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 300ms ease-out, transform 300ms ease-out;
     will-change: opacity, transform;
   }
 
-  #mainNav.nav-hidden {
-    transform: translateY(-100%);
+  #mainNav.nav-hidden .nav-inner {
+    transform: translateY(-150%);
     opacity: 0;
     pointer-events: none;
   }

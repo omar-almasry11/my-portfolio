@@ -24,15 +24,21 @@ themeToggle?.addEventListener('click', () => {
 // =============================
 const mainNav = document.getElementById('mainNav');
 /**
- * Delta threshold avoids reacting to mobile browser-UI toolbar resize,
- * iOS elastic overscroll, and momentum-scroll micro-reversals that
- * otherwise make the navbar flicker up/down.
+ * Directional-commitment thresholds kill iOS navbar flicker.
+ * The browser URL-bar collapse, elastic overscroll, and momentum
+ * reversals routinely yank scrollY by 20–60px in the "wrong" direction
+ * mid-gesture. A plain delta filter can't reject those; we instead
+ * require that the scroll travel *since the last direction flip*
+ * exceed a threshold before we toggle the navbar state.
  */
-const NAV_SCROLL_DELTA = 8;
 const NAV_REVEAL_TOP = 12;
 const NAV_COMPACT_AT = 80;
+const NAV_COMMIT_TRAVEL = 28;
+const NAV_NOISE_FLOOR = 2;
 
-let lastCommittedY = Math.max(window.scrollY, 0);
+let lastY = Math.max(window.scrollY, 0);
+let directionAnchorY = lastY;
+let lastDirection = 0;
 let navTicking = false;
 
 function getMaxScrollY() {
@@ -48,38 +54,58 @@ function handleNavScroll() {
 
     const maxY = getMaxScrollY();
     const currentY = Math.min(Math.max(window.scrollY, 0), maxY);
-    const delta = currentY - lastCommittedY;
-
-    // Ignore jitter below threshold — this is what kills the mobile flicker.
-    if (Math.abs(delta) < NAV_SCROLL_DELTA && currentY > NAV_REVEAL_TOP) return;
-
-    const scrollingDown = delta > 0;
+    const delta = currentY - lastY;
     const isMobile = window.innerWidth < 640;
 
     if (currentY <= NAV_REVEAL_TOP) {
       mainNav.classList.remove('nav-logo-compact');
       mainNav.classList.remove('nav-hidden');
-    } else if (scrollingDown && currentY > NAV_COMPACT_AT) {
+      lastY = currentY;
+      directionAnchorY = currentY;
+      lastDirection = 0;
+      return;
+    }
+
+    if (Math.abs(delta) < NAV_NOISE_FLOOR) return;
+
+    const dir = delta > 0 ? 1 : -1;
+    if (dir !== lastDirection) {
+      directionAnchorY = lastY;
+      lastDirection = dir;
+    }
+    lastY = currentY;
+
+    const travelSinceFlip = Math.abs(currentY - directionAnchorY);
+    if (travelSinceFlip < NAV_COMMIT_TRAVEL) return;
+
+    if (dir === 1 && currentY > NAV_COMPACT_AT) {
       mainNav.classList.add('nav-logo-compact');
       if (isMobile) mainNav.classList.add('nav-hidden');
-    } else if (!scrollingDown) {
+    } else if (dir === -1) {
       mainNav.classList.remove('nav-logo-compact');
       mainNav.classList.remove('nav-hidden');
     }
 
     if (!isMobile) mainNav.classList.remove('nav-hidden');
-
-    lastCommittedY = currentY;
   });
 }
 
+function resetNavBaseline() {
+  lastY = Math.max(window.scrollY, 0);
+  directionAnchorY = lastY;
+  lastDirection = 0;
+}
+
 window.addEventListener('scroll', handleNavScroll, { passive: true });
+window.addEventListener('touchstart', resetNavBaseline, { passive: true });
 window.addEventListener('resize', () => {
   if (!mainNav) return;
   if (window.innerWidth >= 640) mainNav.classList.remove('nav-hidden');
-  // Re-sync baseline so a viewport-resize-driven scrollY change (iOS URL bar) doesn't register as user scroll.
-  lastCommittedY = Math.max(window.scrollY, 0);
+  resetNavBaseline();
 }, { passive: true });
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', resetNavBaseline);
+}
 
 
 // =============================
