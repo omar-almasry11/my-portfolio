@@ -23,44 +23,62 @@ themeToggle?.addEventListener('click', () => {
 // 📱 Navbar Scroll: Logo Morph + Mobile Hide
 // =============================
 const mainNav = document.getElementById('mainNav');
-let lastScrollY = window.scrollY;
+/**
+ * Delta threshold avoids reacting to mobile browser-UI toolbar resize,
+ * iOS elastic overscroll, and momentum-scroll micro-reversals that
+ * otherwise make the navbar flicker up/down.
+ */
+const NAV_SCROLL_DELTA = 8;
+const NAV_REVEAL_TOP = 12;
+const NAV_COMPACT_AT = 80;
+
+let lastCommittedY = Math.max(window.scrollY, 0);
 let navTicking = false;
 
+function getMaxScrollY() {
+  const doc = document.documentElement;
+  return Math.max(0, (doc.scrollHeight || 0) - window.innerHeight);
+}
+
 function handleNavScroll() {
-  if (!navTicking) {
-    requestAnimationFrame(() => {
-      if (mainNav) {
-        const currentScrollY = Math.max(window.scrollY, 0);
+  if (navTicking || !mainNav) return;
+  navTicking = true;
+  requestAnimationFrame(() => {
+    navTicking = false;
 
-        if (currentScrollY > lastScrollY && currentScrollY > 80) {
-          mainNav.classList.add('nav-logo-compact');
-        } else if (currentScrollY < lastScrollY || currentScrollY <= 12) {
-          mainNav.classList.remove('nav-logo-compact');
-        }
+    const maxY = getMaxScrollY();
+    const currentY = Math.min(Math.max(window.scrollY, 0), maxY);
+    const delta = currentY - lastCommittedY;
 
-        if (window.innerWidth < 640) {
-          if (currentScrollY > lastScrollY && currentScrollY > 80) {
-            mainNav.classList.add('nav-hidden');
-          } else {
-            mainNav.classList.remove('nav-hidden');
-          }
-        } else {
-          mainNav.classList.remove('nav-hidden');
-        }
+    // Ignore jitter below threshold — this is what kills the mobile flicker.
+    if (Math.abs(delta) < NAV_SCROLL_DELTA && currentY > NAV_REVEAL_TOP) return;
 
-        lastScrollY = currentScrollY;
-      }
-      navTicking = false;
-    });
-    navTicking = true;
-  }
+    const scrollingDown = delta > 0;
+    const isMobile = window.innerWidth < 640;
+
+    if (currentY <= NAV_REVEAL_TOP) {
+      mainNav.classList.remove('nav-logo-compact');
+      mainNav.classList.remove('nav-hidden');
+    } else if (scrollingDown && currentY > NAV_COMPACT_AT) {
+      mainNav.classList.add('nav-logo-compact');
+      if (isMobile) mainNav.classList.add('nav-hidden');
+    } else if (!scrollingDown) {
+      mainNav.classList.remove('nav-logo-compact');
+      mainNav.classList.remove('nav-hidden');
+    }
+
+    if (!isMobile) mainNav.classList.remove('nav-hidden');
+
+    lastCommittedY = currentY;
+  });
 }
 
 window.addEventListener('scroll', handleNavScroll, { passive: true });
 window.addEventListener('resize', () => {
-  if (mainNav && window.innerWidth >= 640) {
-    mainNav.classList.remove('nav-hidden');
-  }
+  if (!mainNav) return;
+  if (window.innerWidth >= 640) mainNav.classList.remove('nav-hidden');
+  // Re-sync baseline so a viewport-resize-driven scrollY change (iOS URL bar) doesn't register as user scroll.
+  lastCommittedY = Math.max(window.scrollY, 0);
 }, { passive: true });
 
 
@@ -116,7 +134,34 @@ function initHeroGreetingRotator() {
     }, fadeMs);
   };
 
-  window.setInterval(showNext, cycleMs);
+  /** Gate the rotator on visibility — no point firing a setInterval + DOM mutation every 3.6s while the hero is off-screen. */
+  let intervalId = null;
+  const startRotator = () => {
+    if (intervalId || prefersReducedMotion) return;
+    intervalId = window.setInterval(showNext, cycleMs);
+  };
+  const stopRotator = () => {
+    if (!intervalId) return;
+    clearInterval(intervalId);
+    intervalId = null;
+  };
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) startRotator();
+        else stopRotator();
+      });
+    }, { threshold: 0 });
+    io.observe(greetingWord);
+  } else {
+    startRotator();
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopRotator();
+    else if (greetingWord.getBoundingClientRect().bottom > 0) startRotator();
+  });
 }
 
 document.addEventListener('DOMContentLoaded', initHeroGreetingRotator);

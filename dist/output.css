@@ -4089,6 +4089,10 @@ html.dark .cs-decision-callout {
   pointer-events: none;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .static {
   position: static;
 }
@@ -5395,7 +5399,6 @@ html.dark .cs-decision-callout {
   width: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 34 / var(--tw-bg-opacity, 1));
-  will-change: opacity;
 }
 
 /* Utility to hide custom cursor */
@@ -5479,7 +5482,7 @@ html.dark .cs-decision-callout {
 .cta-grid-item {
   height: 100%;
   width: 100%;
-  will-change: opacity;
+  /* Intentionally no will-change: GSAP applies it to only the actively-animating items each cycle, avoiding 400 persistent compositor layers. */
   transition: opacity 0.3s ease;
   aspect-ratio: 1 / 1;
 }
@@ -5603,9 +5606,7 @@ html.dark .testimonial-card__role-short {
   background-color: transparent !important;
 }
 
-.cb-sq {
-  will-change: opacity;
-}
+/* No will-change/transform hack — GSAP manages layer promotion for the tweened squares. A persistent rule promotes every square to its own compositor layer. */
 
 /* About narrative: two-column sections (label + body), max 900px, left in section column */
 
@@ -5711,9 +5712,7 @@ html.dark .about-prose-body {
   pointer-events: none;
 }
 
-.about-pixel-sq {
-  will-change: opacity;
-}
+/* No will-change — see .cb-sq note. */
 
 /* Case study cards: hover-driven pixel overlay */
 
@@ -5729,9 +5728,7 @@ html.dark .about-prose-body {
   pointer-events: none;
 }
 
-.case-study-pixel-sq {
-  will-change: opacity;
-}
+/* No will-change — see .cb-sq note. */
 
 /*
   Mondrian tiling — tall accent left, color cluster right, scattered accents bottom
@@ -6193,6 +6190,10 @@ html.dark .about-prose-body {
 
   .sm\:max-w-full {
     max-width: 100%;
+  }
+
+  .sm\:max-w-sm {
+    max-width: 24rem;
   }
 
   .sm\:grid-cols-2 {

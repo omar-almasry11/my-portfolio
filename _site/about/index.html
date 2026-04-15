@@ -147,7 +147,7 @@
         generateColors();
       })();
     </script>
-    <nav id="mainNav" class="px-[5%] py-4 sticky top-0 z-50 transition-transform duration-300">
+    <nav id="mainNav" class="px-[5%] py-4 sticky top-0 z-50">
   <div class="max-w-6xl mx-auto flex w-full items-center justify-between gap-3">
     <!-- Logo -->
     <a href="/" class="logo logo-nav flex shrink-0 items-center font-bold no-underline group" aria-label="Omar Almasry, home">
@@ -335,8 +335,8 @@
 
   <!-- Global Experience Card -->
   <div class="standard-card about-pixel-card col-span-6 justify-center">
-    <h3 class="text-lg sm:text-xl font-bold">Global Experience</h3>
-    <p class="text-sm sm:text-base font-light mb-4 text-normalLight dark:text-invertedLight max-w-lg">I've had the pleasure of working with clients from 11 different countries on 5 continents.</p>
+    <h3 class="text-xl sm:text-2xl font-bold">Global Experience</h3>
+    <p class="text-base sm:text-lg font-light mb-4 text-normalLight dark:text-invertedLight max-w-xs sm:max-w-sm">I've had the pleasure of working with clients from 11 different countries on 5 continents.</p>
     <div class="globe-embed w-full aspect-square max-w-[350px] sm:max-w-[450px] mx-auto"></div>
   </div>
 
@@ -473,12 +473,26 @@
               renderer.setPixelRatio(isSmallScreen ? 1 : Math.min(window.devicePixelRatio, 2));
               globeContainer.appendChild(renderer.domElement);
 
-              const texture = new THREE.TextureLoader().load('/images/globe-texture.webp');
-              texture.minFilter = THREE.LinearFilter;
+              const texture = new THREE.TextureLoader().load('/images/globe-texture.webp', (tex) => {
+                  // Match the renderer's current color space so hues don't shift after the texture finishes decoding.
+                  if ('SRGBColorSpace' in THREE) tex.colorSpace = THREE.SRGBColorSpace;
+                  else tex.encoding = THREE.sRGBEncoding;
+              });
+              /**
+               * Trilinear filtering + mipmaps — the globe texture is high-res (~3MB source).
+               * Without mipmaps, minification at small render sizes and grazing angles
+               * aliases into the shimmering "white noise" effect. Trilinear samples from
+               * pre-filtered mip levels and kills the moire.
+               */
+              texture.minFilter = THREE.LinearMipmapLinearFilter;
               texture.magFilter = THREE.LinearFilter;
+              texture.generateMipmaps = true;
+              // Mild anisotropic filtering further sharpens the texture at oblique angles without noticeable cost.
+              texture.anisotropy = Math.min(4, renderer.capabilities.getMaxAnisotropy());
 
               globe = new THREE.Mesh(
-                  new THREE.SphereGeometry(5, 64, 64),
+                  /** 48 segments is plenty for a ≤450px sphere; 64 was wasted vertices. */
+                  new THREE.SphereGeometry(5, 48, 48),
                   new THREE.MeshStandardMaterial({
                       map: texture,
                       roughness: 0.8,

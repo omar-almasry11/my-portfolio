@@ -11,7 +11,8 @@ const initAboutCardPixelFill = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   const CARD_SELECTOR = '.about-pixel-card';
-  const CELL_TARGET = 28;
+  /** Larger tiles → ~75% fewer squares per card, fewer GSAP targets in the scrub. */
+  const CELL_TARGET = 56;
   const palette = ['#C48A1E', '#8A9BB5', '#4A5C8A', '#2A4494'];
   let resizeTimer;
 
@@ -74,15 +75,41 @@ const initAboutCardPixelFill = () => {
         },
         scrollTrigger: {
           trigger: card,
-          start: 'top 85%',
-          end: 'center 60%',
+          /** Start only when the card's top enters the viewport — measurement-drift safe on Safari. */
+          start: 'top bottom',
+          end: 'center 65%',
           scrub: 0.35,
+          fastScrollEnd: true,
+          invalidateOnRefresh: true,
         },
       });
     });
   };
 
-  build();
+  /**
+   * Defer overlay build off the critical path. Only refresh ScrollTrigger once after
+   * layout settles, and never while the user is actively scrolling — mid-scroll
+   * refreshes cause visible jumps in scrubbed animations on Safari.
+   */
+  let userHasScrolled = false;
+  const markScrolled = () => {
+    userHasScrolled = true;
+    window.removeEventListener('scroll', markScrolled);
+  };
+  window.addEventListener('scroll', markScrolled, { passive: true, once: true });
+
+  const runBuild = () => {
+    build();
+    setTimeout(() => {
+      if (!userHasScrolled) ScrollTrigger.refresh();
+    }, 1000);
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(runBuild, { timeout: 800 });
+  } else {
+    setTimeout(runBuild, 100);
+  }
 
   window.addEventListener(
     'resize',

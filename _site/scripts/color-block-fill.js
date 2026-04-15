@@ -14,13 +14,13 @@ const initColorBlockMosaicFill = () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  /** iOS: rubber-band scroll reverses scrub tweens; normalizeScroll fixes that. */
-  if (window.matchMedia('(pointer: coarse)').matches) {
-    if (typeof ScrollTrigger.normalizeScroll === 'function') {
-      ScrollTrigger.normalizeScroll(true);
-    }
-    ScrollTrigger.config({ ignoreMobileResize: true });
-  }
+  /**
+   * Keep ignoreMobileResize so iOS URL-bar show/hide doesn't re-trigger refreshes,
+   * but do NOT call normalizeScroll — on iOS/iPadOS Safari it hijacks native scroll
+   * and produces the jerky / incomplete scrub the testimonials section was showing.
+   * fastScrollEnd + invalidateOnRefresh on each trigger handle the rubber-band case.
+   */
+  ScrollTrigger.config({ ignoreMobileResize: true });
 
   const CELL_TARGET = 28;
   let resizeTimer;
@@ -51,93 +51,131 @@ const initColorBlockMosaicFill = () => {
     return null;
   };
 
-  const refreshScrollTriggersSoon = () => {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => ScrollTrigger.refresh());
+  /** Kill the ScrollTrigger whose trigger is this block, so rebuilding doesn't leave dupes. */
+  const killBlockTrigger = (block) => {
+    ScrollTrigger.getAll().forEach((st) => {
+      if (st.trigger === block) st.kill();
+    });
+  };
+
+  const buildBlock = (block) => {
+    const oldWrapper = block.querySelector('.cb-sq-wrapper');
+    if (oldWrapper) oldWrapper.remove();
+    block.classList.remove('cb-has-squares');
+    killBlockTrigger(block);
+
+    const color = resolveBlockColor(block);
+    if (!color) return;
+
+    const rect = block.getBoundingClientRect();
+    if (rect.width < 4 || rect.height < 4) return;
+
+    const W = rect.width;
+    const H = rect.height;
+    const cols = Math.max(1, Math.round(W / CELL_TARGET));
+    const s = W / cols;
+    const rows = Math.max(1, Math.ceil(H / s));
+    const lastRowPx = rows === 1 ? H : Math.max(1, H - (rows - 1) * s);
+    const rowTemplate =
+      rows === 1 ? `${H}px` : `repeat(${rows - 1}, ${s}px) ${lastRowPx}px`;
+
+    block.classList.add('cb-has-squares');
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'cb-sq-wrapper';
+    wrapper.style.cssText =
+      `position:absolute;inset:0;pointer-events:none;overflow:hidden;box-sizing:border-box;` +
+      `display:grid;grid-template-columns:repeat(${cols},${s}px);` +
+      `grid-template-rows:${rowTemplate};`;
+
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < cols * rows; i++) {
+      const sq = document.createElement('div');
+      sq.className = 'cb-sq';
+      sq.style.backgroundColor = color;
+      sq.style.opacity = '0';
+      frag.appendChild(sq);
+    }
+    wrapper.appendChild(frag);
+    block.appendChild(wrapper);
+
+    const squares = wrapper.querySelectorAll('.cb-sq');
+
+    gsap.to(squares, {
+      opacity: 1,
+      ease: 'none',
+      stagger: {
+        each: 0.02,
+        from: 'random',
+      },
+      scrollTrigger: {
+        trigger: block,
+        /** Start only when the block's top actually enters the viewport — measurement-drift safe. */
+        start: 'top bottom',
+        end: 'center 60%',
+        scrub: 0.4,
+        fastScrollEnd: true,
+        invalidateOnRefresh: true,
+      },
     });
   };
 
   const build = () => {
     const blocks = document.querySelectorAll('.color-block');
     if (!blocks.length) return;
-
-    blocks.forEach((block) => {
-      // Tear down previous run
-      const oldWrapper = block.querySelector('.cb-sq-wrapper');
-      if (oldWrapper) oldWrapper.remove();
-      block.classList.remove('cb-has-squares');
-
-      const color = resolveBlockColor(block);
-      if (!color) return;
-
-      const rect = block.getBoundingClientRect();
-      if (rect.width === 0 || rect.height === 0) return;
-
-      const W = rect.width;
-      const H = rect.height;
-      const cols = Math.max(1, Math.round(W / CELL_TARGET));
-      const s = W / cols;
-      const rows = Math.max(1, Math.ceil(H / s));
-      const lastRowPx = rows === 1 ? H : Math.max(1, H - (rows - 1) * s);
-      const rowTemplate =
-        rows === 1 ? `${H}px` : `repeat(${rows - 1}, ${s}px) ${lastRowPx}px`;
-
-      block.classList.add('cb-has-squares');
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'cb-sq-wrapper';
-      wrapper.style.cssText =
-        `position:absolute;inset:0;pointer-events:none;overflow:hidden;box-sizing:border-box;` +
-        `display:grid;grid-template-columns:repeat(${cols},${s}px);` +
-        `grid-template-rows:${rowTemplate};`;
-
-      const frag = document.createDocumentFragment();
-      for (let i = 0; i < cols * rows; i++) {
-        const sq = document.createElement('div');
-        sq.className = 'cb-sq';
-        sq.style.backgroundColor = color;
-        sq.style.opacity = '0';
-        frag.appendChild(sq);
-      }
-      wrapper.appendChild(frag);
-      block.appendChild(wrapper);
-
-      const squares = wrapper.querySelectorAll('.cb-sq');
-
-      gsap.to(squares, {
-        opacity: 1,
-        ease: 'none',
-        stagger: {
-          each: 0.02,
-          from: 'random',
-        },
-        scrollTrigger: {
-          trigger: block,
-          start: 'top 90%',
-          end: 'center 50%',
-          scrub: 0.4,
-          fastScrollEnd: true,
-          invalidateOnRefresh: true,
-        },
-      });
-    });
-
-    refreshScrollTriggersSoon();
-    document.fonts?.ready?.then(() => ScrollTrigger.refresh());
+    blocks.forEach(buildBlock);
   };
 
-  build();
+  /**
+   * Per-block ResizeObserver: lazy-loaded testimonial logos land later and change the
+   * row heights that color blocks share with testimonial cards. Without this, the
+   * pixel grid stays locked at the pre-load dimensions and shows as a tiny 1×1 or
+   * partial fill. Only the block that actually changed size is rebuilt — no global
+   * ScrollTrigger.refresh is needed, so there are no scroll jumps on Safari.
+   *
+   * ResizeObserver fires once on observe() with the current size, which doubles as
+   * our initial build trigger. No separate idle-callback build needed.
+   *
+   * The size cache ignores sub-pixel noise so a stray layout poke doesn't thrash rebuilds.
+   */
+  const sizeCache = new WeakMap();
+  const SIZE_EPSILON = 2;
+  const scheduledRebuilds = new WeakMap();
+
+  const onBlockResize = (block) => {
+    const rect = block.getBoundingClientRect();
+    const prev = sizeCache.get(block);
+    if (
+      prev &&
+      Math.abs(prev.w - rect.width) < SIZE_EPSILON &&
+      Math.abs(prev.h - rect.height) < SIZE_EPSILON
+    ) {
+      return;
+    }
+    sizeCache.set(block, { w: rect.width, h: rect.height });
+    // Coalesce a burst of resize entries into a single rebuild per block.
+    if (scheduledRebuilds.get(block)) return;
+    scheduledRebuilds.set(block, true);
+    requestAnimationFrame(() => {
+      scheduledRebuilds.delete(block);
+      buildBlock(block);
+    });
+  };
+
+  if ('ResizeObserver' in window) {
+    const ro = new ResizeObserver((entries) => {
+      entries.forEach((entry) => onBlockResize(entry.target));
+    });
+    document.querySelectorAll('.color-block').forEach((block) => ro.observe(block));
+  } else {
+    // Legacy fallback: no ResizeObserver, so build once and rely on window resize.
+    if ('requestIdleCallback' in window) requestIdleCallback(build, { timeout: 800 });
+    else setTimeout(build, 100);
+  }
 
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      ScrollTrigger.getAll().forEach((st) => {
-        if (st.trigger && st.trigger.classList.contains('color-block')) {
-          st.kill();
-        }
-      });
-      build();
-    }, 200);
+    resizeTimer = setTimeout(build, 200);
   });
 };
 
