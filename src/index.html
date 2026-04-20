@@ -18,7 +18,12 @@ description: Digital designer helping agencies and in-house teams build accessib
     <div class="hero-grid__portrait">
         <div id="portraitCircle" class="relative w-full h-full bg-transparent overflow-hidden">
             <picture>
-              <source srcset="/images/full-shot-1.webp" type="image/webp">
+              <source
+                srcset="/images/full-shot-1-480w.webp 480w,
+                        /images/full-shot-1-768w.webp 768w,
+                        /images/full-shot-1.webp 1024w"
+                sizes="(max-width: 767px) 62.5vw, 25vw"
+                type="image/webp">
               <img src="/images/full-shot-1.png" width="1022" height="1397" alt="Omar Almasry" class="w-full h-full object-cover object-top" fetchpriority="high" decoding="async">
             </picture>
           </div>

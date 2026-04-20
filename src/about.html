@@ -257,7 +257,8 @@ description: Learn about Omar Almasry, a digital designer from Egypt now based i
               renderer.setPixelRatio(isSmallScreen ? 1 : Math.min(window.devicePixelRatio, 2));
               globeContainer.appendChild(renderer.domElement);
 
-              const texture = new THREE.TextureLoader().load('/images/globe-texture.webp', (tex) => {
+              const globeTextureSrc = isSmallScreen ? '/images/globe-texture-1k.webp' : '/images/globe-texture-2k.webp';
+              const texture = new THREE.TextureLoader().load(globeTextureSrc, (tex) => {
                   // Match the renderer's current color space so hues don't shift after the texture finishes decoding.
                   if ('SRGBColorSpace' in THREE) tex.colorSpace = THREE.SRGBColorSpace;
                   else tex.encoding = THREE.sRGBEncoding;

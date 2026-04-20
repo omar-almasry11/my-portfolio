@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(css|scss|html|js|ts|tsx\\)$\")",
+      "Bash(wc -l /Users/omaralmasry/Documents/web-dev-projects/omar-almasry-portfolio/src/scripts/*.js)",
+      "Bash(find /Users/omaralmasry/Documents/web-dev-projects/omar-almasry-portfolio/src/images -type f \\\\\\( -name \"*.webp\" -o -name \"*.png\" -o -name \"*.svg\" -o -name \"*.avif\" \\\\\\) -exec du -h {} +)",
+      "Bash(awk '{sum+=$1} END {print \"Total image size:\", sum}')",
+      "Bash(find /Users/omaralmasry/Documents/web-dev-projects/omar-almasry-portfolio/src/images -type f -exec ls -lh {} +)",
+      "Bash(grep -E \"\\\\.\\(webp|png|svg|avif\\)$\")",
+      "Bash(xargs ls *)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(sort -k1 -h)",
+      "Bash(ls -lh /Users/omaralmasry/Documents/web-dev-projects/omar-almasry-portfolio/src/images/full-shot-1.*)",
+      "Bash(ls -lh /Users/omaralmasry/Documents/web-dev-projects/omar-almasry-portfolio/src/images/png/full-shot-1.*)"
+    ]
+  }
+}

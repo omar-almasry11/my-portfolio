@@ -5,7 +5,7 @@
 @layer base {
   @font-face {
     font-family: 'Bricolage Grotesque';
-    src: url('/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.ttf') format('truetype');
+    src: url('/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.woff2') format('woff2');
     font-style: normal;
     font-weight: 200 800;
     font-display: swap;
@@ -13,7 +13,7 @@
 
   @font-face {
     font-family: 'DM Sans';
-    src: url('/fonts/DMSans-VariableFont.ttf') format('truetype');
+    src: url('/fonts/DMSans-VariableFont.woff2') format('woff2');
     font-style: normal;
     font-weight: 300 700;
     font-display: swap;

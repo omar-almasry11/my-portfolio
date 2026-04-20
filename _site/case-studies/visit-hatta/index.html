@@ -13,8 +13,8 @@
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/fonts/DMSans-VariableFont.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/DMSans-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
     <link
@@ -82,69 +82,53 @@
         loadGrid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
         loadGrid.dataset.gridCols = String(cols);
 
-        // Generate grid items
-        for (let i = 0; i < totalItems; i++) {
-          const item = document.createElement('div');
-          item.className = 'load_grid-item';
-          loadGrid.appendChild(item);
-        }
-
-        const items = document.querySelectorAll('.load_grid-item');
+        // Batch DOM insertions with a DocumentFragment to minimize reflows
+        const fragment = document.createDocumentFragment();
+        const itemElements = [];
         const storedColors = sessionStorage.getItem('transitionColors');
-
-        const applyColors = (colorArray) => {
-          items.forEach((item, i) => {
-            if (colorArray[i]) item.style.backgroundColor = colorArray[i];
-          });
-        };
-
-        const generateColors = () => {
-          const newColors = [];
-          items.forEach((item, index) => {
-            let color;
-            let attempts = 0;
-            const maxAttempts = 10;
-
-            do {
-              color = colors[Math.floor(Math.random() * colors.length)];
-              attempts++;
-
-              const row = Math.floor(index / cols);
-              const col = index % cols;
-
-              const leftIndex = index - 1;
-              const hasLeftNeighbor = col > 0 && leftIndex >= 0;
-              const leftColor = hasLeftNeighbor ? newColors[leftIndex] : null;
-
-              const topIndex = index - cols;
-              const hasTopNeighbor = row > 0 && topIndex >= 0;
-              const topColor = hasTopNeighbor ? newColors[topIndex] : null;
-
-              if (color !== leftColor && color !== topColor) {
-                break;
-              }
-            } while (attempts < maxAttempts);
-
-            item.style.backgroundColor = color;
-            newColors.push(color);
-          });
-
-          sessionStorage.setItem('transitionColors', JSON.stringify(newColors));
-        };
+        let cachedColors = null;
 
         if (storedColors) {
           try {
-            const colorArray = JSON.parse(storedColors);
-            if (Array.isArray(colorArray) && colorArray.length === items.length) {
-              applyColors(colorArray);
-              return;
+            const parsed = JSON.parse(storedColors);
+            if (Array.isArray(parsed) && parsed.length === totalItems) {
+              cachedColors = parsed;
             }
-          } catch (err) {
-            // Ignore invalid stored data and regenerate
-          }
+          } catch (err) { /* regenerate */ }
         }
 
-        generateColors();
+        // Generate items and apply colors in a single pass
+        const newColors = cachedColors || [];
+        for (let i = 0; i < totalItems; i++) {
+          const item = document.createElement('div');
+          item.className = 'load_grid-item';
+
+          if (cachedColors) {
+            item.style.backgroundColor = cachedColors[i];
+          } else {
+            let color;
+            let attempts = 0;
+            const row = Math.floor(i / cols);
+            const col = i % cols;
+            do {
+              color = colors[Math.floor(Math.random() * colors.length)];
+              attempts++;
+              const leftColor = col > 0 ? newColors[i - 1] : null;
+              const topColor = row > 0 ? newColors[i - cols] : null;
+              if (color !== leftColor && color !== topColor) break;
+            } while (attempts < 10);
+            item.style.backgroundColor = color;
+            newColors.push(color);
+          }
+
+          fragment.appendChild(item);
+        }
+
+        if (!cachedColors) {
+          sessionStorage.setItem('transitionColors', JSON.stringify(newColors));
+        }
+
+        loadGrid.appendChild(fragment);
       })();
     </script>
     <nav id="mainNav" class="px-[5%] py-4 sticky top-0 z-50">
@@ -1304,12 +1288,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="/scripts/main.js" defer></script>
     <script src="/scripts/cursor.js" defer></script>
-    <script src="/scripts/colorful-heading.js" defer></script>
-    <script src="/scripts/color-block-fill.js" defer></script>
-    <script src="/scripts/about-card-pixel-fill.js" defer></script>
-    <script src="/scripts/case-study-card-pixel-hover.js" defer></script>
-    <script src="/scripts/hero-cell-pixel-scroll.js" defer></script>
     <script src="/scripts/page-transition.js" defer></script>
     <script src="/scripts/cta-grid-animation.js" defer></script>
+    
+    
+    
+    
   </body>
 </html>
