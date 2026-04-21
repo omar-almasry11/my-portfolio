@@ -12,7 +12,7 @@ header-img: "/images/socialsuite-hero-img.webp"
 header-img-width: 2880
 header-img-height: 1738
 header_subtitle: "Brand Identity & Website Design"
-header-overview: "Transforming an ESG software leader's digital presence — designing a sophisticated website that speaks to both mission-driven nonprofits and enterprise corporations."
+header-overview: "Translating a new brand identity into a digital system that speaks credibly to two very different audiences — global nonprofits and Fortune 500 corporations."
 header_meta:
   - label: "Client"
     value: "Socialsuite"
@@ -22,9 +22,9 @@ header_meta:
     value: "6 weeks"
   - label: "Role"
     value: "Lead Designer & Developer"
-order: 1
+order: 2
 categories:
-  - Branding
+  - Brand System
   - Web Design / Dev
 ---
 
@@ -43,17 +43,17 @@ As a platform serving both Fortune 500 companies and leading nonprofits, they ne
 The goal was ambitious: double conversions to 4.5% — without sacrificing lead quality.
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
-  <div class="standard-card text-center">
+  <div class="standard-card text-left">
     <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">01</p>
     <p class="font-semibold text-normal dark:text-inverted mb-2">Visual Identity Disconnect</p>
     <p class="text-sm text-normalLight dark:text-invertedLight mb-0">The existing site relied on generic stock illustrations and outdated branding that failed to communicate their premium positioning as an enterprise software provider.</p>
   </div>
-  <div class="standard-card text-center">
+  <div class="standard-card text-left">
     <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">02</p>
     <p class="font-semibold text-normal dark:text-inverted mb-2">Poor Conversion Performance</p>
     <p class="text-sm text-normalLight dark:text-invertedLight mb-0">A homepage conversion rate of just 2.15% was actively hindering growth.</p>
   </div>
-  <div class="standard-card text-center">
+  <div class="standard-card text-left">
     <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">03</p>
     <p class="font-semibold text-normal dark:text-inverted mb-2">Audience Confusion</p>
     <p class="text-sm text-normalLight dark:text-invertedLight mb-0">A single "Book a Demo" flow attempted to serve two dramatically different audiences — creating friction at every touchpoint.</p>
@@ -393,11 +393,11 @@ Same brand. Different conversations.
 The redesigned website launched in December 2022.
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
-  <div class="standard-card text-center py-8">
+  <div class="standard-card text-left py-8">
     <p class="text-4xl sm:text-5xl font-extrabold text-normal dark:text-inverted mb-2">165+</p>
     <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Organizations served worldwide</p>
   </div>
-  <div class="standard-card text-center py-8">
+  <div class="standard-card text-left py-8">
     <p class="text-4xl sm:text-5xl font-extrabold text-normal dark:text-inverted mb-2">2×</p>
     <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Conversion rate target</p>
   </div>

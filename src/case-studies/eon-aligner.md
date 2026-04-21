@@ -1,6 +1,8 @@
 ---
 title: "Eon Aligner"
 date: 2025-01-01
+archived: true
+permalink: false
 project-link: "https://eon-aligner-doctor-finder.netlify.app/"
 description: "Eon Aligner is a dental brand specializing in clear-aligner treatment. I built a React-based doctor locator with interactive Google Maps integration, country/city filtering, and an Airtable backend that lets the marketing team manage clinic listings without developer involvement."
 logo: "/images/eon-aligner-logo.svg"
@@ -10,7 +12,7 @@ header-img: "/images/eon-aligner-1.webp"
 header-img-width: 3024
 header-img-height: 1654
 header-overview: "Patients needed a fast, intuitive way to find certified providers in their area. I architected and built a map-first locator using React and Google Maps API, with dynamic country/city filtering and real-time data from Airtable. The solution empowers the marketing team to add, edit, and remove clinic listings through a simple spreadsheet-like interface—no code changes, no deployments, no developer bottlenecks."
-order: 5
+order: 6
 categories:
   - Web Development
 ---
