@@ -30,7 +30,7 @@
 
   html {
     @apply font-sans text-normal bg-normal transition-colors duration-300;
-    cursor: url('../images/pixel-art-arrow.svg?v=2') 0 0, auto;
+    cursor: url('../images/pixel-art-arrow.svg?v=3') 0 0, auto;
   }
 
   html.dark {
@@ -74,7 +74,7 @@
   input[type="radio"],
   #back-to-top,
   .stretched-link::after {
-    cursor: url('../images/pixel-art-pointer.svg?v=2') 10 0, pointer !important;
+    cursor: url('../images/pixel-art-pointer.svg?v=3') 8 0, pointer !important;
   }
 
   /* Brush cursor for portrait - hide system cursor */
@@ -520,7 +520,7 @@
 /* Custom Cursor Styles */
 @layer components {
   .cursor-wrapper {
-    @apply fixed top-0 left-0 w-5 h-5 pointer-events-none z-[30] flex items-center justify-center translate-x-0 translate-y-0 will-change-transform transition-[z-index] duration-0;
+    @apply fixed top-0 left-0 w-4 h-4 pointer-events-none z-[30] flex items-center justify-center translate-x-0 translate-y-0 will-change-transform transition-[z-index] duration-0;
   }
 
   .cursor-top {
@@ -532,23 +532,23 @@
   }
 
   .cursor_dot {
-    @apply w-[1.4rem] h-[1.4rem] bg-primary rounded-[4px] dark:bg-primaryInverted;
+    @apply w-[1.15rem] h-[1.15rem] bg-primary rounded-[3px] dark:bg-primaryInverted;
     opacity: 0.8;
     transition: background-color 300ms ease-out, opacity 300ms ease-out, transform 300ms ease-out;
   }
 
   .scale-cursor-up {
-    @apply scale-[4];
+    @apply scale-[3.35];
     opacity: 1;
   }
 
   .scale-cursor-up-small {
-    @apply scale-[1.5];
+    @apply scale-[1.35];
     opacity: 1;
   }
 
   .scale-cursor-up-footer {
-    @apply scale-[2.53];
+    @apply scale-[2.15];
     opacity: 1;
   }
 
@@ -994,8 +994,8 @@
   */
   @media (max-width: 767px) {
     .hero-grid.hero-grid--about {
-      min-height: max(9rem, 85vh);
-      height: max(9rem, 85vh);
+      min-height: max(9rem, 60vh);
+      height: max(9rem, 60vh);
       grid-template-rows:
         minmax(0, 1fr)
         minmax(0, 1fr)
@@ -1148,12 +1148,10 @@
 
   #back-to-top,
   #back-to-top * {
-    cursor: url('../images/pixel-art-pointer.svg?v=2') 10 0, pointer !important;
+    cursor: url('../images/pixel-art-pointer.svg?v=3') 8 0, pointer !important;
   }
 
   #back-to-top {
-    width: 3rem;
-    height: 3rem;
     opacity: 1;
     transform: translateY(0);
     transition: opacity 200ms ease, transform 200ms ease;

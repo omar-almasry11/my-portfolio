@@ -1,7 +1,7 @@
 ---
 title: "Socialsuite"
 date: 2025-01-04
-description: "Brand identity and website design for a global ESG platform serving 150+ organizations — including YMCA, Big Brothers Big Sisters, and publicly traded companies on NASDAQ and NYSE."
+description: "Brand design and website for a global ESG platform serving 150+ organizations — including YMCA, Big Brothers Big Sisters, and publicly traded companies on NASDAQ and NYSE."
 logo: "/images/png/socialsuite-logo.webp"
 logo-dark: "/images/png/socialsuite-logo.webp"
 customLogoClass: "w-12 h-12 dark:w-12 dark:h-12"
@@ -11,8 +11,8 @@ card-img-height: 1200
 header-img: "/images/socialsuite-hero-img.webp"
 header-img-width: 2880
 header-img-height: 1738
-header_subtitle: "Brand Identity & Website Design"
-header-overview: "Translating a new brand identity into a digital system that speaks credibly to two very different audiences — global nonprofits and Fortune 500 corporations."
+header_subtitle: "Brand Design & Website"
+header-overview: "Building the brand expression for a global ESG platform — a visual language that speaks credibly to two very different audiences: global nonprofits and Fortune 500 corporations."
 header_meta:
   - label: "Client"
     value: "Socialsuite"
@@ -21,16 +21,18 @@ header_meta:
   - label: "Timeline"
     value: "6 weeks"
   - label: "Role"
-    value: "Lead Designer & Developer"
+    value: "Brand Designer"
 order: 2
 categories:
   - Brand System
-  - Web Design / Dev
+  - Web Design
 ---
 
 ## Overview
 
-Socialsuite is a global leader in ESG and impact measurement software, serving 150+ organizations worldwide — from nonprofits like YMCA and Habitat for Humanity to publicly traded companies on NASDAQ and NYSE. Following a comprehensive rebrand, I led the complete redesign of their web presence, translating new brand guidelines into a digital experience that serves two distinct audiences while driving measurable conversion improvements.
+Socialsuite is a global leader in ESG and impact measurement software, serving 150+ organizations worldwide — from nonprofits like YMCA and Habitat for Humanity to publicly traded companies on NASDAQ and NYSE. 
+
+They came to me with a logo and a set of suggested brand colors. Everything else — the visual language, the photography approach, the illustration system, the typography, and its primary digital application — I designed from there.
 
 ---
 
@@ -38,7 +40,7 @@ Socialsuite is a global leader in ESG and impact measurement software, serving 1
 
 Socialsuite had a problem: their website didn't match their market position.
 
-As a platform serving both Fortune 500 companies and leading nonprofits, they needed a digital presence that could speak credibly to both. Instead, they had outdated visuals, a confusing user experience, and a homepage conversion rate of just 2.15%.
+As a platform serving both Fortune 500 companies and leading nonprofits, they needed a brand presence that could speak credibly to both. Instead, they had outdated visuals, a confusing user experience, and a homepage conversion rate of just 2.15%.
 
 The goal was ambitious: double conversions to 4.5% — without sacrificing lead quality.
 
@@ -46,7 +48,7 @@ The goal was ambitious: double conversions to 4.5% — without sacrificing lead 
   <div class="standard-card text-left">
     <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">01</p>
     <p class="font-semibold text-normal dark:text-inverted mb-2">Visual Identity Disconnect</p>
-    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">The existing site relied on generic stock illustrations and outdated branding that failed to communicate their premium positioning as an enterprise software provider.</p>
+    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">The existing site relied on generic stock illustrations and dated visuals that failed to communicate the premium positioning of enterprise software.</p>
   </div>
   <div class="standard-card text-left">
     <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">02</p>
@@ -81,7 +83,7 @@ The goal was ambitious: double conversions to 4.5% — without sacrificing lead 
 
 The real problem wasn't design — it was clarity.
 
-One message can't resonate with both audiences. The website needed to feel like two experiences in one — unified by brand, differentiated by intent.
+One message can't resonate with both audiences. The brand needed to feel like two experiences in one — unified by visual language, differentiated by intent.
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
   <div class="cs-audience-card standard-card" style="border-left: 3px solid #00a0aa;">
@@ -104,44 +106,15 @@ One message can't resonate with both audiences. The website needed to feel like 
   </div>
 </div>
 
----
-
-## Discovery & Strategy
-
-I mapped each audience's journey separately — understanding that a nonprofit program director and a Fortune 500 sustainability officer have completely different pain points, vocabularies, and trust signals.
-
-This informed everything: navigation structure, content hierarchy, imagery choices, and CTA placement.
-
-### Competitive Analysis
-
-I analyzed the client's reference sites (Slack, Wealthsimple, Pingboard, Flyhyer) and identified key patterns:
-
-- Clean, spacious layouts with generous whitespace
-- Custom illustrations that reinforce brand personality
-- Clear, benefit-focused value propositions above the fold
-- Conversion-optimized CTAs with minimal friction
-
-### Strategic Approach
-
-**Visual Strategy**
-Move from generic SaaS aesthetics to a sophisticated, purpose-driven design language that bridges corporate professionalism with nonprofit authenticity.
-
-**Conversion Strategy**
-Implement separate, optimized demo flows and tailored value propositions for each audience. By reducing form friction through progressive disclosure and strategically placing social proof throughout the user journey, we streamlined the path to action and increased overall trust.
-
-<div class="not-prose w-full my-12">
-  <img src="/images/socialsuite-form.webp" alt="Socialsuite conversion-optimized form design" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
-</div>
+I mapped each audience's journey separately — understanding that a nonprofit program director and a Fortune 500 sustainability officer have completely different pain points, vocabularies, and trust signals. This shaped everything downstream: navigation structure, content hierarchy, imagery, and CTA placement.
 
 ---
 
 ## Early Exploration
 
-Before any visual design, I focused on content strategy and page structure. Working with the Socialsuite team, I created wireframes to map out user flows and content hierarchy — ensuring we solved the structural problems before layering on brand.
+Before any visual design, I focused on content strategy and page structure. Working with the Socialsuite team, I wireframed the core templates to map user flows and content hierarchy — ensuring we solved the structural problems before layering on brand.
 
-The homepage needed to quickly route two different audiences to relevant content, while industry-specific pages had to speak directly to sector needs (like metals and mining companies navigating ESG compliance).
-
-These wireframes became our alignment tool — getting stakeholder buy-in on structure before committing to pixels.
+The homepage needed to quickly route two different audiences to relevant content. Industry-specific pages had to speak directly to sector needs (like metals and mining companies navigating ESG compliance). These wireframes became the alignment tool — getting stakeholder buy-in on structure before committing to pixels.
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
   <div class="space-y-4">
@@ -162,9 +135,7 @@ These wireframes became our alignment tool — getting stakeholder buy-in on str
 
 ## Visual Direction
 
-With structure locked, I explored how the brand palette could shape the emotional tone of the site. The rebrand provided a rich color system — but how bold should we go?
-
-I tested three directions:
+With structure locked, I explored how the brand could feel — and how to make a single visual language hold both audiences credibly. I tested three directions:
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
   <div class="cs-direction-card">
@@ -201,11 +172,13 @@ I tested three directions:
 
 ---
 
-## Visual Identity System
+## The Brand Language
 
-The rebrand gave me a sophisticated color palette and logo geometry. My job was to extend this into a complete digital design system — one that could flex between nonprofit warmth and enterprise credibility.
+Since Socialsuite had two completely different audiences, they needed a brand language that is flexible enough to shift between nonprofit warmth and enterprise credibility while staying unmistakably theirs.
 
 ### Color System
+
+I developed a two-tier palette built around primary brand tones and a flexible secondary set. The primaries carry the brand's weight. The secondaries let the language shift register — warmer for nonprofit contexts, more restrained for enterprise.
 
 **Primary Colors**
 
@@ -256,7 +229,7 @@ The rebrand gave me a sophisticated color palette and logo geometry. My job was 
 
 <div class="not-prose w-full h-32 rounded-2xl my-6 shadow-medium dark:shadow-mediumInverted" style="background: linear-gradient(90deg, #014682 0%, #00a0aa 100%);"></div>
 
-A sophisticated blue-to-teal gradient that added depth while maintaining accessibility — used strategically in hero sections to create visual interest without overwhelming content.
+The ocean-to-lagoon gradient became the brand's signature surface — used deliberately in hero moments and key brand statements. It carries depth without becoming decorative, and it's the single most identifiable element of the brand's digital expression.
 
 ### Typography
 
@@ -272,51 +245,40 @@ A sophisticated blue-to-teal gradient that added depth while maintaining accessi
       </div>
     </div>
   </div>
-  <div class="space-y-4">
-    <p class="text-xs uppercase tracking-[0.2em] opacity-40 font-bold mb-0">Characters & Numbers</p>
-    <div class="text-4xl md:text-6xl tracking-[0.15em] text-normal dark:text-inverted leading-[1.4]" style="font-family: 'Roboto', sans-serif;">
-      ABCDEFGHIJKLMN<br>
-      OPQRSTUVWXYZ<br>
-      abcdefghijklmn<br>
-      opqrstuvwxyz<br>
-      1234567890!@#$%
-    </div>
-  </div>
   <div class="max-w-3xl">
     <p class="text-xl leading-relaxed text-normalLight dark:text-invertedLight">
-      I selected Roboto for its versatility and clean, modern aesthetic. Its excellent readability across screen sizes and weights made it ideal for both data-heavy ESG content and emotion-driven impact storytelling.
+      I selected Roboto for its versatility and clean, modern aesthetic. Its readability across screen sizes made it ideal for both data-heavy ESG content and emotion-driven impact storytelling — one typeface that could carry both registers without shifting voice.
     </p>
   </div>
 </div>
 
-### Custom Illustration System
+### Circles as the Visual Language
 
-<div class="not-prose w-full my-12">
-  <img src="/images/socialsuite-custom-illustration-system-1.webp" alt="Socialsuite Custom Illustration System" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
-</div>
+The logo is built from overlapping circles — a visual metaphor for connection and impact. 
 
-> "Custom design over stock photos... visual identity to be driven by our mission and vision"
-
-Rather than generic SaaS illustrations, I developed a distinctive visual system that merged authentic photography with geometric abstraction:
+Rather than treat the logo as an isolated mark, I extended its geometry into a full brand vocabulary. Concentric circles, overlapping shapes, and circular photo frames became the system's signature — creating brand cohesion without relying on generic illustration.
 
 <div class="not-prose space-y-8 my-12">
-  <img src="/images/socialsuite-custom-illustration-system-2.webp" alt="Socialsuite Illustration Approach 1" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
-  <img src="/images/socialsuite-custom-illustration-system-3.webp" alt="Socialsuite Illustration Approach 2" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+  <img src="/images/socialsuite-circles-concept-1.webp" alt="Socialsuite Logo Geometry Applied" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+  <img src="/images/socialsuite-circles-concept-2.webp" alt="Socialsuite Circular Design System" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
 </div>
 
-### Photography & Circular Frames
+### Photography System
 
-Inspired by the client's logo geometry, I created a series of circular frames using concentric line work. These frames:
+When the team decided against traditional illustrations, I proposed black-and-white photography with subtle brand color overlays — real people in authentic moments, framed in the brand's circular geometry. This gave the brand a human register that illustrations couldn't, while staying visually distinctive across nonprofit and enterprise contexts.
 
-- **Echoed the logo** — maintaining brand consistency through circular motifs
-- **Created visual hierarchy** — drawing attention to key imagery
-- **Flexed across audiences** — warm and human for nonprofits, professional for enterprise
+<div class="not-prose w-full my-12">
+  <img src="/images/socialsuite-custom-illustration-system-1.webp" alt="Socialsuite photography and illustration system" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+</div>
 
-Photography was treated in black-and-white with subtle brand color overlays — real people in authentic moments, showing diverse industries from nonprofits to mining to manufacturing.
+<div class="not-prose space-y-8 my-12">
+  <img src="/images/socialsuite-custom-illustration-system-2.webp" alt="Socialsuite photography system 1" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+  <img src="/images/socialsuite-custom-illustration-system-3.webp" alt="Socialsuite photography system 2" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+</div>
 
 ### Icon System
 
-I implemented the Phosphor icon library in duotone style — aligning with the brand's modern aesthetic while providing a comprehensive library for use across the website, product, and marketing materials.
+I implemented the Phosphor icon library in duotone style — a comprehensive iconographic set that carries the brand's modern aesthetic across the website, product interface, and marketing materials.
 
 <div class="not-prose grid grid-cols-3 md:grid-cols-6 gap-4 my-10">
   <div class="aspect-square bg-slate-50 dark:bg-white/5 rounded-xl flex items-center justify-center p-4 shadow-low dark:shadow-lowInverted">
@@ -346,38 +308,38 @@ I implemented the Phosphor icon library in duotone style — aligning with the b
 <div class="not-prose grid grid-cols-1 gap-6 my-10">
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 01</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Expanding Logo Geometry Into a Design System</h3>
-    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The Socialsuite logo is built from overlapping circles — a visual metaphor for connection and impact. When the team decided against traditional illustrations, I saw an opportunity: expand this circular language into a complete visual system. Concentric circles, overlapping shapes, and circular photo frames became the vocabulary — creating brand cohesion without relying on generic SaaS illustrations.</p>
+    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Logo Geometry as the Brand's Visual Alphabet</h3>
+    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The strongest move in the whole project was extending the logo's circular geometry into a complete visual language. Rather than treating the logo as a standalone mark with a palette around it, I made the circle the brand's atomic unit: concentric circles, overlapping shapes, photo frames, section dividers. The brand got a signature shape language that couldn't be imitated and didn't need illustration to feel distinctive.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 02</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Photography Treatment Over Illustration</h3>
-    <p class="text-base text-normalLight dark:text-invertedLight mb-4">Rather than typical tech illustrations, I proposed black-and-white photography with subtle brand color overlays. This achieved three things:</p>
-    <ul class="text-sm text-normalLight dark:text-invertedLight space-y-2 m-0 pl-5 list-disc">
-      <li><span class="font-semibold text-normal dark:text-inverted">Authenticity</span> — real people, real impact</li>
-      <li><span class="font-semibold text-normal dark:text-inverted">Flexibility</span> — works for both nonprofit and enterprise audiences</li>
-      <li><span class="font-semibold text-normal dark:text-inverted">Sophistication</span> — elevates beyond typical SaaS aesthetics</li>
-    </ul>
+    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Photography as the Anti-SaaS Move</h3>
+    <p class="text-base text-normalLight dark:text-invertedLight mb-0">SaaS brands default to abstract illustration. I proposed the opposite: real people, black-and-white, framed in the brand's circular geometry with subtle color overlays. This gave the brand a human register — essential for the nonprofit audience — while staying visually distinctive enough to carry enterprise credibility. One treatment, two audiences.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 03</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Progressive Disclosure in Forms</h3>
-    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The original demo form asked for everything upfront — creating friction. I redesigned it with progressive disclosure: start simple, reveal complexity only when needed. This reduced perceived effort while maintaining lead quality for the sales team.</p>
+    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">One Brand, Two Pathways</h3>
+    <p class="text-base text-normalLight dark:text-invertedLight mb-0">Rather than designing two sites or splitting the brand in two, I designed a single brand language that could shift register through tone, imagery selection, and content hierarchy. Nonprofits see mission-focused messaging and impact stories. Enterprise users see compliance frameworks and ROI data. The brand stays unified; the conversation doesn't.</p>
+  </div>
+  <div class="standard-card">
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 04</p>
+    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Progressive Disclosure for Conversion</h3>
+    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The original demo form asked for everything upfront — creating friction that was costing real conversions. I redesigned it with progressive disclosure: start simple, reveal complexity only when needed. This reduced perceived effort while preserving lead quality for the sales team.</p>
   </div>
 </div>
 
-<div class="not-prose space-y-8 my-12">
-  <img src="/images/socialsuite-circles-concept-1.webp" alt="Socialsuite Logo Geometry Applied" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
-  <img src="/images/socialsuite-circles-concept-2.webp" alt="Socialsuite Circular Design System" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+<div class="not-prose w-full my-12">
+  <img src="/images/socialsuite-form.webp" alt="Socialsuite conversion-optimized form design" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+  <p class="text-xs uppercase tracking-widest opacity-50 text-center mt-4">Redesigned Demo Form — Progressive Disclosure in Practice</p>
 </div>
 
 ---
 
 ## The Solution
 
-A website that speaks two languages.
+A brand that speaks two languages.
 
-The final design creates distinct pathways for each audience while maintaining unified brand integrity. Nonprofits see mission-focused messaging and impact stories. Enterprise users see compliance frameworks and ROI data.
+The final design creates distinct pathways for each audience while maintaining unified visual integrity. Nonprofits see mission-focused messaging and impact stories. Enterprise users see compliance frameworks and ROI data.
 
 Same brand. Different conversations.
 
@@ -390,7 +352,7 @@ Same brand. Different conversations.
 
 ## Outcome
 
-The redesigned website launched in December 2022.
+The Socialsuite team were very happy with the end result, and the conversion rate improvement they were looking to achieve.
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
   <div class="standard-card text-left py-8">
@@ -413,14 +375,12 @@ The redesigned website launched in December 2022.
   </blockquote>
 </div>
 
-The visual system has since been adopted across Socialsuite's product interface, sales materials, and investor presentations.
+The visual language I developed has since been adopted across Socialsuite's product interface, sales materials, and investor presentations — outliving the website engagement as the company's working brand system.
 
 ---
 
 ## Reflection
 
-This project reinforced something I believe deeply: the best design solutions often come from constraints.
+Socialsuite is the project where I learned how much of brand design happens *after* the logo.
 
-When the team decided against traditional illustrations, it pushed me to expand the logo geometry into a full visual system — a solution that ended up being more distinctive and ownable than any illustration library could have been.
-
-It also taught me the value of designing for clarity over cleverness. Two audiences, two journeys, one cohesive brand. That's the balance enterprise software demands.
+A logo and a color palette aren't a brand. They're the starting ingredients. The brand is everything that happens next — the shape language, the photography system, the gradient logic, the way typography behaves, the decisions about what the brand chooses not to do. That gap — between a brand's ingredients and a brand that actually works across every surface it needs to — is where I do my best work.

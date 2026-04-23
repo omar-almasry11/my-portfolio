@@ -31,13 +31,15 @@ categories:
 
 ## Overview
 
-Dubai Holding is one of the Middle East's largest diversified holding companies — managing destination, retail, hospitality, and residential brands across the emirate. In late 2023, they hired me directly as a contractor to lead a large-scale migration of their digital portfolio onto Webflow. What started as a scoped migration engagement became a two-year partnership spanning multiple marketing teams, property brands, and business units — and the design and build of a component system that's still powering their portfolio today.
+Dubai Holding is one of the Middle East's largest diversified holding companies — managing destination, retail, hospitality, and residential brands across the emirate. In late 2023, they hired me directly as a contractor to lead a large-scale migration of their digital portfolio onto Webflow. 
+
+What started as a scoped migration engagement became a two-year partnership spanning multiple marketing teams, property brands, and business units, and the design and build of a component system that's still powering their portfolio today.
 
 ---
 
 ## The Challenge
 
-Migrating a single enterprise website is hard. Migrating a portfolio of them — each with its own marketing team, its own content model, its own stakeholders, and its own brand expression — is a different discipline entirely.
+Migrating a single enterprise website is a challenge. But migrating a portfolio of enterprise websites — each with its own marketing team, its own content model, its own stakeholders, and its own brand expression? That's a much bigger challenge that requires a more holistic approach. 
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
   <div class="standard-card text-left">
@@ -101,7 +103,7 @@ The library shipped with Nad Al Sheba Mall, was reused on Circle Mall, and scale
 
 ## In Practice: Visit Hatta
 
-[visithatta.com](https://www.visithatta.com/)
+<a href="https://www.visithatta.com/" target="_blank" rel="noopener noreferrer">visithatta.com</a>
 
 Visit Hatta is the official website for Dubai's largest nature reserve — a flagship tourism property that welcomes over 350,000 visitors per season. The site needed to serve both English and Arabic audiences with a bilingual experience that felt equally native to each.
 
@@ -139,11 +141,11 @@ This was one of the higher-sensitivity properties in the portfolio — both beca
 
 ## In Practice: Nad Al Sheba Mall
 
-[nadalshebamall.ae](https://www.nadalshebamall.ae/)
+<a href="https://www.nadalshebamall.ae/" target="_blank" rel="noopener noreferrer">nadalshebamall.ae</a>
 
 Nad Al Sheba Mall was the first retail property to ship on the component library — and its requirements shaped how the library handled accessibility going forward. Retail properties in the portfolio needed to meet WCAG AA compliance, which meant accessibility couldn't be an afterthought at the page level; it had to be encoded into every component.
 
-After shipping Nad Al Sheba, the same component library was reused for [Circle Mall](https://www.circlemall.ae/) — validating the premise that a well-designed system could absorb a new property with brand-level customization rather than component-level rework.
+After shipping Nad Al Sheba, the same component library was reused for <a href="https://www.circlemall.ae/" target="_blank" rel="noopener noreferrer">Circle Mall</a> — validating the premise that a well-designed system could absorb a new property with brand-level customization rather than component-level rework.
 
 **What I delivered:**
 
@@ -174,11 +176,11 @@ Visit Hatta and Nad Al Sheba were two anchors in a broader engagement. Over the 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full items-start">
     <div class="w-full text-lg">
       <img src="/images/bay-avenue-final.webp" alt="Bay Avenue website" class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted rounded-2xl" />
-      <p class="mt-2"><a href="https://www.bayavenue.ae/" class="font-semibold">Bay Avenue</a></p>
+      <p class="mt-2"><a href="https://www.bayavenue.ae/" class="font-semibold" target="_blank" rel="noopener noreferrer">Bay Avenue</a></p>
     </div>
     <div class="w-full text-lg">
       <img src="/images/souq-jumeirah-final.webp" alt="Souk Madinat Jumeirah website" class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted rounded-2xl" />
-      <p class="mt-2"><a href="https://www.soukmadinatjumeirah.ae/en" class="font-semibold">Souk Madinat Jumeirah</a></p>
+      <p class="mt-2"><a href="https://www.soukmadinatjumeirah.ae/en" class="font-semibold" target="_blank" rel="noopener noreferrer">Souk Madinat Jumeirah</a></p>
     </div>
   </div>
 </section>
@@ -195,12 +197,12 @@ The pattern across every property was the same: each new engagement moved faster
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 01</p>
     <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Designing the System, Not the Sites</h3>
-    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The first major decision was refusing to treat Dubai Holding as a series of one-off website projects. Every hour spent on the component library upfront saved weeks on every subsequent property migration. This reframed the work from "site design" to "portfolio design" — and reframed my role from "migration contractor" to long-term system partner.</p>
+    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The first major decision was refusing to treat Dubai Holding as a series of one-off website projects. Every hour spent on the component library upfront saved weeks on every subsequent property migration.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 02</p>
     <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Accessibility and Bilingual Support as System Foundations</h3>
-    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The non-negotiables — WCAG AA, RTL, performance — had to be solved at the component level, not the page level. Designing these into the library's foundations meant no individual property launch could regress on them, no matter who was operating the site afterward. This is the difference between standards you enforce and standards that enforce themselves.</p>
+    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The non-negotiables — WCAG AA, RTL, performance — had to be solved at the component level, not the page level. Designing these into the library's foundations meant no individual property launch could regress on them, no matter who was operating the site afterward.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 03</p>
@@ -243,6 +245,4 @@ The engagement scaled the way enterprise engagements do when they're working —
 
 The most impactful thing a designer can do for an enterprise client isn't to design one great website. It's to design the system that lets them ship great websites — for years — without you.
 
-Dubai Holding taught me that at scale, the leverage isn't in any individual screen or page. It's in the decisions the system forces downstream — accessibility baked into every component, bilingual support that can't be accidentally dropped, brand flex points that keep properties distinct while keeping the portfolio coherent. When those decisions are right, each new property gets easier. When they're wrong, the whole portfolio drifts.
-
-This engagement is the clearest expression of what I do: take brand and design inputs, and turn them into the infrastructure that keeps them working at scale.
+Dubai Holding taught me that at scale, the leverage isn't in any individual screen or page. It's in the decisions the system forces downstream: accessibility baked into every component, bilingual support that can't be accidentally dropped, brand flex points that keep properties distinct while keeping the portfolio coherent. When those decisions are right, each new property gets easier. When they're wrong, the whole portfolio drifts.
