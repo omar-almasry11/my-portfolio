@@ -196,22 +196,22 @@ The pattern across every property was the same: each new engagement moved faster
 <div class="not-prose grid grid-cols-1 gap-6 my-10">
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 01</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Designing the System, Not the Sites</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Designing the System, Not the Sites</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">The first major decision was refusing to treat Dubai Holding as a series of one-off website projects. Every hour spent on the component library upfront saved weeks on every subsequent property migration.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 02</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Accessibility and Bilingual Support as System Foundations</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Accessibility and Bilingual Support as System Foundations</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">The non-negotiables — WCAG AA, RTL, performance — had to be solved at the component level, not the page level. Designing these into the library's foundations meant no individual property launch could regress on them, no matter who was operating the site afterward.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 03</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">SEO as a Design Consideration, Not a Post-Launch Task</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">SEO as a Design Consideration, Not a Post-Launch Task</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">With years of search equity on the line, SEO wasn't something to check at the end. Content models, URL structures, schema markup, and redirect strategies were designed into each migration from the start — in close coordination with Dubai Holding's SEO team. Every migration launched without losing ground on search rankings.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 04</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Building for Independence</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Building for Independence</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">The goal wasn't to make Dubai Holding's marketing teams dependent on me — it was to give them infrastructure they could operate themselves. Every CMS was designed to put content control in the team's hands, with the design system enforcing consistency in the background. Today, the teams run their properties independently — which is the outcome I was designing toward from the start.</p>
   </div>
 </div>

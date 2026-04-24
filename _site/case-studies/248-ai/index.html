@@ -13,8 +13,13 @@
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/DMSans-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
+    <link
+      rel="preload"
+      href="/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    >
 
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
     <link
@@ -94,7 +99,9 @@
             if (Array.isArray(parsed) && parsed.length === totalItems) {
               cachedColors = parsed;
             }
-          } catch (err) { /* regenerate */ }
+          } catch (err) {
+            /* regenerate */
+          }
         }
 
         // Generate items and apply colors in a single pass
@@ -204,7 +211,7 @@
     <div class="mb-12">
       <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-3 text-normal dark:text-inverted">248.AI</h1>
       
-        <p class="text-xl sm:text-2xl font-medium text-normalLight dark:text-invertedLight mb-4">Brand Design & Website</p>
+        <p class="text-xl font-light sm:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-4 max-w-2xl">Brand Design & Website</p>
       
       
         <p class="text-base sm:text-xl text-normalLight font-normal dark:text-invertedLight max-w-[40rem] leading-relaxed mb-0">A minimalist, type-led brand design for a San Francisco AI startup — grounded in the mathematical concept behind the company's name, and expressed through a dot-based visual language that extends from logo to live, interactive web.</p>
@@ -216,22 +223,22 @@
         
           <div>
             <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">Client</p>
-            <p class="text-base font-semibold text-normal dark:text-inverted mb-0">248.AI</p>
+            <p class="text-base font-medium text-normal dark:text-inverted mb-0">248.AI</p>
           </div>
         
           <div>
             <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">Industry</p>
-            <p class="text-base font-semibold text-normal dark:text-inverted mb-0">Artificial Intelligence</p>
+            <p class="text-base font-medium text-normal dark:text-inverted mb-0">Artificial Intelligence</p>
           </div>
         
           <div>
             <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">Timeline</p>
-            <p class="text-base font-semibold text-normal dark:text-inverted mb-0">3 weeks</p>
+            <p class="text-base font-medium text-normal dark:text-inverted mb-0">3 weeks</p>
           </div>
         
           <div>
             <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">Role</p>
-            <p class="text-base font-semibold text-normal dark:text-inverted mb-0">Brand Designer</p>
+            <p class="text-base font-medium text-normal dark:text-inverted mb-0">Brand Designer</p>
           </div>
         
       </div>
@@ -294,17 +301,17 @@
 <div class="not-prose grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
   <div class="cs-direction-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction A</p>
-    <h3 class="text-lg font-bold text-normal dark:text-inverted mb-3">Technical & Editorial</h3>
+    <h3 class="text-lg font-medium text-normal dark:text-inverted mb-3">Technical & Editorial</h3>
     <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Monospace typography, structured grids, dense information hierarchy. A brand that reads like a well-designed research paper — all substance, no ornament. Precise, but potentially cold and inaccessible for a broad audience.</p>
   </div>
   <div class="cs-direction-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction B</p>
-    <h3 class="text-lg font-bold text-normal dark:text-inverted mb-3">Quiet & Literate</h3>
+    <h3 class="text-lg font-medium text-normal dark:text-inverted mb-3">Quiet & Literate</h3>
     <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Clean sans-serif typography, generous whitespace, a restrained grayscale palette, and a conceptual anchor that rewards close attention. Understated by default; confident enough to not need to shout.</p>
   </div>
   <div class="cs-direction-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction C</p>
-    <h3 class="text-lg font-bold text-normal dark:text-inverted mb-3">Futurist & Expressive</h3>
+    <h3 class="text-lg font-medium text-normal dark:text-inverted mb-3">Futurist & Expressive</h3>
     <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Dark-mode aesthetics, gradients, glowing accents, and the kind of visual language typical of AI startups in this category. Familiar, attention-grabbing — but exactly the convention the client wanted to avoid.</p>
   </div>
 </div>
@@ -405,22 +412,22 @@
 <div class="not-prose grid grid-cols-1 gap-6 my-10">
   <div class="standard-card text-left">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 01</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">The Game of Life as the Brand's Living Signature</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">The Game of Life as the Brand's Living Signature</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">Rather than a static hero image, the brand's first impression is a live Conway's Game of Life simulation — cells being born, surviving, dying, migrating across the viewport in real time. It's not decoration. It's the brand's conceptual foundation rendered literally — a company named after the Game of Life opening with the Game of Life itself. Visitors hovering on cells can seed new patterns, turning passive viewing into participation. The brand's first interaction is playful, intelligent, and exactly on-concept.</p>
   </div>
   <div class="standard-card text-left">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 02</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Grayscale as a Positioning Statement</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Grayscale as a Positioning Statement</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">Choosing no hue in a category drowning in gradients is itself a statement. It signals confidence — the brand doesn't need color to be interesting. It rewards attention — the viewer's eye is drawn to structure and rhythm instead of surface. And it ages well — a brand without a trendy accent color doesn't date itself. Grayscale became the loudest thing the brand could do, precisely because everything else is quiet.</p>
   </div>
   <div class="standard-card text-left">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 03</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Type-Only, No Imagery</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Type-Only, No Imagery</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">I proposed — and the client agreed to — eliminating photography and illustration entirely. AI brands that rely on stock imagery (server rooms, abstract neural networks, humanoid robots) signal exactly the wrong thing: derivativeness. By restricting the brand to typography and the dot-system, every visual element becomes intentional. The brand's surface is small, but every square inch of it is earned.</p>
   </div>
   <div class="standard-card text-left">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 04</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Logo System as Modular Set, Not Single Mark</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Logo System as Modular Set, Not Single Mark</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">The logo provided includes full-color, two-tone, and dynamic variants. Rather than treat these as interchangeable, I assigned each a role within the system: full-color for primary brand moments, two-tone for contexts requiring maximum contrast (stamps, embossing, small applications), and dynamic for placement over photography or colored backgrounds.</p>
   </div>
 </div>
@@ -1512,10 +1519,10 @@
       <div class="flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
         <!-- Left: Title and Subtext -->
         <div class="min-w-0 lg:max-w-[58%]">
-          <h2 class="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.1] tracking-tight">
+          <h2 class="text-4xl sm:text-[2.5rem] md:text-[2.75rem] font-bold mb-2 text-white leading-[1.1] tracking-tight">
             Let's work together
           </h2>
-          <p class="max-w-[32ch] text-lg text-white leading-snug">
+          <p class="max-w-lg text-xl font-light sm:text-2xl text-white/90 leading-tight text-balance">
             I'm currently available for full-time roles and select freelance projects.
           </p>
         </div>

@@ -219,7 +219,7 @@ The brand colors didn't change — but their role did. Instead of defaulting to 
 <div class="not-prose grid grid-cols-1 gap-6 my-10">
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 01</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Making the Brand Name a Design Instruction</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Making the Brand Name a Design Instruction</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">The company is called ColorCoded Labs, but nothing in the identity actually <em>did</em> anything color-coded. On the homepage hero, I assigned each letter of the headline a different color from the brand palette — and added a subtle interaction that cycles the letters through the palette on hover. It's a small moment that delivers on the brand's own name: the first thing a visitor reads on the site is literally color-coded. The concept stopped being a description and started being an experience.</p>
   </div>
   <div class="w-full space-y-4">
@@ -232,17 +232,17 @@ The brand colors didn't change — but their role did. Instead of defaulting to 
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 02</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Restraint as the Brand Language's Core Rule</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Restraint as the Brand Language's Core Rule</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">Convincing a client with a deliberately vibrant brand that <em>less</em> color would make the brand stronger required trust. The argument: when every color is shouting, none of them signal anything. By pulling brand color back to 10% of the interface, every appearance of brand color could mean something — and every CTA, every product marker, every key moment gained real visual weight.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 03</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Color as a Program Identity Layer</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Color as a Program Identity Layer</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">Rather than use brand colors decoratively, I assigned them to program. Each course owns a color — and that color carries through the entire experience of that program, from first impression to enrollment. This created instant recognition, supported cross-program differentiation, and built room for future programs to join without reinventing the system.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 04</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">A System the Team Can Operate</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">A System the Team Can Operate</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">A brand language only works if the team can maintain it. I built the CMS so the rules of the language — color assignment, component patterns, visibility logic — were baked into the content model itself. When the team adds a new course, they pick a color; the system handles the rest. The brand stays consistent because the infrastructure enforces it.</p>
   </div>
 </div>

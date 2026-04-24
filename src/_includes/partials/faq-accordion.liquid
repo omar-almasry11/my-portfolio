@@ -1,7 +1,7 @@
 <section class="py-12 px-[5%] {{ customClasses | default: '' }}">
   <div class="container mx-auto max-w-6xl">
     {% if title %}
-      <h2 class="text-3xl md:text-4xl font-bold mb-8">{{ title }}</h2>
+      <h2 class="text-3xl sm:text-4xl font-bold leading-[1.1] tracking-tight mb-8">{{ title }}</h2>
     {% endif %}
 
     {% if faqs and faqs.size > 0 %}
@@ -15,7 +15,7 @@
               id="faq-trigger-{{ forloop.index }}"
               type="button"
             >
-              <span class="text-lg font-semibold pr-4">{{ faq.question }}</span>
+              <span class="text-lg font-medium pr-4">{{ faq.question }}</span>
               <svg
                 class="faq-icon w-6 h-6 text-primary dark:text-primaryInverted transform transition-transform duration-200 flex-shrink-0"
                 fill="none"

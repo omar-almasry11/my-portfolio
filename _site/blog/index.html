@@ -13,8 +13,13 @@
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/DMSans-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
+    <link
+      rel="preload"
+      href="/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    >
 
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
     <link
@@ -94,7 +99,9 @@
             if (Array.isArray(parsed) && parsed.length === totalItems) {
               cachedColors = parsed;
             }
-          } catch (err) { /* regenerate */ }
+          } catch (err) {
+            /* regenerate */
+          }
         }
 
         // Generate items and apply colors in a single pass
@@ -208,7 +215,7 @@
       Blog
     </h1>
     
-      <p class="text-xl sm:text-2xl text-normalLight max-w-2xl ml-0 leading-tight dark:text-invertedLight">
+      <p class="text-xl font-light sm:text-2xl text-normalLight max-w-2xl ml-0 leading-tight dark:text-invertedLight mt-4">
         Reflections on design, code, and everyday insights from my work.
       </p>
     
@@ -227,7 +234,7 @@
               
               <!-- Dark Mode Logo -->
               
-              <h3 class="font-bold mb-2">
+              <h3 class="font-medium mb-2">
                 Webflow for Enterprise Clients: A Deep Dive
               </h3>
               
@@ -251,7 +258,7 @@
               
               <!-- Dark Mode Logo -->
               
-              <h3 class="font-bold mb-2">
+              <h3 class="font-medium mb-2">
                 Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success
               </h3>
               
@@ -277,10 +284,10 @@
   </div>
 </section>
 <section class="py-12 px-[5%] ">
-  <div class="max-w-6xl mx-auto"><div class="max-w-3xl mx-auto text-center"><h2 class="text-3xl md:text-4xl font-bold mb-4 leading-[1.1] tracking-tight ">
+  <div class="max-w-6xl mx-auto"><div class="max-w-3xl mx-auto text-center"><h2 class="text-3xl sm:text-4xl font-bold mb-2.5 leading-[1.1] tracking-tight ">
           Have a project in mind?
         </h2>
-        <p class="text-lg md:text-xl text-normalLight dark:text-invertedLight mb-6">Let's work together to build something exceptional.</p>
+        <p class="text-xl font-light sm:text-2xl text-normalLight dark:text-invertedLight mb-6 leading-tight">Let's work together to build something exceptional.</p>
         <a
           href="mailto:hello@omaralmasry.com"
           class="flex mr-auto ml-auto px-5 py-2 bg-primary text-lg text-inverted font-medium rounded-md shadow-low no-underline transition duration-300 hover:bg-lapis-light dark:bg-primaryInverted dark:text-normal dark:hover:bg-amber-light dark:shadow-lowInverted focus:ring-2 focus:ring-lapis-light/30 dark:focus:ring-amber-light/30"
@@ -1123,10 +1130,10 @@
       <div class="flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
         <!-- Left: Title and Subtext -->
         <div class="min-w-0 lg:max-w-[58%]">
-          <h2 class="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.1] tracking-tight">
+          <h2 class="text-4xl sm:text-[2.5rem] md:text-[2.75rem] font-bold mb-2 text-white leading-[1.1] tracking-tight">
             Let's work together
           </h2>
-          <p class="max-w-[32ch] text-lg text-white leading-snug">
+          <p class="max-w-lg text-xl font-light sm:text-2xl text-white/90 leading-tight text-balance">
             I'm currently available for full-time roles and select freelance projects.
           </p>
         </div>

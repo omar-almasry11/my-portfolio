@@ -6,7 +6,7 @@ layout: "/layouts/layout.liquid"
     <div class="mb-12">
       <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-3 text-normal dark:text-inverted">{{ title }}</h1>
       {% if header_subtitle %}
-        <p class="text-xl sm:text-2xl font-medium text-normalLight dark:text-invertedLight mb-4">{{ header_subtitle }}</p>
+        <p class="text-xl font-light sm:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-4 max-w-2xl">{{ header_subtitle }}</p>
       {% endif %}
       {% if header-overview %}
         <p class="text-base sm:text-xl text-normalLight font-normal dark:text-invertedLight max-w-[40rem] leading-relaxed mb-0">{{ header-overview }}</p>
@@ -18,7 +18,7 @@ layout: "/layouts/layout.liquid"
         {% for item in header_meta %}
           <div>
             <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">{{ item.label }}</p>
-            <p class="text-base font-semibold text-normal dark:text-inverted mb-0">{{ item.value }}</p>
+            <p class="text-base font-medium text-normal dark:text-inverted mb-0">{{ item.value }}</p>
           </div>
         {% endfor %}
       </div>

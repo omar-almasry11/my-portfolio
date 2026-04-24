@@ -13,8 +13,13 @@
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/DMSans-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
+    <link
+      rel="preload"
+      href="/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    >
 
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
     <link
@@ -94,7 +99,9 @@
             if (Array.isArray(parsed) && parsed.length === totalItems) {
               cachedColors = parsed;
             }
-          } catch (err) { /* regenerate */ }
+          } catch (err) {
+            /* regenerate */
+          }
         }
 
         // Generate items and apply colors in a single pass
@@ -1161,10 +1168,10 @@
       <div class="flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
         <!-- Left: Title and Subtext -->
         <div class="min-w-0 lg:max-w-[58%]">
-          <h2 class="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.1] tracking-tight">
+          <h2 class="text-4xl sm:text-[2.5rem] md:text-[2.75rem] font-bold mb-2 text-white leading-[1.1] tracking-tight">
             Let's work together
           </h2>
-          <p class="max-w-[32ch] text-lg text-white leading-snug">
+          <p class="max-w-lg text-xl font-light sm:text-2xl text-white/90 leading-tight text-balance">
             I'm currently available for full-time roles and select freelance projects.
           </p>
         </div>

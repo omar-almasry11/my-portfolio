@@ -13,8 +13,13 @@
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="/fonts/BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/DMSans-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
+    <link
+      rel="preload"
+      href="/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    >
 
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
     <link
@@ -94,7 +99,9 @@
             if (Array.isArray(parsed) && parsed.length === totalItems) {
               cachedColors = parsed;
             }
-          } catch (err) { /* regenerate */ }
+          } catch (err) {
+            /* regenerate */
+          }
         }
 
         // Generate items and apply colors in a single pass

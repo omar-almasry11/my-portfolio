@@ -3,7 +3,7 @@
   <div class="container mx-auto">
     <div class="max-w-6xl mx-auto">
       {% if title %}
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-left">{{ title }}</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold leading-[1.1] tracking-tight mb-8 text-left">{{ title }}</h2>
       {% endif %}
 
       {% if projects and projects.size > 0 %}
@@ -24,7 +24,7 @@
 
               <!-- Project Info -->
               <div class="mt-4">
-                <h3 class="text-xl font-semibold text-normal dark:text-inverted mb-2">{{ project.title }}</h3>
+                <h3 class="text-xl font-medium text-normal dark:text-inverted mb-2">{{ project.title }}</h3>
 
                 {% if project.url %}
                   <a

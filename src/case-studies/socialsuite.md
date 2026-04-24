@@ -140,7 +140,7 @@ With structure locked, I explored how the brand could feel — and how to make a
 <div class="not-prose grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
   <div class="cs-direction-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction A</p>
-    <h3 class="text-lg font-bold text-normal dark:text-inverted mb-3">Energetic & Bold</h3>
+    <h3 class="text-lg font-medium text-normal dark:text-inverted mb-3">Energetic & Bold</h3>
     <div class="rounded-xl overflow-hidden shadow-low dark:shadow-lowInverted mb-4">
       <img src="/images/png/socialsuite-hero-color-attempt-3.png" alt="Socialsuite hero Direction A — Warm & Bold with yellow-gold background" class="w-full h-auto">
     </div>
@@ -148,7 +148,7 @@ With structure locked, I explored how the brand could feel — and how to make a
   </div>
   <div class="cs-direction-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction B</p>
-    <h3 class="text-lg font-bold text-normal dark:text-inverted mb-3">Premium & Confident</h3>
+    <h3 class="text-lg font-medium text-normal dark:text-inverted mb-3">Premium & Confident</h3>
     <div class="rounded-xl overflow-hidden shadow-low dark:shadow-lowInverted mb-4">
       <img src="/images/png/direction-b.png" alt="Socialsuite hero Direction B — Cool & Confident with deep teal gradient" class="w-full h-auto">
     </div>
@@ -156,7 +156,7 @@ With structure locked, I explored how the brand could feel — and how to make a
   </div>
   <div class="cs-direction-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction C</p>
-    <h3 class="text-lg font-bold text-normal dark:text-inverted mb-3">Clear & Minimal</h3>
+    <h3 class="text-lg font-medium text-normal dark:text-inverted mb-3">Clear & Minimal</h3>
     <div class="rounded-xl overflow-hidden shadow-low dark:shadow-lowInverted mb-4">
       <img src="/images/png/socialsuite-hero-color-attempt-1.png" alt="Socialsuite hero Direction C — Subtle & Premium with light background" class="w-full h-auto">
     </div>
@@ -308,22 +308,22 @@ I implemented the Phosphor icon library in duotone style — a comprehensive ico
 <div class="not-prose grid grid-cols-1 gap-6 my-10">
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 01</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Logo Geometry as the Brand's Visual Alphabet</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Logo Geometry as the Brand's Visual Alphabet</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">The strongest move in the whole project was extending the logo's circular geometry into a complete visual language. Rather than treating the logo as a standalone mark with a palette around it, I made the circle the brand's atomic unit: concentric circles, overlapping shapes, photo frames, section dividers. The brand got a signature shape language that couldn't be imitated and didn't need illustration to feel distinctive.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 02</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Photography as the Anti-SaaS Move</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Photography as the Anti-SaaS Move</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">SaaS brands default to abstract illustration. I proposed the opposite: real people, black-and-white, framed in the brand's circular geometry with subtle color overlays. This gave the brand a human register — essential for the nonprofit audience — while staying visually distinctive enough to carry enterprise credibility. One treatment, two audiences.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 03</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">One Brand, Two Pathways</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">One Brand, Two Pathways</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">Rather than designing two sites or splitting the brand in two, I designed a single brand language that could shift register through tone, imagery selection, and content hierarchy. Nonprofits see mission-focused messaging and impact stories. Enterprise users see compliance frameworks and ROI data. The brand stays unified; the conversation doesn't.</p>
   </div>
   <div class="standard-card">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 04</p>
-    <h3 class="text-xl font-bold text-normal dark:text-inverted mb-3">Progressive Disclosure for Conversion</h3>
+    <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Progressive Disclosure for Conversion</h3>
     <p class="text-base text-normalLight dark:text-invertedLight mb-0">The original demo form asked for everything upfront — creating friction that was costing real conversions. I redesigned it with progressive disclosure: start simple, reveal complexity only when needed. This reduced perceived effort while preserving lead quality for the sales team.</p>
   </div>
 </div>

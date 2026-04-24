@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['DM Sans', 'system-ui', 'sans-serif'],
-        heading: ['Bricolage Grotesque', 'system-ui', 'sans-serif'],
+        sans: ['Atkinson Hyperlegible Next', 'system-ui', 'sans-serif'],
+        heading: ['Atkinson Hyperlegible Next', 'system-ui', 'sans-serif'],
       },
       colors: {
         transparent: 'transparent',
