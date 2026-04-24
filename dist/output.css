@@ -6406,6 +6406,11 @@ html.dark .about-prose-body {
     padding-right: 0.5rem;
   }
 
+  .md\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
   .md\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -6419,11 +6424,6 @@ html.dark .about-prose-body {
   .md\:py-28 {
     padding-top: 7rem;
     padding-bottom: 7rem;
-  }
-
-  .md\:px-3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
   }
 
   .md\:pt-20 {

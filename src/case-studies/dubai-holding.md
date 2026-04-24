@@ -31,7 +31,7 @@ categories:
 
 ## Overview
 
-Dubai Holding is one of the Middle East's largest diversified holding companies — managing destination, retail, hospitality, and residential brands across the emirate. In late 2023, they hired me directly as a contractor to lead a large-scale migration of their digital portfolio onto Webflow. 
+Dubai Holding is one of the Middle East's largest diversified holding companies — managing destination, retail, hospitality, and residential brands across the emirate. In late 2023, they hired me directly as a contractor to lead a large-scale migration of their digital portfolio onto Webflow.
 
 What started as a scoped migration engagement became a two-year partnership spanning multiple marketing teams, property brands, and business units, and the design and build of a component system that's still powering their portfolio today.
 
@@ -39,7 +39,7 @@ What started as a scoped migration engagement became a two-year partnership span
 
 ## The Challenge
 
-Migrating a single enterprise website is a challenge. But migrating a portfolio of enterprise websites — each with its own marketing team, its own content model, its own stakeholders, and its own brand expression? That's a much bigger challenge that requires a more holistic approach. 
+Migrating a single enterprise website is a challenge. But migrating a portfolio of enterprise websites — each with its own marketing team, its own content model, its own stakeholders, and its own brand expression? That's a much bigger challenge that requires a more holistic approach.
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
   <div class="standard-card text-left">
