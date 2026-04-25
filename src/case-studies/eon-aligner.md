@@ -92,7 +92,7 @@ The marketing team now adds new providers in minutes through Airtable, with chan
         <img
           src="/images/eon-aligner-1.webp"
           alt="EON Aligner doctor finder interface showing the initial map view with location markers for dental clinics across different countries"
-          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
+          class="w-full h-auto object-contain"
         />
       </div>
       <!-- Image 2 -->
@@ -100,7 +100,7 @@ The marketing team now adds new providers in minutes through Airtable, with chan
         <img
           src="/images/eon-aligner-2.webp"
           alt="EON Aligner doctor locator displaying country and city filter dropdowns with an interactive map showing clinic locations"
-          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
+          class="w-full h-auto object-contain"
         />
       </div>
   </div>

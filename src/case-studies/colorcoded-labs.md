@@ -31,9 +31,7 @@ categories:
 
 ## Overview
 
-ColorCoded Labs is a tech bootcamp based in Columbus, Ohio — preparing students for careers in tech and connecting graduates with employers. After a successful pilot launch, the team was scaling: new programs, growing media coverage, and partnership conversations with enterprise hiring partners. 
-
-For this project, I led a brand system rework and website redesign that turned a standalone identity into a digital brand language the team could operate themselves.
+ColorCoded Labs is a tech bootcamp based in Columbus, Ohio — preparing students for careers in tech and connecting graduates with employers. After a successful pilot launch, the team was scaling: new programs, growing media coverage, and partnership conversations with enterprise hiring partners. I led a brand system rework and website redesign that turned a standalone identity into a digital brand language the team could operate themselves.
 
 ---
 
@@ -43,32 +41,29 @@ ColorCoded Labs had launched with a bold visual identity — vibrant colors, a d
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
   <div class="standard-card text-left">
-    <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">01</p>
-    <p class="font-semibold text-normal dark:text-inverted mb-2">Brand Designed for Impact, Not Scale</p>
-    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">The identity worked beautifully as a standalone — but applied across an entire website, every element ended up in brand color, every background fighting for attention, every section feeling equally important.</p>
+    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Brand Designed for Impact, Not Scale</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">The identity worked beautifully as a standalone — but applied across an entire website, every element ended up in brand color, every background fighting for attention, every section feeling equally important.</p>
   </div>
   <div class="standard-card text-left">
-    <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">02</p>
-    <p class="font-semibold text-normal dark:text-inverted mb-2">Site Built for a Pilot</p>
-    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">The original site supported a single product. As the company expanded into multiple programs, press coverage, and partnership outreach, there was no structure to house any of it.</p>
+    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Site Built for a Pilot</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">The original site supported a single product. As the company expanded into multiple programs, press coverage, and partnership outreach, there was no structure to house any of it.</p>
   </div>
   <div class="standard-card text-left">
-    <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">03</p>
-    <p class="font-semibold text-normal dark:text-inverted mb-2">Team Blocked From Their Own Brand</p>
-    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Course updates, enrollment deadlines, and press mentions all required developer intervention — leaving the marketing team unable to keep their own site current as the company moved faster.</p>
+    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Team Blocked From Their Own Brand</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Course updates, enrollment deadlines, and press mentions all required developer intervention — leaving the marketing team unable to keep their own site current as the company moved faster.</p>
   </div>
 </div>
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
   <div class="space-y-4">
-    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl shadow-low dark:shadow-lowInverted">
-      <img src="/images/colorcoded-labs-before-1.webp" alt="ColorCoded Labs Original Homepage" class="w-full h-auto rounded-lg shadow-sm">
+    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl">
+      <img src="/images/colorcoded-labs-before-1.webp" alt="ColorCoded Labs Original Homepage" class="w-full h-auto rounded-lg">
     </div>
     <p class="text-xs uppercase tracking-widest opacity-50 text-center">Original Pilot Site — Brand Color Everywhere</p>
   </div>
   <div class="space-y-4">
-    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl shadow-low dark:shadow-lowInverted">
-      <img src="/images/colorcoded-labs-before-2.webp" alt="ColorCoded Labs Original Design" class="w-full h-auto rounded-lg shadow-sm">
+    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl">
+      <img src="/images/colorcoded-labs-before-2.webp" alt="ColorCoded Labs Original Design" class="w-full h-auto rounded-lg">
     </div>
     <p class="text-xs uppercase tracking-widest opacity-50 text-center">No Visual Hierarchy Between Sections</p>
   </div>
@@ -82,7 +77,7 @@ The company is called ColorCoded Labs. But nothing in the identity actually did 
 
 The original brand hinted at the concept — five colors in the palette, a color-banded logo — but there were no rules for *how* those colors should behave. So on the existing site, every color was being used at once, everywhere. The brand's own name was making a promise its design language wasn't keeping.
 
-The real work wasn't extending the brand into digital. It was taking the brand's own name and turning it into a design instruction — a language with rules about where color lives, what it signals, and when it should be quiet.
+The real work was taking the brand's own name and turning it into a design instruction — a language with rules about where color lives, what it signals, and when it should be quiet.
 
 <div class="not-prose cs-decision-callout my-10">
   <p class="text-base sm:text-lg text-normal dark:text-inverted mb-0">My diagnosis to the client: <em>"The colors concept is strong — but it's being overused on the website in a way that's making the concept less impactful. More whitespace and high-contrast foundations will make the brand colors stand out, not disappear."</em></p>
@@ -92,22 +87,20 @@ The real work wasn't extending the brand into digital. It was taking the brand's
 
 ## Early Exploration
 
-Before any visual design, I worked through structure. The original site had grown organically — new pages added as the company launched new initiatives, without a shared model for how those pages should behave. 
+Before any visual design, I worked through structure. The original site had grown organically — new pages added as the company launched new initiatives, without a shared model for how those pages should behave.
 
-I wireframed the priority page templates — homepage and about — to map content hierarchy, confirm information architecture, and align with stakeholders on structure before committing to any visual decisions.
-
-These wireframes surfaced structural gaps (the missing About page, partnerships section, and press archive) as design decisions rather than afterthoughts.
+I wireframed the priority page templates — homepage and about — to map content hierarchy, confirm information architecture, and align with stakeholders on structure before committing to any visual decisions. These wireframes surfaced structural gaps (the missing About page, partnerships section, and press archive) as design decisions rather than afterthoughts.
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
   <div class="space-y-4">
-    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl shadow-low dark:shadow-lowInverted">
-      <img src="/images/ccl-homepage-wireframe.png" alt="ColorCoded Labs homepage wireframe mapping content hierarchy and conversion flow" class="w-full h-auto rounded-lg shadow-sm">
+    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl">
+      <img src="/images/ccl-homepage-wireframe.png" alt="ColorCoded Labs homepage wireframe mapping content hierarchy and conversion flow" class="w-full h-auto rounded-lg">
     </div>
     <p class="text-xs uppercase tracking-widest opacity-50 text-center">Homepage Wireframe — Hierarchy Before Visual System</p>
   </div>
   <div class="space-y-4">
-    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl shadow-low dark:shadow-lowInverted">
-      <img src="/images/ccl-about-wireframe.png" alt="ColorCoded Labs About page wireframe showing mission, values, and team structure" class="w-full h-auto rounded-lg shadow-sm">
+    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl">
+      <img src="/images/ccl-about-wireframe.png" alt="ColorCoded Labs About page wireframe showing mission, values, and team structure" class="w-full h-auto rounded-lg">
     </div>
     <p class="text-xs uppercase tracking-widest opacity-50 text-center">About Page Wireframe — Mission, Values, and Team Structure</p>
   </div>
@@ -125,21 +118,21 @@ The original palette had no rest states — every brand color was fully saturate
 
 <div class="not-prose flex flex-wrap gap-8 tracking-tight my-8">
   <div class="flex flex-col items-center sm:items-start">
-    <div class="w-16 h-16 rounded-xl shadow-low dark:shadow-lowInverted" style="background-color: #18172D;"></div>
+    <div class="w-16 h-16 rounded-xl" style="background-color: #18172D;"></div>
     <div class="mt-2 text-center sm:text-left">
       <p class="font-bold text-base mb-0 text-normal dark:text-inverted">Xiketic</p>
       <span class="text-xs opacity-60 font-mono">#18172D</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
-    <div class="w-16 h-16 rounded-xl shadow-low dark:shadow-lowInverted border border-slate-200 dark:border-white/10" style="background-color: #F2F2F2;"></div>
+    <div class="w-16 h-16 rounded-xl border border-slate-200 dark:border-white/10" style="background-color: #F2F2F2;"></div>
     <div class="mt-2 text-center sm:text-left">
       <p class="font-bold text-base mb-0 text-normal dark:text-inverted">Cultured</p>
       <span class="text-xs opacity-60 font-mono">#F2F2F2</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
-    <div class="w-16 h-16 rounded-xl shadow-low dark:shadow-lowInverted border border-slate-200 dark:border-white/10" style="background-color: #FFFFFF;"></div>
+    <div class="w-16 h-16 rounded-xl border border-slate-200 dark:border-white/10" style="background-color: #FFFFFF;"></div>
     <div class="mt-2 text-center sm:text-left">
       <p class="font-bold text-base mb-0 text-normal dark:text-inverted">White</p>
       <span class="text-xs opacity-60 font-mono">#FFFFFF</span>
@@ -153,35 +146,35 @@ Dark surfaces, light surfaces, and a true white — a canvas against which the b
 
 <div class="not-prose flex flex-wrap gap-8 tracking-tight my-8">
   <div class="flex flex-col items-center sm:items-start">
-    <div class="w-12 h-12 rounded-lg shadow-low dark:shadow-lowInverted" style="background-color: #262262;"></div>
+    <div class="w-12 h-12 rounded-lg" style="background-color: #262262;"></div>
     <div class="mt-2 text-center sm:text-left">
       <p class="font-bold text-sm mb-0 text-normal dark:text-inverted">Midnight Blue</p>
       <span class="text-[10px] opacity-60 font-mono">#262262</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
-    <div class="w-12 h-12 rounded-lg shadow-low dark:shadow-lowInverted" style="background-color: #1C75BB;"></div>
+    <div class="w-12 h-12 rounded-lg" style="background-color: #1C75BB;"></div>
     <div class="mt-2 text-center sm:text-left">
       <p class="font-bold text-sm mb-0 text-normal dark:text-inverted">French Blue</p>
       <span class="text-[10px] opacity-60 font-mono">#1C75BB</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
-    <div class="w-12 h-12 rounded-lg shadow-low dark:shadow-lowInverted" style="background-color: #61C7CF;"></div>
+    <div class="w-12 h-12 rounded-lg" style="background-color: #61C7CF;"></div>
     <div class="mt-2 text-center sm:text-left">
       <p class="font-bold text-sm mb-0 text-normal dark:text-inverted">Dark Turquoise</p>
       <span class="text-[10px] opacity-60 font-mono">#61C7CF</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
-    <div class="w-12 h-12 rounded-lg shadow-low dark:shadow-lowInverted" style="background-color: #F6931D;"></div>
+    <div class="w-12 h-12 rounded-lg" style="background-color: #F6931D;"></div>
     <div class="mt-2 text-center sm:text-left">
       <p class="font-bold text-sm mb-0 text-normal dark:text-inverted">Carrot Orange</p>
       <span class="text-[10px] opacity-60 font-mono">#F6931D</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
-    <div class="w-12 h-12 rounded-lg shadow-low dark:shadow-lowInverted" style="background-color: #EB008B;"></div>
+    <div class="w-12 h-12 rounded-lg" style="background-color: #EB008B;"></div>
     <div class="mt-2 text-center sm:text-left">
       <p class="font-bold text-sm mb-0 text-normal dark:text-inverted">Deep Cerise</p>
       <span class="text-[10px] opacity-60 font-mono">#EB008B</span>
@@ -218,12 +211,11 @@ The brand colors didn't change — but their role did. Instead of defaulting to 
 
 <div class="not-prose grid grid-cols-1 gap-6 my-10">
   <div class="standard-card">
-    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 01</p>
     <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Making the Brand Name a Design Instruction</h3>
-    <p class="text-base text-normalLight dark:text-invertedLight mb-0">The company is called ColorCoded Labs, but nothing in the identity actually <em>did</em> anything color-coded. On the homepage hero, I assigned each letter of the headline a different color from the brand palette — and added a subtle interaction that cycles the letters through the palette on hover. It's a small moment that delivers on the brand's own name: the first thing a visitor reads on the site is literally color-coded. The concept stopped being a description and started being an experience.</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">The company is called ColorCoded Labs, but nothing in the identity actually <em>did</em> anything color-coded. On the homepage hero, I assigned each letter of the headline a different color from the brand palette — and added a subtle interaction that cycles the letters through the palette on hover. It's a small moment that delivers on the brand's own name: the first thing a visitor reads on the site is literally color-coded. The concept stopped being a description and started being an experience.</p>
   </div>
   <div class="w-full space-y-4">
-    <div class="overflow-hidden rounded-2xl shadow-medium dark:shadow-mediumInverted bg-slate-50 dark:bg-white/5 ring-1 ring-black/5 dark:ring-white/10">
+    <div class="overflow-hidden rounded-2xl bg-slate-50 dark:bg-white/5 ring-1 ring-black/5 dark:ring-white/10">
       <video class="w-full h-auto block" autoplay loop muted playsinline preload="auto" aria-label="Homepage hero headline: each letter shifts through the brand palette on hover">
         <source src="/images/ccl-interaction.mp4" type="video/mp4">
       </video>
@@ -231,19 +223,16 @@ The brand colors didn't change — but their role did. Instead of defaulting to 
     <p class="text-xs uppercase tracking-widest opacity-50 text-center">Hero Headline — Interactive Color-Coded Letters</p>
   </div>
   <div class="standard-card">
-    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 02</p>
     <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Restraint as the Brand Language's Core Rule</h3>
-    <p class="text-base text-normalLight dark:text-invertedLight mb-0">Convincing a client with a deliberately vibrant brand that <em>less</em> color would make the brand stronger required trust. The argument: when every color is shouting, none of them signal anything. By pulling brand color back to 10% of the interface, every appearance of brand color could mean something — and every CTA, every product marker, every key moment gained real visual weight.</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Convincing a client with a deliberately vibrant brand that <em>less</em> color would make the brand stronger required trust. The argument: when every color is shouting, none of them signal anything. By pulling brand color back to 10% of the interface, every appearance of brand color could mean something — and every CTA, every product marker, every key moment gained real visual weight.</p>
   </div>
   <div class="standard-card">
-    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 03</p>
     <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Color as a Program Identity Layer</h3>
-    <p class="text-base text-normalLight dark:text-invertedLight mb-0">Rather than use brand colors decoratively, I assigned them to program. Each course owns a color — and that color carries through the entire experience of that program, from first impression to enrollment. This created instant recognition, supported cross-program differentiation, and built room for future programs to join without reinventing the system.</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Rather than use brand colors decoratively, I assigned them to program. Each course owns a color — and that color carries through the entire experience of that program, from first impression to enrollment. This created instant recognition, supported cross-program differentiation, and built room for future programs to join without reinventing the system.</p>
   </div>
   <div class="standard-card">
-    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3">Decision 04</p>
     <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">A System the Team Can Operate</h3>
-    <p class="text-base text-normalLight dark:text-invertedLight mb-0">A brand language only works if the team can maintain it. I built the CMS so the rules of the language — color assignment, component patterns, visibility logic — were baked into the content model itself. When the team adds a new course, they pick a color; the system handles the rest. The brand stays consistent because the infrastructure enforces it.</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">A brand language only works if the team can maintain it. I built the CMS so the rules of the language — color assignment, component patterns, visibility logic — were baked into the content model itself. When the team adds a new course, they pick a color; the system handles the rest. The brand stays consistent because the infrastructure enforces it.</p>
   </div>
 </div>
 
@@ -251,26 +240,21 @@ The brand colors didn't change — but their role did. Instead of defaulting to 
 
 ## Applying the Language
 
-The redesigned website became the first full application of the new brand language. Every page is assembled from the component library. Every use of brand color is deliberate. Every program is visually distinct, but clearly a part of the same brand.
+The redesigned website became the first full application of the new brand language. Every page is assembled from the component library. Every use of brand color is deliberate. Every program is visually distinct, but clearly part of the same brand.
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
   <div class="space-y-4">
-    <img src="/images/colorcoded-labs-homepage.webp" alt="ColorCoded Labs Redesigned Homepage" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+    <img src="/images/colorcoded-labs-homepage.webp" alt="ColorCoded Labs Redesigned Homepage" class="w-full h-auto rounded-2xl">
     <p class="text-xs uppercase tracking-widest opacity-50 text-center">Homepage — Color-Coded Headline Delivers on the Brand Name</p>
   </div>
   <div class="space-y-4">
-    <img src="/images/colorcoded-labs-offering.webp" alt="ColorCoded Labs Course Offerings" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+    <img src="/images/colorcoded-labs-offering.webp" alt="ColorCoded Labs Course Offerings" class="w-full h-auto rounded-2xl">
     <p class="text-xs uppercase tracking-widest opacity-50 text-center">Course Offerings — Per-Program Color Identity</p>
   </div>
 </div>
 
 <div class="not-prose w-full my-12">
-  <img src="/images/colorcoded-labs-course-page.webp" alt="ColorCoded Labs Individual Course Page" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
-  <p class="text-xs uppercase tracking-widest opacity-50 text-center mt-4">Course Page — The Program's Color Carries the Experience</p>
-</div>
-
-<div class="not-prose w-full my-12">
-  <img src="/images/colorcoded-labs-about.webp" alt="ColorCoded Labs About Page" class="w-full h-auto rounded-2xl shadow-medium dark:shadow-mediumInverted">
+  <img src="/images/colorcoded-labs-about.webp" alt="ColorCoded Labs About Page" class="w-full h-auto rounded-2xl">
   <p class="text-xs uppercase tracking-widest opacity-50 text-center mt-4">About Page — Mission-Forward, Language-Consistent</p>
 </div>
 
@@ -278,16 +262,16 @@ The redesigned website became the first full application of the new brand langua
 
 ## Outcome
 
-When the redesigned website was launched, it gave ColorCoded Labs a brand language with clear guidelines that would keep up with the company's growth.
+The redesigned site launched in 2023, giving ColorCoded Labs a brand language built to keep up with the company's growth.
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
   <div class="standard-card text-left py-8">
-    <p class="text-xl sm:text-2xl font-extrabold text-normal dark:text-inverted mb-2">Delivering on the Name</p>
-    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">"Color-coded" stopped being a description and became a part of the design language. This was clearly carried through the micro interactions, the iconography, and how each course had its unique color palette.</p>
+    <p class="text-xl sm:text-2xl font-semibold text-normal dark:text-inverted mb-2">Delivering on the Name</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">"Color-coded" stopped being a description and became part of the design language — carried through the micro-interactions, iconography, and per-program color identity.</p>
   </div>
   <div class="standard-card text-left py-8">
-    <p class="text-xl sm:text-2xl font-extrabold text-normal dark:text-inverted mb-2">Full Content Independence</p>
-    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Team owns course launches, enrollment updates, and press publishing end-to-end — with the brand's rules baked into each component.</p>
+    <p class="text-xl sm:text-2xl font-semibold text-normal dark:text-inverted mb-2">Full Content Independence</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Team owns course launches, enrollment updates, and press publishing end-to-end — with the brand's rules baked into each component.</p>
   </div>
 </div>
 

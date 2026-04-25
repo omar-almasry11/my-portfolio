@@ -44,7 +44,7 @@
                   decoding="async"
                 >
               </div>
-            {% elsif item.data.header-img %}
+            {% elsif item.data['header-img'] %}
               <div class="case-study-media aspect-[4/3] overflow-hidden rounded-t-md">
                 <img
                   src="{{ item.data.header-img }}"
@@ -61,10 +61,28 @@
             {% elsif item.data.logo %}
               <div class="case-study-media aspect-[4/3] overflow-hidden rounded-t-md flex items-center justify-center bg-card dark:bg-invertedSecondary p-10">
                 {% if item.data['logo-dark'] %}
-                  <img src="{{ item.data.logo }}" alt="{{ item.data.title }}" class="max-h-16 w-auto object-contain dark:hidden" loading="lazy" decoding="async">
-                  <img src="{{ item.data['logo-dark'] }}" alt="{{ item.data.title }}" class="max-h-16 w-auto object-contain hidden dark:block" loading="lazy" decoding="async">
+                  <img
+                    src="{{ item.data.logo }}"
+                    alt="{{ item.data.title }}"
+                    class="max-h-16 w-auto object-contain dark:hidden"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <img
+                    src="{{ item.data['logo-dark'] }}"
+                    alt="{{ item.data.title }}"
+                    class="max-h-16 w-auto object-contain hidden dark:block"
+                    loading="lazy"
+                    decoding="async"
+                  >
                 {% else %}
-                  <img src="{{ item.data.logo }}" alt="{{ item.data.title }}" class="max-h-16 w-auto object-contain" loading="lazy" decoding="async">
+                  <img
+                    src="{{ item.data.logo }}"
+                    alt="{{ item.data.title }}"
+                    class="max-h-16 w-auto object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  >
                 {% endif %}
               </div>
             {% endif %}
@@ -88,7 +106,10 @@
                 </p>
               {% endif %}
               <div class="mt-auto">
-                <span class="inline-flex items-center gap-2 text-primary dark:text-primaryInverted font-medium text-md sm:text-md pointer-events-none" aria-hidden="true">
+                <span
+                  class="inline-flex items-center gap-2 text-primary dark:text-primaryInverted font-medium text-md sm:text-md pointer-events-none"
+                  aria-hidden="true"
+                >
                   View case study
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

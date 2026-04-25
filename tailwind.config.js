@@ -79,12 +79,13 @@ module.exports = {
         primary: '#2E4A8E',
         primaryInverted: '#D4952A',
       },
+      /* Very low-contrast borders (hairline on cream / barely-lifted on oxford) */
       borderColor: {
-        normal: '#E8E2D9',
-        light: '#F0EBE3',
-        inverted: '#1A1A3A',
-        invertedLight: '#2A2A4A',
-        normalLight: '#D4CFC6',
+        normal: '#F0EDE6',
+        light: '#F6F4EF',
+        inverted: '#12122C',
+        invertedLight: '#1C1C3A',
+        normalLight: '#E8E3D8',
       },
       boxShadow: {
         low: '0px 1px 3px rgba(0, 0, 34, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.10), 0px 2px 1px rgba(0, 0, 0, 0.08)',

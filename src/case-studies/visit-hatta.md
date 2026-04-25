@@ -66,7 +66,7 @@ We employed **Webflow’s native localization** features to streamline the bilin
         <img
           src="/images/hatta-homepage-english.webp"
           alt="A day out in Hatta"
-          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
+          class="w-full h-auto object-contain"
         />
       </div>
       <!-- Image 2 -->
@@ -74,7 +74,7 @@ We employed **Webflow’s native localization** features to streamline the bilin
         <img
           src="/images/hatta-homepage-arabic.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
+          class="w-full h-auto object-contain"
         />
       </div>
       <!-- Image 3 -->
@@ -82,7 +82,7 @@ We employed **Webflow’s native localization** features to streamline the bilin
         <img
           src="/images/hatta-inner-page.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
+          class="w-full h-auto object-contain"
         />
       </div>
       <!-- Image 4 -->
@@ -90,7 +90,7 @@ We employed **Webflow’s native localization** features to streamline the bilin
         <img
           src="/images/hatta-menu.webp"
           alt="A night under the stars in Hatta"
-          class="w-full h-auto object-contain shadow-low dark:shadow-lowInverted"
+          class="w-full h-auto object-contain"
         />
       </div>
     </div>

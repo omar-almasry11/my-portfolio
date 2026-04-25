@@ -47,19 +47,16 @@ This wasn't a brochure site. It was a **high-traffic publishing surface** with y
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
   <div class="standard-card text-left">
-    <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">01</p>
-    <p class="font-semibold text-normal dark:text-inverted mb-2">Scale Without a Safety Net</p>
-    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Hundreds of live URLs, each with history in search. A migration that mishandles structure or redirects doesn't just look messy — it quietly bleeds traffic.</p>
+    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Scale Without a Safety Net</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Hundreds of live URLs, each with history in search. A migration that mishandles structure or redirects doesn't just look messy — it quietly bleeds traffic.</p>
   </div>
   <div class="standard-card text-left">
-    <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">02</p>
-    <p class="font-semibold text-normal dark:text-inverted mb-2">WordPress Feature Debt</p>
-    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">Filtering, categories, date-driven content, and editorial workflows had accreted over time. Anything built in Webflow had to match real reader behavior, not just look fine in a template.</p>
+    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">WordPress Feature Debt</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Filtering, categories, date-driven content, and editorial workflows had accreted over time. Anything built in Webflow had to match real reader behavior, not just look fine in a template.</p>
   </div>
   <div class="standard-card text-left">
-    <p class="text-3xl font-extrabold text-normal dark:text-inverted mb-2">03</p>
-    <p class="font-semibold text-normal dark:text-inverted mb-2">Marketing Ownership</p>
-    <p class="text-sm text-normalLight dark:text-invertedLight mb-0">The goal was operational independence: publish, reorganize, and iterate without opening a ticket for every structural change.</p>
+    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Marketing Ownership</p>
+    <p class="text-lg text-normalLight dark:text-invertedLight mb-0">The goal was operational independence: publish, reorganize, and iterate without opening a ticket for every structural change.</p>
   </div>
 </div>
 
@@ -121,14 +118,14 @@ The blog relaunched on Webflow with **850+ entries** migrated into a coherent CM
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 my-12">
   <div class="space-y-4">
-    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl shadow-low dark:shadow-lowInverted">
-      <img src="/images/pixlee-screenshot-1.webp" alt="Pixlee TurnTo blog listing on Webflow showing resource cards and layout" class="w-full h-auto rounded-lg shadow-sm">
+    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl">
+      <img src="/images/pixlee-screenshot-1.webp" alt="Pixlee TurnTo blog listing on Webflow showing resource cards and layout" class="w-full h-auto rounded-lg">
     </div>
     <p class="text-xs uppercase tracking-widest opacity-50 text-center">Resources listing — browse and content hierarchy</p>
   </div>
   <div class="space-y-4">
-    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl shadow-low dark:shadow-lowInverted">
-      <img src="/images/pixlee-screenshot-2.webp" alt="Pixlee TurnTo article and editorial layout after migration" class="w-full h-auto rounded-lg shadow-sm">
+    <div class="bg-slate-50 dark:bg-white/5 px-2 py-1 md:px-4 md:py-2 rounded-2xl">
+      <img src="/images/pixlee-screenshot-2.webp" alt="Pixlee TurnTo article and editorial layout after migration" class="w-full h-auto rounded-lg">
     </div>
     <p class="text-xs uppercase tracking-widest opacity-50 text-center">Article template — long-form reading experience</p>
   </div>
