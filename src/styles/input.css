@@ -1334,9 +1334,9 @@
     pointer-events: none;
   }
 
-  /* Case Study Tags — same border tokens as cards */
+  /* Case Study Tags — stronger outline than cards (cards use hairline normal/inverted borders) */
   .case-study-tag {
-    @apply inline-flex items-center rounded-full border border-normal dark:border-inverted px-3 py-1 text-sm font-medium leading-tight tracking-tight text-normalLight dark:text-invertedLight;
+    @apply inline-flex items-center rounded-full border border-slate-light px-3 py-1 text-sm font-medium leading-tight tracking-tight text-normalLight dark:text-invertedLight;
   }
 
   /* Radial glow from cursor entry — shared by case study cards and CTA links */

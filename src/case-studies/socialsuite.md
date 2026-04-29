@@ -22,7 +22,7 @@ header_meta:
     value: "6 weeks"
   - label: "Role"
     value: "Brand Designer"
-order: 2
+order: 1
 categories:
   - Brand System
   - Web Design

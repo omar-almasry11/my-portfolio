@@ -3878,7 +3878,7 @@ nav.group,
   pointer-events: none;
 }
 
-/* Case Study Tags — same border tokens as cards */
+/* Case Study Tags — stronger outline than cards (cards use hairline normal/inverted borders) */
 
 .case-study-tag {
   display: inline-flex;
@@ -3886,7 +3886,7 @@ nav.group,
   border-radius: 9999px;
   border-width: 1px;
   --tw-border-opacity: 1;
-  border-color: rgb(240 237 230 / var(--tw-border-opacity, 1));
+  border-color: rgb(122 122 136 / var(--tw-border-opacity, 1));
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.25rem;
@@ -3901,8 +3901,6 @@ nav.group,
 }
 
 .case-study-tag:is(.dark *) {
-  --tw-border-opacity: 1;
-  border-color: rgb(18 18 44 / var(--tw-border-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(184 180 174 / var(--tw-text-opacity, 1));
 }

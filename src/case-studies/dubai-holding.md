@@ -23,7 +23,7 @@ header_meta:
     value: "2 years"
   - label: "Role"
     value: "Lead Designer & Developer"
-order: 1
+order: 2
 categories:
   - Design System
   - Web Design
