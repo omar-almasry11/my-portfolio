@@ -44,15 +44,15 @@ As a platform serving both Fortune 500 companies and leading nonprofits, they ne
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
   <div class="standard-card text-left">
-    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Visual Identity Disconnect</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Visual Identity Disconnect</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">The existing site relied on generic stock illustrations and dated visuals that failed to communicate the premium positioning of enterprise software.</p>
   </div>
   <div class="standard-card text-left">
-    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Poor Conversion Performance</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Poor Conversion Performance</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">A homepage conversion rate of just 2.15% was actively hindering growth.</p>
   </div>
   <div class="standard-card text-left">
-    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Audience Confusion</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Audience Confusion</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">A single "Book a Demo" flow attempted to serve two dramatically different audiences — creating friction at every touchpoint.</p>
   </div>
 </div>
@@ -84,19 +84,19 @@ One message can't resonate with both audiences. The brand needed to feel like tw
   <div class="cs-audience-card standard-card" style="border-left: 3px solid #00a0aa;">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-4">Social Impact Users</p>
     <ul class="space-y-3 text-lg text-normalLight dark:text-invertedLight m-0 p-0 list-none">
-      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Who:</span> Nonprofits ($1–10M revenue)</li>
-      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Focus:</span> Community impact reporting</li>
-      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Buyers:</span> Program directors, grant writers</li>
-      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Tone:</span> Approachable, mission-focused</li>
+      <li class="flex items-start gap-2"><span class="font-medium text-normal dark:text-inverted shrink-0">Who:</span> Nonprofits ($1–10M revenue)</li>
+      <li class="flex items-start gap-2"><span class="font-medium text-normal dark:text-inverted shrink-0">Focus:</span> Community impact reporting</li>
+      <li class="flex items-start gap-2"><span class="font-medium text-normal dark:text-inverted shrink-0">Buyers:</span> Program directors, grant writers</li>
+      <li class="flex items-start gap-2"><span class="font-medium text-normal dark:text-inverted shrink-0">Tone:</span> Approachable, mission-focused</li>
     </ul>
   </div>
   <div class="cs-audience-card standard-card" style="border-left: 3px solid #014682;">
     <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-4">ESG Users</p>
     <ul class="space-y-3 text-lg text-normalLight dark:text-invertedLight m-0 p-0 list-none">
-      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Who:</span> Public companies ($10M–2B market cap)</li>
-      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Focus:</span> Regulatory compliance</li>
-      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Buyers:</span> C-suite, sustainability officers</li>
-      <li class="flex items-start gap-2"><span class="font-semibold text-normal dark:text-inverted shrink-0">Tone:</span> Professional, data-driven</li>
+      <li class="flex items-start gap-2"><span class="font-medium text-normal dark:text-inverted shrink-0">Who:</span> Public companies ($10M–2B market cap)</li>
+      <li class="flex items-start gap-2"><span class="font-medium text-normal dark:text-inverted shrink-0">Focus:</span> Regulatory compliance</li>
+      <li class="flex items-start gap-2"><span class="font-medium text-normal dark:text-inverted shrink-0">Buyers:</span> C-suite, sustainability officers</li>
+      <li class="flex items-start gap-2"><span class="font-medium text-normal dark:text-inverted shrink-0">Tone:</span> Professional, data-driven</li>
     </ul>
   </div>
 </div>
@@ -134,7 +134,7 @@ With structure locked, I explored how the brand could feel — and how to make a
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
   <div class="cs-direction-card">
-    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction A</p>
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-medium">Direction A</p>
     <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Energetic & Bold</h3>
     <div class="rounded-xl overflow-hidden mb-4">
       <img src="/images/png/socialsuite-hero-color-attempt-3.png" alt="Socialsuite hero Direction A — Warm & Bold with yellow-gold background" class="w-full h-auto">
@@ -142,7 +142,7 @@ With structure locked, I explored how the brand could feel — and how to make a
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">A yellow-gold background paired with teal accents created energy and optimism — but risked feeling too playful for enterprise audiences.</p>
   </div>
   <div class="cs-direction-card">
-    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction B</p>
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-medium">Direction B</p>
     <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Premium & Confident</h3>
     <div class="rounded-xl overflow-hidden mb-4">
       <img src="/images/png/direction-b.png" alt="Socialsuite hero Direction B — Cool & Confident with deep teal gradient" class="w-full h-auto">
@@ -150,7 +150,7 @@ With structure locked, I explored how the brand could feel — and how to make a
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">A deep ocean-to-teal gradient anchored by the brand's circular motifs — bold and contemporary, with a sophistication that signals enterprise credibility without feeling cold.</p>
   </div>
   <div class="cs-direction-card">
-    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-bold">Direction C</p>
+    <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-3 font-medium">Direction C</p>
     <h3 class="text-xl font-medium text-normal dark:text-inverted mb-3">Clear & Minimal</h3>
     <div class="rounded-xl overflow-hidden mb-4">
       <img src="/images/png/socialsuite-hero-color-attempt-1.png" alt="Socialsuite hero Direction C — Subtle & Premium with light background" class="w-full h-auto">
@@ -181,14 +181,14 @@ I developed a two-tier palette: primary brand tones that carry the brand's weigh
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-16 h-16 rounded-xl" style="background-color: #014682;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-base mb-0 text-normal dark:text-inverted">Ocean</p>
+      <p class="font-medium text-base mb-0 text-normal dark:text-inverted">Ocean</p>
       <span class="text-xs opacity-60 font-mono">#014682</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-16 h-16 rounded-xl" style="background-color: #00a0aa;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-base mb-0 text-normal dark:text-inverted">Lagoon</p>
+      <p class="font-medium text-base mb-0 text-normal dark:text-inverted">Lagoon</p>
       <span class="text-xs opacity-60 font-mono">#00a0aa</span>
     </div>
   </div>
@@ -200,21 +200,21 @@ I developed a two-tier palette: primary brand tones that carry the brand's weigh
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-16 h-16 rounded-xl" style="background-color: #00a0c8;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-base mb-0 text-normal dark:text-inverted">Sky</p>
+      <p class="font-medium text-base mb-0 text-normal dark:text-inverted">Sky</p>
       <span class="text-xs opacity-60 font-mono">#00a0c8</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-16 h-16 rounded-xl" style="background-color: #bcc896;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-base mb-0 text-normal dark:text-inverted">Grass</p>
+      <p class="font-medium text-base mb-0 text-normal dark:text-inverted">Grass</p>
       <span class="text-xs opacity-60 font-mono">#bcc896</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-16 h-16 rounded-xl" style="background-color: #00a096;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-base mb-0 text-normal dark:text-inverted">Leaf</p>
+      <p class="font-medium text-base mb-0 text-normal dark:text-inverted">Leaf</p>
       <span class="text-xs opacity-60 font-mono">#00a096</span>
     </div>
   </div>
@@ -230,7 +230,7 @@ The ocean-to-lagoon gradient became the brand's signature surface — used in he
 
 <div class="not-prose w-full my-12 space-y-12">
   <div class="flex items-baseline gap-6 border-b border-normal dark:border-inverted pb-8">
-    <span class="text-[10rem] md:text-[12rem] font-bold tracking-tighter text-normal dark:text-inverted leading-none" style="font-family: 'Roboto', sans-serif;">Aa</span>
+    <span class="text-[10rem] md:text-[12rem] font-medium tracking-tighter text-normal dark:text-inverted leading-none" style="font-family: 'Roboto', sans-serif;">Aa</span>
     <div class="flex flex-col">
       <span class="text-3xl font-mono opacity-50">Roboto</span>
       <div class="flex gap-3 mt-4">
@@ -337,11 +337,11 @@ I implemented the Phosphor icon library in duotone style — a comprehensive ico
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
   <div class="standard-card text-left py-8">
-    <p class="text-4xl sm:text-5xl font-semibold text-normal dark:text-inverted mb-2">165+</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">165+</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Organizations served worldwide</p>
   </div>
   <div class="standard-card text-left py-8">
-    <p class="text-4xl sm:text-5xl font-semibold text-normal dark:text-inverted mb-2">2×</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">2×</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Conversion rate target achieved</p>
   </div>
 </div>
@@ -350,7 +350,7 @@ I implemented the Phosphor icon library in duotone style — a comprehensive ico
   <blockquote class="m-0 p-0 border-none">
     <p class="text-lg sm:text-xl italic text-normal dark:text-inverted leading-relaxed mb-4">"It was fantastic to work with Omar - from start to finish he was a delight to work with! Omar went above and beyond to help us deliver our project on time - going above and beyond the original scope of work to help us create an incredible website. His training on the CMS was fantastic, and I recommend Omar to anyone looking for assistance with a Webflow site!"</p>
     <footer class="flex flex-col">
-      <span class="font-bold text-normal dark:text-inverted">Eleanor Carter</span>
+      <span class="font-medium text-normal dark:text-inverted">Eleanor Carter</span>
       <span class="text-lg text-normalLight dark:text-invertedLight">Senior Content Strategist</span>
     </footer>
   </blockquote>

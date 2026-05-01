@@ -75,7 +75,7 @@
   }
 
   h1 {
-    @apply font-heading text-4xl sm:text-6xl font-extrabold mb-4 leading-[1.1] tracking-tight;
+    @apply font-heading text-4xl sm:text-6xl font-medium mb-4 leading-[1.1] tracking-tight;
   }
 
   p {
@@ -83,7 +83,7 @@
   }
 
   h2 {
-    @apply font-heading text-3xl sm:text-4xl font-bold mb-4 leading-[1.1] tracking-tight;
+    @apply font-heading text-[2rem] font-medium mb-4 leading-[1.1] tracking-tight;
   }
 
   h3 {
@@ -165,12 +165,13 @@
   }
 
   .prose {
-    @apply prose-h2:text-4xl prose-h2:mb-4 prose-h2:leading-[1.1] prose-h2:tracking-tight prose-h3:text-2xl prose-h3:font-medium prose-h3:text-normalLight prose-h3:mb-1 prose-h3:mt-6 lg:prose-lg md:prose-base max-w-full dark:prose-inverted dark:prose-h3:text-invertedLight;
+    @apply prose-h2:text-[2rem] prose-h2:mb-4 prose-h2:leading-[1.1] prose-h2:tracking-tight prose-h3:text-2xl prose-h3:font-medium prose-h3:text-normalLight prose-h3:mb-1 prose-h3:mt-6 lg:prose-lg md:prose-base max-w-full dark:prose-inverted dark:prose-h3:text-invertedLight;
   }
 
-  /* Case studies: softer section dividers (markdown ---) than default prose hr */
+  /* Case studies: softer body weight; softer section dividers (markdown ---) */
   .prose.case-study-prose {
     --tw-prose-hr: theme('borderColor.light');
+    @apply prose-p:font-light prose-li:font-light prose-blockquote:font-light prose-strong:font-medium prose-th:font-medium prose-td:font-light prose-figcaption:font-light prose-lead:font-light prose-code:font-normal;
   }
 
   .dark .prose.case-study-prose {
@@ -1342,13 +1343,15 @@
   /* Radial glow from cursor entry — shared by case study cards and CTA links */
   .case-study-cursor-card,
   .case-study-next-link,
+  .case-study-prev-link,
   .footer-cta-cursor-link {
     --clip-x: 50%;
     --clip-y: 50%;
   }
 
   .case-study-cursor-card::before,
-  .case-study-next-link::before {
+  .case-study-next-link::before,
+  .case-study-prev-link::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -1375,7 +1378,8 @@
   }
 
   .case-study-cursor-card.card-glow-active::before,
-  .case-study-next-link.card-glow-active::before {
+  .case-study-next-link.card-glow-active::before,
+  .case-study-prev-link.card-glow-active::before {
     clip-path: circle(125% at var(--clip-x) var(--clip-y));
   }
 
@@ -1384,7 +1388,8 @@
   }
 
   html.dark .case-study-cursor-card::before,
-  html.dark .case-study-next-link::before {
+  html.dark .case-study-next-link::before,
+  html.dark .case-study-prev-link::before {
     background: rgba(212, 149, 42, 0.07);
   }
 
@@ -1410,12 +1415,14 @@
 
   /* CTA links: positioned box so ::before inherits border-radius */
   .case-study-next-link,
+  .case-study-prev-link,
   .footer-cta-cursor-link {
     @apply relative;
     isolation: isolate;
   }
 
   .case-study-next-link > *,
+  .case-study-prev-link > *,
   .footer-cta-cursor-link > * {
     @apply relative z-[2];
   }
@@ -1565,7 +1572,8 @@
 
 .testimonial-card__portrait {
   display: block;
-  width: 74px;
+  margin-bottom: 1rem;
+  width: 100px;
   aspect-ratio: 1 / 1;
   height: auto;
   border-radius: 0.375rem; /* matches .standard-card rounded-md */
@@ -1585,7 +1593,7 @@
 
 .testimonial-card__name {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -1615,6 +1623,7 @@ html.dark .testimonial-card__role-short {
 
 .testimonial-card__text {
   font-size: 1.125rem;
+  font-weight: 300;
   line-height: 1.6;
   margin: 0;
   flex: 1;
@@ -1681,7 +1690,7 @@ html.dark .testimonial-card__role-short {
 }
 
 .about-prose-label {
-  @apply m-0 p-0 text-3xl sm:text-4xl font-bold leading-[1.1] tracking-tight text-normal dark:text-inverted;
+  @apply m-0 p-0 text-[2rem] font-medium leading-[1.1] tracking-tight text-normal dark:text-inverted;
 }
 
 .about-prose-body {

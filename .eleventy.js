@@ -89,6 +89,13 @@ eleventyConfig.addCollection("caseStudies", function (collectionApi) {
     return caseStudies[idx + 1];
   });
 
+  eleventyConfig.addFilter("previousCaseStudy", function (caseStudies, currentUrl) {
+    if (!Array.isArray(caseStudies) || !currentUrl) return null;
+    const idx = caseStudies.findIndex((item) => item.url === currentUrl);
+    if (idx <= 0) return null;
+    return caseStudies[idx - 1];
+  });
+
   // JSON filter to parse strings
   eleventyConfig.addFilter("from_json", function(value) {
     try {

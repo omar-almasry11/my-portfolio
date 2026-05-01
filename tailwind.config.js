@@ -102,8 +102,8 @@ module.exports = {
           css: {
             '--tw-prose-body': theme('textColor.normal'),
             '--tw-prose-headings': theme('textColor.normal'),
-            h1: { fontFamily: headingFont },
-            h2: { fontFamily: headingFont },
+            h1: { fontFamily: headingFont, fontWeight: '500' },
+            h2: { fontFamily: headingFont, fontWeight: '500' },
             h3: { fontFamily: headingFont },
             h4: { fontFamily: headingFont },
             '--tw-prose-links': theme('textColor.primary'),
@@ -125,8 +125,8 @@ module.exports = {
           css: {
             '--tw-prose-body': theme('textColor.inverted'),
             '--tw-prose-headings': theme('textColor.inverted'),
-            h1: { fontFamily: headingFont },
-            h2: { fontFamily: headingFont },
+            h1: { fontFamily: headingFont, fontWeight: '500' },
+            h2: { fontFamily: headingFont, fontWeight: '500' },
             h3: { fontFamily: headingFont },
             h4: { fontFamily: headingFont },
             '--tw-prose-links': theme('textColor.primaryInverted'),

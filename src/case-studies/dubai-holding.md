@@ -41,15 +41,15 @@ Dubai Holding has a large portfolio of enterprise websites, each with its own co
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
   <div class="standard-card text-left">
-    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Multiple Teams, Different Brands</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Multiple Teams, Different Brands</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Each brand under Dubai Holding had its own brand expression, design assets, and marketing team. Designing one-off sites for each would be slow, inconsistent, and impossible to maintain.</p>
   </div>
   <div class="standard-card text-left">
-    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Years of SEO Equity at Risk</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Years of SEO Equity at Risk</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">These sites weren't launches — they were migrations. Each property carried years of organic search rankings and domain authority that any missed redirect, broken canonical, or content drift could unwind.</p>
   </div>
   <div class="standard-card text-left">
-    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Bilingual and Accessibility Requirements</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Bilingual and Accessibility Requirements</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Properties needed full Arabic/English support with proper RTL layouts, and retail properties required WCAG AA compliance.</p>
   </div>
 </div>
@@ -161,11 +161,11 @@ Visit Hatta and Nad Al Sheba were two anchors in a broader engagement. Over two 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full items-start">
     <div class="w-full text-lg">
       <img src="/images/bay-avenue-final.webp" alt="Bay Avenue website" class="w-full h-auto object-contain rounded-2xl" />
-      <p class="mt-2"><a href="https://www.bayavenue.ae/" class="font-semibold" target="_blank" rel="noopener noreferrer">Bay Avenue</a></p>
+      <p class="mt-2"><a href="https://www.bayavenue.ae/" class="font-medium" target="_blank" rel="noopener noreferrer">Bay Avenue</a></p>
     </div>
     <div class="w-full text-lg">
       <img src="/images/souq-jumeirah-final.webp" alt="Souk Madinat Jumeirah website" class="w-full h-auto object-contain rounded-2xl" />
-      <p class="mt-2"><a href="https://www.soukmadinatjumeirah.ae/en" class="font-semibold" target="_blank" rel="noopener noreferrer">Souk Madinat Jumeirah</a></p>
+      <p class="mt-2"><a href="https://www.soukmadinatjumeirah.ae/en" class="font-medium" target="_blank" rel="noopener noreferrer">Souk Madinat Jumeirah</a></p>
     </div>
   </div>
 </section>
@@ -203,15 +203,15 @@ A two-year direct engagement supporting multiple marketing teams across destinat
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
   <div class="standard-card text-left py-8">
-    <p class="text-xl sm:text-2xl font-semibold text-normal dark:text-inverted mb-2">Portfolio-Wide Component Library</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Portfolio-Wide Component Library</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Shared design system powering retail and destination properties, still in active use by Dubai Holding's teams today.</p>
   </div>
   <div class="standard-card text-left py-8">
-    <p class="text-xl sm:text-2xl font-semibold text-normal dark:text-inverted mb-2">Zero SEO Regression</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Zero SEO Regression</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Every migration launched without losing organic search rankings — preserving years of accumulated domain authority.</p>
   </div>
   <div class="standard-card text-left py-8">
-    <p class="text-xl sm:text-2xl font-semibold text-normal dark:text-inverted mb-2">Accessibility as Default</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Accessibility as Default</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">WCAG AA compliance achieved across retail properties, with accessibility encoded into the component library so future sites inherit it automatically.</p>
   </div>
 </div>

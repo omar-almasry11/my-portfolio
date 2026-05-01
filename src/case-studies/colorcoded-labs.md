@@ -41,15 +41,15 @@ ColorCoded Labs had launched with a bold visual identity — vibrant colors, a d
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
   <div class="standard-card text-left">
-    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Brand Designed for Impact, Not Scale</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Brand Designed for Impact, Not Scale</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">The identity worked beautifully as a standalone — but applied across an entire website, every element ended up in brand color, every background fighting for attention, every section feeling equally important.</p>
   </div>
   <div class="standard-card text-left">
-    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Site Built for a Pilot</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Site Built for a Pilot</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">The original site supported a single product. As the company expanded into multiple programs, press coverage, and partnership outreach, there was no structure to house any of it.</p>
   </div>
   <div class="standard-card text-left">
-    <p class="text-xl font-semibold text-normal dark:text-inverted mb-2">Team Blocked From Their Own Brand</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Team Blocked From Their Own Brand</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Course updates, enrollment deadlines, and press mentions all required developer intervention — leaving the marketing team unable to keep their own site current as the company moved faster.</p>
   </div>
 </div>
@@ -120,21 +120,21 @@ The original palette had no rest states — every brand color was fully saturate
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-16 h-16 rounded-xl" style="background-color: #18172D;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-base mb-0 text-normal dark:text-inverted">Xiketic</p>
+      <p class="font-medium text-base mb-0 text-normal dark:text-inverted">Xiketic</p>
       <span class="text-xs opacity-60 font-mono">#18172D</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-16 h-16 rounded-xl border border-slate-200 dark:border-white/10" style="background-color: #F2F2F2;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-base mb-0 text-normal dark:text-inverted">Cultured</p>
+      <p class="font-medium text-base mb-0 text-normal dark:text-inverted">Cultured</p>
       <span class="text-xs opacity-60 font-mono">#F2F2F2</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-16 h-16 rounded-xl border border-slate-200 dark:border-white/10" style="background-color: #FFFFFF;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-base mb-0 text-normal dark:text-inverted">White</p>
+      <p class="font-medium text-base mb-0 text-normal dark:text-inverted">White</p>
       <span class="text-xs opacity-60 font-mono">#FFFFFF</span>
     </div>
   </div>
@@ -148,35 +148,35 @@ Dark surfaces, light surfaces, and a true white — a canvas against which the b
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-12 h-12 rounded-lg" style="background-color: #262262;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-sm mb-0 text-normal dark:text-inverted">Midnight Blue</p>
+      <p class="font-medium text-sm mb-0 text-normal dark:text-inverted">Midnight Blue</p>
       <span class="text-[10px] opacity-60 font-mono">#262262</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-12 h-12 rounded-lg" style="background-color: #1C75BB;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-sm mb-0 text-normal dark:text-inverted">French Blue</p>
+      <p class="font-medium text-sm mb-0 text-normal dark:text-inverted">French Blue</p>
       <span class="text-[10px] opacity-60 font-mono">#1C75BB</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-12 h-12 rounded-lg" style="background-color: #61C7CF;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-sm mb-0 text-normal dark:text-inverted">Dark Turquoise</p>
+      <p class="font-medium text-sm mb-0 text-normal dark:text-inverted">Dark Turquoise</p>
       <span class="text-[10px] opacity-60 font-mono">#61C7CF</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-12 h-12 rounded-lg" style="background-color: #F6931D;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-sm mb-0 text-normal dark:text-inverted">Carrot Orange</p>
+      <p class="font-medium text-sm mb-0 text-normal dark:text-inverted">Carrot Orange</p>
       <span class="text-[10px] opacity-60 font-mono">#F6931D</span>
     </div>
   </div>
   <div class="flex flex-col items-center sm:items-start">
     <div class="w-12 h-12 rounded-lg" style="background-color: #EB008B;"></div>
     <div class="mt-2 text-center sm:text-left">
-      <p class="font-bold text-sm mb-0 text-normal dark:text-inverted">Deep Cerise</p>
+      <p class="font-medium text-sm mb-0 text-normal dark:text-inverted">Deep Cerise</p>
       <span class="text-[10px] opacity-60 font-mono">#EB008B</span>
     </div>
   </div>
@@ -188,7 +188,7 @@ The brand colors didn't change — but their role did. Instead of defaulting to 
 
 <div class="not-prose w-full my-12 space-y-12">
   <div class="flex items-baseline gap-6 border-b border-normal dark:border-inverted pb-8">
-    <span class="text-[10rem] md:text-[12rem] font-bold tracking-tighter text-normal dark:text-inverted leading-none">Aa</span>
+    <span class="text-[10rem] md:text-[12rem] font-medium tracking-tighter text-normal dark:text-inverted leading-none">Aa</span>
     <div class="flex flex-col">
       <span class="text-3xl font-mono opacity-50">Helvetica Now Display</span>
       <div class="flex gap-3 mt-4">
@@ -266,11 +266,11 @@ The redesigned site launched in 2023, giving ColorCoded Labs a brand language bu
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
   <div class="standard-card text-left py-8">
-    <p class="text-xl sm:text-2xl font-semibold text-normal dark:text-inverted mb-2">Delivering on the Name</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Delivering on the Name</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">"Color-coded" stopped being a description and became part of the design language — carried through the micro-interactions, iconography, and per-program color identity.</p>
   </div>
   <div class="standard-card text-left py-8">
-    <p class="text-xl sm:text-2xl font-semibold text-normal dark:text-inverted mb-2">Full Content Independence</p>
+    <p class="text-xl font-medium text-normal dark:text-inverted mb-2">Full Content Independence</p>
     <p class="text-lg text-normalLight dark:text-invertedLight mb-0">Team owns course launches, enrollment updates, and press publishing end-to-end — with the brand's rules baked into each component.</p>
   </div>
 </div>

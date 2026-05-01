@@ -6,12 +6,12 @@
     {% if header or subheader %}
       <div class="mb-10 md:mb-12">
         {% if header %}
-          <h2 class="text-3xl sm:text-4xl font-bold leading-[1.1] tracking-tight mb-0">
+          <h2 class="text-[2rem] font-medium leading-[1.1] tracking-tight mb-0">
             {{ header }}
           </h2>
         {% endif %}
         {% if subheader %}
-          <p class="text-xl font-light sm:text-2xl text-normalLight leading-tight dark:text-invertedLight max-w-2xl mt-2.5 mb-0">
+          <p class="text-[1.5rem] font-light text-normalLight leading-tight dark:text-invertedLight max-w-2xl mt-2.5 mb-0">
             {{ subheader }}
           </p>
         {% endif %}
@@ -101,7 +101,7 @@
                 {{ item.data.title }}
               </h3>
               {% if item.data.description %}
-                <p class="text-base text-normalLight dark:text-invertedLight leading-snug mb-4">
+                <p class="font-light text-[1.125rem] text-base text-normalLight dark:text-invertedLight leading-snug mb-4">
                   {{ item.data.description }}
                 </p>
               {% endif %}

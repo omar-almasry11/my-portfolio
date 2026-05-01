@@ -4,12 +4,18 @@ layout: "/layouts/layout.liquid"
 <header class="pt-24 pb-4 px-[5%] mx-auto">
   <div class="container mx-auto max-w-6xl">
     <div class="mb-12">
-      <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-3 text-normal dark:text-inverted">{{ title }}</h1>
+      <h1 class="font-medium tracking-tight sm:text-6xl md:text-6xl lg:text-7xl leading-[1.1] mb-3 text-normal dark:text-inverted">
+        {{ title }}
+      </h1>
       {% if header_subtitle %}
-        <p class="text-xl font-light sm:text-2xl text-normalLight dark:text-invertedLight leading-tight mb-4 max-w-2xl">{{ header_subtitle }}</p>
+        <p class="text-[1.5rem] font-light text-normalLight dark:text-invertedLight leading-tight mb-4 max-w-2xl">
+          {{ header_subtitle }}
+        </p>
       {% endif %}
       {% if header-overview %}
-        <p class="text-base sm:text-xl text-normalLight font-normal dark:text-invertedLight max-w-[40rem] leading-relaxed mb-0">{{ header-overview }}</p>
+        <p class="text-[1.125rem] text-normalLight font-light dark:text-invertedLight max-w-[40rem] leading-relaxed mb-0">
+          {{ header-overview }}
+        </p>
       {% endif %}
     </div>
 
@@ -17,7 +23,9 @@ layout: "/layouts/layout.liquid"
       <div class="cs-meta-bar grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mb-12 py-6 border-y border-normal dark:border-inverted">
         {% for item in header_meta %}
           <div>
-            <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">{{ item.label }}</p>
+            <p class="text-xs uppercase tracking-widest text-normalLight dark:text-invertedLight mb-1">
+              {{ item.label }}
+            </p>
             <p class="text-base font-medium text-normal dark:text-inverted mb-0">{{ item.value }}</p>
           </div>
         {% endfor %}
@@ -44,24 +52,46 @@ layout: "/layouts/layout.liquid"
       {{ content }}
     </article>
 
+    {% assign prev_cs = collections.caseStudies | previousCaseStudy: page.url %}
     {% assign next_cs = collections.caseStudies | nextCaseStudy: page.url %}
-    {% if next_cs %}
-      <div class="mt-16 flex w-full min-w-0 justify-end border-t border-normal pt-12 dark:border-inverted">
-        <a
-          href="{{ next_cs.url | url }}"
-          class="case-study-next-link group inline-flex min-w-0 max-w-full flex-wrap items-center justify-end gap-2 rounded-md px-6 py-3 text-left text-primary dark:text-primaryInverted font-semibold no-underline hover:text-lapis-light dark:hover:text-amber-light transition-colors duration-300"
-        >
-          <span class="min-w-0 break-words">Next Case Study: {{ next_cs.data.title }}</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-4 h-4 sm:w-6 sm:h-6 fill-current shrink-0 transition-transform duration-200 group-hover:translate-x-1"
-            viewBox="0 0 256 256"
-            aria-hidden="true"
+    {% if prev_cs or next_cs %}
+      <nav
+        class="mt-16 flex min-w-0 w-full flex-col gap-6 border-t border-normal pt-12 dark:border-inverted {% if prev_cs and next_cs %}sm:flex-row sm:items-start sm:justify-between{% elsif next_cs %}sm:flex-row sm:justify-end{% else %}sm:flex-row sm:justify-start{% endif %}"
+        aria-label="Adjacent case studies"
+      >
+        {% if prev_cs %}
+          <a
+            href="{{ prev_cs.url | url }}"
+            class="case-study-prev-link group relative inline-flex min-w-0 max-w-full flex-wrap items-center justify-start gap-2 rounded-md px-6 py-3 text-left text-primary dark:text-primaryInverted font-medium no-underline hover:text-lapis-light dark:hover:text-amber-light transition-colors duration-300"
           >
-            <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
-          </svg>
-        </a>
-      </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 shrink-0 fill-current transition-transform duration-200 group-hover:-translate-x-1 sm:w-6 sm:h-6"
+              viewBox="0 0 256 256"
+              aria-hidden="true"
+            >
+              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z" transform="rotate(180 128 128)"></path>
+            </svg>
+            <span class="min-w-0 break-words">Previous Case Study: {{ prev_cs.data.title }}</span>
+          </a>
+        {% endif %}
+        {% if next_cs %}
+          <a
+            href="{{ next_cs.url | url }}"
+            class="case-study-next-link group relative inline-flex min-w-0 max-w-full flex-wrap items-center justify-end gap-2 rounded-md px-6 py-3 text-left text-primary dark:text-primaryInverted font-medium no-underline hover:text-lapis-light dark:hover:text-amber-light transition-colors duration-300"
+          >
+            <span class="min-w-0 break-words">Next Case Study: {{ next_cs.data.title }}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 shrink-0 fill-current transition-transform duration-200 group-hover:translate-x-1 sm:w-6 sm:h-6"
+              viewBox="0 0 256 256"
+              aria-hidden="true"
+            >
+              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+            </svg>
+          </a>
+        {% endif %}
+      </nav>
     {% endif %}
   </div>
 </section>
