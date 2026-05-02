@@ -11,7 +11,7 @@
     font-display: swap;
   }
 
-  /* Accent mosaic palette (hero, testimonials, CTA grid, page transitions — keep in sync with page-transition.js / cta-grid-animation.js / layout.liquid) */
+  /* Accent mosaic palette (hero static tiles, etc.). Transition load-grid uses full palette in page-transition.js + layout.liquid. CTA band cycle: cta-grid-animation.js. */
   :root {
     --palette-blue: #2a4494;
     --palette-gold: #c48a1e;
@@ -1340,23 +1340,66 @@
     @apply inline-flex items-center rounded-full border border-slate-light px-3 py-1 text-sm font-medium leading-tight tracking-tight text-normalLight dark:text-invertedLight;
   }
 
+  /* Experiment page — interactive canvas frames */
+  .experiment-canvas-stack {
+    @apply flex flex-col gap-10 my-12;
+  }
+
+  .experiment-canvas-figure {
+    @apply m-0 flex flex-col gap-3 border-0;
+  }
+
+  .experiment-canvas-frame {
+    @apply relative w-full overflow-hidden border-0 shadow-none;
+    aspect-ratio: 16 / 10;
+  }
+
+  .experiment-canvas-frame--square {
+    aspect-ratio: 1 / 1;
+    max-width: 36rem;
+  }
+
+  .experiment-canvas-frame > canvas {
+    @apply block h-full w-full;
+    touch-action: none;
+  }
+
+  .experiment-canvas-caption {
+    @apply text-sm font-light text-normalLight dark:text-invertedLight text-left;
+  }
+
   /* Radial glow from cursor entry — shared by case study cards and CTA links */
   .case-study-cursor-card,
   .case-study-next-link,
   .case-study-prev-link,
+  .card-cta-glow,
   .footer-cta-cursor-link {
     --clip-x: 50%;
     --clip-y: 50%;
   }
 
-  .case-study-cursor-card::before,
-  .case-study-next-link::before,
-  .case-study-prev-link::before {
+  /* Whole-card cursor wash only — keep subtle */
+  .case-study-cursor-card::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
     background: rgba(46, 74, 142, 0.06);
+    clip-path: circle(0% at var(--clip-x) var(--clip-y));
+    transition: clip-path 420ms cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Next/prev + card CTA: dense primary lapis in light (same as cursor dot), not the pale card wash */
+  .case-study-next-link::before,
+  .case-study-prev-link::before,
+  .card-cta-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(46, 74, 142, 0.94);
     clip-path: circle(0% at var(--clip-x) var(--clip-y));
     transition: clip-path 420ms cubic-bezier(0.23, 1, 0.32, 1);
     pointer-events: none;
@@ -1379,7 +1422,8 @@
 
   .case-study-cursor-card.card-glow-active::before,
   .case-study-next-link.card-glow-active::before,
-  .case-study-prev-link.card-glow-active::before {
+  .case-study-prev-link.card-glow-active::before,
+  .card-cta-glow.card-glow-active::before {
     clip-path: circle(125% at var(--clip-x) var(--clip-y));
   }
 
@@ -1387,10 +1431,31 @@
     clip-path: circle(220% at var(--clip-x) var(--clip-y));
   }
 
-  html.dark .case-study-cursor-card::before,
+  html.dark .case-study-cursor-card::before {
+    background: rgba(74, 106, 176, 0.16);
+  }
+
+  /* Adjacent case study / experiment nav: dense amber wash + white type when engaged */
   html.dark .case-study-next-link::before,
   html.dark .case-study-prev-link::before {
-    background: rgba(212, 149, 42, 0.07);
+    background: rgba(154, 102, 24, 0.94);
+  }
+
+  html.dark .card-cta-glow::before {
+    background: rgba(154, 102, 24, 0.94);
+  }
+
+  .case-study-next-link:hover,
+  .case-study-prev-link:hover,
+  .case-study-next-link.card-glow-active,
+  .case-study-prev-link.card-glow-active,
+  .case-study-next-link:focus-visible,
+  .case-study-prev-link:focus-visible {
+    @apply text-white;
+  }
+
+  .card-cta-glow.card-glow-active {
+    @apply text-white;
   }
 
   /* CTA band on mosaic: white outline + type; hover fills oxford (cream text/icon) */
@@ -1416,13 +1481,19 @@
   /* CTA links: positioned box so ::before inherits border-radius */
   .case-study-next-link,
   .case-study-prev-link,
+  .card-cta-glow,
   .footer-cta-cursor-link {
     @apply relative;
     isolation: isolate;
   }
 
+  .card-cta-glow {
+    z-index: 11;
+  }
+
   .case-study-next-link > *,
   .case-study-prev-link > *,
+  .card-cta-glow > *,
   .footer-cta-cursor-link > * {
     @apply relative z-[2];
   }
@@ -1521,7 +1592,7 @@
   grid-template-rows: repeat(20, 1fr);
   transition: background-color 0.5s ease;
   /* Matches first frame of cta-grid-animation.js before JS runs */
-  background-color: var(--palette-gold);
+  background-color: var(--palette-slate);
 }
 
 .cta-grid-item {
@@ -1539,20 +1610,8 @@
   }
 }
 
-/* ── Testimonial Mondrian Grid ── */
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto;
-  gap: 4px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Inherits bg, border, rounded, p-6 from .standard-card */
+/* ── Testimonial Card Component ── */
 .testimonial-card.standard-card {
-  height: auto !important;
-  align-items: flex-start !important;
   text-align: left;
 }
 
@@ -1641,17 +1700,88 @@ html.dark .testimonial-card__role-short {
   width: 100%;
 }
 
-.color-block {
-  border-radius: 0;
-  position: relative;
+/* ── Testimonial slider (Swiper) ── */
+.testimonial-swiper.swiper {
   overflow: hidden;
+  width: 100%;
+  cursor: grab !important;
 }
 
-.color-block.cb-has-squares {
-  background-color: transparent !important;
+.testimonial-swiper.swiper-dragging {
+  cursor: grabbing !important;
 }
 
-/* No will-change/transform hack — GSAP manages layer promotion for the tweened squares. A persistent rule promotes every square to its own compositor layer. */
+.testimonial-swiper .swiper-wrapper {
+  align-items: stretch;
+  /* Marquee-style autoplay: constant velocity between slide positions */
+  transition-timing-function: linear !important;
+}
+
+.testimonial-swiper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.testimonial-swiper .swiper-slide .testimonial-card {
+  height: 100%;
+}
+
+/* ── Slider Navigation ── */
+.testimonial-swiper__controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+}
+
+.testimonial-swiper__arrows {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.testimonial-swiper__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1.5px solid theme('borderColor.normal');
+  border-radius: 0.25rem;
+  background: transparent;
+  color: theme('textColor.normal');
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+  cursor: url('../images/pixel-art-pointer.svg?v=3') 8 0, pointer !important;
+}
+
+html.dark .testimonial-swiper__arrow {
+  border-color: theme('borderColor.inverted');
+  color: theme('textColor.inverted');
+}
+
+.testimonial-swiper__arrow:hover {
+  background-color: var(--palette-blue);
+  border-color: var(--palette-blue);
+  color: #fff;
+}
+
+html.dark .testimonial-swiper__arrow:hover {
+  background-color: var(--palette-blue);
+  border-color: var(--palette-blue);
+  color: #fff;
+}
+
+.testimonial-swiper__arrow:focus-visible {
+  outline: 2px solid var(--palette-blue);
+  outline-offset: 2px;
+}
+
+.testimonial-swiper__arrow svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
 
 /* About narrative: two-column sections (label + body), max 900px, left in section column */
 .about-prose-wrap {
@@ -1713,92 +1843,43 @@ html.dark .about-prose-body {
   margin-top: 1.25rem;
 }
 
-/* About page cards: testimonial-style pixel overlay */
-.about-pixel-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.about-pixel-card.about-pixel-card--has-squares {
-  background-color: transparent;
-}
-
-.about-pixel-card > * {
-  position: relative;
-  z-index: 2;
-}
-
-.about-pixel-sq-wrapper {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* No will-change — see .cb-sq note. */
-
-/* Case study cards: hover-driven pixel overlay */
+/* Case study / bento cards — stacking + clip for media hover */
 .case-study-cursor-card {
   position: relative;
   overflow: hidden;
 }
 
-.case-study-pixel-sq-wrapper {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* No will-change — see .cb-sq note. */
-
 /*
-  Mondrian tiling — narrow pixel strips (tighter color blocks than 2-col gold / 2-col blue)
-  R1: gold(c1, r1-2)     | Haley(c2-6)      | Eleanor(c7-12)
-  R2: gold continues     | Victoria(c2-11)  | blue(c12) — single col
-  R3: navy(c1)           | Caitlin(c2-6)     | mid(c7)    | Miia(c8-12)
-*/
-.cb--gold-1                { grid-column: 1 / 2;   grid-row: 1 / 3;  background-color: var(--palette-slate); }
-.testimonial-card--haley   { grid-column: 2 / 7;   grid-row: 1; }
-.testimonial-card--eleanor { grid-column: 7 / 13;  grid-row: 1; }
-.testimonial-card--victoria{ grid-column: 2 / 12;  grid-row: 2; }
-.cb--blue                  { grid-column: 12 / 13; grid-row: 2;  background-color: var(--palette-blue); }
-.cb--navy-1                { grid-column: 1 / 2;   grid-row: 3;  background-color: var(--palette-gold); }
-.testimonial-card--caitlin { grid-column: 2 / 7;   grid-row: 3; }
-.cb--mid                   { grid-column: 7 / 8;   grid-row: 3;  background-color: var(--palette-mid); }
-.testimonial-card--miia    { grid-column: 8 / 13;  grid-row: 3; }
-
-@media (max-width: 699px) {
-  .testimonial-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 6px;
-  }
-
-  .testimonial-grid > * {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-  }
-
-  .color-block {
-    display: none;
-  }
-
-  .color-block.cb--gold-1 {
-    display: block;
-    order: 99;
-    aspect-ratio: 1;
-  }
+ * Global `a` in @layer base uses `dark:hover:text-amber-light`, which can beat utilities
+ * on these no-underline controls. Force cream-white in dark mode when engaged.
+ */
+html.dark .case-study-next-link:hover,
+html.dark .case-study-next-link.card-glow-active,
+html.dark .case-study-next-link:focus-visible,
+html.dark .case-study-prev-link:hover,
+html.dark .case-study-prev-link.card-glow-active,
+html.dark .case-study-prev-link:focus-visible {
+  color: #fdfcfa !important;
 }
 
-@media (max-width: 419px) {
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
+html.dark .case-study-next-link:hover svg,
+html.dark .case-study-next-link.card-glow-active svg,
+html.dark .case-study-next-link:focus-visible svg,
+html.dark .case-study-prev-link:hover svg,
+html.dark .case-study-prev-link.card-glow-active svg,
+html.dark .case-study-prev-link:focus-visible svg {
+  color: #fdfcfa !important;
+}
 
-  .color-block.cb--gold-1 {
-    display: none;
-  }
+/* Bento card CTA chip — same base `a` / utility conflict as next/prev */
+.card-cta-glow:hover,
+.card-cta-glow.card-glow-active {
+  color: #fdfcfa !important;
+}
+
+.card-cta-glow:hover svg,
+.card-cta-glow.card-glow-active svg {
+  color: #fdfcfa !important;
 }
 
 /* Disable hover-based animations on touch devices */

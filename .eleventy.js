@@ -16,11 +16,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/scripts");
 
-  // Blog posts collection
+  // Blog posts collection (exclude drafts + archived — same policy as case studies / experiments)
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/*.md").sort((a, b) => {
-      return new Date(b.date) - new Date(a.date); // Newest posts first
-    });
+    return collectionApi
+      .getFilteredByGlob("src/blog/*.md")
+      .filter((item) => {
+        if (item.data.archived === true) return false;
+        if (item.data.draft === true) return false;
+        return true;
+      })
+      .sort((a, b) => {
+        return new Date(b.date) - new Date(a.date); // Newest posts first
+      });
   });
 
   // Case studies collection
@@ -52,6 +59,50 @@ eleventyConfig.addCollection("caseStudies", function (collectionApi) {
     return new Date(b.date) - new Date(a.date);
   });
 });
+
+  // Experiments collection
+  eleventyConfig.addCollection("experiments", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/experiments/*.md")
+      .filter(item => {
+        if (item.data.archived === true) return false;
+        if (item.data.draft === true) return false;
+        return true;
+      })
+      .sort((a, b) => {
+        const orderA = typeof a.data.order !== "undefined" ? a.data.order : Number.MAX_SAFE_INTEGER;
+        const orderB = typeof b.data.order !== "undefined" ? b.data.order : Number.MAX_SAFE_INTEGER;
+        if (orderA !== orderB) return orderA - orderB;
+        return new Date(b.date) - new Date(a.date);
+      });
+  });
+
+  eleventyConfig.addFilter("nextPost", function (posts, currentUrl) {
+    if (!Array.isArray(posts) || !currentUrl) return null;
+    const idx = posts.findIndex((item) => item.url === currentUrl);
+    if (idx === -1 || idx >= posts.length - 1) return null;
+    return posts[idx + 1];
+  });
+
+  eleventyConfig.addFilter("previousPost", function (posts, currentUrl) {
+    if (!Array.isArray(posts) || !currentUrl) return null;
+    const idx = posts.findIndex((item) => item.url === currentUrl);
+    if (idx <= 0) return null;
+    return posts[idx - 1];
+  });
+
+  eleventyConfig.addFilter("nextExperiment", function (experiments, currentUrl) {
+    if (!Array.isArray(experiments) || !currentUrl) return null;
+    const idx = experiments.findIndex((item) => item.url === currentUrl);
+    if (idx === -1 || idx >= experiments.length - 1) return null;
+    return experiments[idx + 1];
+  });
+
+  eleventyConfig.addFilter("previousExperiment", function (experiments, currentUrl) {
+    if (!Array.isArray(experiments) || !currentUrl) return null;
+    const idx = experiments.findIndex((item) => item.url === currentUrl);
+    if (idx <= 0) return null;
+    return experiments[idx - 1];
+  });
 
   // Services collection
   eleventyConfig.addCollection("services", function (collectionApi) {

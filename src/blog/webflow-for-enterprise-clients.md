@@ -2,7 +2,11 @@
 title: "Webflow for Enterprise Clients: A Deep Dive"
 date: 2025-02-01
 description: "Webflow is a great choice for startups and small businesses, but is it the right fit for enterprises? Let's explore the pros, cons, and risks of committing to Webflow Enterprise."
+categories:
+  - Webflow
+  - Strategy
 draft: true
+permalink: false
 ---
 
 [[toc]]

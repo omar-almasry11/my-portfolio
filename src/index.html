@@ -36,7 +36,7 @@ description: Digital designer helping agencies and in-house teams build accessib
         </p>
     </div>
     <div class="hero-grid__intro">
-        <h1 class="hero-intro text-left text-xl sm:text-2xl text-normalLight font-light dark:text-invertedLight max-w-[40rem] leading-snug">
+        <h1 class="hero-intro text-left text-xl sm:text-2xl text-normalLight font-light dark:text-invertedLight max-w-[42rem] leading-snug">
           I'm Omar Almasry, a brand designer working at the intersection of identity and digital. I design brand systems, the websites they live across, and the components that keep them consistent as they scale.</h1>
     </div>
     <!-- Empty cells (8×5 grid; count matches unoccupied slots) -->
@@ -61,118 +61,168 @@ description: Digital designer helping agencies and in-house teams build accessib
     header: 'Featured Projects',
     subheader: 'Interesting case studies for some projects I worked on.',
     collection: collections.caseStudies,
-    limit: 6
+    limit: 6,
+    threeColOnLarge: true
   -%}
 
-  {%- render 'partials/section-standard', 
-    header: 'What My Clients Say',
-    subheader: 'Kind words from lovely people.',
-    content: '<div class="testimonial-grid">
-      <!-- Haley Fraser — col 1, rows 1–2 -->
-      <div class="testimonial-card standard-card testimonial-card--haley">
-        <div class="testimonial-card__header">
-          <picture>
-            <source srcset="/images/haley-fraser-portrait.webp" type="image/webp">
-            <img src="/images/png/haley-fraser-portrait.png" width="74" height="74" loading="lazy" decoding="async" class="testimonial-card__portrait" alt="Haley Fraser">
-          </picture>
-          <div class="testimonial-card__meta">
-            <span class="testimonial-card__name">Haley Fraser</span>
-            <span class="testimonial-card__role-short">Director of Marketing, Brand and Content</span>
-          </div>
-        </div>
-        <p class="testimonial-card__text">Omar was terrific to work with. He quickly and skillfully helped re-platform our entire blog to Webflow within our timeline and budget. Omar went above and beyond to help us with our project – we couldn\'t be more thankful!</p>
-        <div class="testimonial-card__footer">
-          <img src="/images/emplifi-logo-light.svg" loading="lazy" decoding="async" class="testimonial-card__logo dark:hidden" alt="Emplifi">
-          <img src="/images/emplifi-logo-white.svg" loading="lazy" decoding="async" class="testimonial-card__logo hidden dark:block" alt="Emplifi">
-        </div>
-      </div>
-
-      <div class="color-block cb--gold-1"></div>
-
-      <!-- Eleanor Carter — cols 3–4, rows 1–2 -->
-      <div class="testimonial-card standard-card testimonial-card--eleanor">
-        <div class="testimonial-card__header">
-          <picture>
-            <source srcset="/images/eleanor-carter-portrait.webp" type="image/webp">
-            <img src="/images/png/eleanor-carter-portrait.png" width="74" height="74" loading="lazy" decoding="async" class="testimonial-card__portrait" alt="Eleanor Carter">
-          </picture>
-          <div class="testimonial-card__meta">
-            <span class="testimonial-card__name">Eleanor Carter</span>
-            <span class="testimonial-card__role-short">Senior Content Strategist</span>
-          </div>
-        </div>
-        <p class="testimonial-card__text">It was fantastic to work with Omar - from start to finish he was a delight to work with! Omar went above and beyond to help us deliver our project on time - going above and beyond the original scope of work to help us create an incredible website. His training on the CMS was fantastic, and I recommend Omar to anyone looking for assistance with a Webflow site!</p>
-        <div class="testimonial-card__footer">
-          <picture>
-            <source srcset="/images/social-suite-logo.webp" type="image/webp">
-            <img src="/images/png/social-suite-logo.png" loading="lazy" decoding="async" class="testimonial-card__logo invert dark:invert-0" alt="Socialsuite">
-          </picture>
-        </div>
-      </div>
-
-      <div class="color-block cb--navy-1"></div>
-
-      <!-- Victoria Hogg -->
-      <div class="testimonial-card standard-card testimonial-card--victoria">
-        <div class="testimonial-card__header">
-          <picture>
-            <source srcset="/images/victoria-hogg-portrait.webp" type="image/webp">
-            <img src="/images/png/victoria-hogg-portrait.png" width="74" height="74" loading="lazy" decoding="async" class="testimonial-card__portrait" alt="Victoria Hogg">
-          </picture>
-          <div class="testimonial-card__meta">
-            <span class="testimonial-card__name">Victoria Hogg</span>
-            <span class="testimonial-card__role-short">Marketing Director</span>
-          </div>
-        </div>
-        <p class="testimonial-card__text">I\'ve worked with Omar on multiple content projects for different companies - ranging from best-in-class tech brands to small 1-man businesses - and I can safely say Omar is the most creative, engaging, reliable, and awesome content partner I\'ve ever worked with.</p>
-        <div class="testimonial-card__footer">
-          <picture>
-            <source srcset="/images/4sale-logo.webp" type="image/webp">
-            <img src="/images/png/4sale-logo.png" loading="lazy" decoding="async" class="testimonial-card__logo invert dark:invert-0" alt="4Sale">
-          </picture>
-        </div>
-      </div>
-
-      <div class="color-block cb--mid"></div>
-      <div class="color-block cb--blue"></div>
-
-      <!-- Caitlin Riesbeck -->
-      <div class="testimonial-card standard-card testimonial-card--caitlin">
-        <div class="testimonial-card__header">
-          <picture>
-            <source srcset="/images/caitlin-riesbeck-portrait.webp" type="image/webp">
-            <img src="/images/png/caitlin-riesbeck-portrait.png" width="74" height="74" loading="lazy" decoding="async" class="testimonial-card__portrait" alt="Caitlin Riesbeck">
-          </picture>
-          <div class="testimonial-card__meta">
-            <span class="testimonial-card__name">Caitlin Riesbeck</span>
-            <span class="testimonial-card__role-short">Art Director</span>
-          </div>
-        </div>
-        <p class="testimonial-card__text">Our boutique marketing agency has had the opportunity to work with Omar as a web designer and developer on multiple projects and he has truly brought value to every single one. His work is fantastic, our clients are thrilled, and beyond that we have found him to be a genuine joy to work with. Hands down cannot recommend Omar enough.</p>
-        <div class="testimonial-card__footer">
-          <img src="/images/vim-logo.svg" loading="lazy" decoding="async" class="testimonial-card__logo invert dark:invert-0" alt="Vim and Co.">
-        </div>
-      </div>
-
-      <div class="testimonial-card standard-card testimonial-card--miia">
-        <div class="testimonial-card__header">
-          <picture>
-            <source srcset="/images/miia-hiltunen-portrait.webp" type="image/webp">
-            <img src="/images/png/miia-hiltunen-portrait.png" width="74" height="74" loading="lazy" decoding="async" class="testimonial-card__portrait" alt="Miia Hiltunen">
-          </picture>
-          <div class="testimonial-card__meta">
-            <span class="testimonial-card__name">Miia Hiltunen</span>
-            <span class="testimonial-card__role-short">Chief Growth Officer</span>
-          </div>
-        </div>
-        <p class="testimonial-card__text">For this job since the very start before even choosing Omar for it, I had such a good feeling about him. I mean go check out his page with his intro video, if your not convinced by his expertise then I\'m speechless! So professional, and in general I loved working with him. Can\'t wait for our future collabs!</p>
-        <div class="testimonial-card__footer">
-          <picture>
-            <source srcset="/images/votech-logo.webp" type="image/webp">
-            <img src="/images/png/votech-logo.png" loading="lazy" decoding="async" class="testimonial-card__logo invert dark:invert-0" alt="Votech">
-          </picture>
-        </div>
-      </div>
-    </div>',
-    customClasses: 'pb-24'
+  {%- render 'partials/section-projects-bento',
+    header: 'Experiments',
+    subheader: 'Interactive code experiments — small studies in motion, geometry, and material.',
+    collection: collections.experiments,
+    limit: 6,
+    linkLabel: 'View experiment',
+    threeColOnLarge: true,
+    customClasses: '!pt-0'
   -%}
+
+  {%- render 'partials/section-projects-bento',
+    header: 'Writing',
+    subheader: 'Thoughts on design, code, and building for the web.',
+    collection: collections.posts,
+    limit: 2,
+    linkLabel: 'Read post',
+    collectionLink: '/blog/',
+    viewAllLabel: 'View all posts',
+    minCollectionLinkCount: 2,
+    threeColOnLarge: true,
+    customClasses: '!pt-0'
+  -%}
+
+  <!-- ── What My Clients Say ── -->
+  <section class="py-16 px-[5%] pb-24">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-10 md:mb-12">
+        <h2 class="text-[2rem] font-medium leading-[1.1] tracking-tight mb-0">What My Clients Say</h2>
+        <p class="text-[1.5rem] font-light text-normalLight leading-tight dark:text-invertedLight max-w-2xl mt-2.5 mb-0">Kind words from lovely people.</p>
+      </div>
+
+      <div class="testimonial-slider-root" role="region" aria-label="Client testimonials">
+        <div class="swiper testimonial-swiper" id="testimonial-slider">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-card standard-card">
+                <div class="testimonial-card__header">
+                  <picture>
+                    <source srcset="/images/haley-fraser-portrait.webp" type="image/webp">
+                    <img src="/images/png/haley-fraser-portrait.png" width="74" height="74" loading="lazy" decoding="async" class="testimonial-card__portrait" alt="Haley Fraser">
+                  </picture>
+                  <div class="testimonial-card__meta">
+                    <span class="testimonial-card__name">Haley Fraser</span>
+                    <span class="testimonial-card__role-short">Director of Marketing, Brand and Content</span>
+                  </div>
+                </div>
+                <p class="testimonial-card__text">Omar was terrific to work with. He quickly and skillfully helped re-platform our entire blog to Webflow within our timeline and budget. Omar went above and beyond to help us with our project – we couldn't be more thankful!</p>
+                <div class="testimonial-card__footer">
+                  <img src="/images/emplifi-logo-light.svg" loading="lazy" decoding="async" class="testimonial-card__logo dark:hidden" alt="Emplifi">
+                  <img src="/images/emplifi-logo-white.svg" loading="lazy" decoding="async" class="testimonial-card__logo hidden dark:block" alt="Emplifi">
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card standard-card">
+                <div class="testimonial-card__header">
+                  <picture>
+                    <source srcset="/images/eleanor-carter-portrait.webp" type="image/webp">
+                    <img src="/images/png/eleanor-carter-portrait.png" width="74" height="74" loading="lazy" decoding="async" class="testimonial-card__portrait" alt="Eleanor Carter">
+                  </picture>
+                  <div class="testimonial-card__meta">
+                    <span class="testimonial-card__name">Eleanor Carter</span>
+                    <span class="testimonial-card__role-short">Senior Content Strategist</span>
+                  </div>
+                </div>
+                <p class="testimonial-card__text">It was fantastic to work with Omar - from start to finish he was a delight to work with! Omar went above and beyond to help us deliver our project on time - going above and beyond the original scope of work to help us create an incredible website. His training on the CMS was fantastic, and I recommend Omar to anyone looking for assistance with a Webflow site!</p>
+                <div class="testimonial-card__footer">
+                  <picture>
+                    <source srcset="/images/social-suite-logo.webp" type="image/webp">
+                    <img src="/images/png/social-suite-logo.png" loading="lazy" decoding="async" class="testimonial-card__logo invert dark:invert-0" alt="Socialsuite">
+                  </picture>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card standard-card">
+                <div class="testimonial-card__header">
+                  <picture>
+                    <source srcset="/images/victoria-hogg-portrait.webp" type="image/webp">
+                    <img src="/images/png/victoria-hogg-portrait.png" width="74" height="74" loading="lazy" decoding="async" class="testimonial-card__portrait" alt="Victoria Hogg">
+                  </picture>
+                  <div class="testimonial-card__meta">
+                    <span class="testimonial-card__name">Victoria Hogg</span>
+                    <span class="testimonial-card__role-short">Marketing Director</span>
+                  </div>
+                </div>
+                <p class="testimonial-card__text">I've worked with Omar on multiple content projects for different companies - ranging from best-in-class tech brands to small 1-man businesses - and I can safely say Omar is the most creative, engaging, reliable, and awesome content partner I've ever worked with.</p>
+                <div class="testimonial-card__footer">
+                  <picture>
+                    <source srcset="/images/4sale-logo.webp" type="image/webp">
+                    <img src="/images/png/4sale-logo.png" loading="lazy" decoding="async" class="testimonial-card__logo invert dark:invert-0" alt="4Sale">
+                  </picture>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card standard-card">
+                <div class="testimonial-card__header">
+                  <picture>
+                    <source srcset="/images/caitlin-riesbeck-portrait.webp" type="image/webp">
+                    <img src="/images/png/caitlin-riesbeck-portrait.png" width="74" height="74" loading="lazy" decoding="async" class="testimonial-card__portrait" alt="Caitlin Riesbeck">
+                  </picture>
+                  <div class="testimonial-card__meta">
+                    <span class="testimonial-card__name">Caitlin Riesbeck</span>
+                    <span class="testimonial-card__role-short">Art Director</span>
+                  </div>
+                </div>
+                <p class="testimonial-card__text">Our boutique marketing agency has had the opportunity to work with Omar as a web designer and developer on multiple projects and he has truly brought value to every single one. His work is fantastic, our clients are thrilled, and beyond that we have found him to be a genuine joy to work with. Hands down cannot recommend Omar enough.</p>
+                <div class="testimonial-card__footer">
+                  <img src="/images/vim-logo.svg" loading="lazy" decoding="async" class="testimonial-card__logo invert dark:invert-0" alt="Vim and Co.">
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card standard-card">
+                <div class="testimonial-card__header">
+                  <picture>
+                    <source srcset="/images/miia-hiltunen-portrait.webp" type="image/webp">
+                    <img src="/images/png/miia-hiltunen-portrait.png" width="74" height="74" loading="lazy" decoding="async" class="testimonial-card__portrait" alt="Miia Hiltunen">
+                  </picture>
+                  <div class="testimonial-card__meta">
+                    <span class="testimonial-card__name">Miia Hiltunen</span>
+                    <span class="testimonial-card__role-short">Chief Growth Officer</span>
+                  </div>
+                </div>
+                <p class="testimonial-card__text">For this job since the very start before even choosing Omar for it, I had such a good feeling about him. I mean go check out his page with his intro video, if your not convinced by his expertise then I'm speechless! So professional, and in general I loved working with him. Can't wait for our future collabs!</p>
+                <div class="testimonial-card__footer">
+                  <picture>
+                    <source srcset="/images/votech-logo.webp" type="image/webp">
+                    <img src="/images/png/votech-logo.png" loading="lazy" decoding="async" class="testimonial-card__logo invert dark:invert-0" alt="Votech">
+                  </picture>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Navigation arrows -->
+        <div class="testimonial-swiper__controls">
+          <div class="testimonial-swiper__arrows">
+            <button class="testimonial-swiper__arrow testimonial-swiper__arrow--prev" type="button" aria-label="Previous testimonials">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button class="testimonial-swiper__arrow testimonial-swiper__arrow--next" type="button" aria-label="Next testimonials">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

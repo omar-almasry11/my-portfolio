@@ -18,16 +18,18 @@
       </div>
     {% endif %}
 
+    {% assign linkLabel = linkLabel | default: 'View case study' %}
+    {% assign cardCursorClass = cardCursorClass | default: 'case-study-cursor-card' %}
     {% if collection and collection.size > 0 %}
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2{% if threeColOnLarge %} lg:grid-cols-3{% endif %} gap-4">
         {% for item in collection limit: limit %}
-          <article class="standard-card case-study-cursor-card group relative overflow-hidden !p-0">
+          <article class="standard-card {{ cardCursorClass }} group relative overflow-hidden !p-0">
             <a
               href="{{ item.url }}"
               class="stretched-link block focus:outline-none"
-              aria-label="View case study: {{ item.data.title }}"
+              aria-label="{{ linkLabel }}: {{ item.data.title }}"
             >
-              <span class="sr-only">View case study: {{ item.data.title }}</span>
+              <span class="sr-only">{{ linkLabel }}: {{ item.data.title }}</span>
             </a>
 
             {% if item.data['card-img'] %}
@@ -107,10 +109,10 @@
               {% endif %}
               <div class="mt-auto">
                 <span
-                  class="inline-flex items-center gap-2 text-primary dark:text-primaryInverted font-medium text-md sm:text-md pointer-events-none"
+                  class="card-cta-glow inline-flex items-center gap-2 rounded-md px-3 py-2 text-primary dark:text-primaryInverted font-medium text-md sm:text-md pointer-events-auto transition-colors duration-300"
                   aria-hidden="true"
                 >
-                  View case study
+                  <span class="min-w-0 break-words">{{ linkLabel }}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-4 h-4 sm:w-6 sm:h-6 fill-current shrink-0 transition-transform duration-200 group-hover:translate-x-1"
@@ -125,6 +127,25 @@
           </article>
         {% endfor %}
       </div>
+      {% assign minCollectionLinkCount = minCollectionLinkCount | default: 0 %}
+      {% if collectionLink and collection.size > minCollectionLinkCount %}
+        <div class="mt-8 flex justify-end">
+          <a
+            href="{{ collectionLink }}"
+            class="case-study-next-link group relative inline-flex min-w-0 max-w-full flex-wrap items-center justify-end gap-2 rounded-md px-6 py-3 text-left text-primary dark:text-primaryInverted font-medium no-underline hover:text-white dark:hover:text-white transition-colors duration-300"
+          >
+            {{ viewAllLabel | default: 'View all' }}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 sm:w-6 sm:h-6 fill-current shrink-0 transition-transform duration-200 group-hover:translate-x-1"
+              viewBox="0 0 256 256"
+              aria-hidden="true"
+            >
+              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+            </svg>
+          </a>
+        </div>
+      {% endif %}
     {% endif %}
   </div>
 </section>

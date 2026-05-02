@@ -1,6 +1,5 @@
 /**
- * Hero accent cells — inverse mosaic (scroll out)
- * Matches testimonial pixel tiling, but squares start opaque (full color) and
+ * Hero accent cells — inverse mosaic (scroll out): squares start opaque and
  * scrub to transparent as the hero leaves the viewport.
  */
 const parseFillFromBackgroundImage = (backgroundImage) => {

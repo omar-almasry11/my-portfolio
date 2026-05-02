@@ -61,6 +61,7 @@
 
     <!-- Stylesheet -->
     <link href="/dist/output.css" rel="stylesheet">
+    
     <noscript>
       <style>
         .load_grid {
@@ -73,6 +74,7 @@
     <div class="load_grid"></div>
     <script>
       (function () {
+        /* Full brand mosaic — includes gold (transition grid only; card hover pixels omit gold in JS) */
         const colors = ['#C48A1E', '#8A9BB5', '#4A5C8A', '#2A4494'];
         const loadGrid = document.querySelector('.load_grid');
 
@@ -496,7 +498,7 @@
         
           <a
             href="/case-studies/dubai-holding/"
-            class="case-study-prev-link group relative inline-flex min-w-0 max-w-full flex-wrap items-center justify-start gap-2 rounded-md px-6 py-3 text-left text-primary dark:text-primaryInverted font-medium no-underline hover:text-lapis-light dark:hover:text-amber-light transition-colors duration-300"
+            class="case-study-prev-link group relative inline-flex min-w-0 max-w-full flex-wrap items-center justify-start gap-2 rounded-md px-6 py-3 text-left text-primary dark:text-primaryInverted font-medium no-underline hover:text-white dark:hover:text-white transition-colors duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -512,7 +514,7 @@
         
           <a
             href="/case-studies/248-ai/"
-            class="case-study-next-link group relative inline-flex min-w-0 max-w-full flex-wrap items-center justify-end gap-2 rounded-md px-6 py-3 text-left text-primary dark:text-primaryInverted font-medium no-underline hover:text-lapis-light dark:hover:text-amber-light transition-colors duration-300"
+            class="case-study-next-link group relative inline-flex min-w-0 max-w-full flex-wrap items-center justify-end gap-2 rounded-md px-6 py-3 text-left text-primary dark:text-primaryInverted font-medium no-underline hover:text-white dark:hover:text-white transition-colors duration-300"
           >
             <span class="min-w-0 break-words">Next Case Study: 248.AI</span>
             <svg
@@ -1489,7 +1491,7 @@
     <script src="/scripts/cta-grid-animation.js" defer></script>
     
     
-    
+    <script src="/scripts/case-study-card-pixel-hover.js" defer></script>
     
   </body>
 </html>

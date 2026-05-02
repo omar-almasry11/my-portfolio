@@ -8,8 +8,8 @@
     if (!ctaGrid) return;
 
     const gridItems = document.querySelectorAll('.cta-grid-item');
-    /** Brand mosaic palette — keep in sync with :root in input.css */
-    const colors = ['#C48A1E', '#8A9BB5', '#4A5C8A', '#2A4494'];
+    /** Mosaic cycle — cool tones only (no gold); keep in sync with .cta-grid in input.css */
+    const colors = ['#8A9BB5', '#4A5C8A', '#2A4494', '#4A6AB0'];
 
     let currentColorIndex = 0;
     let nextColorIndex = 1;

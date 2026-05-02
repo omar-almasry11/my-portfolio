@@ -61,6 +61,9 @@
 
     <!-- Stylesheet -->
     <link href="/dist/output.css" rel="stylesheet">
+    {% if page.url == '/' %}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" crossorigin>
+    {% endif %}
     <noscript>
       <style>
         .load_grid {
@@ -73,6 +76,7 @@
     <div class="load_grid"></div>
     <script>
       (function () {
+        /* Full brand mosaic — includes gold (transition grid only; card hover pixels omit gold in JS) */
         const colors = ['#C48A1E', '#8A9BB5', '#4A5C8A', '#2A4494'];
         const loadGrid = document.querySelector('.load_grid');
 
@@ -162,12 +166,10 @@
       <script src="/scripts/hero-cell-pixel-scroll.js" defer></script>
     {% endif %}
     {% if page.url == '/' %}
-      <script src="/scripts/color-block-fill.js" defer></script>
-      <script src="/scripts/case-study-card-pixel-hover.js" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" crossorigin defer></script>
+      <script src="/scripts/testimonial-slider.js" defer></script>
     {% endif %}
-    {% if page.url == '/about/' %}
-      <script src="/scripts/about-card-pixel-fill.js" defer></script>
-    {% endif %}
+    <script src="/scripts/case-study-card-pixel-hover.js" defer></script>
     {% if page.url == '/blog/' or page.url == '/services/' or page.url == '/case-studies/' %}
       <script src="/scripts/colorful-heading.js" defer></script>
     {% endif %}

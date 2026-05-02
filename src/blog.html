@@ -1,23 +1,19 @@
 ---
 layout: layouts/layout.liquid
-title: Blog | Design, Code & UX Insights
-description: Insights on design, code, Webflow, accessibility, and digital design from a Toronto-based digital designer.
+title: Writing | Omar Almasry
+description: Thoughts on brand design, web development, Webflow, accessibility, and building for the web.
 ---
 
 {%- render 'partials/page-header',
-  headerTitle: 'Blog',
-  headerSubtitle: 'Reflections on design, code, and everyday insights from my work.',
+  headerTitle: 'Writing',
+  headerSubtitle: 'Thoughts on design, code, and building for the web.',
+  disableColorfulHeading: true
 -%}
 
-{%- render 'partials/section-standard', 
+{%- render 'partials/section-projects-bento',
   collection: collections.posts,
-  limit: 12
+  limit: 12,
+  linkLabel: 'Read post',
+  customClasses: '!pt-0'
 -%}
-
-{%- render 'partials/cta-section',
-  variant: 'minimal',
-  title: 'Have a project in mind?',
-  description: "Let's work together to build something exceptional.",
-  buttonText: 'Get in touch',
-  buttonUrl: 'mailto:hello@omaralmasry.com'
 -%}

@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stripCursorState,
         {
             syncTextCursorMetrics: true,
-            excludeWithin: '.case-study-cursor-card, .cta-grid-container',
+            excludeWithin: '.case-study-cursor-card, .cta-grid-container, .testimonial-swiper',
         }
     );
 

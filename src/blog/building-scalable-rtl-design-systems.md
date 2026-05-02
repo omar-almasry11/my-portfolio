@@ -1,8 +1,10 @@
 ---
-title: "Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success"
+title: "Building Scalable RTL Design Systems for Arabic Websites"
 date: 2025-01-12
-description: 'Building Arabic-friendly websites requires more than `dir="rtl"`. Learn how to create scalable RTL design systems for enterprise success.'
-draft: true
+description: "Building Arabic-friendly websites requires more than dir=rtl. Learn how to create scalable RTL design systems that hold up across large teams and complex products."
+categories:
+  - Design Systems
+  - Accessibility
 ---
 
 [[toc]]

@@ -7,7 +7,7 @@
  */
 
 const initPageTransitions = () => {
-    /** Brand mosaic palette — keep in sync with :root in input.css */
+    /** Transition / load grid — full brand mosaic incl. gold; keep in sync with layout.liquid */
     const colors = ['#C48A1E', '#8A9BB5', '#4A5C8A', '#2A4494'];
     const loadGrid = document.querySelector(".load_grid");
     const gridItems = document.querySelectorAll(".load_grid-item");
