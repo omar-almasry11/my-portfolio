@@ -23,6 +23,15 @@
   html {
     @apply font-sans text-normal bg-normal transition-colors duration-300;
     cursor: url('../images/pixel-art-arrow.svg?v=3') 0 0, auto;
+    scroll-behavior: smooth;
+    /* Match sticky nav + heading scroll-margin (~80px) so #fragment targets aren’t hidden under the bar */
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
   html.dark {
@@ -94,6 +103,7 @@
   h5,
   h6 {
     @apply font-heading;
+    scroll-margin-top: 80px;
   }
 
   h2,
@@ -1619,8 +1629,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 12px;
   width: 100%;
 }
 
@@ -1631,8 +1641,8 @@
 
 .testimonial-card__portrait {
   display: block;
-  margin-bottom: 1rem;
-  width: 100px;
+  margin-bottom: 0.5rem;
+  width: 64px;
   aspect-ratio: 1 / 1;
   height: auto;
   border-radius: 0.375rem; /* matches .standard-card rounded-md */
@@ -1672,9 +1682,9 @@ html.dark .testimonial-card__role-short {
   color: #B8B4AE;
 }
 
-/* Match original testimonial logos: Tailwind `max-w-24` */
+/* Company logos — compact to match smaller portraits */
 .testimonial-card__logo {
-  max-width: 6rem;
+  max-width: 4rem;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1693,7 +1703,7 @@ html.dark .testimonial-card__role-short {
 
 .testimonial-card__footer {
   margin-top: auto;
-  padding-top: 1.25rem;
+  padding-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -1763,8 +1773,13 @@ button.testimonial-swiper__arrow {
   background: transparent;
   color: #2e4a8e;
   /* Match `.card-cta-glow` / `.case-study-next-link` — transition-colors duration-300 */
-  transition: border-color 300ms ease-out, color 300ms ease-out;
+  transition:
+    border-color 300ms ease-out,
+    color 300ms ease-out,
+    background-color 200ms ease-out;
   cursor: url('../images/pixel-art-pointer.svg?v=3') 8 0, pointer !important;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html.dark button.testimonial-swiper__arrow {
@@ -1789,20 +1804,27 @@ html.dark button.testimonial-swiper__arrow::before {
   background: rgba(154, 102, 24, 0.94);
 }
 
-button.testimonial-swiper__arrow.card-glow-active::before {
-  clip-path: circle(125% at var(--clip-x, 50%) var(--clip-y, 50%));
-}
+/*
+ * Keep :hover / radial glow off touch viewports. iOS Safari can stick :hover after tap while the
+ * ::before clip stays at 0% — that leaves white `currentColor` strokes on a transparent button and
+ * can eat the first tap; `cursor.js` only adds .card-glow-active when (hover: hover) anyway.
+ */
+@media (hover: hover) and (pointer: fine) {
+  button.testimonial-swiper__arrow.card-glow-active::before {
+    clip-path: circle(125% at var(--clip-x, 50%) var(--clip-y, 50%));
+  }
 
-button.testimonial-swiper__arrow:hover,
-button.testimonial-swiper__arrow.card-glow-active {
-  color: #fdfcfa;
-  border-color: #2e4a8e;
-}
+  button.testimonial-swiper__arrow:hover,
+  button.testimonial-swiper__arrow.card-glow-active {
+    color: #fdfcfa;
+    border-color: #2e4a8e;
+  }
 
-html.dark button.testimonial-swiper__arrow:hover,
-html.dark button.testimonial-swiper__arrow.card-glow-active {
-  color: #fdfcfa;
-  border-color: #d4952a;
+  html.dark button.testimonial-swiper__arrow:hover,
+  html.dark button.testimonial-swiper__arrow.card-glow-active {
+    color: #fdfcfa;
+    border-color: #d4952a;
+  }
 }
 
 button.testimonial-swiper__arrow:focus-visible {
@@ -1841,6 +1863,11 @@ button.testimonial-swiper__arrow svg {
   html.dark button.testimonial-swiper__arrow:active {
     border-color: #d4952a;
     background-color: rgba(154, 102, 24, 0.94);
+  }
+
+  /* Release pressed styling when finger lifts (iOS can keep :active styling briefly otherwise). */
+  button.testimonial-swiper__arrow:not(:active) {
+    background-color: transparent;
   }
 }
 

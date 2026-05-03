@@ -586,6 +586,15 @@ html {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
   cursor: url('../images/pixel-art-arrow.svg?v=3') 0 0, auto;
+  scroll-behavior: smooth;
+  /* Match sticky nav + heading scroll-margin (~80px) so #fragment targets aren’t hidden under the bar */
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 html.dark {
@@ -754,6 +763,7 @@ h4,
   h5,
   h6 {
   font-family: Atkinson Hyperlegible Next, system-ui, sans-serif;
+  scroll-margin-top: 80px;
 }
 
 h2,
@@ -1271,7 +1281,7 @@ html.dark {
   --tw-prose-captions: #5A5A68;
   --tw-prose-kbd: #111827;
   --tw-prose-kbd-shadows: 17 24 39;
-  --tw-prose-code: #B8B4AE;
+  --tw-prose-code: #2E4A8E;
   --tw-prose-pre-code: #D4952A;
   --tw-prose-pre-bg: #000022;
   --tw-prose-th-borders: #E8E3D8;
@@ -4460,6 +4470,10 @@ html.dark .cs-decision-callout {
   display: block;
 }
 
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
@@ -4960,6 +4974,10 @@ html.dark .cs-decision-callout {
   border-width: 1px;
 }
 
+.border-0 {
+  border-width: 0px;
+}
+
 .border-2 {
   border-width: 2px;
 }
@@ -5096,6 +5114,11 @@ html.dark .cs-decision-callout {
   padding-right: 0.75rem;
 }
 
+.px-3\.5 {
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -5139,6 +5162,11 @@ html.dark .cs-decision-callout {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
 }
 
 .py-20 {
@@ -5288,8 +5316,8 @@ html.dark .cs-decision-callout {
   font-size: 10rem;
 }
 
-.text-\[2\.375rem\] {
-  font-size: 2.375rem;
+.text-\[2\.25rem\] {
+  font-size: 2.25rem;
 }
 
 .text-base {
@@ -5315,10 +5343,6 @@ html.dark .cs-decision-callout {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[2\.25rem\] {
-  font-size: 2.25rem;
 }
 
 .font-bold {
@@ -5706,8 +5730,8 @@ html.dark .cs-decision-callout {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 12px;
   width: 100%;
 }
 
@@ -5718,8 +5742,8 @@ html.dark .cs-decision-callout {
 
 .testimonial-card__portrait {
   display: block;
-  margin-bottom: 1rem;
-  width: 100px;
+  margin-bottom: 0.5rem;
+  width: 64px;
   aspect-ratio: 1 / 1;
   height: auto;
   border-radius: 0.375rem;
@@ -5761,10 +5785,10 @@ html.dark .testimonial-card__role-short {
   color: #B8B4AE;
 }
 
-/* Match original testimonial logos: Tailwind `max-w-24` */
+/* Company logos — compact to match smaller portraits */
 
 .testimonial-card__logo {
-  max-width: 6rem;
+  max-width: 4rem;
   width: auto;
   height: auto;
   -o-object-fit: contain;
@@ -5784,7 +5808,7 @@ html.dark .testimonial-card__role-short {
 
 .testimonial-card__footer {
   margin-top: auto;
-  padding-top: 1.25rem;
+  padding-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -5857,8 +5881,13 @@ button.testimonial-swiper__arrow {
   background: transparent;
   color: #2e4a8e;
   /* Match `.card-cta-glow` / `.case-study-next-link` — transition-colors duration-300 */
-  transition: border-color 300ms ease-out, color 300ms ease-out;
+  transition:
+    border-color 300ms ease-out,
+    color 300ms ease-out,
+    background-color 200ms ease-out;
   cursor: url('../images/pixel-art-pointer.svg?v=3') 8 0, pointer !important;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html.dark button.testimonial-swiper__arrow {
@@ -5883,20 +5912,28 @@ html.dark button.testimonial-swiper__arrow::before {
   background: rgba(154, 102, 24, 0.94);
 }
 
-button.testimonial-swiper__arrow.card-glow-active::before {
-  clip-path: circle(125% at var(--clip-x, 50%) var(--clip-y, 50%));
-}
+/*
+ * Keep :hover / radial glow off touch viewports. iOS Safari can stick :hover after tap while the
+ * ::before clip stays at 0% — that leaves white `currentColor` strokes on a transparent button and
+ * can eat the first tap; `cursor.js` only adds .card-glow-active when (hover: hover) anyway.
+ */
 
-button.testimonial-swiper__arrow:hover,
-button.testimonial-swiper__arrow.card-glow-active {
-  color: #fdfcfa;
-  border-color: #2e4a8e;
-}
+@media (hover: hover) and (pointer: fine) {
+  button.testimonial-swiper__arrow.card-glow-active::before {
+    clip-path: circle(125% at var(--clip-x, 50%) var(--clip-y, 50%));
+  }
 
-html.dark button.testimonial-swiper__arrow:hover,
-html.dark button.testimonial-swiper__arrow.card-glow-active {
-  color: #fdfcfa;
-  border-color: #d4952a;
+  button.testimonial-swiper__arrow:hover,
+  button.testimonial-swiper__arrow.card-glow-active {
+    color: #fdfcfa;
+    border-color: #2e4a8e;
+  }
+
+  html.dark button.testimonial-swiper__arrow:hover,
+  html.dark button.testimonial-swiper__arrow.card-glow-active {
+    color: #fdfcfa;
+    border-color: #d4952a;
+  }
 }
 
 button.testimonial-swiper__arrow:focus-visible {
@@ -5937,6 +5974,12 @@ button.testimonial-swiper__arrow svg {
   html.dark button.testimonial-swiper__arrow:active {
     border-color: #d4952a;
     background-color: rgba(154, 102, 24, 0.94);
+  }
+
+  /* Release pressed styling when finger lifts (iOS can keep :active styling briefly otherwise). */
+
+  button.testimonial-swiper__arrow:not(:active) {
+    background-color: transparent;
   }
 }
 
@@ -6102,6 +6145,15 @@ html.dark .case-study-prev-link:focus-visible svg {
   pointer-events: none;
 }
 
+@media (min-width: 640px) {
+  .sm\:hidden#back-to-top {
+    display: flex;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+  }
+}
+
 .hover\:bg-lapis-light:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(74 106 176 / var(--tw-bg-opacity, 1));
@@ -6163,6 +6215,11 @@ html.dark .case-study-prev-link:focus-visible svg {
 
 .group:hover .group-hover\:-translate-x-1 {
   --tw-translate-x: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:translate-x-0\.5 {
+  --tw-translate-x: 0.125rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -6401,6 +6458,10 @@ html.dark .case-study-prev-link:focus-visible svg {
     display: grid;
   }
 
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:h-6 {
     height: 1.5rem;
   }
@@ -6513,6 +6574,14 @@ html.dark .case-study-prev-link:focus-visible svg {
     justify-items: center;
   }
 
+  .sm\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+
   .sm\:gap-7 {
     gap: 1.75rem;
   }
@@ -6526,9 +6595,19 @@ html.dark .case-study-prev-link:focus-visible svg {
     padding-right: 0px;
   }
 
+  .sm\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .sm\:py-3 {

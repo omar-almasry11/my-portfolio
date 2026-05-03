@@ -114,7 +114,8 @@ module.exports = {
             '--tw-prose-quotes': theme('textColor.normal'),
             '--tw-prose-quote-borders': theme('colors.lapis.DEFAULT'),
             '--tw-prose-captions': theme('textColor.secondary'),
-            '--tw-prose-code': theme('textColor.invertedSecondary'),
+            /* Inline code on light prose — primary lapis (invertedSecondary was illegible on cream) */
+            '--tw-prose-code': theme('textColor.primary'),
             '--tw-prose-pre-code': theme('textColor.primaryInverted'),
             '--tw-prose-pre-bg': theme('backgroundColor.inverted'),
             '--tw-prose-th-borders': theme('borderColor.normalLight'),

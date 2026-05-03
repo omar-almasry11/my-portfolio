@@ -147,6 +147,11 @@ eleventyConfig.addCollection("caseStudies", function (collectionApi) {
     return caseStudies[idx - 1];
   });
 
+  /** Encode a string for use in query parameters (e.g. share URLs). */
+  eleventyConfig.addFilter("uri_encode", function (value) {
+    return encodeURIComponent(String(value ?? ""));
+  });
+
   // JSON filter to parse strings
   eleventyConfig.addFilter("from_json", function(value) {
     try {
