@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="An adaptive Game of Life simulation tuned for ambient presence — auto-fitting cells, weighted seeding, and patterns you can paint with the cursor."
+      content="An adaptive Game of Life tuned for ambient presence with auto-fitting cells, weighted seeding, and patterns you can paint with the cursor."
     >
     <meta name="author" content="Omar Almasry">
     <title>Conway's Game of Life</title>
@@ -40,7 +40,7 @@
     <meta property="og:title" content="Conway's Game of Life">
     <meta
       property="og:description"
-      content="An adaptive Game of Life simulation tuned for ambient presence — auto-fitting cells, weighted seeding, and patterns you can paint with the cursor."
+      content="An adaptive Game of Life tuned for ambient presence with auto-fitting cells, weighted seeding, and patterns you can paint with the cursor."
     >
     <meta property="og:image" content="/images/png/og.png">
     <meta property="og:url" content="https://omaralmasry.com/experiments/conways-game-of-life/">
@@ -52,7 +52,7 @@
     <meta name="twitter:title" content="Conway's Game of Life">
     <meta
       name="twitter:description"
-      content="An adaptive Game of Life simulation tuned for ambient presence — auto-fitting cells, weighted seeding, and patterns you can paint with the cursor."
+      content="An adaptive Game of Life tuned for ambient presence with auto-fitting cells, weighted seeding, and patterns you can paint with the cursor."
     >
     <meta name="twitter:image" content="/images/png/og.png">
 
@@ -215,7 +215,7 @@
         <ul class="flex flex-wrap gap-2 mb-6" role="list" aria-label="Experiment tags">
           
             <li>
-              <span class="case-study-tag">JavaScript</span>
+              <span class="case-study-tag">Cellular Automaton</span>
             </li>
           
             <li>
@@ -229,7 +229,7 @@
       </h1>
       
         <p class="text-[1.5rem] font-light text-normalLight dark:text-invertedLight leading-tight mb-4 max-w-2xl">
-          JavaScript · Cellular Automaton
+          Cellular Automaton · Ambient Simulation
         </p>
       
       
@@ -243,211 +243,7 @@
 <section class="pt-4 pb-24 px-[5%]">
   <div class="container mx-auto max-w-6xl min-w-0">
     <article class="prose case-study-prose mx-auto max-w-4xl">
-      <div class="not-prose experiment-canvas-stack">
-  <figure class="experiment-canvas-figure">
-    <div class="experiment-canvas-frame gol-experiment-frame">
-      <div class="gol-experiment-wrapper">
-        <div id="gol-experiment-gridContainer"></div>
-      </div>
-    </div>
-    <figcaption class="experiment-canvas-caption">Hover the grid to seed gliders, blocks, and blinkers. Generations tick every 2.4 seconds — slow enough to watch shapes survive, drift, and die.</figcaption>
-  </figure>
-</div>
-<style>
-  .gol-experiment-frame {
-    background-color: #EEEEEE;
-    border-radius: 1rem;
-  }
-  .gol-experiment-wrapper {
-    width: 100%;
-    height: 100%;
-  }
-  #gol-experiment-gridContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  #gol-experiment-gridContainer table {
-    border-spacing: 2px !important;
-    border-collapse: separate !important;
-  }
-  #gol-experiment-gridContainer td {
-    width: var(--gol-cell-size);
-    height: var(--gol-cell-size);
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    transition: background-color 0.4s ease-in-out;
-  }
-  #gol-experiment-gridContainer td.live { background-color: #B8B8C1; }
-  #gol-experiment-gridContainer td.dead { background-color: transparent; }
-</style>
-<script>
-(function() {
-  const reproductionTime = 2400;
-  let rows, cols, grid, nextGrid, gameInterval;
-
-  const patterns = {
-    glider: [[0,1,0],[0,0,1],[1,1,1]],
-    block: [[1,1],[1,1]],
-    blinker: [[1,1,1]],
-  };
-
-  function calculateGridDimensions() {
-    const gridContainer = document.getElementById('gol-experiment-gridContainer');
-    if (!gridContainer) return { cellSize: 8, cols: 0, rows: 0 };
-    const borderSpacing = 2;
-    const containerWidth = gridContainer.clientWidth;
-    const containerHeight = gridContainer.clientHeight;
-    let bestScore = 0, bestSize = 4, bestCols = 0, bestRows = 0;
-    for (let cellSize = 4; cellSize <= 20; cellSize++) {
-      const colsFit = Math.floor((containerWidth + borderSpacing) / (cellSize + borderSpacing));
-      const rowsFit = Math.floor((containerHeight + borderSpacing) / (cellSize + borderSpacing));
-      if (colsFit < 10 || rowsFit < 10) continue;
-      const coverage = (colsFit * cellSize) * (rowsFit * cellSize);
-      const aspectScore = 1 - Math.abs((colsFit/rowsFit) - (containerWidth/containerHeight));
-      const totalScore = coverage * aspectScore;
-      if (totalScore > bestScore) {
-        bestScore = totalScore; bestSize = cellSize; bestCols = colsFit; bestRows = rowsFit;
-      }
-    }
-    return { cellSize: bestSize, cols: bestCols, rows: bestRows };
-  }
-
-  function initializeGrid() {
-    grid = Array.from({ length: rows }, () => Array(cols).fill(0));
-    nextGrid = Array.from({ length: rows }, () => Array(cols).fill(0));
-    const rightStart = cols * 0.4;
-    for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < cols; j++) {
-        let probability = 0.98;
-        if (j >= rightStart) {
-          const position = (j - rightStart) / (cols - rightStart);
-          probability = 0.85 - (0.4 * Math.pow(position, 1.5));
-        }
-        grid[i][j] = Math.random() > probability ? 1 : 0;
-      }
-    }
-  }
-
-  function createTable() {
-    const gridContainer = document.getElementById('gol-experiment-gridContainer');
-    if (!gridContainer) return;
-    gridContainer.innerHTML = '';
-    const table = document.createElement('table');
-    const { cellSize } = calculateGridDimensions();
-    gridContainer.style.setProperty('--gol-cell-size', `${cellSize}px`);
-    const colors = ['#EEEEEE', '#B8B8C1', '#787E8E'];
-    for (let i = 0; i < rows; i++) {
-      const tr = document.createElement('tr');
-      for (let j = 0; j < cols; j++) {
-        const cell = document.createElement('td');
-        cell.id = `golx_${i}_${j}`;
-        if (grid[i][j] === 1) {
-          cell.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        }
-        cell.classList.add(grid[i][j] === 1 ? 'live' : 'dead');
-        cell.addEventListener("mouseenter", () => addPattern(i, j));
-        tr.appendChild(cell);
-      }
-      table.appendChild(tr);
-    }
-    gridContainer.appendChild(table);
-  }
-
-  function updateView() {
-    const colors = ['#EEEEEE', '#B8B8C1', '#787E8E'];
-    for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < cols; j++) {
-        const cell = document.getElementById(`golx_${i}_${j}`);
-        if (cell) {
-          if (grid[i][j] === 1) {
-            if (!cell.dataset.color) {
-              cell.dataset.color = colors[Math.floor(Math.random() * colors.length)];
-            }
-            cell.style.backgroundColor = cell.dataset.color;
-          } else {
-            cell.style.backgroundColor = "transparent";
-            delete cell.dataset.color;
-          }
-        }
-      }
-    }
-  }
-
-  function addPattern(row, col) {
-    const patternNames = Object.keys(patterns);
-    const randomPattern = patterns[patternNames[Math.floor(Math.random() * patternNames.length)]];
-    for (let i = 0; i < randomPattern.length; i++) {
-      for (let j = 0; j < randomPattern[i].length; j++) {
-        const newRow = row + i, newCol = col + j;
-        if (newRow < rows && newCol < cols) grid[newRow][newCol] = randomPattern[i][j];
-      }
-    }
-    updateView();
-  }
-
-  function applyRules(row, col) {
-    const n = countNeighbors(row, col);
-    if (grid[row][col] === 1) nextGrid[row][col] = (n === 2 || n === 3) ? 1 : 0;
-    else nextGrid[row][col] = (n === 3) ? 1 : 0;
-  }
-
-  function countNeighbors(row, col) {
-    let count = 0;
-    for (let i = -1; i <= 1; i++) {
-      for (let j = -1; j <= 1; j++) {
-        if (i === 0 && j === 0) continue;
-        const newRow = row + i, newCol = col + j;
-        if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
-          count += grid[newRow][newCol] || 0;
-        }
-      }
-    }
-    return count;
-  }
-
-  function computeNextGeneration() {
-    for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < cols; j++) applyRules(i, j);
-    }
-    [grid, nextGrid] = [nextGrid, grid];
-    updateView();
-  }
-
-  function startGame() {
-    if (gameInterval) clearInterval(gameInterval);
-    const d = calculateGridDimensions();
-    rows = d.rows; cols = d.cols;
-    if (rows === 0 || cols === 0) return;
-    initializeGrid();
-    createTable();
-    updateView();
-    gameInterval = setInterval(computeNextGeneration, reproductionTime);
-  }
-
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      const d = calculateGridDimensions();
-      rows = d.rows; cols = d.cols;
-      if (rows === 0 || cols === 0) return;
-      initializeGrid();
-      createTable();
-      updateView();
-    }, 200);
-  });
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', startGame);
-  } else {
-    startGame();
-  }
-})();
-</script>
+      <p>[canvas embed unchanged]</p>
 <h2 id="the-idea" tabindex="-1">The Idea</h2>
 <p>Conway's Game of Life runs on four rules:</p>
 <ol>
@@ -457,18 +253,17 @@
 <li>A dead cell with exactly three live neighbors becomes alive — reproduction.</li>
 </ol>
 <p>That's the whole specification. Every cell looks at its eight immediate neighbors, applies one of those four cases, and the field updates in lockstep. From those constraints you get gliders that walk across the grid, oscillators that breathe in place, still lifes that anchor the field, and chaotic regions that occasionally resolve into surprising stable structures. Nothing is choreographed. Every pattern is the rules running on themselves.</p>
-<p>I first built this as the live hero for <a href="/case-studies/248-ai/">248.AI's website</a>, where the metaphor of &quot;complex behavior emerging from simple composable rules&quot; matched what the company actually does. Lifted out of that context, the simulation is still interesting on its own — the canonical example of emergence, and a quiet thing to leave running while you read.</p>
+<p>I first built this as the live hero for <a href="/case-studies/248-ai/">248.AI's website</a>, where the metaphor of complex behavior emerging from simple composable rules matched what the company actually does. Lifted out of that context, the simulation is still interesting on its own — the canonical example of emergence, and a quiet thing to leave running while you read.</p>
 <h2 id="how-it-works" tabindex="-1">How It Works</h2>
-<p>Three pieces, none of them complicated on their own.</p>
-<p><strong>The simulation itself</strong> is a pair of 2D arrays — <code>grid</code> and <code>nextGrid</code>. On each tick, every cell counts its live neighbors and decides its next state, writing into <code>nextGrid</code>; then the two arrays swap. The double buffer is the part that's easy to get wrong — read and write into the same array and cells that just changed contaminate the neighbors that haven't been visited yet. The rules stop being the rules.</p>
-<p><strong>The adaptive grid</strong> is the part that took the longest to settle. The container has a fluid width and height, but cells need to be square, evenly spaced, and large enough to read at a glance. So before drawing, the script searches cell sizes from 4px to 20px, picks the size that maximizes coverage <em>and</em> matches the container's aspect ratio, and rebuilds the table on resize. The grid always feels filled — never starved on a tall viewport, never dense to the point of mush on a wide one.</p>
-<p><strong>The seeding interaction</strong> uses <code>mouseenter</code> on individual cells. When the cursor crosses a cell, the script picks a small Game of Life pattern at random (glider, block, or blinker) and stamps it down. The simulation absorbs the change on the next tick. You're not painting on the grid — you're handing it new initial conditions and watching them dissolve into the rest of the field.</p>
-<p>The initial population is weighted: sparse on the left, dense on the right. On the original 248.AI hero this asymmetry let the headline breathe while the simulation took visual priority on the opposite side. I kept it here because it gives the grid a directionality that uniform random seeding doesn't — patterns drift left into thinner air, which reads as motion even when nothing is technically moving.</p>
+<p>The simulation is a pair of 2D arrays. On each tick, every cell counts its live neighbors and decides its next state into a buffer; then the buffer becomes the live grid and the cycle repeats. Standard cellular-automaton implementation — the small details are where it gets interesting.</p>
+<p>The grid auto-fits the viewport. Before drawing, the script picks a cell size between 4 and 20 pixels that maximizes coverage and matches the container's aspect ratio, then rebuilds on resize. The grid always feels filled — never starved on a tall viewport, never overcrowded on a wide one.</p>
+<p>The seeding interaction is the part I'm most attached to. Hovering over a cell stamps a small pattern there — a glider, a block, or a blinker — and the simulation absorbs it on the next tick. You're not painting on the grid. You're handing it new initial conditions and watching them dissolve into the rest of the field. You can intervene, but you can't author.</p>
+<p>The initial population is weighted: sparse on the left, dense on the right. On the original 248.AI hero this gave the headline room to breathe while the simulation took visual priority on the opposite side. I kept the asymmetry here because it gives the grid a directionality that uniform random seeding doesn't — patterns drift left into thinner air, which reads as motion even when nothing is technically moving.</p>
 <h2 id="what-i-was-after" tabindex="-1">What I Was After</h2>
-<p>I wanted the simulation to feel ambient, not loud. Most Game of Life embeds tick fast — sometimes a frame at a time — because the implementer is showing off that it runs in real time. Fast ticks are mostly legible to the implementer; for everyone else, patterns flicker by before you can see what they're doing.</p>
+<p>The simulation should feel ambient, not loud. Most Game of Life embeds tick fast — sometimes a frame at a time — because the implementer is showing off that it runs in real time. Fast ticks are mostly legible to the implementer; for everyone else, patterns flicker by before you can see what they're doing.</p>
 <p>A 2.4-second tick is slow enough that you actually catch the rules happening. You can see a blinker oscillate. You can watch a glider take a step. You can see a stable structure get nudged by an incoming wave and rearrange. The grid stops being a visual effect and starts being a thing you watch.</p>
-<p>The palette decision was the same kind of restraint. Live cells pick from three close grays at random, so density reads as gentle chromatic variation instead of a binary on/off field. The dead state is transparent, so the background carries through. Nothing on the grid demands attention — the patterns do.</p>
-<p>The hover interaction is the move I'm most attached to. It turns a passive simulation into something you can shape, but it doesn't give you direct control — you're seeding initial conditions and the rules take it from there. You can intervene, but you can't author. That feels true to what the Game of Life actually is.</p>
+<p>The palette is the same kind of restraint. Live cells pick from three close grays at random, so density reads as gentle chromatic variation instead of a binary on/off field. The dead state is transparent, so the background carries through. Nothing on the grid demands attention — the patterns do.</p>
+<p>The hover interaction stays at the center of the design. It turns a passive simulation into something you can shape, but it doesn't give you direct control. That feels true to what the Game of Life actually is.</p>
 
     </article>
 
@@ -492,7 +287,7 @@
             >
               <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z" transform="rotate(180 128 128)"></path>
             </svg>
-            <span class="min-w-0 break-words">Previous Experiment: Morphing Diamonds</span>
+            <span class="min-w-0 break-words">Previous Experiment: Refinement</span>
           </a>
         
         
@@ -1334,7 +1129,7 @@
       <div class="flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
         <!-- Left: Title and Subtext -->
         <div class="min-w-0 lg:max-w-[58%]">
-          <h2 class="text-[2rem] font-medium mb-2 text-white leading-[1.1] tracking-tight">
+          <h2 class="text-[2.25rem] font-medium mb-2 text-white leading-[1.1] tracking-tight">
             Let's work together
           </h2>
           <p class="max-w-lg text-[1.5rem] font-light text-white/90 leading-tight text-balance">

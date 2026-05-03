@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="A pair of WebGL scenes about refinement — raw, blob-like ore that polishes itself into faceted gems, and a tic-tac-toe board that resolves itself by reshaping its own pieces."
+      content="An exploration of the concept of refinement and the patient process of turning something rough into something finished."
     >
     <meta name="author" content="Omar Almasry">
-    <title>Morphing Diamonds</title>
+    <title>Refinement</title>
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -37,10 +37,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Morphing Diamonds">
+    <meta property="og:title" content="Refinement">
     <meta
       property="og:description"
-      content="A pair of WebGL scenes about refinement — raw, blob-like ore that polishes itself into faceted gems, and a tic-tac-toe board that resolves itself by reshaping its own pieces."
+      content="An exploration of the concept of refinement and the patient process of turning something rough into something finished."
     >
     <meta property="og:image" content="/images/png/og.png">
     <meta property="og:url" content="https://omaralmasry.com/experiments/morphing-diamonds/">
@@ -49,10 +49,10 @@
     <meta property="og:locale" content="en_US">
     <link rel="canonical" href="https://omaralmasry.com/experiments/morphing-diamonds/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Morphing Diamonds">
+    <meta name="twitter:title" content="Refinement">
     <meta
       name="twitter:description"
-      content="A pair of WebGL scenes about refinement — raw, blob-like ore that polishes itself into faceted gems, and a tic-tac-toe board that resolves itself by reshaping its own pieces."
+      content="An exploration of the concept of refinement and the patient process of turning something rough into something finished."
     >
     <meta name="twitter:image" content="/images/png/og.png">
 
@@ -215,7 +215,7 @@
         <ul class="flex flex-wrap gap-2 mb-6" role="list" aria-label="Experiment tags">
           
             <li>
-              <span class="case-study-tag">ThreeJS</span>
+              <span class="case-study-tag">WebGL</span>
             </li>
           
             <li>
@@ -225,16 +225,16 @@
         </ul>
       
       <h1 class="font-medium tracking-tight sm:text-6xl md:text-6xl lg:text-7xl leading-[1.1] mb-3 text-normal dark:text-inverted">
-        Morphing Diamonds
+        Refinement
       </h1>
       
         <p class="text-[1.5rem] font-light text-normalLight dark:text-invertedLight leading-tight mb-4 max-w-2xl">
-          Three.js · Custom GLSL Shaders
+          WebGL · Custom Shaders
         </p>
       
       
         <p class="text-[1.125rem] text-normalLight font-light dark:text-invertedLight max-w-[40rem] leading-relaxed mb-0">
-          Two interactive scenes built around the same idea: that something rough and shapeless can be refined into a finished, valuable form. The first scene is a raw blob that morphs through the five Platonic solids and back, picking up iridescent sapphire facets each time it polishes. The second is a 3×3 tic-tac-toe board that solves itself — picking a winning line at random, then reshaping those three pieces into matching gems before dissolving them back to start over.
+          Two interactive scenes exploring a single idea: that something raw and shapeless can clear into a finished, faceted form. The first is a blob of ore that polishes itself through the five Platonic solids and back. The second is a tic-tac-toe board that resolves itself, choosing a winning line at random and refining those three pieces into matching gems.
         </p>
       
     </div>
@@ -248,26 +248,25 @@
     <div class="experiment-canvas-frame">
       <canvas id="refining-blob-canvas" aria-label="Morphing refining blob — drag to rotate"></canvas>
     </div>
-    <figcaption class="experiment-canvas-caption">Hover to spin up the morph. Click and drag to rotate the gem in your hands.</figcaption>
+    <figcaption class="experiment-canvas-caption">Hover to spin up the morph. Click and drag to rotate the gem.</figcaption>
   </figure>
   <figure class="experiment-canvas-figure">
     <div class="experiment-canvas-frame experiment-canvas-frame--square">
       <canvas id="gem-tictactoe-canvas" aria-label="Gem tic-tac-toe — three pieces refine themselves into a winning line"></canvas>
     </div>
-    <figcaption class="experiment-canvas-caption">Watch the board pick a winning line, refine those three gems into matching shapes, then dissolve them back to raw ore.</figcaption>
+    <figcaption class="experiment-canvas-caption">The board picks a winning line, refines those three gems into matching shapes, then dissolves them back to raw ore.</figcaption>
   </figure>
 </div>
 <h2 id="the-idea" tabindex="-1">The Idea</h2>
-<p>Both scenes are reaching for the same thing: the moment when a rough material reveals the finished form that was already inside it. Refinement, basically — the patient process of turning ore into something with edges, geometry, and light bouncing off it.</p>
+<p>Both scenes are reaching for the same thing: the moment when a rough material reveals the finished form that was already inside it.</p>
 <p>The first scene is the simplest version of the metaphor I could think of. A noisy, blob-shaped piece of &quot;raw&quot; material slowly clears its bumps, polishes itself, and snaps into one of the five Platonic solids — tetrahedron, cube, octahedron, dodecahedron, icosahedron — before melting back down and starting again with the next shape in the sequence.</p>
-<p>The second scene takes the same idea and applies it to a puzzle. Nine identical gems sit on a 3×3 grid. Every few seconds the board picks a random winning line — a row, a column, a diagonal — and reshapes those three pieces into the same Platonic solid, holds the win, then dissolves them back to neutral. It's a tic-tac-toe board that solves itself by refining its own pieces.</p>
-<h2 id="how-it-works" tabindex="-1">How It Works</h2>
-<p>The whole thing runs on a single custom GLSL shader. The vertex shader does the morphing: it takes a sphere of vertices and, based on a <code>uMorph</code> value between 0 and 1, blends each vertex between three layers — a noisy &quot;ore&quot; displacement, a smooth blob, and the exact ray-cast intersection of a Platonic solid hull. As the morph progresses, the high-frequency noise dies off first, the blob shape clears, and the polyhedron snaps into place.</p>
-<p>The fragment shader handles two materials in one pass. At low morph values it's a soft, roughly-lit volume — the &quot;raw&quot; body. As the morph crosses a threshold, it cross-fades into a mirror gem material with thin-film iridescence, faceted reflections, refraction through the surface, and a holographic rim. The same sapphire palette is used in both light and dark modes so the gem reads consistently against either backdrop.</p>
-<p>The tic-tac-toe scene reuses the same shader but pins the morph state per cell. Cells that aren't on the active winning line stay at morph = 0 (raw blobs); the three cells on the active line ease through 0 → 1 → 0 over a six-second cycle, all snapping to the same randomly-chosen Platonic kind so the win reads as visually unified.</p>
+<p>The second takes the same idea and applies it to a puzzle. Nine identical gems sit on a 3×3 grid. Every few seconds the board picks a random winning line — a row, a column, a diagonal — and reshapes those three pieces into the same Platonic solid, holds the win, then dissolves them back to neutral. A tic-tac-toe board that solves itself by refining its own pieces.</p>
 <h2 id="what-i-was-after" tabindex="-1">What I Was After</h2>
-<p>I wanted the <em>feel</em> of refinement, not just the visual. The blob shouldn't pop into a gem — it should clear up. The bumps should die out before the topology changes, so you never see the polyhedron looking ore-like, and you never see the ore looking faceted. The shader spends most of its complexity on those transitions: where to dampen the noise, when to swap the underlying geometry, how to make the iridescence shift based on view angle so the gem looks like it actually has a surface.</p>
-<p>The tic-tac-toe board is a small bet that the same metaphor scales — that watching a system <em>resolve itself</em> is more interesting than watching a player solve it.</p>
+<p>The <em>feel</em> of refinement, not just the visual. The blob shouldn't pop into a gem — it should <em>clear up</em>. The bumps should die out before the topology changes, so you never see the polyhedron looking ore-like, and you never see the ore looking faceted. Most of the work was tuning those transitions until the moment of becoming-finished felt patient instead of abrupt.</p>
+<p>The tic-tac-toe board is a small bet that the same metaphor scales — that watching a system <em>resolve itself</em> might be more interesting than watching a player solve it.</p>
+<h2 id="built-with" tabindex="-1">Built With</h2>
+<p>A single custom GLSL shader handles both the morphing geometry and the dual-material rendering — soft volumetric lighting at low morph values, a faceted iridescent gem at high morph values, with the cross-fade tuned to feel like polishing rather than switching. The same sapphire palette holds in both light and dark modes.</p>
+<p>The full source is on <a href="https://github.com/omar-almasry11">GitHub</a> for anyone curious about the shader work.</p>
 
     </article>
 
@@ -1140,7 +1139,7 @@
       <div class="flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
         <!-- Left: Title and Subtext -->
         <div class="min-w-0 lg:max-w-[58%]">
-          <h2 class="text-[2rem] font-medium mb-2 text-white leading-[1.1] tracking-tight">
+          <h2 class="text-[2.25rem] font-medium mb-2 text-white leading-[1.1] tracking-tight">
             Let's work together
           </h2>
           <p class="max-w-lg text-[1.5rem] font-light text-white/90 leading-tight text-balance">

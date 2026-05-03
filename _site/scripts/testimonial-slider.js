@@ -1,5 +1,8 @@
 /**
- * Homepage testimonials — Swiper: continuous linear autoplay (marquee-style), loop, grab + drag.
+ * Homepage testimonials — Swiper: loop, grab + drag, discrete slides (no marquee).
+ *
+ * Autoplay uses a normal delay + transition speed so arrows and autoplay stay in sync.
+ * Root hover pauses autoplay for the track and the external arrow row.
  */
 const initTestimonialSlider = () => {
   if (typeof Swiper === 'undefined') return;
@@ -30,22 +33,20 @@ const initTestimonialSlider = () => {
   }
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* Slow linear drift between slides; shorter when reduced motion (no autoplay). */
-  const IDLE_TRANSITION_MS = reduceMotion ? 400 : 16000;
-  const SNAP_SPEED = 520;
+  const SLIDE_SPEED_MS = reduceMotion ? 0 : 520;
+  const AUTOPLAY_DELAY_MS = 6500;
 
   const swiper = new Swiper(el, {
     loop: true,
     loopAddBlankSlides: false,
     loopAdditionalSlides: 6,
     slidesPerView: 1.15,
+    slidesPerGroup: 1,
     spaceBetween: 12,
-    /* Long linear glide per slide index for marquee autoplay — lower = faster drift */
-    speed: IDLE_TRANSITION_MS,
+    speed: SLIDE_SPEED_MS,
     grabCursor: true,
     simulateTouch: true,
     resistanceRatio: 0.85,
-    /* Must be false or Swiper can “lock” the carousel and break infinite loop with few slides */
     watchOverflow: false,
     navigation: {
       prevEl: prevBtn,
@@ -54,32 +55,35 @@ const initTestimonialSlider = () => {
     autoplay: reduceMotion
       ? false
       : {
-          delay: 1,
+          delay: AUTOPLAY_DELAY_MS,
           disableOnInteraction: false,
-          pauseOnMouseEnter: true,
+          pauseOnMouseEnter: false,
           waitForTransition: true,
         },
     breakpoints: {
-      640: { slidesPerView: 2.15, spaceBetween: 16 },
-      /* ~2.35×2 < 5 slides: loop stays on real clones; 3.15×2 needs blank slides */
-      1024: { slidesPerView: 2.35, spaceBetween: 20 },
+      640: { slidesPerView: 2.15, slidesPerGroup: 1, spaceBetween: 16 },
+      1024: { slidesPerView: 2.35, slidesPerGroup: 1, spaceBetween: 20 },
     },
   });
 
-  const useMarqueeSpeed = () => {
-    swiper.params.speed = IDLE_TRANSITION_MS;
-  };
-  const useSnapSpeed = () => {
-    swiper.params.speed = SNAP_SPEED;
-  };
-
-  [prevBtn, nextBtn].forEach((btn) => {
-    btn.addEventListener('pointerdown', useSnapSpeed, true);
-  });
-
   let pausedFromDrag = false;
+
+  const tryResumeAutoplay = () => {
+    if (reduceMotion || !swiper.autoplay || pausedFromDrag) return;
+    if (root.matches(':hover')) return;
+    swiper.autoplay.resume();
+  };
+
+  if (!reduceMotion && swiper.autoplay) {
+    root.addEventListener('mouseenter', () => {
+      swiper.autoplay.pause();
+    });
+    root.addEventListener('mouseleave', () => {
+      tryResumeAutoplay();
+    });
+  }
+
   swiper.on('sliderFirstMove', () => {
-    useSnapSpeed();
     if (reduceMotion || !swiper.autoplay) return;
     swiper.autoplay.pause();
     pausedFromDrag = true;
@@ -88,17 +92,14 @@ const initTestimonialSlider = () => {
   const endDragPause = () => {
     if (!pausedFromDrag) return;
     pausedFromDrag = false;
-    if (!reduceMotion && swiper.autoplay && !el.matches(':hover')) {
-      swiper.autoplay.resume();
-    }
+    tryResumeAutoplay();
   };
 
   swiper.on('transitionEnd', () => {
-    useMarqueeSpeed();
     endDragPause();
   });
+
   swiper.on('touchEnd', () => {
-    useMarqueeSpeed();
     endDragPause();
   });
 };

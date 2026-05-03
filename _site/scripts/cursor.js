@@ -218,6 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     document.querySelectorAll('.case-study-next-link, .case-study-prev-link').forEach(attachGlowLinkCursor);
+    document.querySelectorAll('.testimonial-swiper__arrow').forEach(attachGlowLinkCursor);
     document.querySelectorAll('.menu_link').forEach(attachGlowLinkCursor);
     document.querySelectorAll('.footer-social-link').forEach(attachGlowLinkCursor);
 
