@@ -149,10 +149,20 @@ const initHeroCellPixelScrollMobile = () => {
   schedule();
 };
 
+/**
+ * Use the lightweight CSS-var / rAF path when:
+ * - viewport matches the same `max-width: 767px` breakpoint as `.hero-grid` mobile CSS, or
+ * - primary pointer is coarse (touch), so phone landscape (often ≥640px wide) still avoids
+ *   GSAP ScrollTrigger scrubbing against iOS momentum scrolling.
+ */
+const useMobileHeroPixelScroll = () =>
+  window.matchMedia('(pointer: coarse)').matches ||
+  window.matchMedia('(max-width: 767px)').matches;
+
 const initHeroCellPixelScroll = () => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  if (window.innerWidth < 640) {
+  if (useMobileHeroPixelScroll()) {
     initHeroCellPixelScrollMobile();
     return;
   }
